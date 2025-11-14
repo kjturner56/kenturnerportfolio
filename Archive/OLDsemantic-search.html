@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Semantic CMDB Search Tool | Kenneth R. Turner</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/projects.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="banner">
+    <div class="container banner-inner">
+      <div class="banner-left">
+        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
+        <nav class="nav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html" >Projects</a>
+		      <a href="products.html" class="active">Products</a>
+          <a href="contact.html" >Contact</a>
+        </nav>
+      </div>
+      <div class="banner-center"><h2>Semantic CMDB Search Tool</h2><h3>Natural language search for IT configuration data</h3></div>
+    </div>
+    <div class="banner-divider"></div>
+  </header>
+
+  <main>
+    <section class="project-summary">
+      <div style="margin-bottom:18px">
+        <div class="project-hero">
+          <!-- <img src="images/semantic-search.png" alt="Semantic Search" class="project-thumb" />-->
+          <div>
+            <h2>Semantic CMDB Search Tool</h2>
+            <p style="color:var(--subtext)">A prototype that enables natural language search across configuration and dependency data to surface relevant systems, relationships, and evidence.</p>
+            <p style="margin-top:10px"><a class="project-cta" href="https://github.com/" target="_blank" rel="noopener noreferrer">View code on GitHub</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-section">
+        <h3>Overview</h3>
+        <p>This prototype applies semantic embeddings and a lightweight retrieval layer to a configuration management database. It accepts natural language queries and returns ranked configuration items and dependency paths with contextual evidence.</p>
+      </div>
+
+      <div class="summary-section">
+        <h3>Challenge</h3>
+        <p>Finding the right configuration or dependency information was slow and error prone. Teams spent time manually searching multiple systems and often missed the context needed for rationalization and impact analysis.</p>
+      </div>
+
+      <div class="summary-section">
+        <h3>Approach</h3>
+        <p>I created a pipeline to normalize configuration text, encoded items with embeddings, and built a query interface that rewrites user queries into embeddings before performing similarity search. The UI surfaces results with supporting attributes and relationship links for traceability.</p>
+      </div>
+
+      <div class="summary-section">
+        <h3>Results</h3>
+        <p>Prototype testing reduced time to identify candidate systems by a large margin in user tests and increased stakeholder confidence by including explanatory evidence with each result. The approach proved valuable for application discovery and portfolio rationalization use cases.</p>
+      </div>
+
+<!-- 11/11/25 KRT - Hide Button to Back to Projects
+      <div style="margin-top:12px">
+        <a href="projects.html" class="btn">Back to Projects</a>
+      </div>
+-->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>Kenneth R. Turner</strong>
+        <div style="opacity:0.9">PMP certified Technical Product Manager</div>
+        <div style="margin-top:8px"><a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a></div>
+      </div>
+      <div class="footer-right">
+        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank">LinkedIn</a>
+        <a class="footer-btn" href="products.html">Back to Products</a>
+      </div>
+            <p>© <span id="year"></span> Ken Turner | Product Management & AI Innovation</p>
+    </div>
+  </footer>
+</body>
+</html>

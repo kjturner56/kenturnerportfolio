@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The GenAI App Rationalization Advisor prototype by Kenneth R. Turner uses Generative AI to optimize enterprise application portfolios and guide strategic modernization decisions.">
+
+  <title>GenAI App Rationalization Advisor | Kenneth R. Turner</title>
+
+  <!-- Main styles (site-wide) -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Project-specific styles -->
+  <link rel="stylesheet" href="../css/projects.css" />
+
+  <style>
+    /* Carousel specific styles */
+    .carousel-wrapper{
+      max-width:980px;
+      margin:20px auto 6px;
+      position:relative;
+      --control-size:48px;
+    }
+
+    .carousel {
+      overflow:hidden;
+      border-radius:10px;
+      background:#fff;
+      box-shadow:0 8px 24px rgba(11,30,61,0.06);
+      position:relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 320ms cubic-bezier(.22,.9,.3,1);
+      will-change: transform;
+      position: relative; /* needed for fade layering */
+    }
+
+    .carousel-slide{
+      min-width: 100%;
+      width: 100%;
+      flex-shrink:0;
+      display: flex;
+      align-items:center;
+      justify-content:center;
+      user-select:none;
+      position: absolute; /* enable fade overlay */
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 500ms ease-in-out;
+      z-index: 0;
+    }
+
+    .carousel-slide.active{
+      opacity: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .carousel-control{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:var(--control-size);
+      height:var(--control-size);
+      border-radius:50%;
+      border:none;
+      background:rgba(11,30,61,0.72);
+      color:#fff;
+      font-size:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 6px 18px rgba(11,30,61,0.12);
+    }
+
+    .carousel-control:hover{ background:rgba(0,170,255,0.86) }
+
+    .carousel-control.prev{ left:12px }
+    .carousel-control.next{ right:12px }
+
+    .carousel-dots{
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      margin-top:12px;
+    }
+
+    .carousel-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:rgba(11,30,61,0.12);
+      cursor:pointer;
+      border:1px solid rgba(11,30,61,0.06);
+    }
+
+    .carousel-dot.active{ background:var(--primary); box-shadow:0 4px 10px rgba(0,170,255,0.12); }
+
+    @media (max-width:768px){
+      .carousel-wrapper{ padding:0 8px }
+      .carousel-control{ --control-size:40px; width:40px; height:40px; font-size:1rem }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="banner" role="banner">
+    <div class="container banner-inner">
+      <div class="banner-left">
+        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="../about.html">About</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../products.html" class="active">Products</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="banner-center" aria-hidden="true">
+        <h2>GenAI App Rationalization Advisor</h2>
+        <h3>Stakeholder-specific recommendations for application portfolio decisions</h3>
+      </div>
+    </div>
+    <div class="banner-divider" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="project-summary container" style="padding-top:22px;">
+      <!-- Executive Summary -->
+      <section class="summary-section" role="region" aria-labelledby="project-summary-title" style="margin-bottom:18px;">
+        <h2 id="project-summary-title">Executive Summary</h2>
+        <p>
+          The GenAI App Rationalization Advisor is an AI-powered prototype designed to help enterprises optimize complex application portfolios. It analyzes cost, usage, technology stack, and risk data to provide clear recommendations to retain, retire, modernize, or consolidate applications. The tool generates stakeholder-specific reports with transparent reasoning to support strategic decision-making. By automating analysis, it reduces manual workload and accelerates transformation initiatives.
+        </p>
+
+        <h3 style="margin-top:12px;">Overview</h3>
+        <p>
+          This prototype was inspired by my experience as an Application Portfolio Manager (APM) at GE Vernova, where I saw firsthand how challenging it can be for large enterprises to manage hundreds or even thousands of applications across teams, departments, and regions. Over time, portfolios often become bloated due to organic growth, mergers, and decentralized decision-making, making it difficult to maintain alignment with business needs.
+        </p>
+        <p>
+          Maintaining and operating these applications can consume up to 70–80% of IT budgets, leaving little room for innovation. Many applications are redundant, outdated, or carry compliance and security risks. Traditional portfolio rationalization efforts are manual, slow, and influenced by unclear ownership or politics.
+        </p>
+        <p>
+          The GenAI App Rationalization Advisor addresses these challenges by leveraging generative AI to analyze structured and semi-structured data such as cost, usage, technology stack, and risk. It generates actionable recommendations to retain, retire, modernize, or consolidate applications, along with stakeholder-specific reports and transparent reasoning to support faster, more informed portfolio decisions.
+        </p>
+
+        <h3 style="margin-top:12px;">Key features</h3>
+        <ul>
+          <li>AI-Driven Recommendations: Uses application metadata and business context to guide rationalization decisions.</li>
+          <li>Redundancy & Risk Detection: Identifies legacy systems, compliance risks, and technical redundancies.</li>
+          <li>Stakeholder-Specific Reports: Tailored for CIOs, application owners, finance, and security teams.</li>
+          <li>Scalable Analysis: Handles portfolios of thousands of applications across complex environments.</li>
+          <li>Governed AI Prompts: Ensures transparency, traceability, and auditability of AI-driven decisions.</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Target users</h3>
+        <ul>
+          <li>CIOs, Application Portfolio Managers, and Enterprise Architects</li>
+          <li>Application Owners</li>
+          <li>Finance and Procurement Teams</li>
+          <li>Security and Compliance Teams</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Business value</h3>
+        <ul>
+          <li><strong>Reduction:</strong> Identifies redundant or low-value applications.</li>
+          <li><strong>Faster Transformation:</strong> Accelerates cloud migration, M&A integration, and digital transformation efforts.</li>
+          <li><strong>Operational Efficiency:</strong> Reduces manual workload for IT teams.</li>
+          <li><strong>Strategic Alignment:</strong> Improves transparency and decision-making across the organization.</li>
+        </ul>
+      </section>
+
+      <!-- Technology & MVP -->
+      <section class="summary-section" role="region" aria-labelledby="tech-overview-title">
+        <h3 id="tech-overview-title">Technology overview</h3>
+        <p>
+          The prototype integrates Generative AI with structured portfolio data to automate rationalization analysis and generate transparent, stakeholder-specific reports.
+        </p>
+
+        <ul>
+          <li><strong>Stack:</strong> Python, GPT-4, Tkinter, CSV/CMDB import</li>
+          <li><strong>Inputs:</strong> Application inventory, usage data, cost, compliance risk, owner input</li>
+          <li><strong>Outputs:</strong> Disposition recommendations with rationale, stakeholder-specific reports (PDF/CSV)</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">MVP scope</h3>
+        <ul>
+          <li>Upload application data via CSV or form input</li>
+          <li>Generate disposition recommendations</li>
+          <li>Export stakeholder-specific reports</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Roadmap</h3>
+        <ul>
+          <li>Clustering and grouping of applications</li>
+          <li>Slack alerts and notifications</li>
+          <li>ServiceNow export integration</li>
+          <li>Feedback loops for continuous improvement</li>
+        </ul>
+      </section>
+
+      <!-- Slide deck carousel -->
+      <div class="carousel-wrapper" aria-label="GenAI App Rationalization Advisor slide deck">
+        <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="GenAI slide deck">
+          <div class="carousel-track" aria-live="polite">
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide Home — Main">
+              <img src="Home.png" alt="Slide Home — Main" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 — Problem statement">
+              <img src="ProblemStatement.png" alt="Slide 1 — Problem statement" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 — Hypothesis">
+              <img src="Hypothesis.png" alt="Slide 2 — Hypothesis" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 — Vision statement">
+              <img src="VisionStatement.png" alt="Slide 3 — Vision statement" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 — Approach and architecture">
+              <img src="Arch_Overview.png" alt="Slide 4 — Approach and architecture" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 5 — Results and next steps">
+              <img src="images/genai_slide5.png" alt="Slide 5 — Results and next steps" />
+            </div>
+          </div>
+
+          <button class="carousel-control prev" aria-label="Previous slide" id="prevBtn">‹</button>
+          <button class="carousel-control next" aria-label="Next slide" id="nextBtn">›</button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-hidden="false">
+          <!-- dots generated by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>Kenneth R. Turner</strong>
+        <div style="opacity:0.9">PMP certified Technical Product Manager</div>
+        <div style="margin-top:8px"><a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a></div>
+      </div>
+      <div class="footer-right">
+        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer-btn" href="../products.html">Back to Products</a>
+      </div>
+      <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
+    </div>
+  </footer>
+
+  <!-- Carousel behavior script -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      const track = document.querySelector('#genaiCarousel .carousel-track');
+      const slides = Array.from(track.children);
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('carouselDots');
+
+      let index = 0;
+      const slideCount = slides.length;
+      let startX = 0;
+      let isDragging = false;
+      let dragDelta = 0;
+
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsContainer.children);
+
+      function update(){
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      function goTo(i){ index = (i + slideCount) % slideCount; update(); }
+
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowRight') goTo(index + 1);
+        if(e.key === 'ArrowLeft') goTo(index - 1);
+      });
+
+      const carouselEl = document.getElementById('genaiCarousel');
+      carouselEl.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+      });
+      carouselEl.addEventListener('touchmove', (e) => {
+        if(!isDragging) return;
+        dragDelta = e.touches[0].clientX - startX;
+      });
+      carouselEl.addEventListener('touchend', () => {
+        isDragging = false;
+        if (dragDelta > 50) goTo(index - 1);
+        else if (dragDelta < -50) goTo(index + 1);
+        dragDelta = 0;
+      });
+
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+</body>
+</html>

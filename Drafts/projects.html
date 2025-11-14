@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!--  <script>
+  // Log banner and nav sizes for troubleshooting
+  window.addEventListener('load', () => {
+    const banner = document.querySelector('header.banner');
+    const nav = document.querySelector('.section-nav');
+    
+    console.log('Banner height:', banner.offsetHeight, 'px');
+    console.log('Banner bottom:', banner.getBoundingClientRect().bottom, 'px');
+    console.log('Nav top:', nav.offsetTop, 'px');
+    console.log('Nav computed top:', getComputedStyle(nav).top);
+  });
+</script> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ken Turner | Enterprise Programs & Transformation</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/projects.css" />
+  
+</head>
+
+<body class="projects-page">
+  <!-- Header -->
+  <header class="banner" role="banner">
+    <div class="container banner-inner">
+      <div class="banner-left">
+        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html" class="active">Projects</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html" >Contact</a>
+        </nav>
+      </div>
+
+      <div class="banner-center" aria-hidden="true">
+        <h2>Enterprise Programs & Transformation</h2>
+        <h3>Driving modernization, governance, and operational efficiency at scale</h3>
+      </div>
+    </div>
+    <div class="banner-divider" aria-hidden="true"></div>
+  </header>
+
+<!-- Sticky Section Navigation -->
+<div class="section-nav">
+  <a href="#transformation">Transformation</a>
+  <a href="#process">Process Improvement</a>
+  <a href="#collaboration">Collaboration</a>
+  <a href="#link">From Programs to Products</a>
+</div>
+
+  <!-- Intro -->
+  <section class="section">
+    <p class="intro">
+      I’ve managed enterprise IT programs across GE Vernova, GE Power, and Alstom Power—leading modernization, governance, and infrastructure transformation initiatives.
+      My focus has always been connecting strategy with delivery, ensuring every project produces clear business results and lasting operational value.
+    </p>
+  </section>
+
+  <!-- Transformation Section -->
+  <section id="transformation" class="section light-bg">
+    <h2>Enterprise Transformation</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>GE Vernova Cloud Transformation</h3>
+        <p>Led the migration of more than 150 enterprise applications to the cloud, reducing infrastructure costs and improving scalability and reliability across global regions.</p>
+      </div>
+
+      <div class="card">
+        <h3>Application Portfolio Governance</h3>
+        <p>Developed a standardized portfolio management framework and dashboards that aligned more than 20 business units under a unified IT and compliance strategy.</p>
+      </div>
+
+      <div class="card">
+        <h3>Infrastructure Modernization</h3>
+        <p>Directed infrastructure rationalization programs that improved lifecycle management, strengthened cybersecurity posture, and streamlined operations across legacy platforms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Improvement Section -->
+  <section id="process" class="section">
+    <h2>Process Improvement & Standardization</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Program Management Office Support</h3>
+        <p>Partnered with global PMO teams to streamline project intake, resource planning, and reporting through consistent tools and templates.</p>
+      </div>
+
+      <div class="card">
+        <h3>Lifecycle Optimization</h3>
+        <p>Created a unified process for software requests and evaluation, improving turnaround time and visibility for business and IT stakeholders.</p>
+      </div>
+
+      <div class="card">
+        <h3>Operational Metrics & Dashboards</h3>
+        <p>Introduced standardized scorecards and dashboards to track delivery performance and identify efficiency opportunities across portfolios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaboration Section -->
+  <section id="collaboration" class="section light-bg">
+    <h2>Collaboration & Governance</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>SharePoint Governance Program</h3>
+        <p>Implemented governance standards and reporting for over 400 SharePoint sites, ensuring consistent access control and compliance across global teams.</p>
+      </div>
+
+      <div class="card">
+        <h3>Cross-Regional Program Coordination</h3>
+        <p>Supported multi-region delivery teams by aligning communication, project standards, and reporting across North America, Europe, and Asia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crosslink -->
+  <section id="link" class="section">
+    <h2>From Programs to Products</h2>
+    <p class="intro">
+      My experience leading enterprise-scale projects directly informs how I build and manage AI-driven products today.
+      Visit the <a href="products.html">Products page</a> to see how I apply product management and AI innovation to solve enterprise challenges.
+    </p>
+  </section>
+    <!-- Footer / Contact -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>Kenneth R. Turner</strong>
+        <div style="opacity:0.9">PMP certified Technical Product Manager</div>
+        <div style="margin-top:8px; font-size:0.95rem"><a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a></div>
+      </div>
+
+      <div class="footer-right">
+        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+       <!--  <a class="footer-btn" href="about.html">About</a>
+        <a class="footer-btn" href="projects.html">Projects</a>  -->      
+      </div>
+      <p>© <span id="year"></span> Ken Turner | Product Management & AI Innovation</p>
+    </div>    
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const banner = document.querySelector('header.banner');
+    const nav = document.querySelector('.section-nav');
+    const bannerHeight = banner.offsetHeight;
+    nav.style.top = `${bannerHeight}px`;
+  </script>
+
+</body>
+</html>

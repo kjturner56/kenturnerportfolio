@@ -1,29 +1,244 @@
-/* projects.css - styles just for projects grid & summaries */
-/* We assume style.css is loaded site-wide; this file extends project-specific visuals */
+/* projects.css - Enterprise Projects Page Styles */
 
-.projects-hero{
-  padding:40px 0 8px;
-  background:var(--card-bg);
+/* Fixed Section Navigation - sits below the banner */
+/* === Projects Page Local Navigation === */
+body.projects-page .section-nav {
+  position: fixed;
+  top: 125px; /* height of your header/banner */
+  left: 0;
+  width: 100%;
+  background: var(--nav-bg); /* solid background so visible */
+  z-index: 1200; /* higher than header content */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
-.projects-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:24px; align-items:start }
-.project-card{
-  background:#fff; border-radius:10px; overflow:hidden; border:1px solid rgba(11,30,61,0.06);
-  box-shadow:0 8px 20px rgba(11,30,61,0.04); transition:transform .18s ease, box-shadow .18s ease;
-}
-.project-card:hover{ transform:translateY(-6px); box-shadow:0 18px 36px rgba(11,30,61,0.09) }
-.project-card img{ width:100%; height:170px; object-fit:cover; display:block }
-.project-card .meta{ padding:14px }
-.project-card h4{ margin:0 0 8px; color:var(--nav-bg) }
-.project-card p{ margin:0 0 12px; color:var(--subtext) }
-.project-cta{ display:inline-block; padding:8px 12px; border-radius:6px; background:linear-gradient(180deg,var(--primary), #0088cc); color:#fff; font-weight:600; text-decoration:none }
-.project-summary{ max-width:980px; margin:0 auto; padding:18px; background:var(--card-bg) }
-.summary-section{ margin-bottom:18px }
-.kv-row{ display:flex; gap:16px; flex-wrap:wrap }
-.kv{ background:#fbfcff; border:1px solid rgba(11,30,61,0.06); padding:10px 12px; border-radius:8px; color:var(--subtext) }
 
-/* responsive tweaks */
-@media (max-width:768px){
-  .projects-grid{ grid-template-columns:1fr }
-  .project-card img{ height:200px }
-  .kv-row{ flex-direction:column }
+body.projects-page .section-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+body.projects-page .section-nav a:hover {
+  opacity: 0.75;
+}
+
+/* Push page content below banner + nav */
+body.projects-page {
+  padding-top: 200px; /* header (140px) + nav (60px) */
+}
+
+/* Sections */
+.section {
+  padding: 4rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  scroll-margin-top: 180px; /* height of fixed header + nav */
+}
+
+.section.light-bg {
+  background: var(--muted);
+}
+
+/* Intro Paragraph */
+.intro {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Section Headings */
+.section h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  color: var(--nav-bg);
+  margin-bottom: 1.5rem;
+}
+
+.section h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.card p {
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Crosslink Section */
+.section#link p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.section#link a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.section#link a:hover {
+  text-decoration: underline;
+}
+/* -----------------------------------------------
+  Portfolio Intro Styling
+  This block styles the AI product story section above
+  the prototype cards on the Products page
+------------------------------------------------- */
+.portfolio-intro {
+  max-width: 900px;           /* limit width for readability */
+  margin: 0 auto 50px auto;   /* center horizontally with bottom spacing */
+  padding: 30px 25px;         /* internal spacing around text */
+  background-color: #e6f2ff;  /* subtle blue background to distinguish section */
+  border-radius: 16px;        /* rounded corners matching card style */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12); /* soft shadow for depth */
+  font-size: 1.05rem;         /* slightly larger font for readability */
+  line-height: 1.7;           /* comfortable line spacing for paragraphs */
+  color: #0b1e3d;             /* deep blue text matching header/nav palette */
+  text-align: left;            /* left-aligned text for natural reading flow */
+}
+
+
+/* Footer 
+footer {
+  background: var(--nav-bg);
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}*/
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.2rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+}
+/* Ensure section-nav doesn't overlap header and stays below banner */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Adjust nav to align directly below banner */
+.section-nav {
+  top: var(--header-height, 100px); /* or hardcode: top: 100px; */
+}
+
+/* Adjust body padding for both header and section nav */
+body {
+  padding-top: calc(var(--header-height, 100px) + 60px);
+}
+
+/* Prevent banner h1 from wrapping on Projects page */
+body.projects-page .banner-left {
+  max-width: none;
+  width: auto;
+}
+
+/* Force banner name to match products page */
+body.projects-page .banner-left .site-title h1 {
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+  line-height: 1 !important;
+  white-space: nowrap;          /* prevents wrapping */
+}
+
+/* -----------------------------------------------
+  Responsive Adjustments
+  Ensure readability and spacing on smaller screens
+------------------------------------------------- */
+@media (max-width: 768px) {
+  .portfolio-intro {
+    padding: 20px 15px;       /* slightly reduce padding on tablets */
+    font-size: 1rem;          /* slightly smaller font */
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-intro {
+    padding: 15px 10px;       /* tighter padding for small phones */
+    font-size: 0.95rem;       /* adjust font to fit screen width */
+  }
+}
+/* -----------------------------------------------
+  Products Page: force all headings, paragraphs,
+  intro, and portfolio text to left-align
+------------------------------------------------- */
+body.products-page,
+body.products-page .section,
+body.products-page .section * {
+    text-align: left !important;
+}
+/* Products page text left-alignment */
+body.products-page .section,
+body.products-page .section h2,
+body.products-page .section h3,
+body.products-page .section p,
+body.products-page .portfolio-intro {
+  text-align: left !important;
+}
+
+body.projects-page .section h2 {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.tech-note {
+  font-size: 0.95rem;
+  color: #0b1e3d;
+  background: #f0f8ff; /* light blue background for emphasis */
+  padding: 8px 12px;
+  border-left: 4px solid var(--primary);
+  border-radius: 4px;
+  margin: 12px 0;
 }

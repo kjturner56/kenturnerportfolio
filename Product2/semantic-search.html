@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI-powered Semantic CMDB Search Tool prototype by Kenneth R. Turner, enabling natural language search across enterprise CMDB data.">
+
+  <title>GenAI App Rationalization Advisor | Kenneth R. Turner</title>
+
+  <!-- Main styles (site-wide) -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Project-specific styles -->
+  <link rel="stylesheet" href="../css/projects.css" />
+
+  <style>
+    /* Carousel specific styles (keeps modular and isolated) */
+    .carousel-wrapper{
+      max-width:980px;
+      margin:20px auto 6px;
+      position:relative;
+      --control-size:48px;
+    }
+
+    .carousel {
+      overflow:hidden;
+      border-radius:10px;
+      background:#fff;
+      box-shadow:0 8px 24px rgba(11,30,61,0.06);
+      position:relative;
+    }
+
+.carousel-track {
+  display: flex;
+  transition: transform 320ms cubic-bezier(.22,.9,.3,1);
+  will-change: transform;
+  position: relative; /* needed for fade layering */
+}
+
+    .carousel-slide{
+      min-width: 100%;
+      width: 100%;
+      flex-shrink:0;
+      display: flex;
+      align-items:center;
+      justify-content:center;
+      user-select:none;
+      position: absolute; /* enable fade overlay */
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 500ms ease-in-out;
+      z-index: 0;
+    }
+
+    .carousel-slide.active{
+      opacity: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+
+    .carousel-slide img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      max-height:640px;
+    }
+
+    /* controls */
+    .carousel-control{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:var(--control-size);
+      height:var(--control-size);
+      border-radius:50%;
+      border:none;
+      background:rgba(11,30,61,0.72);
+      color:#fff;
+      font-size:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 6px 18px rgba(11,30,61,0.12);
+    }
+
+    .carousel-control:hover{ background:rgba(0,170,255,0.86) }
+
+    .carousel-control.prev{ left:12px }
+    .carousel-control.next{ right:12px }
+
+    /* pagination dots */
+    .carousel-dots{
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      margin-top:12px;
+    }
+
+    .carousel-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:rgba(11,30,61,0.12);
+      cursor:pointer;
+      border:1px solid rgba(11,30,61,0.06);
+    }
+
+    .carousel-dot.active{ background:var(--primary); box-shadow:0 4px 10px rgba(0,170,255,0.12); }
+
+    /* mobile adjustments */
+    @media (max-width:768px){
+      .carousel-wrapper{ padding:0 8px }
+      .carousel-control{ --control-size:40px; width:40px; height:40px; font-size:1rem }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="banner" role="banner">
+    <div class="container banner-inner">
+      <div class="banner-left">
+        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="../about.html">About</a>
+          <a href="../projects.html" >Projects</a>
+		      <a href="../products.html" class="active" aria-current="page">Products</a>
+          <a href="../contact.html" >Contact</a>
+        </nav>
+      </div>
+
+      <div class="banner-center" aria-hidden="true">
+        <h2>Semantic CMDB Search Tool</h2>
+        <h3>A prototype that enables natural language search across configuration and dependency data to surface relevant systems, relationships, and evidence.</h3>
+      </div>
+    </div>
+    <div class="banner-divider" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="project-summary container" style="padding-top:22px;" role="region" aria-labelledby="project-summary-title">
+      <!-- Executive Summary -->
+      <div class="summary-section" style="margin-bottom:18px;">
+        <h2 id="project-summary-title">Executive summary</h2>
+        <P>
+          The Semantic CMDB Search Tool is an AI-powered prototype that transforms complex ServiceNow Configuration Management Database (CMDB) data into actionable insights. Users can ask questions in plain English and instantly locate configuration items, dependencies, and key metadata—no technical query skills required
+        </P>
+        <p>
+          Inspired by my experience as an Application Portfolio Manager, the tool addresses the inefficiency of searching large, distributed CMDB datasets. Traditional interfaces require specialized knowledge and manual filtering, slowing discovery for both IT teams and business stakeholders.
+        </p>
+        <p>
+          By bridging structured enterprise data with natural language search, the prototype modernizes workflows while maintaining data integrity and privacy.
+        </p>
+       
+        <h3 style="margin-top:12px;">Overview</h3>
+        <p>
+          Enterprise CMDBs can contain thousands of applications, infrastructure components, and service records. Finding the right information quickly is often challenging. This tool simplifies discovery, enabling teams to search, explore, and act on CMDB data efficiently.
+        </p>
+        
+        <h3 style="margin-top:12px;">Key features</h3>
+        <ul>
+          <li>Natural Language Search: Ask questions in plain English and receive accurate results.</li>
+          <li>Semantic Understanding: AI interprets meaning and context beyond keyword matching.</li>
+          <li>Private & Secure: Sensitive data stays within the enterprise environment.</li>
+          <li>Fast Retrieval: High-speed search reduces discovery time from minutes to seconds.</li>
+          <li>Scalable Design: Easily extendable to additional data sources or systems.</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Target users</h3>
+        <ul>
+          <li>Application Portfolio Managers seeking faster visibility into system and service data.</li>
+          <li>ServiceNow Administrators looking to simplify CMDB search and analysis.</li>
+          <li>IT Operations and Service Teams needing rapid insights during incidents or audits.</li>
+          <li>Business Stakeholders who require access to system ownership and dependencies without technical barriers.</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Business value</h3>
+        <ul>
+          <li><strong>Efficiency:</strong> Accelerates data discovery and decision-making.</li>
+          <li><strong>Accessibility:</strong> Makes complex IT data usable for all stakeholders.</li>
+          <li><strong>Faster Decisions:</strong> Supports incident response, application reviews, and audit.</li>
+          <li><strong>Governance & Security:</strong> Maintains integrity and privacy of enterprise data.</li>
+        </ul>
+      </div>
+
+      <!-- Technology & MVP -->
+      <div class="summary-section">
+        <h3>Technology overview</h3>
+        <ul>
+          <li><strong>AI-Powered Semantic Search:</strong> Uses OpenAI embeddings to understand user queries.</li>
+          <li><strong>Backend Services:</strong> Orchestrates queries and delivers results in real time.</li>
+          <li><strong>Local Vector Database:</strong> Ensures fast, private, and scalable data retrieval.</li>
+          <li><strong>Streamlined Web Interface:</strong> Interactive and easy-to-use for non-technical users.</li>
+        </ul>
+        <p class="tech-note">
+          <strong>Note:</strong> The prototype connects to a ServiceNow Personal Developer Instance (PDI) for realistic testing while keeping live enterprise data secure.
+        </p>
+
+        <h3 style="margin-top:12px;">MVP scope</h3>
+        <ul>
+          <li>Connect to ServiceNow PDI to retrieve CMDB records.</li>
+          <li>Generate and store embeddings in Chroma vector database.</li>
+          <li>Process user queries through OpenAI embeddings.</li>
+          <li>Perform semantic search via Chroma and return relevant metadata.</li>
+          <li>Display results in Streamlit with key attributes.</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Roadmap / Future Enhancements</h3>
+        <ul>
+          <li>Simplified deployment for broader adoption.</li>
+          <li>Role-based user access for secure multi-user environments.</li>
+          <li>Automated refresh of semantic data for dynamic CMDB updates.</li>
+          <li>Conversational, chatbot-style search interface.</li>
+          <li>Integration with additional IT and business data sources.</li>
+        </ul>
+      </div>
+
+      <!-- Hide Buttons to GitHub and download PDF Action Links 
+      <div style="margin:18px 0;">
+        <a class="btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">View GitHub repository</a>
+        <a class="btn" href="#" style="background:linear-gradient(180deg,var(--gold), #b89d2c); margin-left:12px;">Download slide deck (PDF)</a>
+      </div>
+-->
+      <!-- Slide deck carousel -->
+      <div class="carousel-wrapper" aria-label="Slide deck">
+        <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="GenAI slide deck">
+          <div class="carousel-track" aria-live="polite">
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 — Problem statement">
+              <img src="Project2/ProblemStatement.png" alt="Slide 1 — Problem statement" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 — Hypothesis">
+              <img src="Project2/genai_slide2.png" alt="Slide 2 — Hypothesis" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 — Vision statement">
+              <img src="Project2/genai_slide3.png" alt="Slide 3 — Vision statement" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 — Approach and architecture">
+              <img src="Project2/Arch_Overview.png" alt="Slide 4 — Approach and architecture" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 5 — Results and next steps">
+              <img src="Project2/genai_slide5.png" alt="Slide 5 — Results and next steps" />
+            </div>
+          </div>
+
+          <button class="carousel-control prev" aria-label="Previous slide" id="prevBtn">‹</button>
+          <button class="carousel-control next" aria-label="Next slide" id="nextBtn">›</button> 
+
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-hidden="false">
+          <!-- dots generated by JS -->
+        </div>
+      </div>
+
+<!-- 11/11/25 KRT - Hide Button to Back to Projects
+      <div style="margin-top:12px">
+        <a href="projects.html" class="btn">Back to Projects</a>
+      </div>
+-->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>Kenneth R. Turner</strong>
+        <div style="opacity:0.9">PMP certified Technical Product Manager</div>
+        <div style="margin-top:8px"><a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a></div>
+      </div>
+      <div class="footer-right">
+        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer-btn" href="../products.html">Back to Products</a>
+      </div>
+      <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
+    </div>
+  </footer>
+
+  <!-- Carousel behavior script -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      const track = document.querySelector('#genaiCarousel .carousel-track');
+      const slides = Array.from(track.children);
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('carouselDots');
+
+      let index = 0;
+      const slideCount = slides.length;
+      let startX = 0;
+      let isDragging = false;
+      let dragDelta = 0;
+
+      // create dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsContainer.children);
+
+      function update(){
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      function goTo(i){ index = (i + slideCount) % slideCount; update(); }
+
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+
+      // keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowRight') goTo(index + 1);
+        if(e.key === 'ArrowLeft') goTo(index - 1);
+      });
+
+      // touch drag support
+      const carouselEl = document.getElementById('genaiCarousel');
+      carouselEl.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+      });
+      carouselEl.addEventListener('touchmove', (e) => {
+        if(!isDragging) return;
+        dragDelta = e.touches[0].clientX - startX;
+      });
+      carouselEl.addEventListener('touchend', () => {
+        isDragging = false;
+        if (dragDelta > 50) goTo(index - 1);
+        else if (dragDelta < -50) goTo(index + 1);
+        dragDelta = 0;
+      });
+
+      // responsive: recalc on resize
+      window.addEventListener('resize', update);
+
+      // initialize
+      update();
+    })();
+  </script>
+</body>
+</html>

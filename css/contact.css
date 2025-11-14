@@ -1,0 +1,180 @@
+/* contact.css - Contact Page Styles */
+
+/* Ensure page-specific body class */
+body.contact-page {
+  padding-top: 140px; /* offset for fixed header */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--muted);
+  color: var(--text);
+}
+
+/* Banner adjustments */
+body.contact-page .banner-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0 14px;
+  flex-wrap: wrap; /* ensures responsive alignment */
+}
+
+body.contact-page .site-title h1 {
+  font-size: 1.35rem;    
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Banner text */
+body.contact-page .banner-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px; /* spacing between h2 and h3 */
+}
+
+body.contact-page .banner-center h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+}
+
+body.contact-page .banner-center h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #c6d5e8;
+  margin: 0;
+  text-align: center;
+  max-width: 650px;
+  word-wrap: break-word;
+}
+
+/* Banner divider */
+body.contact-page .banner-divider {
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(0,170,255,0.14), rgba(212,175,55,0.06));
+}
+
+/* Section layout */
+.section {
+  padding: 4rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  scroll-margin-top: 140px; /* header height for anchor links */
+  text-align: center;
+}
+
+/* Section headings */
+.section h2 {
+  font-size: 1.8rem;
+  color: var(--nav-bg);
+  margin-bottom: 1.5rem;
+}
+
+/* Intro paragraph */
+.intro {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Contact list styling */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.contact-list li {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.contact-list a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* Contact cards */
+.contact-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Grid layout for cards */
+.card-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+/* Footer */
+footer {
+  background: var(--nav-bg);
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 0;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body.contact-page .banner-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  body.contact-page .banner-center {
+    margin-top: 0;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  body.contact-page .site-title h1 {
+    font-size: 1.2rem; /* shrink slightly for small screens */
+  }
+
+  .section {
+    padding: 3rem 1rem;
+  }
+}

@@ -1,0 +1,212 @@
+/* products.css - Products Page Styles */
+
+/* -----------------------------------------------
+   Fixed Section Navigation - sits below the banner
+------------------------------------------------- */
+body.products-page .section-nav {
+  position: fixed;
+  top: 125px; /* match banner height */
+  left: 0;
+  width: 100%;
+  background: var(--nav-bg);
+  z-index: 1200;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+body.products-page .section-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s, color 0.3s;
+}
+
+body.products-page .section-nav a:hover {
+  opacity: 0.75;
+  color: #00aaff;
+}
+
+/* -----------------------------------------------
+   Page padding below fixed header + nav
+------------------------------------------------- */
+body.products-page {
+  padding-top: 185px; /* banner + nav height */
+}
+
+/* -----------------------------------------------
+   Section Layout
+------------------------------------------------- */
+.section {
+  padding: 4rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  scroll-margin-top: 185px; /* fixes anchor jump */
+}
+
+/* -----------------------------------------------
+   Text Alignment: paragraphs left, headings centered
+------------------------------------------------- */
+body.products-page section,
+body.products-page section p,
+body.products-page .portfolio-intro {
+  text-align: left !important; /* paragraphs and intro text left-aligned */
+}
+
+body.products-page section h2,
+body.products-page section h3 {
+  display: inline-block !important;  /* underline width matches text */
+  text-align: center !important;     /* center headings */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-bottom: 5px;
+}
+
+body.products-page section h2 {
+  border-bottom: 2px solid #00aaff; /* optional underline for h2 */
+}
+
+/* -----------------------------------------------
+   Light background sections
+------------------------------------------------- */
+.light-bg {
+  background-color: #f8f9fb;
+}
+
+/* -----------------------------------------------
+   Approach Grid (Product Approach section)
+------------------------------------------------- */
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.approach-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+/* -----------------------------------------------
+   Prototype & Project Cards
+------------------------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* -----------------------------------------------
+   Buttons
+------------------------------------------------- */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #00aaff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #0088cc;
+}
+
+/* -----------------------------------------------
+   Responsive Design
+------------------------------------------------- */
+@media (max-width: 1000px) {
+  body.products-page {
+    padding-top: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 5%;
+  }
+
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.products-page .section-nav {
+    gap: 16px;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .card img {
+    height: 150px;
+  }
+}
+/* Force Products page headings centered with underline */
+body.products-page .section h2,
+body.products-page .section h3 {
+    display: block !important;           /* ensure alignment works */
+    text-align: center !important;       /* center text */
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+body.products-page .section h2 {
+    border-bottom: 2px solid #00aaff !important;
+    padding-bottom: 5px !important;
+    width: fit-content !important;       /* underline matches text width */
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
