@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ken Turner | Contact</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-h6n0J1Z+3/1kGf3Qf4KP/l8u3S2ym4fDxNJr7dJ4/XZg0y0wzptJk8k7xZq3FfK/2Z7qWZp+JdMPvYf7fXJ4qA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="contact-page">
+  <!-- Header -->
+  <header class="banner" role="banner">
+    <div class="container banner-inner">
+      <div class="banner-left">
+        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
+      </div>
+    </div>
+    <div class="banner-divider" aria-hidden="true"></div>
+  </header>
+
+  <!-- Intro Section -->
+  <section id="intro" class="section">
+    <p class="intro">
+      Professional inquiries are welcome. Connect with me via Email or LinkedIn.
+    </p>
+  </section>
+
+  <!-- Contact Cards Section -->
+  <section id="contact-info" class="section light-bg">
+    <h2>Contact Me</h2>
+    <div class="card-grid">
+
+      <!-- Email Card -->
+      <div class="contact-card">
+        <i class="fa-solid fa-envelope fa-2x" style="color: var(--primary); margin-bottom: 10px;"></i>
+        <h3>Email</h3>
+        <p>
+          <a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a>
+        </p>
+      </div>
+
+      <!-- LinkedIn Card -->
+      <div class="contact-card">
+        <i class="fa-brands fa-linkedin fa-2x" style="color: #0077B5; margin-bottom: 10px;"></i>
+        <h3>LinkedIn</h3>
+        <p>
+          <a href="https://www.linkedin.com/in/kennethturner/" target="_blank" rel="noopener noreferrer">
+            linkedin.com/in/kenneth-turner
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
