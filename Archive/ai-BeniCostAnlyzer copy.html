@@ -28,34 +28,35 @@
       position:relative;
     }
 
-    .carousel-track {
-      display: flex;
-      transition: transform 320ms cubic-bezier(.22,.9,.3,1);
-      will-change: transform;
-      position: relative; /* needed for fade layering */
-    }
+.carousel-track {
+  display: flex;
+  transition: transform 320ms cubic-bezier(.22,.9,.3,1);
+  will-change: transform;
+  position: relative; /* needed for fade layering */
+}
 
-    .carousel-slide{
-      min-width: 100%;
-      width: 100%;
-      flex-shrink:0;
-      display: flex;
-      align-items:center;
-      justify-content:center;
-      user-select:none;
-      position: absolute; /* enable fade overlay */
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 500ms ease-in-out;
-      z-index: 0;
-    }
+  .carousel-slide{
+    min-width: 100%;
+    width: 100%;
+    flex-shrink:0;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    user-select:none;
+    position: absolute; /* enable fade overlay */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+    z-index: 0;
+  }
 
-    .carousel-slide.active{
-      opacity: 1;
-      position: relative;
-      z-index: 1;
-    }
+  .carousel-slide.active{
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+  }
+
 
     .carousel-slide img{
       width:100%;
@@ -142,21 +143,21 @@
           Employee benefit programs represent one of the largest controllable expenses for insurers and employers. Organizations often struggle to understand cost drivers or optimize plan performance because data is fragmented across HR systems, finance databases, and third-party reports.
         </p>
         <p>
-          The AI Benefits Cost & Utilization Analyzer prototype demonstrates how Predictive AI, Semantic Search, Computer Vision, and Conversational AI *could* bring structure and insight to this challenge. Currently, a local Data Lakehouse environment is installed and Bronze-level datasets have been ingested, enabling early profiling and experimentation.
+          The AI Benefits Cost & Utilization Analyzer prototype demonstrates how Predictive and Computer Vision AI *could* bring structure and insight to this challenge. Currently, the local Data Lakehouse environment is installed and Bronze-level datasets have been ingested. Early profiling and experimentation can begin, while predictive and computer vision model development is still in the planning and configuration stage.
         </p>
 
         <h3 style="margin-top:12px;">Overview</h3>
         <p>
-          This prototype explores how insurers and large employers can analyze benefits data more effectively. By combining structured and unstructured datasets in a local Data Lakehouse, it provides visibility into utilization patterns, emerging cost drivers, and potential areas for savings. It also gives hands-on experience with Data Lakehouse technologies including MinIO, Apache Spark, Project Nessie, and Dremio.
+          This prototype explores how insurers and large employers can analyze benefits data more effectively. By combining structured and unstructured data sources, it provides a clearer view of utilization patterns, emerging cost drivers, and potential areas for savings. It serves as a safe, local environment to experiment with AI-driven analytics before scaling to enterprise systems.
         </p>
 
-        <h3 style="margin-top:12px;">Key Features (Planned)</h3>
+        <h3 style="margin-top:12px;">Key Features</h3>
         <ul>
-          <li>Predictive AI: Forecast trends using historical claims, demographics, and seasonality</li>
-          <li>Computer Vision: Extract data from claim and invoice images</li>
-          <li>Semantic Search: Enable natural language queries across benefit datasets</li>
-          <li>Conversational Analytics: Chatbot interface for benefits exploration</li>
-          <li>Generative Reporting: Produce executive summaries with charts and insights</li>
+          <li>Predictive AI: Forecast trends using historical claims, demographics, and seasonality (planned).</li>
+          <li>Computer Vision: Extract data from claim and invoice images (planned).</li>
+          <li>Conversational Analytics: Test natural-language queries on benefits data (planned).</li>
+          <li>Generative Reporting: Produce executive summaries with charts and insights (planned).</li>
+          <li>Governed Architecture: Demonstrates secure experimentation with AI before enterprise deployment.</li>
         </ul>
 
         <h3 style="margin-top:12px;">Target Users</h3>
@@ -180,12 +181,15 @@
       <div class="summary-section">
         <h3>Technology Overview</h3>
         <p>
-          The prototype integrates open healthcare and economic datasets into a local Data Lakehouse environment built with MinIO, Apache Spark, Dremio, and Project Nessie. Bronze-level datasets have been ingested for profiling and early experimentation. Predictive models, Computer Vision, Streamlit interface, and Conversational AI are in planning and configuration stages.
+          The prototype integrates open healthcare and economic datasets into a local Data Lakehouse environment built with MinIO, Apache Spark, Dremio, and Project Nessie. Bronze-level datasets have been ingested for profiling and early experimentation. Model development, Streamlit interface, and AI-driven analytics are still in configuration and planning stages.
+        </p>
+        <p>
+          Public datasets include CMS Inpatient Claims, Medicare Severity DRG classifications, BLS Employment and Benefits data, and regional GeoJSON boundaries. These are ingested into the Bronze layer for profiling, normalization, and early experimentation. Future phases will promote data to Silver and Gold layers to support predictive modeling, computer vision extraction, and executive analytics.
         </p>
 
         <h3 style="margin-top:12px;">Current Status</h3>
         <p>
-          Local Data Lakehouse environment installed. Bronze-level datasets ingested, initial profiling completed. Development of predictive AI, computer vision, and generative reporting is planned but not yet started.
+          Local Data Lakehouse environment is installed with MinIO, Apache Spark, Dremio, and Project Nessie. Bronze-level datasets have been ingested, allowing initial profiling. Configuration issues are being resolved, and coding for predictive and computer vision models is planned but not yet started.
         </p>
 
         <h3 style="margin-top:12px;">MVP Scope (Planned)</h3>
@@ -205,9 +209,8 @@
         </ul>
       </div>
 
-      <!-- Carousel (commented out until visuals are ready) -->
-      <!--
-      <div class="carousel-wrapper" aria-label="Slide deck">
+      <!-- Carousel -->
+      <!-- <div class="carousel-wrapper" aria-label="Slide deck">
         <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="Slide deck">
           <div class="carousel-track">
             <div class="carousel-slide">
@@ -232,9 +235,7 @@
         </div>
 
         <div class="carousel-dots" id="carouselDots" aria-hidden="false"></div>
-      </div>
-      -->
-
+      </div> -->
     </section>
   </main>
 
@@ -254,8 +255,69 @@
     </div>
   </footer>
 
+  <!-- Carousel behavior script -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      const track = document.querySelector('#genaiCarousel .carousel-track');
+      const slides = Array.from(track.children);
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('carouselDots');
+
+      let index = 0;
+      const slideCount = slides.length;
+      let startX = 0;
+      let isDragging = false;
+      let dragDelta = 0;
+
+      // create dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsContainer.children);
+
+      function update(){
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      function goTo(i){ index = (i + slideCount) % slideCount; update(); }
+
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowRight') goTo(index + 1);
+        if(e.key === 'ArrowLeft') goTo(index - 1);
+      });
+
+      const carouselEl = document.getElementById('genaiCarousel');
+      carouselEl.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+      });
+      carouselEl.addEventListener('touchmove', (e) => {
+        if(!isDragging) return;
+        dragDelta = e.touches[0].clientX - startX;
+      });
+      carouselEl.addEventListener('touchend', () => {
+        isDragging = false;
+        if (dragDelta > 50) goTo(index - 1);
+        else if (dragDelta < -50) goTo(index + 1);
+        dragDelta = 0;
+      });
+
+      window.addEventListener('resize', update);
+      update();
+    })();
   </script>
 </body>
 </html>

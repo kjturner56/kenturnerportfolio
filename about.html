@@ -16,8 +16,8 @@
           <a href="index.html">Home</a>
           <a href="about.html" class="active">About</a>
           <a href="projects.html">Projects</a>
-		      <a href="products.html">Products</a>
-          <a href="contact.html" >Contact</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
         </nav>
       </div>
 
@@ -29,59 +29,68 @@
     <div class="banner-divider" aria-hidden="true"></div>
   </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p class="intro">
-  I’m a Technical Product Manager who enjoys turning complex technology challenges into clear, actionable solutions. My background in software development and enterprise IT transformation gives me a strong foundation for building products that improve efficiency, streamline workflows, and prepare organizations to use AI more effectively in the future.
-  </p>
-
-
-  <div class="cards-container">
-
-    <!-- Professional Experience -->
-    <div class="card">
-      <!-- <div class="icon">💼</div> -->
-      <h3>Professional Experience</h3>
-      <p>I’m a PMP-certified Technical Product Manager with more than twenty years of experience leading enterprise IT initiatives. My work has focused on application modernization, cloud migration, and process improvement across organizations like GE Vernova, GE Power, and Alstom Power. I enjoy working at the intersection of technology and business to help teams deliver solutions that make a measurable difference.</p>
+  <section id="about" class="container" style="padding-top:22px;">
+    <div class="page-title-container">
+      <h2 class="page-title">About Me</h2>
     </div>
+    <p class="intro">
+      I’m a Technical Product Manager who turns complex technology challenges into clear, actionable solutions. With a background in software development, enterprise IT transformation, and hands-on AI experimentation, I build products that improve efficiency, streamline workflows, and enable organizations to leverage AI for smarter decision-making.
+    </p>
 
-    <!-- AI & Product Innovation -->
-    <div class="card">
-      <!-- <div class="icon">🤖</div> -->
-      <h3>AI & Product Innovation</h3>
-      <p>I’ve built AI prototypes to improve how teams make decisions and work together. One was a Semantic Search Tool that helped identify existing software solutions faster. Another was a Process Automation prototype that reduced manual effort and improved efficiency. These projects helped me gain hands-on experience applying AI concepts to real business challenges.</p>
+    <div class="cards-container">
+
+      <!-- Professional Experience -->
+      <div class="card">
+        <h3>Professional Experience</h3>
+        <p>
+          I’m a PMP-certified Technical Product Manager with over twenty years of experience leading enterprise IT initiatives. My work has focused on application modernization, cloud migration, and process improvement across organizations like GE Vernova, GE Power, and Alstom Power. I enjoy bridging technical and business perspectives to deliver measurable outcomes.
+        </p>
+      </div>
+
+      <!-- AI & Product Innovation -->
+      <div class="card">
+        <h3>AI & Product Innovation</h3>
+        <p>
+          I’ve built AI prototypes that improve decision-making and operational efficiency. These include:
+        </p>
+        <ul>
+          <li>Semantic Search Tool for CMDB data to accelerate application rationalization</li>
+          <li>Process Automation prototype to reduce manual effort and improve efficiency</li>
+          <li>AI Benefits Cost & Utilization Analyzer exploring predictive analytics, computer vision, and conversational AI</li>
+        </ul>
+        <p>
+          These projects have given me hands-on experience applying AI to real enterprise challenges, including integration with a local Data Lakehouse (Spark, MinIO, Dremio, Nessie).
+        </p>
+      </div>
+
+      <!-- Skills & Expertise -->
+      <div class="card">
+        <h3>Skills & Expertise</h3>
+        <p>
+          My background spans Product Management, Technical Program Management, Agile delivery, and application portfolio optimization. I’m comfortable defining priorities, guiding teams, and delivering results that align with organizational goals. I’m also gaining expertise in Data Lakehouse technologies, cloud platforms, and AI-driven analytics.
+        </p>
+      </div>
+
+      <!-- Career Vision -->
+      <div class="card">
+        <h3>Career Vision</h3>
+        <p>
+          I’m focused on growing as a Product Manager, with a strong interest in leveraging AI to improve enterprise operations. I’m passionate about creating practical, data-driven solutions that help organizations work smarter and make better decisions.
+        </p>
+      </div>
+
+      <!-- Education & Certifications -->
+      <div class="card">
+        <h3>Education & Certifications</h3>
+        <p>Bachelor of Science in Aviation Management and Flight Operations</p>
+        <p>PMP, Project Management Professional</p>
+        <p>SAFe Agilist, in progress</p>
+        <p>AWS Cloud Practitioner, in progress</p>
+        <p>AI and Machine Learning, LinkedIn Learning and self-study</p>
+      </div>
+
     </div>
-
-    <!-- Skills & Expertise -->
-    <div class="card">
-      <!-- <div class="icon">🛠️</div> -->
-      <h3>Skills & Expertise</h3>
-      <p>My background spans Product Management, Technical Program Management, Agile delivery, and application portfolio optimization. I’m comfortable bridging technical and business perspectives, defining priorities, and guiding teams to deliver results that align with organizational goals.</p>
-    </div>
-
-    <!-- Career Vision -->
-    <div class="card">
-      <!-- <div class="icon">🎯</div> -->
-      <h3>Career Vision</h3>
-      <p>I’m focused on continuing to grow as a Product Manager, with an interest in how AI can be used to improve enterprise operations. I’m passionate about creating practical, data-driven solutions that help organizations work smarter and make better decisions.</p>
-    </div>
-
-    <!-- Education & Certifications -->
-    <div class="card">
-      <!-- <div class="icon">🎓</div> -->
-      <h3>Education & Certifications</h3>
-      <p>Bachelor of Science in Aviation Management and Flight Operations</p>
-      <p>PMP, Project Management Professional</p>
-      <p>SAFe Agilist, in progress</p>
-      <p>AWS Cloud Practitioner</p>
-      <p>AI and Machine Learning, LinkedIn Learning and self-study</p>
-    </div>
-
-  </div>
-</section>
-
-
-
+  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -94,13 +103,12 @@
 
       <div class="footer-right">
         <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-       <!-- <a class="footer-btn" href="index.html">Home</a>
-        <a class="footer-btn" href="projects.html">Projects</a>-->
       </div>
-      <p>© <span id="year"></span> Ken Turner | Product Management & AI Innovation</p>
+      <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
     </div>
   </footer>
-    <script>
+
+  <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
