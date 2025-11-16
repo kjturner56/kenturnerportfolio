@@ -145,44 +145,54 @@
       <!-- Executive Summary -->
       <div class="summary-section" style="margin-bottom:18px;">
         <h2 id="project-summary-title">Executive summary</h2>
-        <P>
-          The Semantic CMDB Search Tool is an AI-powered prototype that transforms complex ServiceNow Configuration Management Database (CMDB) data into actionable insights. Users can ask questions in plain English and instantly locate configuration items, dependencies, and key metadata—no technical query skills required
-        </P>
         <p>
-          Inspired by my experience as an Application Portfolio Manager, the tool addresses the inefficiency of searching large, distributed CMDB datasets. Traditional interfaces require specialized knowledge and manual filtering, slowing discovery for both IT teams and business stakeholders.
+          The Semantic CMDB Search Tool is an AI-powered prototype that transforms complex
+          ServiceNow CMDB records into actionable insights. Users can ask questions in plain English
+          and instantly surface configuration items, relationships, metadata, and ownership details
+          without needing advanced query skills.
         </p>
         <p>
-          By bridging structured enterprise data with natural language search, the prototype modernizes workflows while maintaining data integrity and privacy.
+          Inspired by my experience as an Application Portfolio Manager, this prototype solves the
+          challenge of locating accurate information within large, distributed CMDB datasets. Traditional
+          CMDB interfaces often require specialized knowledge and manual filtering, slowing discovery
+          for IT teams and business stakeholders.
+        </p>
+        <p>
+          By bridging structured enterprise data with semantic AI search, the prototype modernizes
+          workflows while keeping sensitive data private and secure.
         </p>
        
         <h3 style="margin-top:12px;">Overview</h3>
         <p>
-          Enterprise CMDBs can contain thousands of applications, infrastructure components, and service records. Finding the right information quickly is often challenging. This tool simplifies discovery, enabling teams to search, explore, and act on CMDB data efficiently.
+          Enterprise CMDBs can contain tens of thousands of applications, servers, integrations,
+          and service components. Finding the right information quickly is difficult. This tool
+          simplifies discovery by enabling natural language search across structured configuration
+          data making CMDB insights accessible to both technical and non-technical teams.
         </p>
         
         <h3 style="margin-top:12px;">Key features</h3>
         <ul>
-          <li>Natural Language Search: Ask questions in plain English and receive accurate results.</li>
-          <li>Semantic Understanding: AI interprets meaning and context beyond keyword matching.</li>
-          <li>Private & Secure: Sensitive data stays within the enterprise environment.</li>
-          <li>Fast Retrieval: High-speed search reduces discovery time from minutes to seconds.</li>
-          <li>Scalable Design: Easily extendable to additional data sources or systems.</li>
+          <li><strong>Natural Language Search:</strong> Ask questions in plain English.</li>
+          <li><strong>Semantic Understanding:</strong> AI interprets meaning not keywords.</li>
+          <li><strong>Private & Secure:</strong> All data stays local to your environment.</li>
+          <li><strong>Fast Retrieval:</strong> Vector search returns results in seconds.</li>
+          <li><strong>Scalable:</strong> Can ingest additional systems or data sources.</li>
         </ul>
 
         <h3 style="margin-top:12px;">Target users</h3>
         <ul>
-          <li>Application Portfolio Managers seeking faster visibility into system and service data.</li>
-          <li>ServiceNow Administrators looking to simplify CMDB search and analysis.</li>
-          <li>IT Operations and Service Teams needing rapid insights during incidents or audits.</li>
-          <li>Business Stakeholders who require access to system ownership and dependencies without technical barriers.</li>
+          <li>Application Portfolio Managers needing fast visibility into systems and dependencies.</li>
+          <li>ServiceNow Admins wanting easier CMDB search and analysis.</li>
+          <li>IT Operations teams during incident response and audits.</li>
+          <li>Business stakeholders who need access without deep technical expertise.</li>
         </ul>
 
         <h3 style="margin-top:12px;">Business value</h3>
         <ul>
-          <li><strong>Efficiency:</strong> Accelerates data discovery and decision-making.</li>
-          <li><strong>Accessibility:</strong> Makes complex IT data usable for all stakeholders.</li>
-          <li><strong>Faster Decisions:</strong> Supports incident response, application reviews, and audit.</li>
-          <li><strong>Governance & Security:</strong> Maintains integrity and privacy of enterprise data.</li>
+          <li><strong>Efficiency:</strong> Faster CMDB discovery and analysis.</li>
+          <li><strong>Accessibility:</strong> Makes complex data usable for all stakeholder groups.</li>
+          <li><strong>Faster Decisions:</strong> Supports incident response, reviews, and audits.</li>
+          <li><strong>Governance & Security:</strong> Maintains data integrity and privacy.</li>
         </ul>
       </div>
 
@@ -190,10 +200,11 @@
       <div class="summary-section">
         <h3>Technology overview</h3>
         <ul>
-          <li><strong>AI-Powered Semantic Search:</strong> Uses OpenAI embeddings to understand user queries.</li>
-          <li><strong>Backend Services:</strong> Orchestrates queries and delivers results in real time.</li>
-          <li><strong>Local Vector Database:</strong> Ensures fast, private, and scalable data retrieval.</li>
-          <li><strong>Streamlined Web Interface:</strong> Interactive and easy-to-use for non-technical users.</li>
+          <li><strong>OpenAI Embeddings:</strong> Power semantic understanding of user queries.</li>
+          <li><strong>Chroma Vector DB:</strong> Stores embeddings and enables fast similarity search.</li>
+          <li><strong>Python Backend:</strong> Orchestrates embedding generation and query routing.</li>
+          <li><strong>Streamlit UI:</strong> Provides a clean, interactive user interface.</li>
+          <li><strong>ServiceNow PDI Integration:</strong> Retrieves realistic CMDB records for testing.</li>
         </ul>
         <p class="tech-note">
           <strong>Note:</strong> The prototype connects to a ServiceNow Personal Developer Instance (PDI) for realistic testing while keeping live enterprise data secure.
@@ -201,11 +212,11 @@
 
         <h3 style="margin-top:12px;">MVP scope</h3>
         <ul>
-          <li>Connect to ServiceNow PDI to retrieve CMDB records.</li>
-          <li>Generate and store embeddings in Chroma vector database.</li>
-          <li>Process user queries through OpenAI embeddings.</li>
-          <li>Perform semantic search via Chroma and return relevant metadata.</li>
-          <li>Display results in Streamlit with key attributes.</li>
+          <li>Connect to ServiceNow PDI to retrieve CMDB data.</li>
+          <li>Generate embeddings and store them in Chroma DB.</li>
+          <li>Process user questions through OpenAI embeddings.</li>
+          <li>Perform semantic similarity search.</li>
+          <li>Display results in Streamlit with key metadata fields.</li>
         </ul>
 
         <h3 style="margin-top:12px;">Roadmap / Future Enhancements</h3>
@@ -228,20 +239,50 @@
       <div class="carousel-wrapper" aria-label="Slide deck">
         <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="GenAI slide deck">
           <div class="carousel-track" aria-live="polite">
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 — Problem statement">
-              <img src="Project2/ProblemStatement.png" alt="Slide 1 — Problem statement" />
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide Home — Main">
+              <img src="Home.png" alt="Slide Home — Main" />
             </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 — Hypothesis">
-              <img src="Project2/genai_slide2.png" alt="Slide 2 — Hypothesis" />
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 — Executive Summary">
+              <img src="Executive_Summary.png" alt="Slide 1 — Executive Summary" />
             </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 — Vision statement">
-              <img src="Project2/genai_slide3.png" alt="Slide 3 — Vision statement" />
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 — Problem Statement">
+              <img src="Problem_Statement.png" alt="Slide 2 — Problem Statement" />
             </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 — Approach and architecture">
-              <img src="Project2/Arch_Overview.png" alt="Slide 4 — Approach and architecture" />
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 — Primary Personas">
+              <img src="Personas.png" alt="Slide 3 — Primary Personas" />
             </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 5 — Results and next steps">
-              <img src="Project2/genai_slide5.png" alt="Slide 5 — Results and next steps" />
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 — Vision Statement">
+              <img src="VisionStatement.png" alt="Slide 4 — Vision Statement" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 5 — Hypothesis">
+              <img src="Hypothesis.png" alt="Slide 5 — Hypothesiss" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 6 — Solution Overview">
+              <img src="SolutionOverview.png" alt="Slide 6 — Solution Overview" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 7 — How The System Works">
+              <img src="HowWorks.png" alt="Slide 7 — How The System Works" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 8 — Before and After">
+              <img src="BeforeAfter.png" alt="Slide 8 — Before and After" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 9 — Business Impact">
+              <img src="BusinessImpact.png" alt="Slide 9 — Business Impact" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 10 — Whay AI">
+              <img src="WhyAI.png" alt="Slide 10 — Whay AI" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 11 — Skills Demonstrated">
+              <img src="SkillsDemo.png" alt="Slide 11 — Skills Demonstrated" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 12 — Roadmap">
+              <img src="Roadmap.png" alt="Slide 12 — Roadmap" />
+            </div>
+            <!-- <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 13 — Sample Output Retire">
+              <img src="OutputRetire.png" alt="Slide 13 — Sample Output Retire" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 13 — Sample Output Retain">
+              <img src="OutputRetain.png" alt="Slide 13 — Sample Output Retain" /> -->
             </div>
           </div>
 
