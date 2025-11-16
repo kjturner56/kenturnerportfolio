@@ -70,6 +70,7 @@ p{ margin:0 0 14px; color:var(--subtext); }
   display:flex;
   gap:18px;
   align-items:center;
+  white-space: nowrap;
 }
 
 .site-title{ display:flex; flex-direction:column; line-height:1; }
