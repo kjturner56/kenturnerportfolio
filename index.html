@@ -6,16 +6,6 @@
   <title>Kenneth R. Turner | Technical Product Manager</title>
   <link rel="stylesheet" href="./css/style.css" />
 </head>
-<script>
-  const navToggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".nav");
-
-  navToggle.addEventListener("click", () => {
-    nav.classList.toggle("open");
-    navToggle.classList.toggle("open");
-  });
-</script>
-
 <body>
   <!-- Header -->
   <header class="banner" role="banner">
@@ -117,6 +107,15 @@
   </footer>
 
   <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      navToggle.classList.toggle("open");
+    });
+
+    // Optional: set year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>

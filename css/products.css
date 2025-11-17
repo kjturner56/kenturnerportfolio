@@ -170,7 +170,6 @@ body.products-page section h2 {
   .section {
     padding: 50px 5%;
   }
-
   .approach-grid {
     grid-template-columns: 1fr;
   }
@@ -194,6 +193,166 @@ body.products-page section h2 {
     height: 150px;
   }
 }
+/* -------------------------------
+   Mobile Navigation & Hamburger
+------------------------------- */
+@media (max-width: 768px) {
+
+  /* Hamburger button visible */
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 1400; /* above everything */
+  }
+
+  .nav-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Animate hamburger when open */
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Hide nav by default */
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #222; /* match banner */
+    position: absolute;
+    top: 125px; /* below banner */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1350;
+  }
+
+  /* Show nav when open */
+  .nav.open {
+    display: flex;
+  }
+
+  /* Nav links styling */
+  .nav a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .nav a:hover {
+    background-color: #333;
+    color: #00aaff;
+  }
+
+  /* Section nav below banner stays fixed, adjust top if needed */
+  body.products-page .section-nav {
+    top: 129px; /* adjust if banner + nav height changes */
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 8px 0;
+  }
+}
+
+/* Hide hamburger on larger screens */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    display: flex !important; /* desktop nav stays horizontal */
+    flex-direction: row;
+    position: static;
+    background: none;
+    width: auto;
+    padding: 0;
+  }
+
+  .nav a {
+    display: inline-block;
+    padding: 0 15px;
+    color: #fff;
+  }
+}
+@media (max-width: 768px) {
+  /* Hide banner-center text on mobile to reduce clutter */
+  .banner-center {
+    display: none;
+  }
+
+  /* Adjust banner height since banner-center is hidden */
+  .banner {
+    height: 60px; /* shorter height on mobile */
+  }
+  
+/* Desktop banner divider */
+.banner-divider {
+  height: 4px;
+  background-color: #003c71;
+  width: 100%;
+  position: fixed;
+  top: 125px; /* desktop banner height */
+  left: 0;
+  z-index: 1299;
+}
+
+
+  /* Style nav as hidden by default and dropdown on toggle */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 60px; /* just below the smaller banner */
+    left: 0;
+    width: 100%;
+    background-color: #222; /* solid background matching banner */
+    flex-direction: column;
+    padding: 10px 0;
+    z-index: 1400;
+  }
+
+  /* Show nav when toggled */
+  .nav.open {
+    display: flex;
+  }
+
+  /* Nav links styling inside dropdown */
+  .nav a {
+    padding: 12px 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* Hamburger button stay visible */
+  .nav-toggle {
+    z-index: 1500;
+  }
+}
+
+
+
 /* Force Products page headings centered with underline */
 body.products-page .section h2,
 body.products-page .section h3 {

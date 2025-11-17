@@ -36,28 +36,28 @@
       position: relative; /* needed for fade layering */
     }
 
-    .carousel-slide{
+    .carousel-slide {
       min-width: 100%;
-      width: 100%;
-      flex-shrink:0;
+      flex-shrink: 0;
       display: flex;
-      align-items:center;
-      justify-content:center;
-      user-select:none;
-      position: absolute; /* enable fade overlay */
-      top: 0;
-      left: 0;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
       opacity: 0;
       transition: opacity 500ms ease-in-out;
-      z-index: 0;
+      /* remove position, top, left */
     }
 
-    .carousel-slide.active{
+    .carousel-slide.active {
       opacity: 1;
-      position: relative;
-      z-index: 1;
+      /* position: relative; not needed */
     }
-
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
     .carousel-control{
       position:absolute;
       top:50%;
@@ -109,20 +109,30 @@
   <!-- Header -->
   <header class="banner" role="banner">
     <div class="container banner-inner">
+
       <div class="banner-left">
         <div class="site-title"><h1>Kenneth R. Turner</h1></div>
-        <nav class="nav" role="navigation" aria-label="Main navigation">
-          <a href="../index.html">Home</a>
-          <a href="../about.html">About</a>
-          <a href="../projects.html">Projects</a>
-          <a href="../products.html" class="active">Products</a>
-          <a href="../contact.html">Contact</a>
-        </nav>
+
+        <!-- Hamburger button -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
 
+      <!-- Navigation -->
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/products.html" class="active">Products</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
       <div class="banner-center" aria-hidden="true">
-        <h2>GenAI App Rationalization Advisor</h2>
-        <h3>Stakeholder-specific recommendations for application portfolio decisions</h3>
+        <h2>Senior Technical Product Manager</h2>
+        <h3>AI and enterprise solutions driving innovation and measurable impact</h3>
       </div>
     </div>
     <div class="banner-divider" aria-hidden="true"></div>
@@ -172,10 +182,7 @@
       <li><strong>Operational Efficiency:</strong> Reduces manual workload for IT teams.</li>
       <li><strong>Strategic Alignment:</strong> Improves transparency and decision-making across the organization.</li>
     </ul>
-  </section>
 
-  <!-- Technology & MVP -->
-  <section class="summary-section" role="region" aria-labelledby="tech-overview-title">
     <h3 id="tech-overview-title">Technology overview</h3>
     <p>
       The prototype integrates Generative AI with structured portfolio data to automate rationalization analysis and generate a portfolio-level report.
@@ -286,6 +293,15 @@
 
   <!-- Carousel behavior script -->
   <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      navToggle.classList.toggle("open");
+    });
+
+    // Optional: set year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
     (function(){
       const track = document.querySelector('#genaiCarousel .carousel-track');
