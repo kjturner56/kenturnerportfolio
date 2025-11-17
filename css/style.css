@@ -26,7 +26,7 @@ body{
   background-color:var(--muted);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
-  padding-top:140px;
+  padding-top: 0; /* was 140px */
 }
 
 .container{
@@ -48,37 +48,42 @@ p{ margin:0 0 14px; color:var(--subtext); }
    HEADER
    ========================================================= */
 
-.banner{
-  position:fixed;
-  top:0; left:0;
-  width:100%;
-  background:linear-gradient(180deg,var(--nav-bg), #12315c 60%, #163b6b 100%);
-  color:#fff;
-  z-index:1100;
-  box-shadow:0 6px 18px rgba(11,30,61,0.12);
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(180deg,var(--nav-bg), #12315c 60%, #163b6b 100%);
+  z-index: 1100;
+  box-shadow: 0 6px 18px rgba(11,30,61,0.12);
+  position: relative; /* REQUIRED FOR MOBILE NAV */
 }
 
-.banner-inner{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:20px;
-  padding:18px 0 14px;
+.banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
 }
 
-.banner-left{
-  display:flex;
-  gap:18px;
-  align-items:center;
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: nowrap;
   white-space: nowrap;
 }
 
 .site-title{ display:flex; flex-direction:column; line-height:1; }
-.site-title h1{ font-size:1.35rem; font-weight:700; letter-spacing:0.3px; }
+.site-title h1{ font-size:1.35rem; font-weight:700; letter-spacing:0.3px; color: #fff; /* make name white */ }
 
-.nav{
-  display:flex; gap:16px; align-items:center; margin-left:8px;
+.nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
+
 .nav a{
   color:#fff; font-weight:600;
   padding:6px 8px; border-radius:6px; opacity:0.95;
@@ -114,8 +119,7 @@ p{ margin:0 0 14px; color:var(--subtext); }
   justify-content:space-between;
   flex-wrap:wrap;
 }
-
-.hero-text{ flex:1 1 520px; min-width:260px; }
+.hero-text { flex:1 1 300px; min-width:0; }
 .hero-text h2{ font-size:2.05rem; }
 .hero-text h2 span{ color:var(--primary); }
 .hero-text p{ margin-bottom:12px; }
@@ -136,8 +140,7 @@ p{ margin:0 0 14px; color:var(--subtext); }
   box-shadow:0 12px 28px rgba(0,170,255,0.18);
 }
 
-.hero-image{ flex:0 1 260px; text-align:center; }
-
+.hero-image { flex:1 1 200px; text-align:center; }
 .profile-pic{
   width:240px; height:240px;
   border-radius:50%;
@@ -166,7 +169,6 @@ p{ margin:0 0 14px; color:var(--subtext); }
 
 .light-bg{ background:#f8f9fb; }
 
-/* Navigation bar for sections */
 .section-nav{
   display:flex;
   justify-content:center;
@@ -209,17 +211,17 @@ p{ margin:0 0 14px; color:var(--subtext); }
   gap:30px;
   margin-top:30px;
 }
-/* Projects page */
-/* Ensure all content inside project cards is left-aligned */
-.projects-section .card {
+
+.projects-section .card,
+.projects-section .card .card-content,
+.projects-section .card .card-content h3,
+.projects-section .card .card-content p,
+.projects-section .card .card-content ul,
+.projects-section .card .card-content li,
+.projects-section .card .card-content strong {
   text-align: left;
 }
-.projects-section .card ul,
-.projects-section .card p,
-.projects-section .card h3,
-.projects-section .card strong {
-  text-align: left;
-}
+
 .card{
   background:#fff;
   border:1px solid #e0e0e0;
@@ -228,17 +230,12 @@ p{ margin:0 0 14px; color:var(--subtext); }
   padding:20px;
   transition:transform .3s, box-shadow .3s;
 }
-/* Ensure cards and their content stay left-aligned on Projects page */
-.projects-section .card {
-  text-align: left;
-}
 .card img{
   width:100%; height:180px;
   object-fit:cover;
   border-radius:8px;
   margin-bottom:15px;
 }
-
 .card:hover{
   transform:translateY(-4px);
   box-shadow:0 6px 12px rgba(0,0,0,0.10);
@@ -280,13 +277,11 @@ p{ margin:0 0 14px; color:var(--subtext); }
 
 .projects-section h2 {
   text-align: center;
-  border-bottom: 2px solid var(--primary); /* match other pages */
+  border-bottom: 2px solid var(--primary);
   padding-bottom: 5px;
   margin-bottom: 20px;
   display: inline-block;
 }
-
-
 
 /* =========================================================
    FOOTER
@@ -315,7 +310,7 @@ p{ margin:0 0 14px; color:var(--subtext); }
 }
 
 /* =========================================================
-   ABOUT PAGE — FIXED FOR .cards-container + .card LAYOUT
+   ABOUT PAGE
    ========================================================= */
 
 #about{
@@ -341,7 +336,6 @@ p{ margin:0 0 14px; color:var(--subtext); }
   text-align:left;
 }
 
-/* The correct grid for your About cards */
 .cards-container{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
@@ -350,7 +344,6 @@ p{ margin:0 0 14px; color:var(--subtext); }
   margin:0 auto;
 }
 
-/* About cards styled consistently with other cards */
 #about .card{
   background:#fff;
   border-radius:12px;
@@ -377,6 +370,7 @@ p{ margin:0 0 14px; color:var(--subtext); }
   padding-left:18px;
   margin-top:8px;
 }
+
 .page-title {
   display: inline-block;
   border-bottom: 2px solid var(--primary);
@@ -388,54 +382,140 @@ p{ margin:0 0 14px; color:var(--subtext); }
 }
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE FIXES
    ========================================================= */
 
 @media(max-width:1000px){
-  body{ padding-top:160px; }
+  body{ padding-top:150px; }
   .hero-text h2{ font-size:1.8rem; }
 }
 
 @media(max-width:768px){
-  body{ padding-top:160px; }
+  body { padding-top:130px; }
 
-  .banner-inner{
-    flex-direction:column;
-    text-align:center;
-    gap:10px;
+  .banner-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    align-items: center;
   }
 
-  .hero-inner{ flex-direction:column; text-align:center; }
-
-  .profile-pic{ width:180px; height:180px; }
-
-  .row-flex{
-    flex-direction:column;
-    align-items:center;
-  }
-  .row-flex .box{
-    width:100%;
+  .banner-left {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
   }
 
-  #about .intro{
-    text-align:center;
-    padding:0 10px;
+  .banner-center {
+    text-align: center;
+    padding: 10px 0;
   }
 
-  .site-footer{ text-align:center; }
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text, .hero-image {
+    width: 100%;
+    flex: none;
+  }
+
+  .profile-pic {
+    max-width: 70vw;
+    height: auto;
+  }
+
+  .section .container {
+    flex-direction: column !important;
+    text-align: center;
+    align-items: center !important;
+  }
+  .section .container > div {
+    width: 100%;
+    flex: none;
+  }
+
+  .site-footer { text-align:center; }
 }
 
 @media(max-width:420px){
-  .profile-pic{ width:150px; height:150px; }
-  h2{ font-size:1.4rem; }
+  body { padding-top:120px; }
+  h2 { font-size:1.4rem; }
+  .profile-pic { max-width: 60vw; }
 }
-/* Force all content inside project cards to be left-aligned */
-.projects-section .card,
-.projects-section .card .card-content,
-.projects-section .card .card-content h3,
-.projects-section .card .card-content p,
-.projects-section .card .card-content ul,
-.projects-section .card .card-content li,
-.projects-section .card .card-content strong {
-  text-align: left;
+
+/* =========================================================
+   HAMBURGER MENU
+   ========================================================= */
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================
+   MOBILE NAV DROPDOWN
+   ========================= */
+@media (max-width: 768px) {
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--nav-bg);
+    padding: 18px 0;
+    gap: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity .25s ease, transform .25s ease;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+  }
+
+  .nav.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .banner-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
