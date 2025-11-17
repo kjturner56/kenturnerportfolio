@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../css/projects.css" />
 
   <style>
-    /* Carousel specific styles (keeps modular and isolated) */
+    /* Carousel specific styles */
     .carousel-wrapper{
       max-width:980px;
       margin:20px auto 6px;
@@ -29,45 +29,36 @@
       position:relative;
     }
 
-.carousel-track {
+    .carousel-track {
+      display: flex;
+      transition: transform 320ms cubic-bezier(.22,.9,.3,1);
+      will-change: transform;
+      position: relative; /* needed for fade layering */
+    }
+
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
   display: flex;
-  transition: transform 320ms cubic-bezier(.22,.9,.3,1);
-  will-change: transform;
-  position: relative; /* needed for fade layering */
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  /* remove position, top, left */
 }
 
-    .carousel-slide{
-      min-width: 100%;
-      width: 100%;
-      flex-shrink:0;
-      display: flex;
-      align-items:center;
-      justify-content:center;
-      user-select:none;
-      position: absolute; /* enable fade overlay */
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 500ms ease-in-out;
-      z-index: 0;
-    }
+.carousel-slide.active {
+  opacity: 1;
+  /* position: relative; not needed */
+}
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 
-    .carousel-slide.active{
-      opacity: 1;
-      position: relative;
-      z-index: 1;
-    }
-
-
-    .carousel-slide img{
-      width:100%;
-      height:auto;
-      display:block;
-      object-fit:contain;
-      max-height:640px;
-    }
-
-    /* controls */
     .carousel-control{
       position:absolute;
       top:50%;
@@ -91,7 +82,6 @@
     .carousel-control.prev{ left:12px }
     .carousel-control.next{ right:12px }
 
-    /* pagination dots */
     .carousel-dots{
       display:flex;
       gap:8px;
@@ -110,7 +100,6 @@
 
     .carousel-dot.active{ background:var(--primary); box-shadow:0 4px 10px rgba(0,170,255,0.12); }
 
-    /* mobile adjustments */
     @media (max-width:768px){
       .carousel-wrapper{ padding:0 8px }
       .carousel-control{ --control-size:40px; width:40px; height:40px; font-size:1rem }
@@ -121,20 +110,30 @@
   <!-- Header -->
   <header class="banner" role="banner">
     <div class="container banner-inner">
+
       <div class="banner-left">
         <div class="site-title"><h1>Kenneth R. Turner</h1></div>
-        <nav class="nav" role="navigation" aria-label="Main navigation">
-          <a href="../index.html">Home</a>
-          <a href="../about.html">About</a>
-          <a href="../projects.html" >Projects</a>
-		      <a href="../products.html" class="active" aria-current="page">Products</a>
-          <a href="../contact.html" >Contact</a>
-        </nav>
+
+        <!-- Hamburger button -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
 
+      <!-- Navigation -->
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/products.html" class="active">Products</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
       <div class="banner-center" aria-hidden="true">
-        <h2>Semantic CMDB Search Tool</h2>
-        <h3>A prototype that enables natural language search across configuration and dependency data to surface relevant systems, relationships, and evidence.</h3>
+        <h2>Senior Technical Product Manager</h2>
+        <h3>AI and enterprise solutions driving innovation and measurable impact</h3>
       </div>
     </div>
     <div class="banner-divider" aria-hidden="true"></div>
@@ -194,10 +193,7 @@
           <li><strong>Faster Decisions:</strong> Supports incident response, reviews, and audits.</li>
           <li><strong>Governance & Security:</strong> Maintains data integrity and privacy.</li>
         </ul>
-      </div>
 
-      <!-- Technology & MVP -->
-      <div class="summary-section">
         <h3>Technology overview</h3>
         <ul>
           <li><strong>OpenAI Embeddings:</strong> Power semantic understanding of user queries.</li>
@@ -236,8 +232,8 @@
       </div>
 -->
       <!-- Slide deck carousel -->
-      <div class="carousel-wrapper" aria-label="Slide deck">
-        <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="GenAI slide deck">
+      <div class="carousel-wrapper" aria-label="Semnatic CMDB Seach Slide deck">
+        <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="Semnatic CMDB Seach slide deck">
           <div class="carousel-track" aria-live="polite">
             <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide Home — Main">
               <img src="Home.png" alt="Slide Home — Main" />
@@ -322,6 +318,15 @@
 
   <!-- Carousel behavior script -->
   <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      navToggle.classList.toggle("open");
+    });
+
+    // Optional: set year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
     (function(){
       const track = document.querySelector('#genaiCarousel .carousel-track');

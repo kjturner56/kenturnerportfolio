@@ -96,15 +96,30 @@
   <!-- Header -->
   <header class="banner" role="banner">
     <div class="container banner-inner">
+
       <div class="banner-left">
         <div class="site-title"><h1>Kenneth R. Turner</h1></div>
-        <nav class="nav" role="navigation" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="projects.html">Projects</a>
-          <a href="products.html">Products</a>
-          <a href="contact.html" class="active">Contact</a>
-        </nav>
+
+        <!-- Hamburger button -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <div class="banner-center" aria-hidden="true">
+        <h2>Senior Technical Product Manager</h2>
+        <h3>AI and enterprise solutions driving innovation and measurable impact</h3>
       </div>
     </div>
     <div class="banner-divider" aria-hidden="true"></div>
@@ -151,6 +166,15 @@
   </footer>
 
   <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      navToggle.classList.toggle("open");
+    });
+
+    // Optional: set year in footer    
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>

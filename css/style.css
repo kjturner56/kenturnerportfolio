@@ -391,6 +391,19 @@ p{ margin:0 0 14px; color:var(--subtext); }
 }
 
 @media(max-width:768px){
+    /* Hide banner-center text on mobile to reduce clutter */
+  .banner-center {
+    display: none;
+  }
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  ...
+  position: relative;   /* ❌ THIS OVERRIDES position: fixed */
+}
+  
   body { padding-top:130px; }
 
   .banner-inner {
