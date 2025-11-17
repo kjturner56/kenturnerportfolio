@@ -1,0 +1,381 @@
+/* products.css - Products Page Styles */
+
+/* -----------------------------------------------
+   Fixed Section Navigation - sits below the banner
+------------------------------------------------- */
+body.products-page .section-nav {
+  position: fixed;
+  top: 125px; /* match banner height */
+  left: 0;
+  width: 100%;
+  background: var(--nav-bg);
+  z-index: 1200;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+body.products-page .section-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s, color 0.3s;
+}
+
+body.products-page .section-nav a:hover {
+  opacity: 0.75;
+  color: #00aaff;
+}
+
+/* -----------------------------------------------
+   Page padding below fixed header + nav
+------------------------------------------------- */
+body.products-page {
+  padding-top: 185px; /* banner + nav height */
+}
+
+/* -----------------------------------------------
+   Section Layout
+------------------------------------------------- */
+.section {
+  padding: 4rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  scroll-margin-top: 185px; /* fixes anchor jump */
+}
+
+/* -----------------------------------------------
+   Text Alignment: paragraphs left, headings centered
+------------------------------------------------- */
+body.products-page section,
+body.products-page section p,
+body.products-page .portfolio-intro {
+  text-align: left !important; /* paragraphs and intro text left-aligned */
+}
+
+body.products-page section h2,
+body.products-page section h3 {
+  display: inline-block !important;  /* underline width matches text */
+  text-align: center !important;     /* center headings */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-bottom: 5px;
+}
+
+body.products-page section h2 {
+  border-bottom: 2px solid #00aaff; /* optional underline for h2 */
+}
+
+/* -----------------------------------------------
+   Light background sections
+------------------------------------------------- */
+.light-bg {
+  background-color: #f8f9fb;
+}
+
+/* -----------------------------------------------
+   Approach Grid (Product Approach section)
+------------------------------------------------- */
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.approach-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+/* -----------------------------------------------
+   Prototype & Project Cards
+------------------------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* -----------------------------------------------
+   Buttons
+------------------------------------------------- */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: #00aaff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #0088cc;
+}
+
+/* -----------------------------------------------
+   Responsive Design
+------------------------------------------------- */
+@media (max-width: 1000px) {
+  body.products-page {
+    padding-top: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 5%;
+  }
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.products-page .section-nav {
+    gap: 16px;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .card img {
+    height: 150px;
+  }
+}
+/* -------------------------------
+   Mobile Navigation & Hamburger
+------------------------------- */
+@media (max-width: 768px) {
+
+  /* Hamburger button visible */
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 1400; /* above everything */
+  }
+
+  .nav-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Animate hamburger when open */
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Hide nav by default */
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: #222; /* match banner */
+    position: absolute;
+    top: 125px; /* below banner */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1350;
+  }
+
+  /* Show nav when open */
+  .nav.open {
+    display: flex;
+  }
+
+  /* Nav links styling */
+  .nav a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .nav a:hover {
+    background-color: #333;
+    color: #00aaff;
+  }
+
+  /* Section nav below banner stays fixed, adjust top if needed */
+  body.products-page .section-nav {
+    top: 129px; /* adjust if banner + nav height changes */
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 8px 0;
+  }
+}
+
+/* Hide hamburger on larger screens */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav {
+    display: flex !important; /* desktop nav stays horizontal */
+    flex-direction: row;
+    position: static;
+    background: none;
+    width: auto;
+    padding: 0;
+  }
+
+  .nav a {
+    display: inline-block;
+    padding: 0 15px;
+    color: #fff;
+  }
+}
+@media (max-width: 768px) {
+  /* Hide banner-center text on mobile to reduce clutter */
+  .banner-center {
+    display: none;
+  }
+
+  /* Adjust banner height since banner-center is hidden */
+  .banner {
+    height: 60px; /* shorter height on mobile */
+  }
+  
+/* Desktop banner divider */
+.banner-divider {
+  height: 4px;
+  background-color: #003c71;
+  width: 100%;
+  position: fixed;
+  top: 125px; /* desktop banner height */
+  left: 0;
+  z-index: 1299;
+}
+
+
+  /* Style nav as hidden by default and dropdown on toggle */
+  .nav {
+    display: none;
+    position: absolute;
+    top: 60px; /* just below the smaller banner */
+    left: 0;
+    width: 100%;
+    background-color: #222; /* solid background matching banner */
+    flex-direction: column;
+    padding: 10px 0;
+    z-index: 1400;
+  }
+
+  /* Show nav when toggled */
+  .nav.open {
+    display: flex;
+  }
+
+  /* Nav links styling inside dropdown */
+  .nav a {
+    padding: 12px 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* Hamburger button stay visible */
+  .nav-toggle {
+    z-index: 1500;
+  }
+}
+
+
+
+/* Force Products page headings centered with underline */
+body.products-page .section h2,
+body.products-page .section h3 {
+    display: block !important;           /* ensure alignment works */
+    text-align: center !important;       /* center text */
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+body.products-page .section h2 {
+    border-bottom: 2px solid #00aaff !important;
+    padding-bottom: 5px !important;
+    width: fit-content !important;       /* underline matches text width */
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+/* Fixed banner at the top */
+body.products-page .banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 125px; /* match your current spacing for section-nav */
+  background-color: #222; /* or whatever your banner color is */
+  z-index: 1300; /* above section-nav */
+}

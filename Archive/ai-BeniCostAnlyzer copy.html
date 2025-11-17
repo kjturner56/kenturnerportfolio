@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI Benefits Cost & Utilization Analyzer by Kenneth R. Turner demonstrates how AI can bring insight to benefits data. Local prototype with Bronze-level datasets ingested; configuration and model development in progress.">
+  <title>AI Benefits Cost & Utilization Analyzer | Kenneth R. Turner</title>
+
+  <!-- Main styles (site-wide) -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Project-specific styles -->
+  <link rel="stylesheet" href="../css/projects.css" />
+
+  <style>
+    /* Carousel specific styles */
+    .carousel-wrapper{
+      max-width:980px;
+      margin:20px auto 6px;
+      position:relative;
+      --control-size:48px;
+    }
+
+    .carousel {
+      overflow:hidden;
+      border-radius:10px;
+      background:#fff;
+      box-shadow:0 8px 24px rgba(11,30,61,0.06);
+      position:relative;
+    }
+
+.carousel-track {
+  display: flex;
+  transition: transform 320ms cubic-bezier(.22,.9,.3,1);
+  will-change: transform;
+  position: relative; /* needed for fade layering */
+}
+
+  .carousel-slide{
+    min-width: 100%;
+    width: 100%;
+    flex-shrink:0;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    user-select:none;
+    position: absolute; /* enable fade overlay */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+    z-index: 0;
+  }
+
+  .carousel-slide.active{
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+
+    .carousel-slide img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      max-height:640px;
+    }
+
+    .carousel-control{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:var(--control-size);
+      height:var(--control-size);
+      border-radius:50%;
+      border:none;
+      background:rgba(11,30,61,0.72);
+      color:#fff;
+      font-size:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 6px 18px rgba(11,30,61,0.12);
+    }
+
+    .carousel-control:hover{ background:rgba(0,170,255,0.86) }
+    .carousel-control.prev{ left:12px }
+    .carousel-control.next{ right:12px }
+
+    .carousel-dots{
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      margin-top:12px;
+    }
+
+    .carousel-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:rgba(11,30,61,0.12);
+      cursor:pointer;
+      border:1px solid rgba(11,30,61,0.06);
+    }
+
+    .carousel-dot.active{ background:var(--primary); box-shadow:0 4px 10px rgba(0,170,255,0.12); }
+
+    @media (max-width:768px){
+      .carousel-wrapper{ padding:0 8px }
+      .carousel-control{ --control-size:40px; width:40px; height:40px; font-size:1rem }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="banner" role="banner">
+    <div class="container banner-inner">
+      <div class="banner-left">
+        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="../about.html">About</a>
+          <a href="../projects.html">Projects</a>
+          <a href="../products.html" class="active">Products</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="banner-center" aria-hidden="true">
+        <h2>AI Benefits Cost & Utilization Analyzer</h2>
+        <h3>Flagship prototype: Bronze data ingested, AI model development in progress</h3>
+      </div>
+    </div>
+    <div class="banner-divider" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="project-summary container" style="padding-top:22px;">
+      <!-- Executive Summary -->
+      <div class="summary-section" style="margin-bottom:18px;">
+        <h2>Executive Summary</h2>
+        <p>
+          Employee benefit programs represent one of the largest controllable expenses for insurers and employers. Organizations often struggle to understand cost drivers or optimize plan performance because data is fragmented across HR systems, finance databases, and third-party reports.
+        </p>
+        <p>
+          The AI Benefits Cost & Utilization Analyzer prototype demonstrates how Predictive and Computer Vision AI *could* bring structure and insight to this challenge. Currently, the local Data Lakehouse environment is installed and Bronze-level datasets have been ingested. Early profiling and experimentation can begin, while predictive and computer vision model development is still in the planning and configuration stage.
+        </p>
+
+        <h3 style="margin-top:12px;">Overview</h3>
+        <p>
+          This prototype explores how insurers and large employers can analyze benefits data more effectively. By combining structured and unstructured data sources, it provides a clearer view of utilization patterns, emerging cost drivers, and potential areas for savings. It serves as a safe, local environment to experiment with AI-driven analytics before scaling to enterprise systems.
+        </p>
+
+        <h3 style="margin-top:12px;">Key Features</h3>
+        <ul>
+          <li>Predictive AI: Forecast trends using historical claims, demographics, and seasonality (planned).</li>
+          <li>Computer Vision: Extract data from claim and invoice images (planned).</li>
+          <li>Conversational Analytics: Test natural-language queries on benefits data (planned).</li>
+          <li>Generative Reporting: Produce executive summaries with charts and insights (planned).</li>
+          <li>Governed Architecture: Demonstrates secure experimentation with AI before enterprise deployment.</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Target Users</h3>
+        <ul>
+          <li>HR analytics and benefits teams</li>
+          <li>Insurance finance and pricing analysts</li>
+          <li>Data science teams supporting benefits management</li>
+          <li>Executives responsible for plan design and cost optimization</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Business Value</h3>
+        <ul>
+          <li>Improve cost visibility and forecasting accuracy</li>
+          <li>Reduce manual data preparation and reporting time</li>
+          <li>Identify underutilized plans and cost-saving opportunities</li>
+          <li>Support data-driven decision-making for benefits design and risk management</li>
+        </ul>
+      </div>
+
+      <!-- Technology & MVP -->
+      <div class="summary-section">
+        <h3>Technology Overview</h3>
+        <p>
+          The prototype integrates open healthcare and economic datasets into a local Data Lakehouse environment built with MinIO, Apache Spark, Dremio, and Project Nessie. Bronze-level datasets have been ingested for profiling and early experimentation. Model development, Streamlit interface, and AI-driven analytics are still in configuration and planning stages.
+        </p>
+        <p>
+          Public datasets include CMS Inpatient Claims, Medicare Severity DRG classifications, BLS Employment and Benefits data, and regional GeoJSON boundaries. These are ingested into the Bronze layer for profiling, normalization, and early experimentation. Future phases will promote data to Silver and Gold layers to support predictive modeling, computer vision extraction, and executive analytics.
+        </p>
+
+        <h3 style="margin-top:12px;">Current Status</h3>
+        <p>
+          Local Data Lakehouse environment is installed with MinIO, Apache Spark, Dremio, and Project Nessie. Bronze-level datasets have been ingested, allowing initial profiling. Configuration issues are being resolved, and coding for predictive and computer vision models is planned but not yet started.
+        </p>
+
+        <h3 style="margin-top:12px;">MVP Scope (Planned)</h3>
+        <ul>
+          <li>Local prototype demonstrating cost and utilization forecasting</li>
+          <li>Claims image extraction using Computer Vision</li>
+          <li>Natural-language query testing through chatbot interface</li>
+          <li>Generative executive summary output</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Roadmap (Future Enhancements)</h3>
+        <ul>
+          <li>Phase 2: Expand chatbot and add automated reporting features</li>
+          <li>Phase 3: Integrate with enterprise systems like Workday and SAP SuccessFactors</li>
+          <li>Phase 4: Extend predictive models to underwriting and claims automation</li>
+          <li>Phase 5: Develop enterprise dashboard for real-time analytics and governance metrics</li>
+        </ul>
+      </div>
+
+      <!-- Carousel -->
+      <!-- <div class="carousel-wrapper" aria-label="Slide deck">
+        <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="Slide deck">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="ProblemStatement.png" alt="Slide 1 — Problem statement" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/genai_slide2.png" alt="Slide 2 — Hypothesis" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/genai_slide3.png" alt="Slide 3 — Vision statement" />
+            </div>
+            <div class="carousel-slide">
+              <img src="Arch_Overview.png" alt="Slide 4 — Approach and architecture" />
+            </div>
+            <div class="carousel-slide">
+              <img src="images/genai_slide5.png" alt="Slide 5 — Results and next steps" />
+            </div>
+          </div>
+
+          <button class="carousel-control prev" aria-label="Previous slide" id="prevBtn">‹</button>
+          <button class="carousel-control next" aria-label="Next slide" id="nextBtn">›</button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-hidden="false"></div>
+      </div> -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>Kenneth R. Turner</strong>
+        <div style="opacity:0.9">PMP certified Technical Product Manager</div>
+        <div style="margin-top:8px"><a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a></div>
+      </div>
+      <div class="footer-right">
+        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer-btn" href="../products.html">Back to Products</a>
+      </div>
+      <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
+    </div>
+  </footer>
+
+  <!-- Carousel behavior script -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      const track = document.querySelector('#genaiCarousel .carousel-track');
+      const slides = Array.from(track.children);
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('carouselDots');
+
+      let index = 0;
+      const slideCount = slides.length;
+      let startX = 0;
+      let isDragging = false;
+      let dragDelta = 0;
+
+      // create dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsContainer.children);
+
+      function update(){
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      function goTo(i){ index = (i + slideCount) % slideCount; update(); }
+
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowRight') goTo(index + 1);
+        if(e.key === 'ArrowLeft') goTo(index - 1);
+      });
+
+      const carouselEl = document.getElementById('genaiCarousel');
+      carouselEl.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+      });
+      carouselEl.addEventListener('touchmove', (e) => {
+        if(!isDragging) return;
+        dragDelta = e.touches[0].clientX - startX;
+      });
+      carouselEl.addEventListener('touchend', () => {
+        isDragging = false;
+        if (dragDelta > 50) goTo(index - 1);
+        else if (dragDelta < -50) goTo(index + 1);
+        dragDelta = 0;
+      });
+
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+</body>
+</html>

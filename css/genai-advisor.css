@@ -1,0 +1,160 @@
+/* ------------------------------
+   GenAI Advisor Project Page
+-------------------------------*/
+
+/* General container spacing */
+.project-summary {
+  padding: 2rem 1rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.summary-section {
+  margin-bottom: 2rem;
+}
+
+.summary-section h2,
+.summary-section h3 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.summary-section h2 {
+  border-bottom: 2px solid #00aaff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.summary-section ul {
+  padding-left: 1.2rem;
+}
+
+/* ------------------------------
+   Carousel
+-------------------------------*/
+.carousel-wrapper {
+  max-width: 980px;
+  margin: 2rem auto;
+  position: relative;
+  --control-size: 48px;
+}
+
+.carousel {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(11,30,61,0.06);
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  position: relative;
+}
+
+.carousel-slide {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  z-index: 0;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-slide img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--control-size);
+  height: var(--control-size);
+  border-radius: 50%;
+  border: none;
+  background: rgba(11,30,61,0.72);
+  color: #fff;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(11,30,61,0.12);
+  transition: background 0.3s;
+}
+
+.carousel-control:hover { background: rgba(0,170,255,0.86); }
+
+.carousel-control.prev { left: 12px; }
+.carousel-control.next { right: 12px; }
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(11,30,61,0.12);
+  cursor: pointer;
+  border: 1px solid rgba(11,30,61,0.06);
+}
+
+.carousel-dot.active {
+  background: var(--primary);
+  box-shadow: 0 4px 10px rgba(0,170,255,0.12);
+}
+
+/* ------------------------------
+   Footer
+-------------------------------*/
+.footer-subtitle { opacity: 0.9; }
+
+.footer-right {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    padding: 0 8px;
+  }
+
+  .carousel-control {
+    --control-size: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .footer-right {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .summary-section h2 { font-size: 1.5rem; }
+  .summary-section h3 { font-size: 1.2rem; margin-top: 0.5rem; }
+}
+
+@media (max-width: 420px) {
+  .summary-section h2 { font-size: 1.3rem; }
+  .summary-section h3 { font-size: 1rem; }
+}

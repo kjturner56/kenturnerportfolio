@@ -1,0 +1,87 @@
+/* contact.css - Contact Page Styles */
+
+/* =========================================================
+   CONTACT PAGE — VISUAL CONSISTENCY FIX
+   ========================================================= */
+
+/* Use global font, colors, spacing */
+body.contact-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+}
+
+/* Section spacing */
+section.section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--subtext);
+}
+
+/* Keep existing layout, align with site styling */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* Contact Cards styled similar to global .card */
+.contact-card {
+  flex: 1 1 260px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: var(--shadow);
+  padding: 24px 20px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(11, 30, 61, 0.15);
+}
+
+.contact-card i {
+  margin-bottom: 12px;
+}
+
+.contact-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: var(--nav-bg);
+}
+
+.contact-card p {
+  color: var(--subtext);
+}
+
+.contact-card a {
+  color: var(--primary);
+  word-break: break-word;
+  font-weight: 600;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+/* Footer stays global — style.css handles it */
+footer {
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

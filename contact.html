@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Kenneth R. Turner</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-h6n0J1Z+3/1kGf3Qf4KP/l8u3S2ym4fDxNJr7dJ4/XZg0y0wzptJk8k7xZq3FfK/2Z7qWZp+JdMPvYf7fXJ4qA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Page-specific styles */
+    body.contact-page {
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #0b1e3d;
+      line-height: 1.6;
+    }
+
+    section.section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .intro {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .contact-card {
+      flex: 1 1 250px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(11, 30, 61, 0.08);
+      padding: 25px 20px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(11, 30, 61, 0.12);
+    }
+
+    .contact-card i {
+      margin-bottom: 12px;
+    }
+
+    .contact-card h3 {
+      margin: 10px 0;
+      font-size: 1.2rem;
+      color: var(--primary, #00aaff);
+    }
+
+    .contact-card a {
+      color: inherit;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    footer {
+      background: #0b1e3d;
+      color: #fff;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .card-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body class="contact-page">
+  <!-- Header -->
+  <header class="banner" role="banner">
+    <div class="container banner-inner">
+
+      <div class="banner-left">
+        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
+
+        <!-- Hamburger button -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <div class="banner-center" aria-hidden="true">
+        <h2>Senior Technical Product Manager</h2>
+        <h3>AI and enterprise solutions driving innovation and measurable impact</h3>
+      </div>
+    </div>
+    <div class="banner-divider" aria-hidden="true"></div>
+  </header>
+
+  <!-- Intro Section -->
+  <section id="intro" class="section">
+    <p class="intro">
+      I welcome professional inquiries. Connect with me via Email or LinkedIn to discuss opportunities, collaborations, or AI-driven product innovation.
+    </p>
+  </section>
+
+  <!-- Contact Cards Section -->
+  <section id="contact-info" class="section light-bg">
+    <h2 style="text-align:center; margin-bottom:30px;">Contact Me</h2>
+    <div class="card-grid">
+
+      <!-- Email Card -->
+      <div class="contact-card">
+        <i class="fa-solid fa-envelope fa-2x" aria-hidden="true" style="color: var(--primary);"></i>
+        <h3>Email</h3>
+        <p>
+          <a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a>
+        </p>
+      </div>
+
+      <!-- LinkedIn Card -->
+      <div class="contact-card">
+        <i class="fa-brands fa-linkedin fa-2x" aria-hidden="true" style="color: #0077B5;"></i>
+        <h3>LinkedIn</h3>
+        <p>
+          <a href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">
+            linkedin.com/in/kennethrturner
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      navToggle.classList.toggle("open");
+    });
+
+    // Optional: set year in footer    
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

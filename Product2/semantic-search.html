@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI-powered Semantic CMDB Search Tool prototype by Kenneth R. Turner, enabling natural language search across enterprise CMDB data.">
+
+  <title>GenAI App Rationalization Advisor | Kenneth R. Turner</title>
+
+  <!-- Main styles (site-wide) -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Project-specific styles -->
+  <link rel="stylesheet" href="../css/projects.css" />
+
+  <style>
+    /* Carousel specific styles */
+    .carousel-wrapper{
+      max-width:980px;
+      margin:20px auto 6px;
+      position:relative;
+      --control-size:48px;
+    }
+
+    .carousel {
+      overflow:hidden;
+      border-radius:10px;
+      background:#fff;
+      box-shadow:0 8px 24px rgba(11,30,61,0.06);
+      position:relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 320ms cubic-bezier(.22,.9,.3,1);
+      will-change: transform;
+      position: relative; /* needed for fade layering */
+    }
+
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  /* remove position, top, left */
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  /* position: relative; not needed */
+}
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+    .carousel-control{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:var(--control-size);
+      height:var(--control-size);
+      border-radius:50%;
+      border:none;
+      background:rgba(11,30,61,0.72);
+      color:#fff;
+      font-size:1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 6px 18px rgba(11,30,61,0.12);
+    }
+
+    .carousel-control:hover{ background:rgba(0,170,255,0.86) }
+
+    .carousel-control.prev{ left:12px }
+    .carousel-control.next{ right:12px }
+
+    .carousel-dots{
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      margin-top:12px;
+    }
+
+    .carousel-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:rgba(11,30,61,0.12);
+      cursor:pointer;
+      border:1px solid rgba(11,30,61,0.06);
+    }
+
+    .carousel-dot.active{ background:var(--primary); box-shadow:0 4px 10px rgba(0,170,255,0.12); }
+
+    @media (max-width:768px){
+      .carousel-wrapper{ padding:0 8px }
+      .carousel-control{ --control-size:40px; width:40px; height:40px; font-size:1rem }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="banner" role="banner">
+    <div class="container banner-inner">
+
+      <div class="banner-left">
+        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
+
+        <!-- Hamburger button -->
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/products.html" class="active">Products</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <div class="banner-center" aria-hidden="true">
+        <h2>Senior Technical Product Manager</h2>
+        <h3>AI and enterprise solutions driving innovation and measurable impact</h3>
+      </div>
+    </div>
+    <div class="banner-divider" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <section class="project-summary container" style="padding-top:22px;" role="region" aria-labelledby="project-summary-title">
+      <!-- Executive Summary -->
+      <div class="summary-section" style="margin-bottom:18px;">
+        <h2 id="project-summary-title">Executive summary</h2>
+        <p>
+          The Semantic CMDB Search Tool is an AI-powered prototype that transforms complex
+          ServiceNow CMDB records into actionable insights. Users can ask questions in plain English
+          and instantly surface configuration items, relationships, metadata, and ownership details
+          without needing advanced query skills.
+        </p>
+        <p>
+          Inspired by my experience as an Application Portfolio Manager, this prototype solves the
+          challenge of locating accurate information within large, distributed CMDB datasets. Traditional
+          CMDB interfaces often require specialized knowledge and manual filtering, slowing discovery
+          for IT teams and business stakeholders.
+        </p>
+        <p>
+          By bridging structured enterprise data with semantic AI search, the prototype modernizes
+          workflows while keeping sensitive data private and secure.
+        </p>
+       
+        <h3 style="margin-top:12px;">Overview</h3>
+        <p>
+          Enterprise CMDBs can contain tens of thousands of applications, servers, integrations,
+          and service components. Finding the right information quickly is difficult. This tool
+          simplifies discovery by enabling natural language search across structured configuration
+          data making CMDB insights accessible to both technical and non-technical teams.
+        </p>
+        
+        <h3 style="margin-top:12px;">Key features</h3>
+        <ul>
+          <li><strong>Natural Language Search:</strong> Ask questions in plain English.</li>
+          <li><strong>Semantic Understanding:</strong> AI interprets meaning not keywords.</li>
+          <li><strong>Private & Secure:</strong> All data stays local to your environment.</li>
+          <li><strong>Fast Retrieval:</strong> Vector search returns results in seconds.</li>
+          <li><strong>Scalable:</strong> Can ingest additional systems or data sources.</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Target users</h3>
+        <ul>
+          <li>Application Portfolio Managers needing fast visibility into systems and dependencies.</li>
+          <li>ServiceNow Admins wanting easier CMDB search and analysis.</li>
+          <li>IT Operations teams during incident response and audits.</li>
+          <li>Business stakeholders who need access without deep technical expertise.</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Business value</h3>
+        <ul>
+          <li><strong>Efficiency:</strong> Faster CMDB discovery and analysis.</li>
+          <li><strong>Accessibility:</strong> Makes complex data usable for all stakeholder groups.</li>
+          <li><strong>Faster Decisions:</strong> Supports incident response, reviews, and audits.</li>
+          <li><strong>Governance & Security:</strong> Maintains data integrity and privacy.</li>
+        </ul>
+
+        <h3>Technology overview</h3>
+        <ul>
+          <li><strong>OpenAI Embeddings:</strong> Power semantic understanding of user queries.</li>
+          <li><strong>Chroma Vector DB:</strong> Stores embeddings and enables fast similarity search.</li>
+          <li><strong>Python Backend:</strong> Orchestrates embedding generation and query routing.</li>
+          <li><strong>Streamlit UI:</strong> Provides a clean, interactive user interface.</li>
+          <li><strong>ServiceNow PDI Integration:</strong> Retrieves realistic CMDB records for testing.</li>
+        </ul>
+        <p class="tech-note">
+          <strong>Note:</strong> The prototype connects to a ServiceNow Personal Developer Instance (PDI) for realistic testing while keeping live enterprise data secure.
+        </p>
+
+        <h3 style="margin-top:12px;">MVP scope</h3>
+        <ul>
+          <li>Connect to ServiceNow PDI to retrieve CMDB data.</li>
+          <li>Generate embeddings and store them in Chroma DB.</li>
+          <li>Process user questions through OpenAI embeddings.</li>
+          <li>Perform semantic similarity search.</li>
+          <li>Display results in Streamlit with key metadata fields.</li>
+        </ul>
+
+        <h3 style="margin-top:12px;">Roadmap / Future Enhancements</h3>
+        <ul>
+          <li>Simplified deployment for broader adoption.</li>
+          <li>Role-based user access for secure multi-user environments.</li>
+          <li>Automated refresh of semantic data for dynamic CMDB updates.</li>
+          <li>Conversational, chatbot-style search interface.</li>
+          <li>Integration with additional IT and business data sources.</li>
+        </ul>
+      </div>
+
+      <!-- Hide Buttons to GitHub and download PDF Action Links 
+      <div style="margin:18px 0;">
+        <a class="btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">View GitHub repository</a>
+        <a class="btn" href="#" style="background:linear-gradient(180deg,var(--gold), #b89d2c); margin-left:12px;">Download slide deck (PDF)</a>
+      </div>
+-->
+      <!-- Slide deck carousel -->
+      <div class="carousel-wrapper" aria-label="Semnatic CMDB Seach Slide deck">
+        <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="Semnatic CMDB Seach slide deck">
+          <div class="carousel-track" aria-live="polite">
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide Home — Main">
+              <img src="Home.png" alt="Slide Home — Main" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 — Executive Summary">
+              <img src="Executive_Summary.png" alt="Slide 1 — Executive Summary" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 — Problem Statement">
+              <img src="Problem_Statement.png" alt="Slide 2 — Problem Statement" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 — Primary Personas">
+              <img src="Personas.png" alt="Slide 3 — Primary Personas" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 — Vision Statement">
+              <img src="VisionStatement.png" alt="Slide 4 — Vision Statement" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 5 — Hypothesis">
+              <img src="Hypothesis.png" alt="Slide 5 — Hypothesiss" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 6 — Solution Overview">
+              <img src="SolutionOverview.png" alt="Slide 6 — Solution Overview" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 7 — How The System Works">
+              <img src="HowWorks.png" alt="Slide 7 — How The System Works" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 8 — Before and After">
+              <img src="BeforeAfter.png" alt="Slide 8 — Before and After" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 9 — Business Impact">
+              <img src="BusinessImpact.png" alt="Slide 9 — Business Impact" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 10 — Whay AI">
+              <img src="WhyAI.png" alt="Slide 10 — Whay AI" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 11 — Skills Demonstrated">
+              <img src="SkillsDemo.png" alt="Slide 11 — Skills Demonstrated" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 12 — Roadmap">
+              <img src="Roadmap.png" alt="Slide 12 — Roadmap" />
+            </div>
+            <!-- <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 13 — Sample Output Retire">
+              <img src="OutputRetire.png" alt="Slide 13 — Sample Output Retire" />
+            </div>
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 13 — Sample Output Retain">
+              <img src="OutputRetain.png" alt="Slide 13 — Sample Output Retain" /> -->
+            </div>
+          </div>
+
+          <button class="carousel-control prev" aria-label="Previous slide" id="prevBtn">‹</button>
+          <button class="carousel-control next" aria-label="Next slide" id="nextBtn">›</button> 
+
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-hidden="false">
+          <!-- dots generated by JS -->
+        </div>
+      </div>
+
+<!-- 11/11/25 KRT - Hide Button to Back to Projects
+      <div style="margin-top:12px">
+        <a href="projects.html" class="btn">Back to Projects</a>
+      </div>
+-->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong>Kenneth R. Turner</strong>
+        <div style="opacity:0.9">PMP certified Technical Product Manager</div>
+        <div style="margin-top:8px"><a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a></div>
+      </div>
+      <div class="footer-right">
+        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer-btn" href="../products.html">Back to Products</a>
+      </div>
+      <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
+    </div>
+  </footer>
+
+  <!-- Carousel behavior script -->
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const nav = document.querySelector(".nav");
+
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      navToggle.classList.toggle("open");
+    });
+
+    // Optional: set year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      const track = document.querySelector('#genaiCarousel .carousel-track');
+      const slides = Array.from(track.children);
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('carouselDots');
+
+      let index = 0;
+      const slideCount = slides.length;
+      let startX = 0;
+      let isDragging = false;
+      let dragDelta = 0;
+
+      // create dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = Array.from(dotsContainer.children);
+
+      function update(){
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+      }
+
+      function goTo(i){ index = (i + slideCount) % slideCount; update(); }
+
+      nextBtn.addEventListener('click', () => goTo(index + 1));
+      prevBtn.addEventListener('click', () => goTo(index - 1));
+
+      // keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowRight') goTo(index + 1);
+        if(e.key === 'ArrowLeft') goTo(index - 1);
+      });
+
+      // touch drag support
+      const carouselEl = document.getElementById('genaiCarousel');
+      carouselEl.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+      });
+      carouselEl.addEventListener('touchmove', (e) => {
+        if(!isDragging) return;
+        dragDelta = e.touches[0].clientX - startX;
+      });
+      carouselEl.addEventListener('touchend', () => {
+        isDragging = false;
+        if (dragDelta > 50) goTo(index - 1);
+        else if (dragDelta < -50) goTo(index + 1);
+        dragDelta = 0;
+      });
+
+      // responsive: recalc on resize
+      window.addEventListener('resize', update);
+
+      // initialize
+      update();
+    })();
+  </script>
+</body>
+</html>
