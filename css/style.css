@@ -452,7 +452,13 @@ p{ margin:0 0 14px; color:var(--subtext); }
 
   .site-footer { text-align:center; }
 }
-
+.role-intent {
+  text-align: center;
+  margin: 40px 0;
+  font-weight: 500;
+  color: var(--gold); /* or another theme color */
+  font-size: 1.1rem;
+}
 @media(max-width:420px){
   body { padding-top:120px; }
   h2 { font-size:1.4rem; }

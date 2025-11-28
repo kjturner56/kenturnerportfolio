@@ -93,6 +93,10 @@ body.products-page section h2 {
   justify-content: flex-start;
   text-align: left;
 }
+strong {
+  color: rgba(0,0,0,0.7);
+  font-weight: 600;
+}
 
 /* -----------------------------------------------
    Prototype & Project Cards
