@@ -108,7 +108,8 @@ p{ margin:0 0 14px; color:var(--subtext); }
    ========================================================= */
 
 .hero{
-  background:var(--card-bg);
+  /*background:var(--card-bg);*/
+  background-color: transparent; /* make hero transparent */
   padding:48px 0;
   box-shadow:0 1px 0 rgba(11,30,61,0.02);
 }
@@ -282,7 +283,43 @@ p{ margin:0 0 14px; color:var(--subtext); }
   margin-bottom: 20px;
   display: inline-block;
 }
+.section .container {
+  text-align: left;
+}
 
+.section {
+  background-color: transparent; /* remove gray bars from top and bottom */
+  padding: 20px 20px; /* spacing around card */
+}
+
+.value-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff; /* pure white card */
+  border-radius: 15px;
+  padding: 30px;
+  align-items: flex-start;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Text styling inside the card */
+.value-card-text h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.value-card-text p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Responsive: stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .value-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 /* =========================================================
    FOOTER
    ========================================================= */
