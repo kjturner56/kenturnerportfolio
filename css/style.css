@@ -301,6 +301,10 @@ p{ margin:0 0 14px; color:var(--subtext); }
   align-items: flex-start;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+.section .container > .value-card {
+    width: auto; /* allow flex to control width */
+    flex: 1 1 auto; /* default flex behavior for horizontal layout */
+}
 
 /* Text styling inside the card */
 .value-card-text h3 {
