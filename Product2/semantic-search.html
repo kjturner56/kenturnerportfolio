@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="AI-powered Semantic CMDB Search Tool prototype by Kenneth R. Turner, enabling natural language search across enterprise CMDB data.">
+  <meta name="description" content="Semantic CMDB Search Tool prototype by Kenneth R. Turner. Enables natural language search over ServiceNow PDI CMDB records using AI-powered embeddings and vector similarity search.">
 
-  <title>GenAI App Rationalization Advisor | Kenneth R. Turner</title>
+  <title>Semantic CMDB Search Tool | Kenneth R. Turner</title>
 
   <!-- Main styles (site-wide) -->
   <link rel="stylesheet" href="../css/style.css" />
@@ -36,28 +36,27 @@
       position: relative; /* needed for fade layering */
     }
 
-.carousel-slide {
-  min-width: 100%;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  opacity: 0;
-  transition: opacity 500ms ease-in-out;
-  /* remove position, top, left */
-}
+    .carousel-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      opacity: 0;
+      transition: opacity 500ms ease-in-out;
+    }
 
-.carousel-slide.active {
-  opacity: 1;
-  /* position: relative; not needed */
-}
-.carousel-slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
+    .carousel-slide.active {
+      opacity: 1;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
 
     .carousel-control{
       position:absolute;
@@ -110,7 +109,6 @@
   <!-- Header -->
   <header class="banner" role="banner">
     <div class="container banner-inner">
-
       <div class="banner-left">
         <div class="site-title"><h1>Kenneth R. Turner</h1></div>
 
@@ -131,12 +129,10 @@
         <a href="/contact.html">Contact</a>
       </nav>
 
-<div class="banner-center" aria-hidden="true">
-  <h2>Semantic CMDB Search Tool – Prototype</h2>
-  <h3>AI-powered tool to quickly surface insights from complex ServiceNow CMDB records.</h3>
-
-</div>
-
+      <div class="banner-center" aria-hidden="true">
+        <h2>Semantic CMDB Search Tool – Local Prototype</h2>
+        <h3>AI-powered prototype enabling natural language search across ServiceNow PDI CMDB records.</h3>
+      </div>
     </div>
     <div class="banner-divider" aria-hidden="true"></div>
   </header>
@@ -145,42 +141,45 @@
     <section class="project-summary container" style="padding-top:22px;" role="region" aria-labelledby="project-summary-title">
       <!-- Executive Summary -->
       <div class="summary-section" style="margin-bottom:18px;">
-        <h2 id="project-summary-title">Executive summary</h2>
+        <h2 id="project-summary-title">Executive Summary</h2>
         <p>
-          The Semantic CMDB Search Tool is an AI-powered prototype that transforms complex
-          ServiceNow CMDB records into actionable insights. Users can ask questions in plain English
-          and instantly surface configuration items, relationships, metadata, and ownership details
-          without needing advanced query skills.
+          The Semantic CMDB Search Tool is an AI-powered prototype that transforms
+          ServiceNow PDI CMDB records into actionable insights. Users can ask questions
+          in plain English to surface configuration items, relationships, metadata,
+          and ownership details from the test dataset.
         </p>
         <p>
-          Inspired by my experience as an Application Portfolio Manager, this prototype solves the
-          challenge of locating accurate information within large, distributed CMDB datasets. Traditional
-          CMDB interfaces often require specialized knowledge and manual filtering, slowing discovery
-          for IT teams and business stakeholders.
+          Inspired by my experience as an Application Portfolio Manager, this prototype
+          solves the challenge of locating accurate information within large, distributed
+          CMDB datasets. Traditional CMDB interfaces often require specialized knowledge
+          and manual filtering, slowing discovery for IT teams and business stakeholders.
         </p>
         <p>
-          By bridging structured enterprise data with semantic AI search, the prototype modernizes
-          workflows while keeping sensitive data private and secure.
+          By bridging structured enterprise data with semantic AI search, the prototype
+          modernizes workflows while keeping sensitive data private and secure.
         </p>
-       
+
         <h3 style="margin-top:12px;">Overview</h3>
         <p>
-          Enterprise CMDBs can contain tens of thousands of applications, servers, integrations,
-          and service components. Finding the right information quickly is difficult. This tool
-          simplifies discovery by enabling natural language search across structured configuration
-          data making CMDB insights accessible to both technical and non-technical teams.
+          Enterprise CMDBs can contain tens of thousands of applications, servers,
+          integrations, and service components. Finding the right information quickly
+          is difficult. This tool simplifies discovery by enabling natural language
+          search across structured configuration data, making CMDB insights accessible
+          to both technical and non-technical teams.
         </p>
-        
-        <h3 style="margin-top:12px;">Key features</h3>
+
+        <h3 style="margin-top:12px;">Key Features</h3>
         <ul>
           <li><strong>Natural Language Search:</strong> Ask questions in plain English.</li>
-          <li><strong>Semantic Understanding:</strong> AI interprets meaning not keywords.</li>
-          <li><strong>Private & Secure:</strong> All data stays local to your environment.</li>
+          <li><strong>Semantic Understanding:</strong> AI interprets meaning, not keywords.</li>
+          <li><strong>Private & Secure:</strong> All CMDB data and embeddings remain within your local PDI environment. 
+Vectors are stored in a local Chroma DB, and queries are processed locally, ensuring no sensitive information leaves your system.</li>
+
           <li><strong>Fast Retrieval:</strong> Vector search returns results in seconds.</li>
           <li><strong>Scalable:</strong> Can ingest additional systems or data sources.</li>
         </ul>
 
-        <h3 style="margin-top:12px;">Target users</h3>
+        <h3 style="margin-top:12px;">Target Users</h3>
         <ul>
           <li>Application Portfolio Managers needing fast visibility into systems and dependencies.</li>
           <li>ServiceNow Admins wanting easier CMDB search and analysis.</li>
@@ -188,7 +187,7 @@
           <li>Business stakeholders who need access without deep technical expertise.</li>
         </ul>
 
-        <h3 style="margin-top:12px;">Business value</h3>
+        <h3 style="margin-top:12px;">Business Value</h3>
         <ul>
           <li><strong>Efficiency:</strong> Faster CMDB discovery and analysis.</li>
           <li><strong>Accessibility:</strong> Makes complex data usable for all stakeholder groups.</li>
@@ -196,19 +195,19 @@
           <li><strong>Governance & Security:</strong> Maintains data integrity and privacy.</li>
         </ul>
 
-        <h3>Technology overview</h3>
+        <h3>Technology Overview</h3>
         <ul>
           <li><strong>OpenAI Embeddings:</strong> Power semantic understanding of user queries.</li>
           <li><strong>Chroma Vector DB:</strong> Stores embeddings and enables fast similarity search.</li>
           <li><strong>Python Backend:</strong> Orchestrates embedding generation and query routing.</li>
-          <li><strong>Streamlit UI:</strong> Provides a clean, interactive user interface.</li>
-          <li><strong>ServiceNow PDI Integration:</strong> Retrieves realistic CMDB records for testing.</li>
+          <li><strong>Streamlit UI:</strong> Provides a clean, interactive interface.</li>
+          <li><strong>ServiceNow PDI Integration:</strong> Retrieves realistic CMDB records for safe testing.</li>
         </ul>
         <p class="tech-note">
-          <strong>Note:</strong> The prototype connects to a ServiceNow Personal Developer Instance (PDI) for realistic testing while keeping live enterprise data secure.
+          <strong>Note:</strong> The prototype connects to a ServiceNow Personal Developer Instance (PDI) to ensure safe, realistic testing without exposing live enterprise data.
         </p>
 
-        <h3 style="margin-top:12px;">MVP scope</h3>
+        <h3 style="margin-top:12px;">MVP Scope</h3>
         <ul>
           <li>Connect to ServiceNow PDI to retrieve CMDB data.</li>
           <li>Generate embeddings and store them in Chroma DB.</li>
@@ -227,15 +226,9 @@
         </ul>
       </div>
 
-      <!-- Hide Buttons to GitHub and download PDF Action Links 
-      <div style="margin:18px 0;">
-        <a class="btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">View GitHub repository</a>
-        <a class="btn" href="#" style="background:linear-gradient(180deg,var(--gold), #b89d2c); margin-left:12px;">Download slide deck (PDF)</a>
-      </div>
--->
       <!-- Slide deck carousel -->
-      <div class="carousel-wrapper" aria-label="Semnatic CMDB Seach Slide deck">
-        <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="Semnatic CMDB Seach slide deck">
+      <div class="carousel-wrapper" aria-label="Semantic CMDB Search Slide Deck">
+        <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="Semantic CMDB Search Slide Deck">
           <div class="carousel-track" aria-live="polite">
             <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide Home — Main">
               <img src="Home.png" alt="Slide Home — Main" />
@@ -253,7 +246,7 @@
               <img src="VisionStatement.png" alt="Slide 4 — Vision Statement" />
             </div>
             <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 5 — Hypothesis">
-              <img src="Hypothesis.png" alt="Slide 5 — Hypothesiss" />
+              <img src="Hypothesis.png" alt="Slide 5 — Hypothesis" />
             </div>
             <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 6 — Solution Overview">
               <img src="SolutionOverview.png" alt="Slide 6 — Solution Overview" />
@@ -276,17 +269,10 @@
             <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 12 — Roadmap">
               <img src="Roadmap.png" alt="Slide 12 — Roadmap" />
             </div>
-            <!-- <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 13 — Sample Output Retire">
-              <img src="OutputRetire.png" alt="Slide 13 — Sample Output Retire" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 13 — Sample Output Retain">
-              <img src="OutputRetain.png" alt="Slide 13 — Sample Output Retain" /> -->
-            </div>
           </div>
 
           <button class="carousel-control prev" aria-label="Previous slide" id="prevBtn">‹</button>
           <button class="carousel-control next" aria-label="Next slide" id="nextBtn">›</button> 
-
         </div>
 
         <div class="carousel-dots" id="carouselDots" aria-hidden="false">
@@ -294,11 +280,6 @@
         </div>
       </div>
 
-<!-- 11/11/25 KRT - Hide Button to Back to Projects
-      <div style="margin-top:12px">
-        <a href="projects.html" class="btn">Back to Projects</a>
-      </div>
--->
     </section>
   </main>
 
@@ -318,7 +299,7 @@
     </div>
   </footer>
 
-  <!-- Carousel behavior script -->
+  <!-- Carousel and Navigation script -->
   <script>
     const navToggle = document.querySelector(".nav-toggle");
     const nav = document.querySelector(".nav");
@@ -330,6 +311,7 @@
 
     // Optional: set year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
+
     (function(){
       const track = document.querySelector('#genaiCarousel .carousel-track');
       const slides = Array.from(track.children);

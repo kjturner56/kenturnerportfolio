@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="AI Benefits Cost & Utilization Analyzer by Kenneth R. Turner demonstrates how AI can bring insight to benefits data. Local prototype with Bronze-level datasets ingested; configuration and model development in progress.">
+  <meta name="description" content="AI Benefits Cost & Utilization Analyzer by Kenneth R. Turner demonstrates how AI can bring insight to benefits data. Local prototype with Open Data, Bronze-level datasets ingested, and predictive model planning in progress.">
   <title>AI Benefits Cost & Utilization Analyzer | Kenneth R. Turner</title>
 
   <!-- Main styles (site-wide) -->
@@ -32,7 +32,7 @@
       display: flex;
       transition: transform 320ms cubic-bezier(.22,.9,.3,1);
       will-change: transform;
-      position: relative; /* needed for fade layering */
+      position: relative;
     }
 
     .carousel-slide {
@@ -44,13 +44,10 @@
       user-select: none;
       opacity: 0;
       transition: opacity 500ms ease-in-out;
-      /* remove position, top, left */
     }
 
-    .carousel-slide.active {
-      opacity: 1;
-      /* position: relative; not needed */
-    }
+    .carousel-slide.active { opacity: 1; }
+
     .carousel-slide img {
       width: 100%;
       height: auto;
@@ -102,13 +99,21 @@
       .carousel-wrapper{ padding:0 8px }
       .carousel-control{ --control-size:40px; width:40px; height:40px; font-size:1rem }
     }
+
+    /* Highlight box for Open Data */
+    .highlight-box {
+      background-color: #e0f7ff;
+      border-left: 4px solid #00aaff;
+      padding: 12px 16px;
+      margin: 12px 0;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header class="banner" role="banner">
     <div class="container banner-inner">
-
       <div class="banner-left">
         <div class="site-title"><h1>Kenneth R. Turner</h1></div>
 
@@ -143,49 +148,54 @@
       <div class="summary-section" style="margin-bottom:18px;">
         <h2>Executive Summary</h2>
         <p>
-          Employee benefit programs represent one of the largest controllable expenses for insurers and employers. Organizations often struggle to understand cost drivers or optimize plan performance because data is fragmented across HR systems, finance databases, and third-party reports.
+          Employee benefit programs are one of the largest controllable expenses for insurers and employers. Organizations often struggle to understand cost drivers or optimize plan performance because data is fragmented across HR systems, finance databases, and third-party reports.
         </p>
         <p>
-          The AI Benefits Cost & Utilization Analyzer prototype demonstrates how Predictive AI, Semantic Search, Computer Vision, and Conversational AI *could* bring structure and insight to this challenge. Currently, a local Data Lakehouse environment is installed and Bronze-level datasets have been ingested, enabling early profiling and experimentation.
+          The AI Benefits Cost & Utilization Analyzer prototype demonstrates how Predictive AI, Semantic Search, Computer Vision, and Conversational AI *could* bring structure and actionable insight to this challenge. The prototype operates within a local environment using <strong>Open Data sources</strong> and Bronze-level ingested datasets, enabling safe testing and early experimentation.
         </p>
 
         <h3 style="margin-top:12px;">Overview</h3>
         <p>
-          This prototype explores how insurers and large employers can analyze benefits data more effectively. By combining structured and unstructured datasets in a local Data Lakehouse, it provides visibility into utilization patterns, emerging cost drivers, and potential areas for savings. It also gives hands-on experience with Data Lakehouse technologies including MinIO, Apache Spark, Project Nessie, and Dremio.
+          By combining structured and unstructured datasets in a local Data Lakehouse, the prototype provides visibility into utilization patterns, emerging cost drivers, and potential areas for savings. This approach gives teams hands-on experience with modern data tools including MinIO, Apache Spark, Project Nessie, and Dremio.
         </p>
+
+        <div class="highlight-box">
+          <strong>Open Data:</strong> All datasets used in this prototype are publicly available Open Data, ensuring transparency, privacy, and reproducibility.
+        </div>
 
         <h3 style="margin-top:12px;">Key Features (Planned)</h3>
         <ul>
           <li>Predictive AI: Forecast trends using historical claims, demographics, and seasonality</li>
           <li>Computer Vision: Extract data from claim and invoice images</li>
-          <li>Semantic Search: Enable natural language queries across benefit datasets</li>
+          <li>Semantic Search: Natural-language queries across benefit datasets</li>
           <li>Conversational Analytics: Chatbot interface for benefits exploration</li>
           <li>Generative Reporting: Produce executive summaries with charts and insights</li>
         </ul>
 
         <h3 style="margin-top:12px;">Target Users</h3>
         <ul>
-          <li>HR analytics and benefits teams needing quick insights</li>
+          <li>HR analytics and benefits teams seeking quick insights</li>
           <li>Insurance finance analysts tracking cost drivers</li>
           <li>Data science teams supporting benefits management</li>
           <li>Executives responsible for cost optimization and plan design</li>
         </ul>
+
         <h3 style="margin-top:12px;">Business Value</h3>
         <ul>
           <li>Improve cost visibility and forecasting accuracy</li>
-          <li>Reduce manual data preparation and reporting time</li>
+          <li>Reduce manual data preparation and reporting effort</li>
           <li>Identify underutilized plans and cost-saving opportunities</li>
-          <li>Support data-driven decision-making for benefits design and risk management</li>
+          <li>Enable data-driven decision-making for benefits design and risk management</li>
         </ul>
 
         <h3>Technology Overview</h3>
         <p>
-          The prototype integrates open healthcare and economic datasets into a local Data Lakehouse environment built with MinIO, Apache Spark, Dremio, and Project Nessie. Bronze-level datasets have been ingested for profiling and early experimentation. Predictive models, Computer Vision, Streamlit interface, and Conversational AI are in planning and configuration stages.
+          The prototype leverages Open Data integrated into a local Data Lakehouse environment built with MinIO, Apache Spark, Dremio, and Project Nessie. Bronze-level datasets are ingested for profiling and experimentation. Predictive AI, Computer Vision, Streamlit interface, and Conversational AI are planned for future development.
         </p>
 
         <h3 style="margin-top:12px;">Current Status</h3>
         <p>
-          Local Data Lakehouse environment installed. Bronze-level datasets ingested, initial profiling completed. Development of predictive AI, computer vision, and generative reporting is planned but not yet started.
+          Local Data Lakehouse environment installed. Bronze-level datasets ingested and initially profiled. Development of predictive AI, computer vision, and generative reporting is in planning.
         </p>
 
         <h3 style="margin-top:12px;">MVP Scope (Planned)</h3>
@@ -204,37 +214,6 @@
           <li>Phase 5: Develop enterprise dashboard for real-time analytics and governance metrics</li>
         </ul>
       </div>
-
-      <!-- Carousel (commented out until visuals are ready) -->
-      <!--
-      <div class="carousel-wrapper" aria-label="Slide deck">
-        <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="Slide deck">
-          <div class="carousel-track">
-            <div class="carousel-slide">
-              <img src="ProblemStatement.png" alt="Slide 1 — Problem statement" />
-            </div>
-            <div class="carousel-slide">
-              <img src="images/genai_slide2.png" alt="Slide 2 — Hypothesis" />
-            </div>
-            <div class="carousel-slide">
-              <img src="images/genai_slide3.png" alt="Slide 3 — Vision statement" />
-            </div>
-            <div class="carousel-slide">
-              <img src="Arch_Overview.png" alt="Slide 4 — Approach and architecture" />
-            </div>
-            <div class="carousel-slide">
-              <img src="images/genai_slide5.png" alt="Slide 5 — Results and next steps" />
-            </div>
-          </div>
-
-          <button class="carousel-control prev" aria-label="Previous slide" id="prevBtn">‹</button>
-          <button class="carousel-control next" aria-label="Next slide" id="nextBtn">›</button>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-hidden="false"></div>
-      </div>
-      -->
-
     </section>
   </main>
 
@@ -254,7 +233,6 @@
     </div>
   </footer>
 
-  <!-- Carousel behavior script -->
   <script>
     const navToggle = document.querySelector(".nav-toggle");
     const nav = document.querySelector(".nav");
@@ -264,73 +242,8 @@
       navToggle.classList.toggle("open");
     });
 
-    // Optional: set year in footer
+    // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
-    (function(){
-      const track = document.querySelector('#genaiCarousel .carousel-track');
-      const slides = Array.from(track.children);
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const dotsContainer = document.getElementById('carouselDots');
-
-      let index = 0;
-      const slideCount = slides.length;
-      let startX = 0;
-      let isDragging = false;
-      let dragDelta = 0;
-
-      // create dots
-      slides.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-        dot.addEventListener('click', () => goTo(i));
-        dotsContainer.appendChild(dot);
-      });
-
-      const dots = Array.from(dotsContainer.children);
-
-      function update(){
-        slides.forEach((slide, i) => {
-          slide.classList.toggle('active', i === index);
-        });
-        dots.forEach((d, i) => d.classList.toggle('active', i === index));
-      }
-
-      function goTo(i){ index = (i + slideCount) % slideCount; update(); }
-
-      nextBtn.addEventListener('click', () => goTo(index + 1));
-      prevBtn.addEventListener('click', () => goTo(index - 1));
-
-      // keyboard navigation
-      document.addEventListener('keydown', (e) => {
-        if(e.key === 'ArrowRight') goTo(index + 1);
-        if(e.key === 'ArrowLeft') goTo(index - 1);
-      });
-
-      // touch drag support
-      const carouselEl = document.getElementById('genaiCarousel');
-      carouselEl.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        startX = e.touches[0].clientX;
-      });
-      carouselEl.addEventListener('touchmove', (e) => {
-        if(!isDragging) return;
-        dragDelta = e.touches[0].clientX - startX;
-      });
-      carouselEl.addEventListener('touchend', () => {
-        isDragging = false;
-        if (dragDelta > 50) goTo(index - 1);
-        else if (dragDelta < -50) goTo(index + 1);
-        dragDelta = 0;
-      });
-
-      // responsive: recalc on resize
-      window.addEventListener('resize', update);
-
-      // initialize
-      update();
-    })();
   </script>
 </body>
 </html>

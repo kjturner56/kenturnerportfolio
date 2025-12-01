@@ -93,10 +93,11 @@ body.products-page section h2 {
   justify-content: flex-start;
   text-align: left;
 }
+/* KRT 12/1/25 not sure if this is needed
 strong {
   color: rgba(0,0,0,0.7);
   font-weight: 600;
-}
+}*/
 
 /* -----------------------------------------------
    Prototype & Project Cards

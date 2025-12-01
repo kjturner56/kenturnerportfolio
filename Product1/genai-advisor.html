@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="The GenAI App Rationalization Advisor prototype by Kenneth R. Turner uses Generative AI to optimize enterprise application portfolios and guide strategic modernization decisions.">
+  <meta name="description" content="GenAI App Rationalization Advisor prototype by Kenneth R. Turner demonstrates AI-assisted analysis to help optimize enterprise application portfolios.">
 
   <title>GenAI App Rationalization Advisor | Kenneth R. Turner</title>
 
@@ -33,7 +33,7 @@
       display: flex;
       transition: transform 320ms cubic-bezier(.22,.9,.3,1);
       will-change: transform;
-      position: relative; /* needed for fade layering */
+      position: relative;
     }
 
     .carousel-slide {
@@ -45,19 +45,10 @@
       user-select: none;
       opacity: 0;
       transition: opacity 500ms ease-in-out;
-      /* remove position, top, left */
     }
 
-    .carousel-slide.active {
-      opacity: 1;
-      /* position: relative; not needed */
-    }
-    .carousel-slide img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-    }
+    .carousel-slide.active { opacity: 1; }
+    .carousel-slide img { width: 100%; height: auto; display: block; object-fit: contain; }
     .carousel-control{
       position:absolute;
       top:50%;
@@ -75,19 +66,15 @@
       cursor:pointer;
       box-shadow:0 6px 18px rgba(11,30,61,0.12);
     }
-
     .carousel-control:hover{ background:rgba(0,170,255,0.86) }
-
     .carousel-control.prev{ left:12px }
     .carousel-control.next{ right:12px }
-
     .carousel-dots{
       display:flex;
       gap:8px;
       justify-content:center;
       margin-top:12px;
     }
-
     .carousel-dot{
       width:10px;
       height:10px;
@@ -96,9 +83,7 @@
       cursor:pointer;
       border:1px solid rgba(11,30,61,0.06);
     }
-
     .carousel-dot.active{ background:var(--primary); box-shadow:0 4px 10px rgba(0,170,255,0.12); }
-
     @media (max-width:768px){
       .carousel-wrapper{ padding:0 8px }
       .carousel-control{ --control-size:40px; width:40px; height:40px; font-size:1rem }
@@ -109,10 +94,8 @@
   <!-- Header -->
   <header class="banner" role="banner">
     <div class="container banner-inner">
-
       <div class="banner-left">
         <div class="site-title"><h1>Kenneth R. Turner</h1></div>
-
         <!-- Hamburger button -->
         <button class="nav-toggle" aria-label="Toggle navigation">
           <span></span>
@@ -130,156 +113,148 @@
         <a href="/contact.html">Contact</a>
       </nav>
 
-    <div class="banner-center" aria-hidden="true">
-      <!-- Page title -->
-      <h2>GenAI App Rationalization Advisor – Prototype</h2>
-      <!-- Role/brief purpose -->
-      <h3>AI-powered solution for optimizing enterprise application portfolios</h3>
-      <!-- Optional short intro paragraph -->
-
-    </div>
+      <div class="banner-center" aria-hidden="true">
+        <!-- Page title -->
+        <h2>GenAI App Rationalization Advisor – Prototype</h2>
+        <!-- Role/brief purpose -->
+        <h3>AI-assisted prototype for enterprise application portfolio analysis</h3>
+      </div>
     </div>
     <div class="banner-divider" aria-hidden="true"></div>
   </header>
 
   <main>
-<section class="project-summary container" style="padding-top:22px;">
-  <!-- Executive Summary -->
-  <section class="summary-section" role="region" aria-labelledby="project-summary-title" style="margin-bottom:18px;">
-    <h2 id="project-summary-title">Executive Summary</h2>
-    <p class="intro" style="margin-top:12px;">
-        This prototype demonstrates how structured portfolio data and generative AI can be used to guide strategic application rationalization decisions.
-    </p>
-    <p>
-      The GenAI App Rationalization Advisor is an AI-powered prototype designed to help enterprises optimize complex application portfolios. It analyzes cost, usage, technology stack, business criticality, and risk data to provide clear recommendations to retain, retire, modernize, or consolidate applications. The system generates a portfolio-level report with transparent reasoning to support strategic decision-making. By automating analysis, it reduces manual workload and accelerates transformation initiatives.
-    </p>
+    <section class="project-summary container" style="padding-top:22px;">
+      <!-- Executive Summary -->
+      <section class="summary-section" role="region" aria-labelledby="project-summary-title" style="margin-bottom:18px;">
+        <h2 id="project-summary-title">Executive Summary</h2>
+        <p class="intro" style="margin-top:12px;">
+          This prototype demonstrates how structured portfolio data and generative AI can provide preliminary recommendations to guide strategic application rationalization.
+        </p>
+        <p>
+          The GenAI App Rationalization Advisor is an AI-assisted prototype designed to help enterprises explore how complex application portfolios could be optimized. Using uploaded CSV data, it provides preliminary guidance on retaining, retiring, modernizing, or consolidating applications and generates a portfolio-level report with AI reasoning.
+        </p>
 
-    <h3 style="margin-top:12px;">Overview</h3>
-    <p>
-      This prototype was inspired by my experience as an Application Portfolio Manager (APM) at GE Vernova, where I saw firsthand how challenging it can be for large enterprises to manage hundreds or even thousands of applications across teams, departments, and regions. Over time, portfolios often become bloated due to organic growth, mergers, and decentralized decision-making, making it difficult to maintain alignment with business needs.
-    </p>
-    <p>
-      Maintaining and operating these applications can consume up to 70–80% of IT budgets, leaving little room for innovation. Many applications are redundant, outdated, or carry compliance and security risks. Traditional portfolio rationalization efforts are manual, slow, and influenced by unclear ownership or politics.
-    </p>
-    <p>
-      The GenAI App Rationalization Advisor addresses these challenges by leveraging generative AI to analyze structured and semi-structured data such as cost, usage, technology stack, and risk. It generates actionable recommendations along with a portfolio-level report and transparent reasoning to support faster, more informed portfolio decisions.
-    </p>
+        <h3 style="margin-top:12px;">Overview</h3>
+        <p>
+          Inspired by my experience as an Application Portfolio Manager at GE Vernova, this prototype illustrates the challenges of managing large enterprise portfolios, including redundant or outdated applications and compliance or security risks.
+        </p>
+        <p>
+          By automating preliminary analysis with AI, it demonstrates potential reductions in manual workload and accelerates insight generation. The recommendations are illustrative and intended to support decision-making exploration rather than replace human judgment.
+        </p>
 
-    <h3 style="margin-top:12px;">Key features</h3>
-    <ul>
-      <li>AI-Driven Recommendations: Uses application metadata and business context to guide rationalization decisions.</li>
-      <li>Redundancy & Risk Detection: Identifies legacy systems, compliance risks, and technical redundancies.</li>
-      <li>Portfolio-Level Report: Summarizes recommendations and rationale for all applications.</li>
-      <li>Scalable Analysis: Handles portfolios of thousands of applications across complex environments.</li>
-      <li>Governed AI Prompts: Ensures transparency, traceability, and auditability of AI-driven decisions.</li>
-    </ul>
+        <h3 style="margin-top:12px;">Key features</h3>
+        <ul>
+          <li>AI-Assisted Recommendations: Provides preliminary guidance using application metadata and business context.</li>
+          <li>Redundancy & Risk Indicators: Highlights legacy systems, technical redundancies, and potential compliance considerations.</li>
+          <li>Portfolio-Level Report: Generates a CSV/PDF report illustrating recommendations and AI reasoning.</li>
+          <li>Prototype Scalability: Designed to demonstrate handling larger portfolios via CSV inputs.</li>
+          <li>Transparent AI Prompts: Illustrates reasoning and traceability of recommendations.</li>
+        </ul>
 
-    <h3 style="margin-top:12px;">Target users</h3>
-    <ul>
-      <li>CIOs, Application Portfolio Managers, and Enterprise Architects</li>
-      <li>Application Owners</li>
-      <li>Finance and Procurement Teams</li>
-      <li>Security and Compliance Teams</li>
-    </ul>
+        <h3 style="margin-top:12px;">Target users</h3>
+        <ul>
+          <li>CIOs, Application Portfolio Managers, and Enterprise Architects (for evaluation/demo purposes)</li>
+          <li>Application Owners</li>
+          <li>Finance and Procurement Teams</li>
+          <li>Security and Compliance Teams</li>
+        </ul>
 
-    <h3 style="margin-top:12px;">Business value</h3>
-    <ul>
-      <li><strong>Reduction:</strong> Identifies redundant or low-value applications to guide rationalization decisions.</li>
-      <li><strong>Supports Transformation:</strong> Provides insights to help plan cloud migration, M&A integration, and digital transformation efforts.</li>
-      <li><strong>Operational Efficiency:</strong> Reduces manual workload for IT teams.</li>
-      <li><strong>Strategic Alignment:</strong> Improves transparency and decision-making across the organization.</li>
-    </ul>
+        <h3 style="margin-top:12px;">Business value</h3>
+        <ul>
+          <li><strong>Reduction:</strong> Demonstrates identification of redundant or low-value applications.</li>
+          <li><strong>Supports Transformation:</strong> Provides illustrative insights for cloud migration, M&A integration, and digital transformation planning.</li>
+          <li><strong>Operational Efficiency:</strong> Reduces preliminary manual analysis effort.</li>
+          <li><strong>Strategic Alignment:</strong> Improves transparency of potential rationalization decisions.</li>
+        </ul>
 
-    <h3 id="tech-overview-title">Technology overview</h3>
-    <p>
-      The prototype integrates Generative AI with structured portfolio data to automate rationalization analysis and generate a portfolio-level report.
-    </p>
+        <h3 id="tech-overview-title">Technology overview</h3>
+        <p>
+          The prototype integrates Generative AI with structured CSV portfolio data to demonstrate rationalization analysis and reporting.
+        </p>
+        <ul>
+          <li><strong>Stack:</strong> Python, GPT-3.5-turbo, Tkinter, CSV import</li>
+          <li><strong>Inputs:</strong> Application inventory, usage data, cost, compliance risk, and owner input</li>
+          <li><strong>Outputs:</strong> Illustrative disposition recommendations with rationale and a portfolio-level report (PDF/CSV)</li>
+        </ul>
 
-    <ul>
-      <li><strong>Stack:</strong> Python, GPT-3.5-turbo, Tkinter, CSV import</li>
-      <li><strong>Inputs:</strong> Application inventory, usage data, cost, compliance risk, owner input</li>
-      <li><strong>Outputs:</strong> Disposition recommendations with rationale and a portfolio-level report (PDF/CSV)</li>
-    </ul>
+        <h3 style="margin-top:12px;">MVP scope</h3>
+        <ul>
+          <li>Upload application inventory and usage data via CSV for analysis</li>
+          <li>Generate AI-assisted recommendations for retaining, retiring, modernizing, or consolidating applications</li>
+          <li>Export a portfolio-level report demonstrating recommendations and rationale</li>
+        </ul>
 
-    <h3 style="margin-top:12px;">MVP scope</h3>
-    <ul>
-      <li>Upload application inventory and usage data via CSV for analysis</li>
-      <li>Generate AI-powered recommendations for retaining, retiring, modernizing, or consolidating applications</li>
-      <li>Export report containing recommendations with an explanation</li>
-    </ul>
-
-    <h3 style="margin-top:12px;">Roadmap</h3>
-    <ul>
-      <li>Feedback Loops: Capture user validation on AI recommendations to improve trust and system learning</li>
-      <li>Governance Guardrails: Protect critical applications, require human approval, and show confidence scores to ensure compliance</li>
-      <li>Embedding Similarity & Semantic Search: Detect functionally similar applications even if names differ and prepare for CMDB-based semantic search</li>
-      <li>Build trust, ensure compliance, and unlock deeper insights for smarter rationalization</li>
-    </ul>
-
-  </section>
-</section>
-
-
-      <!-- Slide deck carousel -->
-      <div class="carousel-wrapper" aria-label="GenAI App Rationalization Advisor slide deck">
-        <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="GenAI slide deck">
-          <div class="carousel-track" aria-live="polite">
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide Home — Main">
-              <img src="Home.png" alt="Slide Home — Main" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 — Executive Summary">
-              <img src="Executive_Summary.png" alt="Slide 1 — Executive Summary" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 — Problem Statement">
-              <img src="Problem_Statement.png" alt="Slide 2 — Problem Statement" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 — Primary Personas">
-              <img src="Personas.png" alt="Slide 3 — Primary Personas" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 — Vision Statement">
-              <img src="VisionStatement.png" alt="Slide 4 — Vision Statement" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 5 — Hypothesis">
-              <img src="Hypothesis.png" alt="Slide 5 — Hypothesiss" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 6 — Solution Overview">
-              <img src="SolutionOverview.png" alt="Slide 6 — Solution Overview" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 7 — How The System Works">
-              <img src="HowWorks.png" alt="Slide 7 — How The System Works" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 8 — Before and After">
-              <img src="BeforeAfter.png" alt="Slide 8 — Before and After" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 9 — Business Impact">
-              <img src="BusinessImpact.png" alt="Slide 9 — Business Impact" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 10 — Whay AI">
-              <img src="WhyAI.png" alt="Slide 10 — Whay AI" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 11 — Skills Demonstrated">
-              <img src="SkillsDemo.png" alt="Slide 11 — Skills Demonstrated" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 12 — Roadmap">
-              <img src="Roadmap.png" alt="Slide 12 — Roadmap" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 13 — Sample Output Retire">
-              <img src="OutputRetire.png" alt="Slide 13 — Sample Output Retire" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 13 — Sample Output Retain">
-              <img src="OutputRetain.png" alt="Slide 13 — Sample Output Retain" />
-            </div>
-          </div>
-
-          <button class="carousel-control prev" aria-label="Previous slide" id="prevBtn">‹</button>
-          <button class="carousel-control next" aria-label="Next slide" id="nextBtn">›</button>
-        </div>
-
-        <div class="carousel-dots" id="carouselDots" aria-hidden="false">
-          <!-- dots generated by JS -->
-        </div>
-      </div>
+        <h3 style="margin-top:12px;">Roadmap (Planned)</h3>
+        <ul>
+          <li>Feedback Loops: Capture user validation on AI-assisted recommendations to improve trust and learning</li>
+          <li>Governance Guardrails: Protect critical applications, require human approval, and show confidence scores to ensure compliance</li>
+          <li>CMDB Integration: Connect with enterprise CMDBs to enable richer, automated portfolio analysis</li>
+          <li>Persona-Specific Prompts: Provide tailored AI guidance for CIOs, Application Owners, Finance, and Security teams</li>
+          <li>Conversational AI Interface: Enable interactive, question-driven exploration of portfolio insights</li>
+          <li>Embedding Similarity & Semantic Search: Detect functionally similar applications even if names differ</li>
+          <li>Build trust, ensure compliance, and unlock deeper insights for smarter rationalization</li>
+        </ul>
+      </section>
     </section>
+
+    <!-- Slide deck carousel -->
+    <div class="carousel-wrapper" aria-label="GenAI App Rationalization Advisor slide deck">
+      <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="GenAI slide deck">
+        <div class="carousel-track" aria-live="polite">
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide Home — Main">
+            <img src="Home.png" alt="Slide Home — Main" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 — Executive Summary">
+            <img src="Executive_Summary.png" alt="Slide 1 — Executive Summary" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 — Problem Statement">
+            <img src="Problem_Statement.png" alt="Slide 2 — Problem Statement" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 — Primary Personas">
+            <img src="Personas.png" alt="Slide 3 — Primary Personas" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 — Vision Statement">
+            <img src="VisionStatement.png" alt="Slide 4 — Vision Statement" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 5 — Hypothesis">
+            <img src="Hypothesis.png" alt="Slide 5 — Hypothesis" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 6 — Solution Overview">
+            <img src="SolutionOverview.png" alt="Slide 6 — Solution Overview" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 7 — How The System Works">
+            <img src="HowWorks.png" alt="Slide 7 — How The System Works" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 8 — Before and After">
+            <img src="BeforeAfter.png" alt="Slide 8 — Before and After" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 9 — Business Impact">
+            <img src="BusinessImpact.png" alt="Slide 9 — Business Impact" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 10 — Why AI">
+            <img src="WhyAI.png" alt="Slide 10 — Why AI" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 11 — Skills Demonstrated">
+            <img src="SkillsDemo.png" alt="Slide 11 — Skills Demonstrated" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 12 — Roadmap">
+            <img src="Roadmap.png" alt="Slide 12 — Roadmap" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 13 — Sample Output Retire">
+            <img src="OutputRetire.png" alt="Slide 13 — Sample Output Retire" />
+          </div>
+          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 14 — Sample Output Retain">
+            <img src="OutputRetain.png" alt="Slide 14 — Sample Output Retain" />
+          </div>
+        </div>
+
+        <button class="carousel-control prev" aria-label="Previous slide" id="prevBtn">‹</button>
+        <button class="carousel-control next" aria-label="Next slide" id="nextBtn">›</button>
+      </div>
+
+      <div class="carousel-dots" id="carouselDots" aria-hidden="false"></div>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -308,8 +283,8 @@
       navToggle.classList.toggle("open");
     });
 
-    // Optional: set year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
+
     (function(){
       const track = document.querySelector('#genaiCarousel .carousel-track');
       const slides = Array.from(track.children);
@@ -334,9 +309,7 @@
       const dots = Array.from(dotsContainer.children);
 
       function update(){
-        slides.forEach((slide, i) => {
-          slide.classList.toggle('active', i === index);
-        });
+        slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
         dots.forEach((d, i) => d.classList.toggle('active', i === index));
       }
 
