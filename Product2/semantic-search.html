@@ -123,15 +123,15 @@
       <!-- Navigation -->
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/projects.html">Projects</a>
-        <a href="/products.html" class="active">Products</a>
+        <a href="/about.html">Background</a>
+        <a href="/projects.html">Experience</a>
+        <a href="/products.html" class="active">AI Work</a>
         <a href="/contact.html">Contact</a>
       </nav>
 
       <div class="banner-center" aria-hidden="true">
         <h2>Semantic CMDB Search Tool – Local Prototype</h2>
-        <h3>AI-powered prototype enabling natural language search across ServiceNow PDI CMDB records.</h3>
+        <h3>AI-powered search for ServiceNow CMDB data</h3>
       </div>
     </div>
     <div class="banner-divider" aria-hidden="true"></div>
@@ -143,8 +143,7 @@
       <div class="summary-section" style="margin-bottom:18px;">
         <h2 id="project-summary-title">Executive Summary</h2>
         <p>
-          The Semantic CMDB Search Tool is an AI-powered prototype that transforms
-          ServiceNow PDI CMDB records into actionable insights. Users can ask questions
+          The Semantic CMDB Search Tool is an AI-powered prototype that enables natural language access to ServiceNow PDI CMDB records, allowing users to surface configuration items, relationships, metadata, and ownership details from the test dataset. Users can ask questions
           in plain English to surface configuration items, relationships, metadata,
           and ownership details from the test dataset.
         </p>
@@ -155,7 +154,7 @@
           and manual filtering, slowing discovery for IT teams and business stakeholders.
         </p>
         <p>
-          By bridging structured enterprise data with semantic AI search, the prototype
+          By combining structured enterprise data with embedding-based semantic search, the prototype
           modernizes workflows while keeping sensitive data private and secure.
         </p>
 
@@ -171,12 +170,10 @@
         <h3 style="margin-top:12px;">Key Features</h3>
         <ul>
           <li><strong>Natural Language Search:</strong> Ask questions in plain English.</li>
-          <li><strong>Semantic Understanding:</strong> AI interprets meaning, not keywords.</li>
-          <li><strong>Private & Secure:</strong> All CMDB data and embeddings remain within your local PDI environment. 
-Vectors are stored in a local Chroma DB, and queries are processed locally, ensuring no sensitive information leaves your system.</li>
-
+          <li><strong>Semantic Matching:</strong> Embeddings enable similarity-based search beyond keyword matching.</li>
+          <li><strong>Private & Secure:</strong> All CMDB data and embeddings remain within your local PDI environment. Vectors are stored in a local Chroma DB, and queries are processed locally, ensuring no sensitive information leaves your system.</li>
           <li><strong>Fast Retrieval:</strong> Vector search returns results in seconds.</li>
-          <li><strong>Scalable:</strong> Can ingest additional systems or data sources.</li>
+          <li><strong>Extensible Design:</strong> Can be extended to ingest additional systems or data sources.</li>
         </ul>
 
         <h3 style="margin-top:12px;">Target Users</h3>
@@ -206,7 +203,9 @@ Vectors are stored in a local Chroma DB, and queries are processed locally, ensu
         <p class="tech-note">
           <strong>Note:</strong> The prototype connects to a ServiceNow Personal Developer Instance (PDI) to ensure safe, realistic testing without exposing live enterprise data.
         </p>
-
+        <p>
+          <strong>Key Insight:</strong> The effectiveness of semantic search is highly dependent on the quality and consistency of underlying CMDB data. In testing, incomplete and inconsistent records significantly impacted retrieval accuracy, reinforcing the importance of data governance and standardization for enterprise AI use cases.
+        </p>
         <h3 style="margin-top:12px;">MVP Scope</h3>
         <ul>
           <li>Connect to ServiceNow PDI to retrieve CMDB data.</li>

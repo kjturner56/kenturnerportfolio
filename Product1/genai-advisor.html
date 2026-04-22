@@ -107,9 +107,9 @@
       <!-- Navigation -->
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/projects.html">Projects</a>
-        <a href="/products.html" class="active">Products</a>
+        <a href="/about.html">Background</a>
+        <a href="/projects.html">Experience</a>
+        <a href="/products.html" class="active">AI Works</a>
         <a href="/contact.html">Contact</a>
       </nav>
 
@@ -117,7 +117,7 @@
         <!-- Page title -->
         <h2>GenAI App Rationalization Advisor – Prototype</h2>
         <!-- Role/brief purpose -->
-        <h3>AI-assisted prototype for enterprise application portfolio analysis</h3>
+        <h3>AI decision-support for app portfolio review</h3>
       </div>
     </div>
     <div class="banner-divider" aria-hidden="true"></div>
@@ -129,27 +129,30 @@
       <section class="summary-section" role="region" aria-labelledby="project-summary-title" style="margin-bottom:18px;">
         <h2 id="project-summary-title">Executive Summary</h2>
         <p class="intro" style="margin-top:12px;">
-          This prototype demonstrates how structured portfolio data and generative AI can provide preliminary recommendations to guide strategic application rationalization.
+          The GenAI Application Rationalization Advisor is an early-stage prototype of an AI-enabled decision-support product designed to improve how enterprises evaluate and optimize their application portfolios.
         </p>
         <p>
-          The GenAI App Rationalization Advisor is an AI-assisted prototype designed to help enterprises explore how complex application portfolios could be optimized. Using uploaded CSV data, it provides preliminary guidance on retaining, retiring, modernizing, or consolidating applications and generates a portfolio-level report with AI reasoning.
+          It applies structured portfolio data and a defined decision workflow to support retain, retire, modernize, and consolidate decisions. The prototype generates explainable recommendations using structured inputs and LLM-based analysis, while maintaining human accountability through validation and review.
+        </p>
+        <p>
+          This implementation represents an early-stage product designed to validate architecture, workflow design, and business value prior to enterprise deployment.
         </p>
 
         <h3 style="margin-top:12px;">Overview</h3>
         <p>
-          Inspired by my experience as an Application Portfolio Manager at GE Vernova, this prototype illustrates the challenges of managing large enterprise portfolios, including redundant or outdated applications and compliance or security risks.
+          Based on my experience as an Application Portfolio Manager at GE Vernova, this product addresses the complexity of managing large enterprise portfolios, including redundant systems, technical debt, and risk exposure.
         </p>
         <p>
-          By automating preliminary analysis with AI, it demonstrates potential reductions in manual workload and accelerates insight generation. The recommendations are illustrative and intended to support decision-making exploration rather than replace human judgment.
+          It reduces manual analysis by structuring decision inputs and applying AI to generate consistent, explainable recommendations, while ensuring that final decisions remain with the business.
         </p>
 
         <h3 style="margin-top:12px;">Key features</h3>
         <ul>
-          <li>AI-Assisted Recommendations: Provides preliminary guidance using application metadata and business context.</li>
-          <li>Redundancy & Risk Indicators: Highlights legacy systems, technical redundancies, and potential compliance considerations.</li>
-          <li>Portfolio-Level Report: Generates a CSV/PDF report illustrating recommendations and AI reasoning.</li>
-          <li>Prototype Scalability: Designed to demonstrate handling larger portfolios via CSV inputs.</li>
-          <li>Transparent AI Prompts: Illustrates reasoning and traceability of recommendations.</li>
+          <li><strong>AI-Assisted Decision Support:</strong> Generates structured recommendations grounded in application data and business context.</li>
+          <li><strong>Explainable Outputs:</strong> Provides rationale behind each recommendation to support validation and stakeholder trust.</li>
+          <li><strong>Risk & Redundancy Detection:</strong> Identifies legacy systems, overlapping capabilities, and potential compliance concerns.</li>
+          <li><strong>Portfolio-Level Reporting:</strong> Produces structured outputs for leadership review and planning.</li>
+          <li><strong>Scalable Design:</strong> Designed to support analysis across large enterprise portfolios and evolving data inputs.</li>
         </ul>
 
         <h3 style="margin-top:12px;">Target users</h3>
@@ -162,25 +165,32 @@
 
         <h3 style="margin-top:12px;">Business value</h3>
         <ul>
-          <li><strong>Reduction:</strong> Demonstrates identification of redundant or low-value applications.</li>
-          <li><strong>Supports Transformation:</strong> Provides illustrative insights for cloud migration, M&A integration, and digital transformation planning.</li>
-          <li><strong>Operational Efficiency:</strong> Reduces preliminary manual analysis effort.</li>
-          <li><strong>Strategic Alignment:</strong> Improves transparency of potential rationalization decisions.</li>
+          <li><strong>Improves Decision Consistency:</strong> Standardizes how applications are evaluated across the portfolio.</li>
+          <li><strong>Reduces Manual Effort:</strong> Accelerates analysis that is typically fragmented and spreadsheet-driven.</li>
+          <li><strong>Supports Transformation:</strong> Enables better planning for cloud migration, modernization, and consolidation initiatives.</li>
+          <li><strong>Increases Transparency:</strong> Provides clear rationale behind recommendations for stakeholder alignment.</li>
+        </ul>
+        <h3 style="margin-top:12px;">Human + AI Decision Model</h3>
+        <ul>
+          <li>AI generates recommendations and supporting rationale based on structured data</li>
+          <li>Users review, validate, and approve decisions before action is taken</li>
+          <li>Ownership remains with the application portfolio manager or business stakeholder</li>
+          <li>Designed to prevent over-reliance on AI and ensure accountable decision-making</li>
         </ul>
 
         <h3 id="tech-overview-title">Technology overview</h3>
         <p>
-          The prototype integrates Generative AI with structured CSV portfolio data to demonstrate rationalization analysis and reporting.
+          The system integrates structured portfolio data with generative AI using a retrieval-based approach to produce grounded, explainable recommendations.
         </p>
         <ul>
-          <li><strong>Stack:</strong> Python, GPT-3.5-turbo, Tkinter, CSV import</li>
-          <li><strong>Inputs:</strong> Application inventory, usage data, cost, compliance risk, and owner input</li>
-          <li><strong>Outputs:</strong> Illustrative disposition recommendations with rationale and a portfolio-level report (PDF/CSV)</li>
+          <li><strong>Architecture:</strong> Data ingestion, retrieval, LLM-based analysis, and structured output generation</li>
+          <li><strong>Inputs:</strong> Application inventory, cost, usage, risk, and ownership data</li>
+          <li><strong>Outputs:</strong> Disposition recommendations with rationale and portfolio-level reporting</li>
         </ul>
 
         <h3 style="margin-top:12px;">MVP scope</h3>
         <ul>
-          <li>Upload application inventory and usage data via CSV for analysis</li>
+          <li>Upload CSV → generate recommendations → export report</li>
           <li>Generate AI-assisted recommendations for retaining, retiring, modernizing, or consolidating applications</li>
           <li>Export a portfolio-level report demonstrating recommendations and rationale</li>
         </ul>
@@ -195,6 +205,70 @@
           <li>Embedding Similarity & Semantic Search: Detect functionally similar applications even if names differ</li>
           <li>Build trust, ensure compliance, and unlock deeper insights for smarter rationalization</li>
         </ul>
+      </section>
+      <section class="project-visuals">
+        <h2>How the Product Works</h2>
+        <p class="visual-intro">
+          A structured enterprise decision-support system combining AI-generated recommendations, human validation, and measurable business outcomes.
+        </p>
+
+        <div class="visual-row visual-row-top">
+          <div class="card visual-card visual-card-wide">
+            <h3>Decision Workflow</h3>
+
+            <div class="workflow">
+              <div class="step">Portfolio Data</div>
+              <div class="arrow">→</div>
+              <div class="step">AI Analysis</div>
+              <div class="arrow">→</div>
+              <div class="step">Human Review</div>
+              <div class="arrow">→</div>
+              <div class="step final">Decision</div>
+            </div>
+
+            <ul>
+              <li><strong>Decision:</strong> retain, retire, modernize, or consolidate</li>
+              <li><strong>AI role:</strong> generate recommendation and rationale</li>
+              <li><strong>Human role:</strong> validate context, review risk, approve final decision</li>
+              <li><strong>Outcome:</strong> faster and more consistent portfolio evaluation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="visual-row visual-row-bottom">
+          <div class="card visual-card">
+            <h3>Architecture Overview</h3>
+
+            <div class="architecture-layer"><strong>Input Layer:</strong> application inventory, cost, usage, lifecycle, risk, ownership</div>
+            <div class="architecture-layer"><strong>Retrieval Layer:</strong> portfolio records and contextual data prepared for analysis</div>
+            <div class="architecture-layer"><strong>AI Reasoning Layer:</strong> generates disposition recommendation with supporting rationale using retrieved portfolio context</div>
+            <div class="architecture-layer"><strong>Review Layer:</strong> human validation and approval before action</div>
+            <div class="architecture-layer"><strong>Output Layer:</strong> structured recommendation, rationale, and portfolio-level report</div>
+
+            <p class="visual-note">
+              The product is designed as a retrieval-based decision-support system where recommendations are grounded in structured portfolio data and validated through human review before action.
+            </p>
+          </div>
+
+          <div class="card visual-card">
+            <h3>Evaluation Model</h3>
+
+            <ul>
+              <li><strong>False Positives:</strong> AI recommends action where the application should be retained</li>
+              <li><strong>False Negatives:</strong> AI fails to flag an application that should be retired, modernized, or consolidated</li>
+              <li><strong>Consistency:</strong> similar applications receive similar recommendations</li>
+              <li><strong>Rationale Quality:</strong> recommendations are understandable and reviewable</li>
+            </ul>
+
+            <h4 class="sqdc-title">Business Impact (SQDC)</h4>
+            <ul>
+              <li><strong>Safety:</strong> reduce risk from unsupported or high-exposure applications</li>
+              <li><strong>Quality:</strong> improve consistency and transparency of portfolio decisions</li>
+              <li><strong>Delivery:</strong> reduce manual analysis time and accelerate review cycles</li>
+              <li><strong>Cost:</strong> improve investment allocation and reduce legacy spend</li>
+            </ul>
+          </div>
+        </div>
       </section>
     </section>
 
@@ -267,7 +341,7 @@
       </div>
       <div class="footer-right">
         <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="footer-btn" href="../products.html">Back to Products</a>
+        <a class="footer-btn" href="../products.html">Back to AI Works</a>
       </div>
       <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
     </div>
