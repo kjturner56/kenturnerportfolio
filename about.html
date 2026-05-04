@@ -3,134 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | Kenneth R. Turner</title>
+  <title>Kenneth R. Turner | Background</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body>
-  <!-- Header -->
-  <header class="banner" role="banner">
-    <div class="container banner-inner">
 
-      <div class="banner-left">
-        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
+<body data-depth="0">
 
-        <!-- Hamburger button -->
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="page-title-container">
+        <h2 class="page-title">About Me</h2>
       </div>
-
-      <!-- Navigation -->
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <div class="banner-center" aria-hidden="true">
-        <h2>Technical Product Manager</h2>
-        <h3>Leading product solutions across AI and traditional technology</h3>
-      </div>
-    </div>
-    <div class="banner-divider" aria-hidden="true"></div>
-  </header>
-
-  <section id="about" class="container" style="padding-top:22px;">
-    <div class="page-title-container">
-      <h2 class="page-title">About Me</h2>
-    </div>
-    <p class="intro">
-      I’m a Technical Product Manager who transforms complex technology challenges into actionable solutions. I build products that streamline workflows, enhance decision-making, and deliver measurable business impact. My experience spans enterprise IT modernization, cloud transformation, and practical AI-driven innovation.
-    </p>
-
-    <div class="cards-container">
-
-      <!-- Professional Experience -->
-      <div class="card">
-        <h3>Professional Experience</h3>
-        <p>
-          I’m a PMP-certified Technical Product Manager with over twenty years of experience leading enterprise IT initiatives. I specialize in application modernization, cloud migration, and process improvement across organizations like GE Vernova, GE Power, and Alstom Power. I bridge technical and business perspectives to deliver results that scale.
-        </p>
-      </div>
-
-      <!-- AI & Product Innovation -->
-      <div class="card">
-        <h3>AI & Product Innovation</h3>
-        <p>
-          I’ve built AI prototypes that solve real enterprise problems, including portfolio optimization and semantic search for CMDB data. I’m also planning prototypes to explore predictive analytics for cost and utilization. These projects integrate with enterprise systems, demonstrate measurable impact, and address practical business challenges. Examples include:
-        </p>
-
-        <ul>
-          <li><strong>GenAI Portfolio Advisor</strong> tool to accelerate application rationalization.</li>
-          <li><strong>Semantic Search Tool</strong> for CMDB data that transforms complex ServiceNow CMDB records into actionable insights.</li>
-          <li><strong>AI Benefits Cost & Utilization Analyzer</strong> (planned) exploring predictive analytics, computer vision, and conversational AI.</li>
-        </ul>
-
-      </div>
-
-      <!-- Skills & Expertise -->
-      <div class="card">
-        <h3>Skills & Expertise</h3>
-        <p>
-          My expertise spans Product Management, Technical Program Management, Agile delivery, and application portfolio optimization. I define priorities, guide teams, and deliver results aligned with organizational goals. I continue to expand my knowledge in Data Lakehouse technologies, cloud platforms, and AI-driven analytics to create innovative, practical solutions.
-        </p>
-      </div>
-
-      <!-- Career Vision -->
-      <div class="card">
-        <h3>Career Vision</h3>
-        <p>
-          I aim to grow as a Product Manager focused on creating practical, data-driven solutions that help organizations work smarter, make better decisions, and responsibly leverage AI for measurable impact.
-        </p>
-      </div>
-
-      <!-- Education & Certifications -->
-      <div class="card">
-        <h3>Education & Certifications</h3>
-        <p>Bachelor of Science in Aviation Management and Flight Operations</p>
-        <p>PMP, Project Management Professional</p>
-        <p>SAFe Agilist, in progress</p>
-        <p>AWS Cloud Practitioner, in progress</p>
-        <p>AI and Machine Learning, LinkedIn Learning and self-study</p>
-      </div>
-
+      <p class="about-intro" id="about-intro"></p>
+      <div class="cards-container" id="about-cards"></div>
     </div>
   </section>
-<!-- Role Intent Line -->
-<div class="role-intent">
- I am seeking a Technical Product Manager role where I can lead products that streamline operations, enhance decision-making, and deliver measurable business value.
-</div>
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <strong>Kenneth R. Turner</strong>
-        <div style="opacity:0.9">PMP certified Technical Product Manager</div>
-        <div style="margin-top:8px"><a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a></div>
-      </div>
+</main>
 
-      <div class="footer-right">
-        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-      <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
-    </div>
-  </footer>
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-  <script>
-    const navToggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
+<script src="/js/portfolio.js"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML  = Portfolio.buildNav(d, 'about.html');
+    document.getElementById('site-footer').innerHTML   = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
+    document.getElementById('about-intro').innerHTML = d.about.intro;
+    document.getElementById('about-cards').innerHTML   = Portfolio.buildAboutCards(d, '0');
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+  })();
+</script>
 
-    navToggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-      navToggle.classList.toggle("open");
-    });
-
-    // Optional: set year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

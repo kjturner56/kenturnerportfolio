@@ -3,233 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kenneth R. Turner | Projects</title>
+  <title>Kenneth R. Turner | Experience</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body>
-  <!-- Header -->
-  <header class="banner" role="banner">
-    <div class="container banner-inner">
-      <div class="banner-left">
-        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
 
-        <!-- Hamburger button -->
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+<body data-depth="0">
 
-      <!-- Navigation -->
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html" class="active">Projects</a>
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
 
-      <div class="banner-center" aria-hidden="true">
-        <h2>Technical Product Manager</h2>
-        <h3>Leading product solutions across AI and traditional technology</h3>
-      </div>
+<main>
+  <section class="section">
+    <div class="container">
+      <h2>Selected Enterprise Projects</h2>
+      <p>A selection of platforms I have owned and delivered, each focused on
+         improving how leadership makes decisions around application investment,
+         modernization, and risk.</p>
+      <div class="card-grid" id="project-cards"></div>
     </div>
-    <div class="banner-divider" aria-hidden="true"></div>
-  </header>
+  </section>
+</main>
 
-  <!-- Main Content -->
-  <main>
-    <section class="section projects-section">
-      <div class="container">
-        <h2>Selected Enterprise Projects</h2>
-        <p class="projects-overview">
-          I lead cross-functional teams to deliver enterprise IT solutions that drive measurable business impact. My work focuses on modernization, enabling data-driven decision-making, and applying practical AI where it creates real value. Projects span cloud migrations, application rationalization, predictive maintenance, and PMO development.
-        </p>
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-        <div class="card-grid">
+<script src="/js/portfolio.js"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'projects.html');
+    document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
+    document.getElementById('project-cards').innerHTML =
+      Portfolio.buildProjectCards(d.enterpriseProjects);
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+  })();
+</script>
 
-          <!-- AMS Health Analyzer -->
-          <div class="card project-card">
-            <h3>AMS Health Analyzer</h3>
-            <p><strong>Objective:</strong> Bring an externally purchased predictive maintenance product into production to reduce equipment downtime and deliver customer value.</p>
-            <p><strong>Role:</strong> Technical Product Manager / Project Lead</p>
-            <p><strong>Actions & Results:</strong></p>
-            <ul>
-              <li>Engaged stakeholders to define business requirements, clarify use cases, and establish success metrics.</li>
-              <li>Coordinated 6+ cross-functional teams including vendor, cloud, security, and enterprise architects.</li>
-              <li>Led AWS implementation by coordinating the cloud team and personally installing software to ensure successful deployment.</li>
-              <li>Developed and delivered training materials to ensure adoption and proper use of the tool.</li>
-              <li>Product fully integrated and operational; engineers began using the solution to collect customer's asset vibration data, improving uptime and operational safety.</li>
-              <li>Avoided wasted software spend.</li>
-            </ul>
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> earlier detection of issues<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> proper governance and user training<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> smooth cross-functional rollout<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> avoided wasted software
-            </p>
-          </div>
-
-          <!-- Knowledge DB Replacement -->
-          <div class="card project-card">
-            <h3>Knowledge DB Replacement</h3>
-            <p><strong>Objective:</strong> Modernize enterprise knowledge management by migrating critical engineering documentation from Lotus Notes to SharePoint.</p>
-            <p><strong>Role:</strong> Technical Product Manager / Project Lead</p>
-            <ul>
-              <li>Conducted stakeholder interviews to define requirements and adoption strategy.</li>
-              <li>Evaluated options, selected SharePoint to leverage existing tools and reduce cost.</li>
-              <li>Designed phased rollout to validate adoption and minimize risk.</li>
-              <li>Led technical migration, including data extraction, cleaning, and deployment.</li>
-              <li>Developed training and adoption support.</li>
-              <li>Successfully replaced legacy system; knowledge continuity preserved, operational disruption avoided, adoption increased.</li>
-            </ul>
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> knowledge continuity preserved<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> solution aligned with user needs<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> smooth phased rollout<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> leveraged existing platform
-            </p>
-          </div>
-
-          <!-- SharePoint 2007 Tech Debt Upgrade -->
-          <div class="card project-card">
-            <h3>SharePoint 2007 Tech Debt Upgrade</h3>
-            <p><strong>Objective:</strong> Upgrade SharePoint 2007 to modern 64-bit infrastructure to address technical debt and ensure scalable collaboration.</p>
-            <p><strong>Role:</strong> Technical Product Manager / Project Lead</p>
-            <ul>
-              <li>Assessed business impact and defined success criteria.</li>
-              <li>Designed weekend cutover plan, coordinated engineering teams, validated data integrity.</li>
-              <li>Managed risks proactively and paused go-live when issues were detected.</li>
-              <li>Maintained stakeholder alignment throughout rollout.</li>
-              <li>Upgrade completed successfully with zero data issues; platform stability and security improved; operational resilience enhanced.</li>
-            </ul>
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> mitigated operational/security risks<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> validated, reliable platform<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> smooth, risk-managed rollout<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> avoided rebuilds, optimized existing infrastructure
-            </p>
-          </div>
-
-          <!-- Document Data Quality Improvement -->
-          <div class="card project-card">
-            <h3>Document Data Quality Improvement</h3>
-            <p><strong>Objective:</strong> Resolve long-standing document metadata quality issues, restoring productivity and strengthening governance.</p>
-            <p><strong>Role:</strong> Technical Product Manager / Change Leader</p>
-            <ul>
-              <li>Exported metadata, engaged owners to validate and update their data.</li>
-              <li>Refreshed cleaned metadata back into SharePoint with governance practices.</li>
-              <li>Communicated progress to stakeholders and coached teams for ongoing quality.</li>
-              <li>Long-standing issue resolved efficiently, productivity restored, and user trust regained.</li>
-            </ul>
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> reduced errors and miscommunication<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> validated, accurate metadata<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> removed workflow blockers, restored productivity<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> leveraged existing tools, saved time
-            </p>
-          </div>
-
-          <!-- Process Improvement – Agile Implementation -->
-          <div class="card project-card">
-            <h3>Process Improvement – Agile Implementation</h3>
-            <p><strong>Objective:</strong> Establish structured development processes to improve visibility, predictability, and collaboration.</p>
-            <p><strong>Role:</strong> Technical Product Manager / Agile Coach</p>
-            <ul>
-              <li>Implemented Agile using SCRUM across U.S. and India teams.</li>
-              <li>Created user stories, prioritized backlog, and coached teams on ceremonies.</li>
-              <li>Conducted workshops to demonstrate sprint value and encourage collaboration.</li>
-              <li>Established stakeholder engagement cadence for transparency and alignment.</li>
-              <li>Improved delivery predictability and cross-functional collaboration; Agile framework became foundation for consistent execution.</li>
-            </ul>
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> clarified roles and responsibilities<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> consistent feedback loops improved output<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> predictable sprint cadence<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> avoided delays from ad hoc processes
-            </p>
-          </div>
-
-          <!-- Application Portfolio Management Dashboard -->
-          <div class="card project-card">
-            <h3>Application Portfolio Management (APM) Dashboard</h3>
-            <p><strong>Objective:</strong> Provide leadership with actionable insights into enterprise applications for modernization and investment prioritization.</p>
-            <p><strong>Role:</strong> Application Portfolio Manager / Technical Product Manager</p>
-            <ul>
-              <li>Managed data for 200+ applications, including health scores, technical debt, cost, and cloud adoption.</li>
-              <li>Built dashboard consolidating key metrics, reviewed quarterly with CIO and business leaders.</li>
-              <li>Provided actionable recommendations for investment, retirement, or remediation.</li>
-              <li>Dashboard became a critical decision-making tool, enabling reduction of legacy systems, improved cloud adoption, and cost savings.</li>
-            </ul>
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> identified high-risk applications early<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> prioritized improvements<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> predictable portfolio review cadence<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> reduced maintenance spend, optimized investment
-            </p>
-          </div>
-
-          <!-- PMO Office -->
-          <div class="card project-card">
-            <h3>PMO Office</h3>
-            <p><strong>Objective:</strong> Establish a lightweight, scalable PMO for leadership visibility and optimized project delivery.</p>
-            <p><strong>Role:</strong> Application Portfolio Manager / Technical Product Manager</p>
-            <ul>
-              <li>Designed SmartSheet-based project intake, approval, and tracking system.</li>
-              <li>Customized workflows, templates, and trained teams for adoption.</li>
-              <li>Aligned project prioritization with strategic goals and resource allocation.</li>
-              <li>Created transparent reporting for progress, risks, and dependencies.</li>
-              <li>Leadership gained full visibility; teams experienced clearer expectations, accountability, and improved delivery speed; cost-efficient implementation avoided additional tooling expenses.</li>
-            </ul>
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> surfaced project and resource risks early<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> consistent execution aligned with goals<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> faster approvals and maintained momentum<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> leveraged existing tools, optimized resources
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Role Intent Line -->
-  <div class="role-intent">
-    I am seeking a Technical Product Manager role where I can lead products that streamline operations, enhance decision-making, and deliver measurable business value.
-  </div>
-
-  <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <strong>Kenneth R. Turner</strong>
-        <div style="opacity:0.9">PMP Certified Technical Product Manager</div>
-        <div style="margin-top:8px; font-size:0.95rem">
-          <a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a>
-        </div>
-      </div>
-
-      <div class="footer-right">
-        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-
-      <p>© <span id="year"></span> Kenneth R. Turner | Projects & AI Innovation</p>
-    </div>
-  </footer>
-
-  <script>
-    const navToggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
-
-    navToggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-      navToggle.classList.toggle("open");
-    });
-
-    // Optional: set year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

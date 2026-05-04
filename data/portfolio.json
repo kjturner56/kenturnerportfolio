@@ -1,0 +1,418 @@
+{
+  "meta": {
+    "name": "Kenneth R. Turner",
+    "title": "Senior AI Product Manager",
+    "subtitle": "Enterprise AI and Decision-Support Platforms",
+    "email": "kturner@kenturnerportfolio.com",
+    "linkedin": "https://www.linkedin.com/in/kennethrturner",
+    "github": "https://github.com/kjturner56",
+    "tagline": "I focus on AI Product Manager roles where enterprise platforms, data, and AI come together to improve decision-making, adoption, and workflow integration at scale."
+  },
+  "nav": [
+    {
+      "label": "Home",
+      "href": "/index.html"
+    },
+    {
+      "label": "Background",
+      "href": "/about.html"
+    },
+    {
+      "label": "Experience",
+      "href": "/projects.html"
+    },
+    {
+      "label": "AI Products",
+      "href": "/products.html"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact.html"
+    }
+  ],
+  "aiProducts": [
+    {
+      "id": "ai-rationalization-advisor",
+      "featured": true,
+      "status": "live",
+      "title": "AI Portfolio Rationalization Advisor",
+      "subtitle": "A fully deployed Streamlit application demonstrating enterprise AI governance in action.",
+      "liveUrl": "https://ai-app-advisor.streamlit.app",
+      "githubRepo": "kjturner56/ai-app-rationalization-advisor",
+      "caseStudyUrl": "/Product1/genai-advisor.html",
+      "image": "/images/GenAI_Advisor.png",
+      "imageAlt": "AI Portfolio Rationalization Advisor dashboard screenshot",
+      "tags": [
+        "Claude API",
+        "Python",
+        "Streamlit",
+        "ServiceNow REST API",
+        "GitHub",
+        "Streamlit Cloud"
+      ],
+      "summary": "A fully deployed, 6-screen Streamlit application demonstrating a Centaur governance model for enterprise application portfolio rationalization. Built to show AI product thinking beyond a simple chatbot, with governance, explainability, cost management, and human oversight built into the workflow.",
+      "capabilities": [
+        "Explainable AI recommendation engine with 7-signal scoring",
+        "Jagged Frontier classification (a framework identifying where AI performs reliably versus where human judgment is essential): Inside, Edge, or Outside",
+        "Human-in-the-loop Centaur governance model",
+        "Recommendation change detection",
+        "Conversational semantic search powered by Claude",
+        "Per-session API governance with call limits",
+        "Access-controlled AI features with password gate",
+        "Live ServiceNow REST API with CSV fallback auto-detection"
+      ],
+      "artifacts": [
+        "Live deployed application on Streamlit Community Cloud",
+        "GitHub repository (kjturner56/ai-app-rationalization-advisor)",
+        "Professional user guide PDF",
+        "24-month product roadmap (visual + PDF)"
+      ],
+      "architectureNote": "Deliberate choices: context stuffing over vector DB for explainability at current scale; direct Claude API over LangChain for transparency and control. Roadmap documents exactly when and why each would change at scale.",
+      "businessValue": [
+        "Demonstrates AI product thinking beyond output generation, with governance, explainability, and human oversight built into every workflow",
+        "Includes 0\u2192500 customer productization roadmap showing scaling strategy",
+        "End-to-end delivery in a single weekend proves execution speed and technical depth"
+      ]
+    },
+    {
+      "id": "semantic-cmdb-search",
+      "featured": false,
+      "status": "prototype",
+      "title": "Semantic CMDB Search Tool",
+      "subtitle": "Natural-language search across ServiceNow CMDB records",
+      "liveUrl": null,
+      "githubRepo": null,
+      "caseStudyUrl": "/Product2/semantic-search.html",
+      "image": "/images/SemanticSearch.png",
+      "imageAlt": "Semantic CMDB Search Tool screenshot",
+      "tags": [
+        "OpenAI Embeddings",
+        "ChromaDB",
+        "ServiceNow REST API",
+        "Python"
+      ],
+      "summary": "A working semantic search prototype connecting to a ServiceNow PDI via REST APIs, generating embeddings with OpenAI, and storing them in ChromaDB to enable natural-language search across CMDB records, surfacing system relationships, dependencies, and infrastructure context.",
+      "capabilities": [
+        "Natural-language queries across CMDB records",
+        "Vector-based retrieval pipeline via ChromaDB",
+        "Live ServiceNow PDI connection via REST API",
+        "Highlights CMDB data quality impact on retrieval accuracy"
+      ],
+      "artifacts": [
+        "Working local prototype with end-to-end retrieval pipeline"
+      ],
+      "architectureNote": null,
+      "businessValue": [
+        "Reduces time navigating complex system relationships",
+        "Surfaces dependencies and infrastructure context faster",
+        "Demonstrates real-world constraints of CMDB data quality on AI retrieval"
+      ]
+    },
+    {
+      "id": "benefits-cost-analyzer",
+      "featured": false,
+      "status": "prototype",
+      "title": "AI Benefits Cost & Utilization Analyzer",
+      "subtitle": "Decision-support for benefits and claims data analysis",
+      "liveUrl": null,
+      "githubRepo": null,
+      "caseStudyUrl": "/Product3/ai-BeniCostAnlyzer.html",
+      "image": "/images/AI_BA_Analyzer.png",
+      "imageAlt": "AI Benefits Cost & Utilization Analyzer screenshot",
+      "tags": [
+        "Python",
+        "Data Lakehouse",
+        "CMS Data",
+        "Predictive Analytics"
+      ],
+      "summary": "A decision-support prototype analyzing benefits and claims data for cost and utilization insights. Built on a Bronze-layer Data Lakehouse using open datasets (CMS, BLS, Medicare), with a roadmap including predictive analytics, document intelligence, and conversational interfaces.",
+      "capabilities": [
+        "Bronze-layer Data Lakehouse using CMS, BLS, and Medicare datasets",
+        "Cost and utilization trend analysis",
+        "Roadmap for predictive modeling and document intelligence",
+        "Strict data privacy and governance model"
+      ],
+      "artifacts": [
+        "Local prototype with ingestion pipeline and analytics layer"
+      ],
+      "architectureNote": null,
+      "businessValue": [
+        "Improves cost visibility for HR and finance stakeholders",
+        "Demonstrates enterprise data architecture thinking",
+        "Roadmap shows path to conversational interface and HR system integration"
+      ]
+    }
+  ],
+  "enterpriseProjects": [
+    {
+      "id": "apm-dashboard",
+      "title": "Application Portfolio Management (APM) Dashboard",
+      "objective": "Give leadership actionable visibility into the enterprise application portfolio to support investment, modernization, and retirement decisions.",
+      "role": "Application Portfolio Manager / Technical Product Manager",
+      "bullets": [
+        "Identified a gap in leadership visibility into application health, cost, and risk across a 200+ application portfolio.",
+        "Defined the data model, decision framework, and success metrics that shaped what the dashboard measured and how decisions would be made from it.",
+        "Built and maintained the dashboard, consolidating health scores, technical debt, cost, and cloud adoption data into a single view.",
+        "Drove quarterly portfolio reviews with the CIO and business leaders, translating data into actionable recommendations for investment, retirement, or remediation.",
+        "Dashboard became the primary tool for portfolio decisions, enabling reduction of legacy systems, improved cloud adoption, and measurable cost savings."
+      ],
+      "sqdc": {
+        "safety": "Identified high-risk applications early before they became operational issues",
+        "quality": "Prioritized improvements based on data rather than opinion",
+        "delivery": "Established a predictable quarterly portfolio review cadence",
+        "cost": "Reduced maintenance spend and optimized investment allocation"
+      }
+    },
+    {
+      "id": "predictive-maintenance",
+      "title": "Predictive Maintenance Platform (AMS Health Analyzer)",
+      "objective": "Get an externally purchased predictive maintenance product into production to reduce equipment downtime and deliver customer value.",
+      "role": "Technical Product Manager / Project Lead",
+      "bullets": [
+        "Engaged stakeholders to define business requirements, clarify use cases, and establish success metrics for the deployment.",
+        "Coordinated 6+ cross-functional teams including vendor, cloud, security, and enterprise architects to align on requirements and delivery approach.",
+        "Led AWS implementation by coordinating the cloud team and personally installing software to ensure successful deployment.",
+        "Developed and delivered training materials to drive adoption and proper use of the platform.",
+        "Platform fully integrated and operational, with engineers using it to collect customer asset vibration data and improve uptime and operational safety.",
+        "Avoided wasted software spend by ensuring the platform was properly deployed and adopted before costs escalated."
+      ],
+      "sqdc": {
+        "safety": "Earlier detection of equipment issues in the field",
+        "quality": "Proper governance, training, and user adoption from day one",
+        "delivery": "Smooth cross-functional rollout across 6+ teams",
+        "cost": "Avoided wasted software investment through disciplined deployment"
+      }
+    },
+    {
+      "id": "knowledge-platform",
+      "title": "Knowledge DB Replacement (Lotus Notes to SharePoint)",
+      "objective": "Replace a failing legacy knowledge system with a modern platform that preserved critical engineering documentation and improved access.",
+      "role": "Technical Product Manager / Project Lead",
+      "bullets": [
+        "Identified the business risk of staying on Lotus Notes and defined the requirements and adoption strategy through stakeholder interviews.",
+        "Evaluated platform options and made the call to use SharePoint, recognizing it would leverage existing tools, reduce cost, and accelerate adoption.",
+        "Designed the phased rollout approach to validate adoption and minimize disruption to engineering teams.",
+        "Led the technical migration, including data extraction, cleaning, and deployment.",
+        "Developed training and adoption support to ensure teams could use the new system from day one.",
+        "Successfully replaced the legacy system with knowledge continuity preserved, operational disruption avoided, and adoption increased."
+      ],
+      "sqdc": {
+        "safety": "Knowledge continuity preserved throughout the transition",
+        "quality": "Solution aligned with user needs through stakeholder-led requirements",
+        "delivery": "Smooth phased rollout with minimal disruption",
+        "cost": "Leveraged existing enterprise platform, avoiding new tooling costs"
+      }
+    },
+    {
+      "id": "sharepoint-modernization",
+      "title": "SharePoint 2007 Tech Debt Upgrade",
+      "objective": "Address accumulated technical debt by upgrading SharePoint 2007 to modern 64-bit infrastructure before it became an operational or security risk.",
+      "role": "Technical Product Manager / Project Lead",
+      "bullets": [
+        "Identified the business impact of aging infrastructure and defined the success criteria and risk framework for the upgrade.",
+        "Designed the weekend cutover approach, choosing a strategy that minimized disruption while protecting data integrity.",
+        "Coordinated engineering teams through the cutover and made the call to pause the go-live when issues were detected, preventing downstream impact.",
+        "Maintained stakeholder alignment throughout, communicating clearly on risks, decisions, and progress.",
+        "Upgrade completed successfully with zero data issues; platform stability and security improved and operational resilience enhanced."
+      ],
+      "sqdc": {
+        "safety": "Mitigated operational and security risks from aging infrastructure",
+        "quality": "Validated, reliable platform delivered with data integrity confirmed",
+        "delivery": "Smooth, risk-managed rollout with proactive issue response",
+        "cost": "Avoided costly rebuilds by optimizing existing infrastructure"
+      }
+    },
+    {
+      "id": "data-quality",
+      "title": "Document Data Quality Improvement",
+      "objective": "Resolve long-standing document metadata quality issues that were slowing teams down and eroding trust in the platform.",
+      "role": "Technical Product Manager / Change Leader",
+      "bullets": [
+        "Identified the root cause of a persistent data quality problem that had gone unresolved and defined an approach to fix it.",
+        "Designed the remediation process, including how metadata would be exported, validated by owners, corrected, and refreshed back into SharePoint.",
+        "Engaged document owners directly to take accountability for their data and coached teams on governance practices to prevent regression.",
+        "Communicated progress to stakeholders throughout to maintain trust and momentum.",
+        "Resolved a long-standing issue efficiently, restoring productivity and regaining user confidence in the platform."
+      ],
+      "sqdc": {
+        "safety": "Reduced errors and miscommunication from inaccurate metadata",
+        "quality": "Validated, accurate metadata across the document library",
+        "delivery": "Removed workflow blockers and restored team productivity",
+        "cost": "Leveraged existing tools, avoiding new spend and saving time"
+      }
+    },
+    {
+      "id": "agile-delivery",
+      "title": "Process Improvement: Agile Implementation",
+      "objective": "Introduce Agile ways of working to improve delivery predictability, team collaboration, and stakeholder visibility.",
+      "role": "Technical Product Manager / Agile Coach",
+      "bullets": [
+        "Identified the need for structured delivery practices and made the case for Agile as the right framework for the team's context.",
+        "Designed the implementation approach, including how ceremonies, backlog structure, and stakeholder engagement would work across U.S. and India teams.",
+        "Created user stories, prioritized the backlog, and coached teams on Agile practices and ways of working.",
+        "Ran workshops to build team buy-in, demonstrate sprint value, and encourage cross-functional collaboration.",
+        "Established a stakeholder engagement cadence that gave leadership consistent visibility into progress and priorities.",
+        "Improved delivery predictability and collaboration; the Agile framework became the foundation for consistent execution across the team."
+      ],
+      "sqdc": {
+        "safety": "Clarified roles and responsibilities across distributed teams",
+        "quality": "Consistent feedback loops improved output quality",
+        "delivery": "Predictable sprint cadence replaced ad hoc delivery",
+        "cost": "Avoided delays and rework from unstructured processes"
+      }
+    },
+    {
+      "id": "portfolio-planning",
+      "title": "PMO Office",
+      "objective": "Design and stand up a lightweight PMO from scratch to give leadership visibility into project delivery and bring discipline to how work gets prioritized.",
+      "role": "Application Portfolio Manager / Technical Product Manager",
+      "bullets": [
+        "Identified the absence of structured project visibility as a risk to delivery and leadership alignment, and made the case for building a lightweight PMO.",
+        "Designed the intake, approval, and tracking system in Smartsheet, defining the workflows, templates, and governance model from scratch.",
+        "Chose Smartsheet deliberately to leverage existing tools and avoid new tooling costs.",
+        "Trained teams on the new processes and drove adoption across the organization.",
+        "Created transparent reporting on progress, risks, and dependencies that gave leadership a consistent, reliable view of the portfolio.",
+        "Leadership gained full portfolio visibility; teams experienced clearer expectations, stronger accountability, and improved delivery speed."
+      ],
+      "sqdc": {
+        "safety": "Surfaced project and resource risks early before they impacted delivery",
+        "quality": "Consistent execution aligned with strategic goals",
+        "delivery": "Faster approvals and maintained delivery momentum",
+        "cost": "Leveraged existing tools, avoiding new tooling spend"
+      }
+    }
+  ],
+  "about": {
+    "intro": "I spent 20+ years at GE Vernova, GE Power, Pratt &amp; Whitney, and Alstom Power building the decision-support platforms that leadership used to manage application portfolios, prioritize investment, and guide modernization across complex global environments. I owned those systems end to end, from defining the product strategy and decision framework to working directly with CIOs and business leaders to make sure the outputs drove real decisions. I am now a Founding Partner at <a href=\"https://www.avignity.com\" target=\"_blank\" rel=\"noopener noreferrer\">Avignity</a>, where I continue to build and refine AI decision-support tools for enterprise environments, and the AI products on this site reflect that work.",
+    "cards": [
+      {
+        "title": "Professional Experience",
+        "body": "PMP-certified Senior AI Product Manager with 20+ years owning and delivering enterprise platforms across GE Vernova, GE Power, Pratt & Whitney, and Alstom Power. I specialize in application portfolio management, modernization planning, and decision-support systems that help organizations evaluate cost, risk, and investment priorities at scale. I am currently a Founding Partner at Avignity, a boutique advisory firm focused on applied AI, IT strategy, and operational transformation, where I design and build AI decision-support tools for enterprise clients."
+      },
+      {
+        "title": "AI & Product Innovation",
+        "body": "I design and ship AI decision-support tools that address real enterprise challenges, particularly where data is fragmented and decisions require context, validation, and accountability. My work focuses on applying AI within structured workflows, surfacing relevant insights while maintaining transparency, human ownership, and control over final decisions.",
+        "featuredProject": {
+          "name": "AI Portfolio Rationalization Advisor",
+          "description": "A fully deployed Streamlit application demonstrating a Centaur governance model for enterprise application portfolio rationalization. Built and shipped in a single weekend.",
+          "url": "/Product1/genai-advisor.html",
+          "liveUrl": "https://ai-app-advisor.streamlit.app"
+        }
+      },
+      {
+        "title": "Skills & Expertise",
+        "body": "Enterprise AI product management, application portfolio management, and decision-support system design. I work at the intersection of business, technology, and data, translating fragmented inputs into clear, actionable products that improve visibility, alignment, and execution. I apply this foundation to AI decision-support, designing workflows where outputs are grounded in enterprise data, validated by decision owners, and governed to build trust and reduce over-reliance."
+      },
+      {
+        "title": "Career Vision",
+        "body": "My focus is on enterprise AI products that help organizations make better decisions from the data they already have, whether that data is clean or fragmented, structured or not. I prioritize use cases where decision quality, transparency, and accountability are critical, and where someone has to own the outcome."
+      },
+      {
+        "title": "Education & Certifications",
+        "items": [
+          "Graduate Certificate in Enterprise AI, Stevens Institute of Technology (Expected June 2026)",
+          "Bachelor of Science, Aviation Management and Flight Operations, Daniel Webster College",
+          "PMP, Project Management Professional",
+          "ITIL Foundation",
+          "In Progress: SAFe Product Owner / Product Manager (POPM), AWS Cloud Practitioner"
+        ]
+      }
+    ]
+  },
+  "pov": {
+    "headline": "My Point of View on Enterprise AI",
+    "body": "Most organizations are not failing at AI because of the models. They are struggling because they are applying AI to problems that have not been translated into clear, actionable decisions. AI does not solve problems directly. It supports decisions that address those problems. If the decision is not clearly defined, owned, and measurable, AI introduces risk instead of value.",
+    "coreInsight": "I view AI as a decision-support capability, not a decision-maker. The decision must be explicit, ownership must be assigned, and outcomes must be measurable and validated.",
+    "approach": [
+      "Start with the decision: define what needs to be decided, who owns it, and what success looks like",
+      "Separate pattern work from judgment: AI supports pattern recognition, humans own tradeoffs",
+      "Keep AI in an advisory role with required human validation",
+      "Track false positives, false negatives, and business impact",
+      "Assign ownership and monitor outcomes through feedback loops"
+    ]
+  },
+  "productApproach": [
+    {
+      "title": "Start with the Decision",
+      "body": "I define the decision we are trying to improve, who owns it, and what action it drives. If the decision is unclear, I do not move forward."
+    },
+    {
+      "title": "Decompose the Workflow",
+      "body": "I map the end-to-end workflow, separating data retrieval, rules-based logic, pattern recognition, and human judgment to identify where AI actually fits."
+    },
+    {
+      "title": "Choose the Right Approach",
+      "body": "I determine whether the problem requires rules, search, retrieval-based approaches, or machine learning. Not every problem needs AI."
+    },
+    {
+      "title": "Design Human + AI Interaction",
+      "body": "I define what the AI does, what the human does, and where validation occurs. AI supports decisions, but humans remain accountable."
+    },
+    {
+      "title": "Define Success & Risk",
+      "body": "I establish business metrics and assess risk early, ensuring outputs are measurable, reversible, and appropriate for the level of impact."
+    },
+    {
+      "title": "Pilot, Measure, and Scale",
+      "body": "I start with a narrow use case, measure both output quality and workflow impact, and scale only when value, trust, and control are proven."
+    }
+  ],
+  "technologyCapabilities": [
+    {
+      "title": "AI Patterns & Capabilities",
+      "items": [
+        "Retrieval-augmented generation (RAG) via context stuffing and vector-based approaches",
+        "Conversational semantic search powered by Claude API",
+        "Explainable AI recommendation engines with multi-signal scoring",
+        "Jagged Frontier classification for AI task suitability (identifying where AI is reliable versus where human judgment is essential)",
+        "Recommendation change detection",
+        "Per-session API governance with call limits"
+      ]
+    },
+    {
+      "title": "Governance & Human-in-the-Loop",
+      "items": [
+        "Centaur governance model: AI recommends, humans decide",
+        "Access-controlled AI features with password gate",
+        "Human validation workflows built into every decision point",
+        "Designed to prevent over-reliance and ensure accountable decision-making"
+      ]
+    },
+    {
+      "title": "Data Architecture",
+      "items": [
+        "Live ServiceNow REST API integration with graceful CSV fallback",
+        "Bronze-layer Data Lakehouse supporting scalable analytics",
+        "Vector-based indexing (ChromaDB) for context-aware retrieval",
+        "Structured portfolio data models across 200+ enterprise applications"
+      ]
+    },
+    {
+      "title": "Stack & Deployment",
+      "items": [
+        "Python, Streamlit, Anthropic Claude API (claude-sonnet)",
+        "ServiceNow REST API",
+        "GitHub + Streamlit Community Cloud (production deployment)",
+        "OpenAI Embeddings + ChromaDB (semantic search prototype)"
+      ]
+    },
+    {
+      "title": "Outputs & Decision Support",
+      "items": [
+        "AI-generated recommendations with supporting rationale and context",
+        "Structured outputs designed for stakeholder review and validation",
+        "Portfolio-level reporting and dashboards",
+        "Exportable decision reports for leadership review"
+      ]
+    },
+    {
+      "title": "Product Ownership",
+      "items": [
+        "End-to-end product delivery from vision to production deployment",
+        "MVP scope definition and architecture decision-making",
+        "24-month productization roadmaps with 0\u2192500 customer scaling strategy",
+        "Deliberate architectural choices with documented rationale for scale"
+      ]
+    }
+  ]
+}

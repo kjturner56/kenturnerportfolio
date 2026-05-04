@@ -3,269 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kenneth R. Turner | Product Management & AI Solutions</title>
+  <title>Kenneth R. Turner | AI Products</title>
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/products.css">
 </head>
 
-<body class="products-page">
-  <!-- Header -->
-  <header class="banner" role="banner">
-    <div class="container banner-inner">
+<body class="has-subnav" data-depth="0">
 
-      <div class="banner-left">
-        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
 
-        <!-- Hamburger button -->
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+<div class="section-nav">
+  <a href="#pov">My POV</a>
+  <a href="#approach">Approach</a>
+  <a href="#products">AI Products</a>
+  <a href="#technology">Technology</a>
+</div>
 
-      <!-- Navigation -->
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="products.html" class="active">Products</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<main>
 
-      <div class="banner-center" aria-hidden="true">
-        <h2>Technical Product Manager</h2>
-        <h3>Leading product solutions across AI and traditional technology</h3>
-      </div>
+  <!-- POV -->
+  <section id="pov" class="section">
+    <div class="container">
+      <h2>My Point of View on Enterprise AI</h2>
+      <div id="pov-body"></div>
     </div>
-     <div class="banner-divider" aria-hidden="true"></div>
-  </header>
+  </section>
 
-  <!-- Section Navigation -->
-  <div class="section-nav">
-    <a href="#background">Experience</a>
-    <a href="#approach">Approach</a>
-    <a href="#prototypes">Prototypes</a>
-    <a href="#technology">Technology</a>
-  </div>
-
-  <!-- Background Section -->
-  <section id="background" class="section">
-  <h2>My Experience</h2>
-  <p>
-    I am a Technical Product Manager who delivers enterprise solutions that streamline workflows, reduce operational inefficiencies, and support better decision-making. Over 20 years, I have led application modernization, cloud migration, and portfolio optimization programs at GE Vernova, GE Power, and Alstom Power.
-  </p>
-  <p>
-    I combine product strategy with technical depth to turn complex systems into scalable solutions that deliver measurable business value. My experience includes working with engineering, data, and architecture teams to define requirements, shape delivery plans, and guide successful implementation.
-  </p>
-  <p>
-    I use AI prototypes to explore emerging technologies and validate new ideas. These projects highlight my ability to define problem statements, design architectures, evaluate feasibility, and apply AI to real business use cases in a controlled and responsible way.
-  </p>
-  <p class="career-intent">
-  I am seeking a Technical Product Manager role focused on improving how organizations deliver, scale, and modernize enterprise technology.
-</p>
-</section>
-
-
-  <!-- Product Approach Section -->
-<section id="approach" class="section light-bg">
-  <h2>My Product Approach</h2>
-  <div class="approach-grid">
-
-    <div class="approach-card">
-      <h3>Discover & Frame</h3>
-      <p>Identify business problems, align stakeholders, and define clear requirements by partnering with cross-functional teams to uncover high-value opportunities.</p>
+  <!-- Product Approach -->
+  <section id="approach" class="section light-bg">
+    <div class="container">
+      <h2>My Product Approach</h2>
+      <div class="approach-grid" id="approach-grid"></div>
     </div>
+  </section>
 
-    <div class="approach-card">
-      <h3>Data & Design</h3>
-      <p>Work with technical teams, including engineers, analysts, and data specialists, to shape data needs, evaluate solution approaches, and design architectures that balance feasibility, scalability, and business value.</p>
+  <!-- AI Products -->
+  <section id="products" class="section">
+    <div class="container">
+      <h2>AI Products &amp; Prototypes</h2>
+      <p>Each of these projects starts with a specific business decision that
+         needed to be made better. The AI capability came second, after the
+         decision, the workflow, and the governance model were defined.</p>
+      <div class="card-grid" id="product-cards"></div>
     </div>
+  </section>
 
-    <div class="approach-card">
-      <h3>Prototype & Iterate</h3>
-      <p>Collaborate with engineers to build and refine prototypes, validate assumptions, and develop user experiences through continuous feedback loops.</p>
+  <!-- Technology -->
+  <section id="technology" class="section light-bg">
+    <div class="container">
+      <h2>Technical Capabilities</h2>
+      <div class="card-grid" id="tech-cards"></div>
     </div>
+  </section>
 
-    <div class="approach-card">
-      <h3>Measure & Scale</h3>
-      <p>Define KPIs, assess performance, and plan scalable workflows and architectures that support long-term adoption and enterprise growth.</p>
-    </div>
+</main>
 
-    <div class="approach-card">
-      <h3>Communicate & Govern</h3>
-      <p>Ensure transparency, responsible decision-making, and organizational alignment by clearly communicating risks, tradeoffs, and outcomes to stakeholders.</p>
-    </div>
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-  </div>
-</section>
+<script src="/js/portfolio.js"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'products.html');
+    document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
 
+    const pov = d.pov;
+    document.getElementById('pov-body').innerHTML = `
+      <p>${pov.body}</p>
+      <h3>Core Insight</h3>
+      <p>${pov.coreInsight}</p>
+      <h3>How I Approach It</h3>
+      <ul>${pov.approach.map(a => `<li>${a}</li>`).join('')}</ul>`;
 
-  <!-- Prototypes Section -->
-<section id="prototypes" class="section">
-  <h2>AI and Emerging Technology Prototypes</h2>
-    <p>
-      These prototypes demonstrate how I turn enterprise problems into practical MVPs by defining business needs, clarifying technical requirements, and shaping early architecture. Each project explores a different area of AI and data-driven decision support, progressing from structured analysis to semantic search to predictive and generative intelligence.
-    </p>
+    document.getElementById('approach-grid').innerHTML =
+      Portfolio.buildApproachCards(d.productApproach);
+    document.getElementById('product-cards').innerHTML =
+      Portfolio.buildProductCards(d.aiProducts, '0');
+    document.getElementById('tech-cards').innerHTML =
+      Portfolio.buildTechCards(d.technologyCapabilities);
 
-    <p>
-      Across all prototypes, I defined the business problem, data flows, system behavior, user experience, and MVP scope. Generative AI was used to accelerate implementation and code scaffolding, while I focused on product direction, architecture decisions, and validation of technical feasibility.
-    </p>
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+  })();
+</script>
 
-    <p>
-      <strong>GenAI App Rationalization Advisor:</strong> Designed to streamline application portfolio assessments by reducing manual effort and improving consistency. I defined the workflow and system architecture, while leveraging generative AI to support code generation, data preparation, and automated report creation.
-    </p>
-
-    <p>
-      <strong>Semantic CMDB Search Tool:</strong> Created to improve how teams access configuration data through a natural language interface. I defined search requirements, designed the retrieval and embedding workflow, and outlined the user experience, while AI assisted with prototype logic and UI scaffolding.
-    </p>
-
-    <p>
-      <strong>AI Benefits Cost and Utilization Analyzer:</strong> Planned as a predictive analytics tool for consolidating benefits and claims data into executive-ready insights. I built the Bronze layer of a local Data Lakehouse and defined the future analytics pipeline. Next phases include predictive models, document intelligence, and a conversational interface, all designed to maintain data privacy and security.
-    </p>
-
-  <div class="card-grid">
-
-    <!-- Card 1 -->
-    <div class="card">
-      <img src="images/GenAI_Advisor.png" alt="GenAI App Rationalization Advisor dashboard screenshot">
-    <h3>GenAI App Rationalization Advisor</h3>
-    <ul>
-      <li>Streamlined application portfolio analysis using an AI-assisted review workflow</li>
-      <li>Designed the evaluation framework and outlined planned scoring rules and decision logic for future enhancements</li>
-      <li>Leveraged AI to automate recommendations, generate rationalization summaries, and produce PDF/CSV reports</li>
-      <li>Developed an interactive local prototype with a Tkinter desktop interface</li>
-    </ul>
-    <a href="Product1/genai-advisor.html" class="btn">View Case Study</a>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="card">
-      <img src="images/SemanticSearch.png" alt="Semantic CMDB Search Tool screenshot">
-      <h3>Semantic CMDB Search Tool</h3>
-      <ul>
-        <li>Improved CMDB data retrieval by enabling natural-language search across ServiceNow PDI records</li>
-        <li>Designed the embedding workflow, retrieval approach, and UI/UX flow</li>
-        <li>Used AI to generate portions of the prototype (vector search logic, API scaffolding, and UI components) based on the architecture and requirements I defined</li>
-        <li>Implemented using OpenAI embeddings, Chroma DB, FastAPI, and Streamlit</li>
-      </ul>
-      <a href="Product2/semantic-search.html" class="btn">View Case Study</a>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="card">
-      <img src="images/AI_BA_Analyzer.png" alt="AI Benefits Cost & Utilization Analyzer screenshot">
-      <h3>AI Benefits Cost & Utilization Analyzer</h3>
-      <ul>
-        <li>Provides predictive insights and automated executive summaries for benefits data</li>
-        <li>Defined architecture, workflow, and data ingestion strategy</li>
-        <li>Built Bronze-layer Data Lakehouse using open datasets (CMS, BLS, Medicare)</li>
-        <li>Future phases include predictive modeling, document intelligence, conversational AI, and simulated integration with enterprise HR systems</li>
-      </ul>
-      <a href="Product3/ai-BeniCostAnlyzer.html" class="btn">View Case Study</a>
-    </div>
-
-  </div>
-</section>
-
-
-  <!-- Technology Overview Section -->
-<section id="technology" class="section light-bg">
-  <h2>Technology Overview</h2>
-  <p>
-    This section highlights the AI technologies and enterprise tools integrated across my prototypes. I managed architecture, MVP scope, and AI integration while AI assisted with coding and modeling.
-  </p>
-  <div class="card-grid">
-
-    <div class="card">
-      <h3>AI & Machine Learning</h3>
-      <ul>
-        <li>Generative AI: GPT-3.5-turbo for insights and conversational interfaces (implemented)</li>
-        <li>Semantic Search: Embeddings for natural-language search (implemented)</li>
-        <li>Predictive Analytics (planned for Benefits Cost & Utilization Analyzer)</li>
-        <li>Computer Vision (planned for benefits claims and invoice data)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Data & Storage</h3>
-      <ul>
-        <li>Local Data Lakehouse: MinIO, Apache Spark, Dremio, Project Nessie (implemented for Benefits Analyzer)</li>
-        <li>Vector Databases: Chroma for semantic search (implemented for CMDB)</li>
-        <li>CSV & CMDB Integration: Enterprise application metadata (implemented)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Applications & Interfaces</h3>
-      <ul>
-        <li>Web: Streamlit dashboards (implemented)</li>
-        <li>Backend: FastAPI for orchestration (implemented)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Data Sources & Inputs</h3>
-      <ul>
-        <li>ServiceNow CMDB (implemented)</li>
-        <li>Application portfolios (cost, usage, risk, metadata) (implemented)</li>
-        <li>Public employee benefits and claims datasets (CMS, BLS, Medicare) (implemented)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Outputs & Deliverables</h3>
-      <ul>
-        <li>Actionable recommendations with clear rationale (implemented)</li>
-        <li>Stakeholder-specific reports (PDF, CSV) (implemented/planned)</li>
-        <li>Interactive dashboards for insights and decision-making (planned)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Key TPM Focus Areas</h3>
-      <ul>
-        <li>Translating enterprise needs into AI-driven solutions</li>
-        <li>Defining MVP scope and prototyping roadmap</li>
-        <li>Guiding responsible and secure use of generative AI for rapid experimentation</li>
-        <li>Ensuring secure, governed, and scalable experiments</li>
-        <li>Driving adoption of AI insights across the organization</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-  <!-- Role Intent Line -->
-  <div class="role-intent">
-    I am seeking a Technical Product Manager role where I can lead products that streamline operations, enhance decision-making, and deliver measurable business value.
-  </div>
-  <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <strong>Kenneth R. Turner</strong>
-        <div style="opacity:0.9">PMP certified Technical Product Manager</div>
-        <div style="margin-top:8px; font-size:0.95rem"><a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a></div>
-      </div>
-      <div class="footer-right">
-        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-      <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
-    </div>
-  </footer>
-
-  <script>
-    const navToggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
-
-    navToggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-      navToggle.classList.toggle("open");
-    });
-
-    // Optional: set year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
