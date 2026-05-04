@@ -3,165 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | Kenneth R. Turner</title>
+  <title>Kenneth R. Turner | Background</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body>
-  <!-- Header -->
-  <header class="banner" role="banner">
-    <div class="container banner-inner">
 
-      <div class="banner-left">
-        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
+<body data-depth="0">
 
-        <!-- Hamburger button -->
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="page-title-container">
+        <h2 class="page-title">About Me</h2>
       </div>
-
-      <!-- Navigation -->
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html" class="active">Background</a>
-        <a href="projects.html">Experience</a>
-        <a href="products.html">AI Work</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <div class="banner-center" aria-hidden="true">
-        <h2>Technical Product Manager</h2>
-        <h3>Enterprise AI and Decision-Support Platforms</h3>
-      </div>
-    </div>
-    <div class="banner-divider" aria-hidden="true"></div>
-  </header>
-
-  <section id="about" class="container" style="padding-top:22px;">
-    <div class="page-title-container">
-      <h2 class="page-title">About Me</h2>
-    </div>
-    <p class="intro">
-      I’m a Senior Technical Product Manager focused on enterprise decision-support platforms that help organizations make better, faster, and more consistent decisions across complex workflows.
-      <br>
-      I define and deliver internal products that bring together application, cost, risk, and operational data to support planning, prioritization, and modernization at scale.
-      <br>
-      My work extends into AI, where I apply it within enterprise workflows to improve decision quality while ensuring outputs remain transparent, validated, and aligned with real-world operational constraints.
-    </p>
-    <div class="cards-container">
-
-      <!-- Professional Experience -->
-      <div class="card">
-        <h3>Professional Experience</h3>
-        <p>
-          I’m a PMP-certified Senior Technical Product Manager with over twenty years of experience owning and delivering enterprise platforms across organizations such as GE Vernova, GE Power, and Alstom Power.
-        </p>
-
-        <p>
-          I specialize in application portfolio management, modernization planning, and decision-support systems that help organizations evaluate cost, risk, and investment priorities at scale.
-        </p>
-
-        <p>
-          I bridge business and technical domains to define product direction, align stakeholders, and deliver platforms that improve visibility, consistency, and decision quality across complex enterprise environments.
-        </p>
-      </div>
-
-      <!-- AI & Product Innovation -->
-      <div class="card">
-        <h3>AI & Product Innovation</h3>
-        <p>
-          I design and prototype AI-driven decision-support systems that address real enterprise challenges, particularly in areas where data is fragmented and decisions require context, validation, and accountability.
-        </p>
-
-        <p>
-          My work focuses on applying AI within structured workflows, using techniques such as retrieval-augmented generation and semantic search to surface relevant insights while maintaining transparency and control.
-        </p>
-
-        <p>
-          These prototypes are grounded in enterprise use cases, integrate with systems such as ServiceNow CMDB, and are designed to support measurable outcomes rather than experimentation alone. Examples include:
-        </p>
-
-        <ul>
-          <li><strong>GenAI Application Rationalization Advisor</strong> – a decision-support tool that assists in evaluating retain, retire, and modernize decisions across an application portfolio.</li>
-          <li><strong>Semantic CMDB Search Tool</strong> – a semantic search capability that transforms complex ServiceNow CMDB data into structured, actionable insights.</li>
-          <li><strong>AI Benefits Cost & Utilization Analyzer</strong> (planned) – exploring predictive analytics and AI-assisted analysis to improve cost visibility and utilization insights.</li>
-        </ul>
-
-      </div>
-
-      <!-- Skills & Expertise -->
-      <div class="card">
-        <h3>Skills & Expertise</h3>
-        <p>
-          My expertise spans product management, enterprise platforms, and application portfolio optimization, with a focus on defining product direction, prioritizing initiatives, and delivering systems that support complex decision-making.
-        </p>
-
-        <p>
-          I work at the intersection of business, technology, and data, translating fragmented inputs into structured products that improve visibility, alignment, and execution across teams.
-        </p>
-
-        <p>
-          I continue to expand my capabilities in cloud platforms, modern data architectures, and AI-driven decision-support, applying these to real-world enterprise workflows where outcomes must be measurable and governed.
-        </p>
-      </div>
-
-      <!-- Career Vision -->
-      <div class="card">
-        <h3>Career Vision</h3>
-        <p>
-          My focus is on building enterprise products that improve decision-making through structured data, clear workflows, and responsible application of AI.
-        </p>
-
-        <p>
-          I prioritize use cases where decision quality, transparency, and accountability are critical, ensuring solutions deliver measurable impact within real-world operational constraints.
-        </p>
-      </div>
-
-      <!-- Education & Certifications -->
-      <div class="card">
-        <h3>Education & Certifications</h3>
-        <p>Bachelor of Science in Aviation Management and Flight Operations</p>
-        <p>PMP, Project Management Professional</p>
-        <p>Graduate Certificate in Enterprise AI, Stevens Institute of Technology (in progress)</p>
-        <p>SAFe Product Owner / Product Manager (POPM), in progress</p>
-        <p>AWS Cloud Practitioner, in progress</p>
-      </div>
-
+      <p class="about-intro" id="about-intro"></p>
+      <div class="cards-container" id="about-cards"></div>
     </div>
   </section>
-<!-- Role Intent Line -->
-<div class="role-intent">
-  I focus on product roles where enterprise platforms, data, and AI come together to improve decision-making, planning, and operational workflows at scale.
-</div>
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <strong>Kenneth R. Turner</strong>
-        <div style="opacity:0.9">PMP certified Technical Product Manager</div>
-        <div style="margin-top:8px"><a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a></div>
-      </div>
+</main>
 
-      <div class="footer-right">
-        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-      <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
-    </div>
-  </footer>
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-  <script>
-    const navToggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
+<script src="/js/portfolio.js"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML  = Portfolio.buildNav(d, 'about.html');
+    document.getElementById('site-footer').innerHTML   = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
+    document.getElementById('about-intro').innerHTML = d.about.intro;
+    document.getElementById('about-cards').innerHTML   = Portfolio.buildAboutCards(d, '0');
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+  })();
+</script>
 
-    navToggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-      navToggle.classList.toggle("open");
-    });
-
-    // Optional: set year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

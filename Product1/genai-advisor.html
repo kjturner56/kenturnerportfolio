@@ -3,419 +3,339 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="GenAI App Rationalization Advisor prototype by Kenneth R. Turner demonstrates AI-assisted analysis to help optimize enterprise application portfolios.">
-
-  <title>GenAI App Rationalization Advisor | Kenneth R. Turner</title>
-
-  <!-- Main styles (site-wide) -->
+  <meta name="description" content="AI Portfolio Rationalization Advisor — fully deployed production application by Kenneth R. Turner, Senior AI PM. Demonstrates Centaur governance model, explainable AI, Jagged Frontier classification (identifying where AI is reliable versus where human judgment is essential), and human-in-the-loop decision-support.">
+  <title>AI Portfolio Rationalization Advisor | Kenneth R. Turner</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <!-- Project-specific styles -->
-  <link rel="stylesheet" href="../css/projects.css" />
-
-  <style>
-    /* Carousel specific styles */
-    .carousel-wrapper{
-      max-width:980px;
-      margin:20px auto 6px;
-      position:relative;
-      --control-size:48px;
-    }
-
-    .carousel {
-      overflow:hidden;
-      border-radius:10px;
-      background:#fff;
-      box-shadow:0 8px 24px rgba(11,30,61,0.06);
-      position:relative;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 320ms cubic-bezier(.22,.9,.3,1);
-      will-change: transform;
-      position: relative;
-    }
-
-    .carousel-slide {
-      min-width: 100%;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      user-select: none;
-      opacity: 0;
-      transition: opacity 500ms ease-in-out;
-    }
-
-    .carousel-slide.active { opacity: 1; }
-    .carousel-slide img { width: 100%; height: auto; display: block; object-fit: contain; }
-    .carousel-control{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      width:var(--control-size);
-      height:var(--control-size);
-      border-radius:50%;
-      border:none;
-      background:rgba(11,30,61,0.72);
-      color:#fff;
-      font-size:1.25rem;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      box-shadow:0 6px 18px rgba(11,30,61,0.12);
-    }
-    .carousel-control:hover{ background:rgba(0,170,255,0.86) }
-    .carousel-control.prev{ left:12px }
-    .carousel-control.next{ right:12px }
-    .carousel-dots{
-      display:flex;
-      gap:8px;
-      justify-content:center;
-      margin-top:12px;
-    }
-    .carousel-dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:rgba(11,30,61,0.12);
-      cursor:pointer;
-      border:1px solid rgba(11,30,61,0.06);
-    }
-    .carousel-dot.active{ background:var(--primary); box-shadow:0 4px 10px rgba(0,170,255,0.12); }
-    @media (max-width:768px){
-      .carousel-wrapper{ padding:0 8px }
-      .carousel-control{ --control-size:40px; width:40px; height:40px; font-size:1rem }
-    }
-  </style>
 </head>
-<body>
-  <!-- Header -->
-  <header class="banner" role="banner">
-    <div class="container banner-inner">
-      <div class="banner-left">
-        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
-        <!-- Hamburger button -->
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+
+<body data-depth="1">
+
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
+
+<main>
+  <div class="container" style="padding-top:28px;padding-bottom:48px;">
+
+    <!-- Live app callout bar -->
+    <div style="background:linear-gradient(135deg,rgba(0,170,255,0.07),rgba(46,204,113,0.07));border:1px solid rgba(0,170,255,0.20);border-radius:10px;padding:16px 20px;margin-bottom:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <span class="badge badge-live">Live</span>
+        <strong style="color:var(--nav-bg);">AI Portfolio Rationalization Advisor</strong>
+        <span style="color:var(--subtext);font-size:0.9rem;">Deployed on Streamlit Community Cloud</span>
       </div>
-
-      <!-- Navigation -->
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="/index.html">Home</a>
-        <a href="/about.html">Background</a>
-        <a href="/projects.html">Experience</a>
-        <a href="/products.html" class="active">AI Works</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-
-      <div class="banner-center" aria-hidden="true">
-        <!-- Page title -->
-        <h2>GenAI App Rationalization Advisor – Prototype</h2>
-        <!-- Role/brief purpose -->
-        <h3>AI decision-support for app portfolio review</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="https://ai-app-advisor.streamlit.app" class="btn" target="_blank" rel="noopener noreferrer">&#x1F680; View Live App</a>
+        <a href="https://github.com/kjturner56/ai-app-rationalization-advisor" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
       </div>
     </div>
-    <div class="banner-divider" aria-hidden="true"></div>
-  </header>
 
-  <main>
-    <section class="project-summary container" style="padding-top:22px;">
-      <!-- Executive Summary -->
-      <section class="summary-section" role="region" aria-labelledby="project-summary-title" style="margin-bottom:18px;">
-        <h2 id="project-summary-title">Executive Summary</h2>
-        <p class="intro" style="margin-top:12px;">
-          The GenAI Application Rationalization Advisor is an early-stage prototype of an AI-enabled decision-support product designed to improve how enterprises evaluate and optimize their application portfolios.
-        </p>
-        <p>
-          It applies structured portfolio data and a defined decision workflow to support retain, retire, modernize, and consolidate decisions. The prototype generates explainable recommendations using structured inputs and LLM-based analysis, while maintaining human accountability through validation and review.
-        </p>
-        <p>
-          This implementation represents an early-stage product designed to validate architecture, workflow design, and business value prior to enterprise deployment.
-        </p>
-
-        <h3 style="margin-top:12px;">Overview</h3>
-        <p>
-          Based on my experience as an Application Portfolio Manager at GE Vernova, this product addresses the complexity of managing large enterprise portfolios, including redundant systems, technical debt, and risk exposure.
-        </p>
-        <p>
-          It reduces manual analysis by structuring decision inputs and applying AI to generate consistent, explainable recommendations, while ensuring that final decisions remain with the business.
-        </p>
-
-        <h3 style="margin-top:12px;">Key features</h3>
-        <ul>
-          <li><strong>AI-Assisted Decision Support:</strong> Generates structured recommendations grounded in application data and business context.</li>
-          <li><strong>Explainable Outputs:</strong> Provides rationale behind each recommendation to support validation and stakeholder trust.</li>
-          <li><strong>Risk & Redundancy Detection:</strong> Identifies legacy systems, overlapping capabilities, and potential compliance concerns.</li>
-          <li><strong>Portfolio-Level Reporting:</strong> Produces structured outputs for leadership review and planning.</li>
-          <li><strong>Scalable Design:</strong> Designed to support analysis across large enterprise portfolios and evolving data inputs.</li>
-        </ul>
-
-        <h3 style="margin-top:12px;">Target users</h3>
-        <ul>
-          <li>CIOs, Application Portfolio Managers, and Enterprise Architects (for evaluation/demo purposes)</li>
-          <li>Application Owners</li>
-          <li>Finance and Procurement Teams</li>
-          <li>Security and Compliance Teams</li>
-        </ul>
-
-        <h3 style="margin-top:12px;">Business value</h3>
-        <ul>
-          <li><strong>Improves Decision Consistency:</strong> Standardizes how applications are evaluated across the portfolio.</li>
-          <li><strong>Reduces Manual Effort:</strong> Accelerates analysis that is typically fragmented and spreadsheet-driven.</li>
-          <li><strong>Supports Transformation:</strong> Enables better planning for cloud migration, modernization, and consolidation initiatives.</li>
-          <li><strong>Increases Transparency:</strong> Provides clear rationale behind recommendations for stakeholder alignment.</li>
-        </ul>
-        <h3 style="margin-top:12px;">Human + AI Decision Model</h3>
-        <ul>
-          <li>AI generates recommendations and supporting rationale based on structured data</li>
-          <li>Users review, validate, and approve decisions before action is taken</li>
-          <li>Ownership remains with the application portfolio manager or business stakeholder</li>
-          <li>Designed to prevent over-reliance on AI and ensure accountable decision-making</li>
-        </ul>
-
-        <h3 id="tech-overview-title">Technology overview</h3>
-        <p>
-          The system integrates structured portfolio data with generative AI using a retrieval-based approach to produce grounded, explainable recommendations.
-        </p>
-        <ul>
-          <li><strong>Architecture:</strong> Data ingestion, retrieval, LLM-based analysis, and structured output generation</li>
-          <li><strong>Inputs:</strong> Application inventory, cost, usage, risk, and ownership data</li>
-          <li><strong>Outputs:</strong> Disposition recommendations with rationale and portfolio-level reporting</li>
-        </ul>
-
-        <h3 style="margin-top:12px;">MVP scope</h3>
-        <ul>
-          <li>Upload CSV → generate recommendations → export report</li>
-          <li>Generate AI-assisted recommendations for retaining, retiring, modernizing, or consolidating applications</li>
-          <li>Export a portfolio-level report demonstrating recommendations and rationale</li>
-        </ul>
-
-        <h3 style="margin-top:12px;">Roadmap (Planned)</h3>
-        <ul>
-          <li>Feedback Loops: Capture user validation on AI-assisted recommendations to improve trust and learning</li>
-          <li>Governance Guardrails: Protect critical applications, require human approval, and show confidence scores to ensure compliance</li>
-          <li>CMDB Integration: Connect with enterprise CMDBs to enable richer, automated portfolio analysis</li>
-          <li>Persona-Specific Prompts: Provide tailored AI guidance for CIOs, Application Owners, Finance, and Security teams</li>
-          <li>Conversational AI Interface: Enable interactive, question-driven exploration of portfolio insights</li>
-          <li>Embedding Similarity & Semantic Search: Detect functionally similar applications even if names differ</li>
-          <li>Build trust, ensure compliance, and unlock deeper insights for smarter rationalization</li>
-        </ul>
-      </section>
-      <section class="project-visuals">
-        <h2>How the Product Works</h2>
-        <p class="visual-intro">
-          A structured enterprise decision-support system combining AI-generated recommendations, human validation, and measurable business outcomes.
-        </p>
-
-        <div class="visual-row visual-row-top">
-          <div class="card visual-card visual-card-wide">
-            <h3>Decision Workflow</h3>
-
-            <div class="workflow">
-              <div class="step">Portfolio Data</div>
-              <div class="arrow">→</div>
-              <div class="step">AI Analysis</div>
-              <div class="arrow">→</div>
-              <div class="step">Human Review</div>
-              <div class="arrow">→</div>
-              <div class="step final">Decision</div>
-            </div>
-
-            <ul>
-              <li><strong>Decision:</strong> retain, retire, modernize, or consolidate</li>
-              <li><strong>AI role:</strong> generate recommendation and rationale</li>
-              <li><strong>Human role:</strong> validate context, review risk, approve final decision</li>
-              <li><strong>Outcome:</strong> faster and more consistent portfolio evaluation</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="visual-row visual-row-bottom">
-          <div class="card visual-card">
-            <h3>Architecture Overview</h3>
-
-            <div class="architecture-layer"><strong>Input Layer:</strong> application inventory, cost, usage, lifecycle, risk, ownership</div>
-            <div class="architecture-layer"><strong>Retrieval Layer:</strong> portfolio records and contextual data prepared for analysis</div>
-            <div class="architecture-layer"><strong>AI Reasoning Layer:</strong> generates disposition recommendation with supporting rationale using retrieved portfolio context</div>
-            <div class="architecture-layer"><strong>Review Layer:</strong> human validation and approval before action</div>
-            <div class="architecture-layer"><strong>Output Layer:</strong> structured recommendation, rationale, and portfolio-level report</div>
-
-            <p class="visual-note">
-              The product is designed as a retrieval-based decision-support system where recommendations are grounded in structured portfolio data and validated through human review before action.
-            </p>
-          </div>
-
-          <div class="card visual-card">
-            <h3>Evaluation Model</h3>
-
-            <ul>
-              <li><strong>False Positives:</strong> AI recommends action where the application should be retained</li>
-              <li><strong>False Negatives:</strong> AI fails to flag an application that should be retired, modernized, or consolidated</li>
-              <li><strong>Consistency:</strong> similar applications receive similar recommendations</li>
-              <li><strong>Rationale Quality:</strong> recommendations are understandable and reviewable</li>
-            </ul>
-
-            <h4 class="sqdc-title">Business Impact (SQDC)</h4>
-            <ul>
-              <li><strong>Safety:</strong> reduce risk from unsupported or high-exposure applications</li>
-              <li><strong>Quality:</strong> improve consistency and transparency of portfolio decisions</li>
-              <li><strong>Delivery:</strong> reduce manual analysis time and accelerate review cycles</li>
-              <li><strong>Cost:</strong> improve investment allocation and reduce legacy spend</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+    <!-- Executive Summary -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Executive Summary</h2>
+      <p class="intro" style="margin-top:14px;">
+        The AI Portfolio Rationalization Advisor is a fully deployed Streamlit application demonstrating how a Centaur governance model can be applied to one of the most common and costly problems in enterprise IT: deciding which applications to retain, modernize, retire, or replace.
+      </p>
+      <p>
+        Enterprise organizations waste significant budget on redundant, aging, and poorly governed application portfolios. The decision process is typically fragmented, spreadsheet-driven, and
+        inconsistent across business units. This application structures that decision into a governed,
+        explainable, auditable workflow, with AI handling pattern recognition and humans retaining full accountability for every outcome.
+      </p>
+      <p>
+        Built using Python, Streamlit, and the Anthropic Claude API, the app is live at
+        <a href="https://ai-app-advisor.streamlit.app" target="_blank" rel="noopener noreferrer">ai-app-advisor.streamlit.app</a>
+        and deployed from a GitHub repository on Streamlit Community Cloud. It is not a mockup or a slide deck. It is a working application that an interviewer can open, use, and evaluate in real time.
+      </p>
     </section>
 
-    <!-- Slide deck carousel -->
-    <div class="carousel-wrapper" aria-label="GenAI App Rationalization Advisor slide deck">
-      <div class="carousel" id="genaiCarousel" role="region" aria-roledescription="carousel" aria-label="GenAI slide deck">
-        <div class="carousel-track" aria-live="polite">
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide Home — Main">
-            <img src="Home.png" alt="Slide Home — Main" />
+    <!-- What this demonstrates -->
+    <section style="margin-bottom:36px;background:var(--muted);border-radius:12px;padding:24px 28px;border:1px solid var(--border);">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">What This Demonstrates</h2>
+      <p style="margin-top:14px;">Most AI prototypes demonstrate a chatbot. This demonstrates AI product thinking at a Senior PM level: governance, explainability, cost management, and human oversight built into every workflow decision.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px;">
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Governance by design</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Three-layer Centaur model with AI engine, APM review, and CIO escalation. Every decision is logged with reviewer identity, timestamp, and written rationale.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Explainability first</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Every AI recommendation exposes the seven signals that drove it, a confidence score, and a Jagged Frontier position showing where AI is reliable versus where human judgment is essential. No black box outputs.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Cost-aware AI</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Per-session query limits with a visible quota counter. Access-controlled Screen 6. Deliberate architectural choices that scale without runaway API costs.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Deployment-ready architecture</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Live ServiceNow REST API with graceful CSV fallback. Auto-detection at startup. A data mode indicator so users always know what they are looking at.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Centaur Model -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">The Centaur Governance Model</h2>
+      <p style="margin-top:14px;">
+        Named after the mythological figure combining human and horse, the Centaur model pairs AI
+        analytical capability with human judgment, accountability, and contextual reasoning. It is the
+        architectural backbone of the application and the answer to the question every enterprise AI
+        buyer asks: <em>who is accountable when the AI is wrong?</em>
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px;">
+        <div style="background:rgba(0,170,255,0.06);border:1px solid rgba(0,170,255,0.18);border-radius:10px;padding:18px;">
+          <div style="font-size:1.4rem;margin-bottom:8px;">&#x1F916;</div>
+          <strong style="color:var(--nav-bg);">Layer 1 &mdash; AI Engine</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Analyzes 7 signals per application. Generates a recommendation (Retain / Modernize / Retire / Replace / Evaluate) with a confidence score and a Jagged Frontier position showing where AI is reliable versus where human judgment is essential.</p>
+        </div>
+        <div style="background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.25);border-radius:10px;padding:18px;">
+          <div style="font-size:1.4rem;margin-bottom:8px;">&#x1F464;</div>
+          <strong style="color:var(--nav-bg);">Layer 2 &mdash; APM Review</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">The Application Portfolio Manager reviews every AI recommendation in the Validation Queue. They can approve, override (with mandatory written rationale), or escalate to the CIO.</p>
+        </div>
+        <div style="background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.20);border-radius:10px;padding:18px;">
+          <div style="font-size:1.4rem;margin-bottom:8px;">&#x1F3E2;</div>
+          <strong style="color:var(--nav-bg);">Layer 3 &mdash; CIO Escalation</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">High-stakes, high-risk, or ambiguous decisions are escalated to executive review. Every escalation is flagged in the Decision Audit Log with full context.</p>
+        </div>
+      </div>
+      <p style="margin-top:16px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--primary);padding:12px 16px;border-radius:0 6px 6px 0;">
+        <strong style="color:var(--nav-bg);">Why this matters as a moat:</strong> Enterprise AI buyers are under regulatory and board-level pressure to demonstrate AI accountability and auditability. The Centaur model delivers this out of the box. Competitors adding AI to existing portfolio tools will struggle to retrofit this. It has to be designed in from the start.
+      </p>
+    </section>
+
+    <!-- The 6 Screens -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">The 6 Screens</h2>
+      <p style="margin-top:14px;">Each screen serves a distinct role in the governance workflow. Screens 1&ndash;5 are fully public. Screen 6 requires an access key to control API costs.</p>
+
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
+
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--nav-bg);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">Screen 1</div>
+            <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">Portfolio Overview</div>
           </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 — Executive Summary">
-            <img src="Executive_Summary.png" alt="Slide 1 — Executive Summary" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 — Problem Statement">
-            <img src="Problem_Statement.png" alt="Slide 2 — Problem Statement" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 — Primary Personas">
-            <img src="Personas.png" alt="Slide 3 — Primary Personas" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 — Vision Statement">
-            <img src="VisionStatement.png" alt="Slide 4 — Vision Statement" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 5 — Hypothesis">
-            <img src="Hypothesis.png" alt="Slide 5 — Hypothesis" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 6 — Solution Overview">
-            <img src="SolutionOverview.png" alt="Slide 6 — Solution Overview" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 7 — How The System Works">
-            <img src="HowWorks.png" alt="Slide 7 — How The System Works" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 8 — Before and After">
-            <img src="BeforeAfter.png" alt="Slide 8 — Before and After" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 9 — Business Impact">
-            <img src="BusinessImpact.png" alt="Slide 9 — Business Impact" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 10 — Why AI">
-            <img src="WhyAI.png" alt="Slide 10 — Why AI" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 11 — Skills Demonstrated">
-            <img src="SkillsDemo.png" alt="Slide 11 — Skills Demonstrated" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 12 — Roadmap">
-            <img src="Roadmap.png" alt="Slide 12 — Roadmap" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 13 — Sample Output Retire">
-            <img src="OutputRetire.png" alt="Slide 13 — Sample Output Retire" />
-          </div>
-          <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 14 — Sample Output Retain">
-            <img src="OutputRetain.png" alt="Slide 14 — Sample Output Retain" />
+          <div>
+            <strong style="color:var(--nav-bg);">Executive dashboard</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">At-Risk Apps, Portfolio TCO, Pending Decisions, and Cycle Accuracy KPIs. Real-time multi-select filters by Lifecycle, AI Recommendation, and Business Unit. Full application table with AI recommendations and status for the current rationalization cycle.</p>
           </div>
         </div>
 
-        <button class="carousel-control prev" aria-label="Previous slide" id="prevBtn">‹</button>
-        <button class="carousel-control next" aria-label="Next slide" id="nextBtn">›</button>
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--nav-bg);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">Screen 2</div>
+            <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">AI Analysis &amp; Signals</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">Full explainability for every recommendation</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">Select any application to see the complete signal breakdown: Incident Trend, Duplicate Functionality, Technical Debt Index, Lifecycle Status, 12-Month Incident Volume, Stability Inverse, and Replacement Candidate Exists &mdash; each scored 0&ndash;100 with a severity badge. Jagged Frontier position (Inside means strong AI reliability, Edge means the APM should validate carefully, Outside means the APM must exercise independent judgment) tells the APM how much to trust the AI output. A plain-English &ldquo;Why this recommendation?&rdquo; panel makes the reasoning accessible to non-technical stakeholders.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--nav-bg);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">Screen 3</div>
+            <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">Validation Queue</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">The APM's primary workspace</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">All pending recommendations requiring human review in the current cycle. Three decision actions: Approve, Override (requires mandatory written rationale &mdash; a deliberate governance control that forces the APM to articulate their reasoning and creates accountability for future model improvement), or Escalate to CIO. Recommendation Drift Alerts flag applications where the AI recommendation changed since the previous cycle.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--nav-bg);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">Screen 4</div>
+            <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">Decision Audit Log</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">The accountability mechanism</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">A complete record of every governance decision: application name, decision type, AI recommendation at time of review, reviewer identity, timestamp, written rationale, and confidence score. Override rate analysis flags data quality issues or scoring inconsistencies that may require investigation. In production, entries persist to a database and are exportable for compliance reporting.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--nav-bg);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">Screen 5</div>
+            <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">Governance Dashboard</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">Portfolio-level analytics for senior stakeholders</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">Cycle KPIs: total decisions, approval rate, override rate, escalation rate, and cycle accuracy vs. historical benchmarks. Recommendation distribution across Retain / Modernize / Retire / Replace / Evaluate. Frontier Analysis chart showing AI model reliability distribution across the portfolio.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;background:white;border:2px solid var(--primary);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--primary);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">Screen 6</div>
+            <div style="font-size:0.75rem;opacity:0.9;margin-top:2px;">Semantic CMDB Search</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">AI-powered conversational search &mdash; access key required</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">Natural language queries against the full portfolio dataset, powered by the Claude API via context stuffing &mdash; a deliberate architectural choice for explainability at current scale. 20-query session limit with visible quota counter. Password-gated access controls API costs. Eight suggested prompts guide users to high-value queries: cost of all end-of-life apps, dependency risk of retiring a specific application, comparative modernization priority between two systems.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Technical Architecture -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Technical Architecture</h2>
+      <p style="margin-top:14px;">Every architectural decision was deliberate, with a documented rationale for when and why it would change at scale.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:18px;">
+
+        <div class="card" style="padding:20px;">
+          <h3>Stack</h3>
+          <ul>
+            <li><strong>Python + Streamlit</strong> &mdash; rapid full-stack deployment without a separate frontend</li>
+            <li><strong>Anthropic Claude API</strong> (claude-sonnet) &mdash; conversational semantic search on Screen 6</li>
+            <li><strong>ServiceNow REST API</strong> &mdash; live CMDB data with graceful CSV fallback</li>
+            <li><strong>GitHub + Streamlit Community Cloud</strong> &mdash; production deployment, CI/CD via git push</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Deliberate Choices</h3>
+          <ul>
+            <li><strong>Context stuffing over vector DB:</strong> At 15-application demo scale, stuffing the full portfolio into the Claude context window is faster, more transparent, and easier to debug than a retrieval pipeline. The roadmap documents when pgvector on Postgres becomes the right call.</li>
+            <li><strong>Direct Claude API over LangChain:</strong> LangChain abstracts away the reasoning I need to show interviewers. Direct API calls are transparent and controllable.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Data Architecture</h3>
+          <ul>
+            <li>Five CSV files representing a 15-application enterprise portfolio: application inventory, dependency relationships, security vulnerability records, business capability mappings, 12-month incident summary</li>
+            <li>Auto-detection at startup: live ServiceNow PDI if credentials present, silent CSV fallback if not</li>
+            <li>Data mode indicator in sidebar &mdash; users always know their data source</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Governance Controls</h3>
+          <ul>
+            <li>Per-session API query limit (20 queries) with visible countdown</li>
+            <li>Password-gated Screen 6 &mdash; session-scoped authentication</li>
+            <li>Mandatory written rationale for every override decision</li>
+            <li>Recommendation change detection across rationalization cycles</li>
+            <li>Full audit log with reviewer identity stamped on every decision</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 24-Month Roadmap -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">24-Month Product Roadmap</h2>
+      <p style="margin-top:14px;">A 0&rarr;500 customer scaling strategy with four deliberate phase gates, each unlocked only when the previous phase's key question is answered with paying customers, not assumptions.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px;">
+
+        <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;">
+          <div style="background:var(--nav-bg);color:white;padding:12px 16px;">
+            <div style="font-size:0.75rem;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;">Phase 1 &middot; Months 1&ndash;4</div>
+            <div style="font-weight:700;margin-top:2px;">Validate</div>
+            <div style="font-size:0.8rem;opacity:0.8;">3 design partners</div>
+          </div>
+          <div style="padding:14px 16px;background:white;">
+            <p style="font-size:0.85rem;margin:0;">User auth, multi-user sessions, decision persistence, prompt A/B testing, Postgres for audit log persistence, CSV import for customer portfolio data. <strong>Key question: Will they pay?</strong></p>
+          </div>
+        </div>
+
+        <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;">
+          <div style="background:var(--nav-bg-2);color:white;padding:12px 16px;">
+            <div style="font-size:0.75rem;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;">Phase 2 &middot; Months 5&ndash;10</div>
+            <div style="font-weight:700;margin-top:2px;">Launch</div>
+            <div style="font-size:0.8rem;opacity:0.8;">10 paying customers</div>
+          </div>
+          <div style="padding:14px 16px;background:white;">
+            <p style="font-size:0.85rem;margin:0;">Self-serve onboarding, tiered pricing (Starter / Growth / Enterprise), LangChain for large portfolios, pgvector, model routing &mdash; cheap models for simple queries, Claude for complex reasoning. ServiceNow partner ecosystem outreach. <strong>Key question: Can we retain them?</strong></p>
+          </div>
+        </div>
+
+        <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;">
+          <div style="background:#1a4a7a;color:white;padding:12px 16px;">
+            <div style="font-size:0.75rem;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;">Phase 3 &middot; Months 11&ndash;18</div>
+            <div style="font-weight:700;margin-top:2px;">Scale</div>
+            <div style="font-size:0.8rem;opacity:0.8;">50 customers</div>
+          </div>
+          <div style="padding:14px 16px;background:white;">
+            <p style="font-size:0.85rem;margin:0;">LangGraph agentic layer (reads and writes to ServiceNow autonomously), drift detection v2, fine-tuned model on anonymized customer data, SOC 2 Type II, SSO/SAML, LangSmith for AI observability. <strong>Key question: Can we grow without me?</strong></p>
+          </div>
+        </div>
+
+        <div style="border-radius:10px;border:1px solid rgba(0,170,255,0.30);overflow:hidden;">
+          <div style="background:var(--primary);color:white;padding:12px 16px;">
+            <div style="font-size:0.75rem;opacity:0.85;text-transform:uppercase;letter-spacing:0.5px;">Phase 4 &middot; Months 19&ndash;24</div>
+            <div style="font-weight:700;margin-top:2px;">Expand</div>
+            <div style="font-size:0.8rem;opacity:0.9;">200&ndash;500 customers</div>
+          </div>
+          <div style="padding:14px 16px;background:white;">
+            <p style="font-size:0.85rem;margin:0;">Full agentic cycle management, proprietary model trained on anonymized customer data, adjacent markets (cloud cost governance, vendor rationalization, tech debt management), multi-region deployment, Series A or acquisition. <strong>Key question: Platform or exit?</strong></p>
+          </div>
+        </div>
+
       </div>
 
-      <div class="carousel-dots" id="carouselDots" aria-hidden="false"></div>
-    </div>
-  </main>
+      <p style="margin-top:16px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 6px 6px 0;">
+        <strong style="color:var(--nav-bg);">The ServiceNow bet:</strong> ServiceNow's APM module is expensive and complex. Their mid-market customers, companies with 50 to 500 applications, are underserved. A lightweight, AI-native alternative that integrates with ServiceNow rather than replacing it is a wedge, not a threat. This positions the product for acquisition by ServiceNow or a major SI partner.
+      </p>
+    </section>
 
-  <!-- Footer -->
-  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <strong>Kenneth R. Turner</strong>
-        <div style="opacity:0.9">PMP certified Technical Product Manager</div>
-        <div style="margin-top:8px"><a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a></div>
+    <!-- Artifacts -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Artifacts Produced</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:18px;">
+        <div class="card" style="padding:18px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:8px;">&#x1F680;</div>
+          <strong style="color:var(--nav-bg);">Live Application</strong>
+          <p style="font-size:0.88rem;margin-top:6px;">Fully deployed on Streamlit Community Cloud. Open in any browser, no install required.</p>
+          <a href="https://ai-app-advisor.streamlit.app" class="btn" style="margin-top:10px;font-size:0.85rem;" target="_blank" rel="noopener noreferrer">Open App</a>
+        </div>
+        <div class="card" style="padding:18px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:8px;">&#x1F4C4;</div>
+          <strong style="color:var(--nav-bg);">User Guide</strong>
+          <p style="font-size:0.88rem;margin-top:6px;">11-page reference covering all 6 screens, the governance model, data sources, and FAQ.</p>
+          <a href="AI_Portfolio_Advisor_User_Guide.pdf" class="btn btn-outline" style="margin-top:10px;font-size:0.85rem;" target="_blank" rel="noopener noreferrer">View Guide</a>
+        </div>
+        <div class="card" style="padding:18px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:8px;">&#x1F4CA;</div>
+          <strong style="color:var(--nav-bg);">24-Month Roadmap</strong>
+          <p style="font-size:0.88rem;margin-top:6px;">Four-phase 0&rarr;500 customer scaling strategy with phase gates, revenue targets, and build vs. buy decisions.</p>
+          <a href="AI_Portfolio_Advisor_Roadmap.pdf" class="btn btn-outline" style="margin-top:10px;font-size:0.85rem;" target="_blank" rel="noopener noreferrer">View Roadmap</a>
+        </div>
+        <div class="card" style="padding:18px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:8px;">&#x1F4BB;</div>
+          <strong style="color:var(--nav-bg);">GitHub Repository</strong>
+          <p style="font-size:0.88rem;margin-top:6px;">Full source code with documented architecture decisions and deployment configuration.</p>
+          <a href="https://github.com/kjturner56/ai-app-rationalization-advisor" class="btn btn-outline" style="margin-top:10px;font-size:0.85rem;" target="_blank" rel="noopener noreferrer">View Repo</a>
+        </div>
       </div>
-      <div class="footer-right">
-        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="footer-btn" href="../products.html">Back to AI Works</a>
-      </div>
-      <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Carousel behavior script -->
-  <script>
-    const navToggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
 
-    navToggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-      navToggle.classList.toggle("open");
-    });
+  </div><!-- /container -->
+</main>
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-    (function(){
-      const track = document.querySelector('#genaiCarousel .carousel-track');
-      const slides = Array.from(track.children);
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const dotsContainer = document.getElementById('carouselDots');
+<script src="../js/portfolio.js"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML  = Portfolio.buildNav(d, 'products.html');
+    document.getElementById('site-footer').innerHTML   = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+  })();
 
-      let index = 0;
-      const slideCount = slides.length;
-      let startX = 0;
-      let isDragging = false;
-      let dragDelta = 0;
+</script>
 
-      slides.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-        dot.addEventListener('click', () => goTo(i));
-        dotsContainer.appendChild(dot);
-      });
-
-      const dots = Array.from(dotsContainer.children);
-
-      function update(){
-        slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
-        dots.forEach((d, i) => d.classList.toggle('active', i === index));
-      }
-
-      function goTo(i){ index = (i + slideCount) % slideCount; update(); }
-
-      nextBtn.addEventListener('click', () => goTo(index + 1));
-      prevBtn.addEventListener('click', () => goTo(index - 1));
-
-      document.addEventListener('keydown', (e) => {
-        if(e.key === 'ArrowRight') goTo(index + 1);
-        if(e.key === 'ArrowLeft') goTo(index - 1);
-      });
-
-      const carouselEl = document.getElementById('genaiCarousel');
-      carouselEl.addEventListener('touchstart', (e) => {
-        isDragging = true;
-        startX = e.touches[0].clientX;
-      });
-      carouselEl.addEventListener('touchmove', (e) => {
-        if(!isDragging) return;
-        dragDelta = e.touches[0].clientX - startX;
-      });
-      carouselEl.addEventListener('touchend', () => {
-        isDragging = false;
-        if (dragDelta > 50) goTo(index - 1);
-        else if (dragDelta < -50) goTo(index + 1);
-        dragDelta = 0;
-      });
-
-      window.addEventListener('resize', update);
-      update();
-    })();
-  </script>
 </body>
 </html>

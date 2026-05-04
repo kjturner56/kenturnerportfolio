@@ -3,262 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kenneth R. Turner | Projects</title>
+  <title>Kenneth R. Turner | Experience</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body>
-  <!-- Header -->
-  <header class="banner" role="banner">
-    <div class="container banner-inner">
-      <div class="banner-left">
-        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
 
-        <!-- Hamburger button -->
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+<body data-depth="0">
 
-      <!-- Navigation -->
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">Background</a>
-        <a href="projects.html" class="active">Experience</a>
-        <a href="products.html">AI Work</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
 
-      <div class="banner-center" aria-hidden="true">
-        <h2>Technical Product Manager</h2>
-        <h3>Enterprise AI and Decision-Support Platforms</h3>
-      </div>
+<main>
+  <section class="section">
+    <div class="container">
+      <h2>Selected Enterprise Projects</h2>
+      <p>A selection of platforms I have owned and delivered, each focused on
+         improving how leadership makes decisions around application investment,
+         modernization, and risk.</p>
+      <div class="card-grid" id="project-cards"></div>
     </div>
-    <div class="banner-divider" aria-hidden="true"></div>
-  </header>
+  </section>
+</main>
 
-  <!-- Main Content -->
-  <main>
-    <section class="section projects-section">
-      <div class="container">
-        <h2>Selected Enterprise Projects</h2>
-        <p class="projects-overview">
-          This section highlights enterprise platforms I have owned and delivered across application portfolio management, modernization planning, and operational decision-support.
-          These initiatives focus on structuring fragmented data, workflows, and governance into systems that enable consistent, data-informed decisions around cost, risk, and investment priorities.
-          I apply AI within these environments to enhance decision quality, using approaches such as semantic search and retrieval-augmented generation while maintaining transparency, validation, and human accountability.
-        </p>
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-        <div class="card-grid">
+<script src="/js/portfolio.js"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'projects.html');
+    document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
+    document.getElementById('project-cards').innerHTML =
+      Portfolio.buildProjectCards(d.enterpriseProjects);
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+  })();
+</script>
 
-          <!-- AMS Health Analyzer -->
-          <div class="card project-card">
-            <h3>Predictive Maintenance Platform (AMS Health Analyzer)</h3>
-
-            <p><strong>Objective:</strong> Enable proactive maintenance decisions by operationalizing predictive analytics to reduce equipment downtime and improve asset reliability.</p>
-
-            <p><strong>Role:</strong> Product Owner, Predictive Maintenance Platform</p>
-
-            <ul>
-              <li>Defined product use cases, success metrics, and stakeholder workflows for predictive maintenance.</li>
-              <li>Owned delivery of the platform, aligning vendor capabilities with enterprise requirements, cloud architecture, and security standards.</li>
-              <li>Designed data collection and usage workflows to ensure consistent ingestion of asset vibration data.</li>
-              <li>Established adoption model, including onboarding, training, and governance to drive consistent usage.</li>
-              <li>Delivered a production-ready platform used by engineers to monitor asset health and improve uptime.</li>
-              <li>Validated business value by enabling early issue detection and avoiding unnecessary software spend.</li>
-            </ul>
-
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> earlier detection of equipment risks<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> standardized data collection and usage<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> enabled proactive maintenance workflows<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> reduced downtime and avoided wasted software investment
-            </p>
-          </div>
-
-          <!-- Knowledge DB Replacement -->
-          <div class="card project-card">
-            <h3>Enterprise Knowledge Platform (Lotus Notes to SharePoint)</h3>
-
-            <p><strong>Objective:</strong> Enable reliable access to critical engineering knowledge by modernizing and standardizing enterprise documentation workflows.</p>
-
-            <p><strong>Role:</strong> Product Owner, Enterprise Knowledge Platform</p>
-
-            <ul>
-              <li>Defined product vision, user workflows, and success metrics for enterprise knowledge management.</li>
-              <li>Evaluated platform options and selected SharePoint to align with enterprise architecture and cost constraints.</li>
-              <li>Designed phased rollout strategy to validate adoption, reduce risk, and ensure continuity of critical knowledge.</li>
-              <li>Structured data migration approach, including extraction, cleansing, and organization of legacy content.</li>
-              <li>Established adoption model with training, governance, and usage standards to drive long-term sustainability.</li>
-              <li>Delivered a modern knowledge platform that preserved institutional knowledge and improved accessibility for engineering teams.</li>
-            </ul>
-
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> ensured access to validated engineering procedures<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> standardized and reliable knowledge base<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> enabled efficient knowledge retrieval and onboarding<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> leveraged existing enterprise platform, avoiding new tooling
-            </p>
-          </div>
-
-          <!-- SharePoint 2007 Tech Debt Upgrade -->
-          <div class="card project-card">
-            <h3>Enterprise Collaboration Platform Modernization (SharePoint Upgrade)</h3>
-
-            <p><strong>Objective:</strong> Ensure reliability, scalability, and security of enterprise collaboration by modernizing a legacy platform and addressing accumulated technical debt.</p>
-
-            <p><strong>Role:</strong> Product Owner, Enterprise Collaboration Platform</p>
-
-            <ul>
-              <li>Defined success criteria and business impact of platform modernization, aligning stakeholders on risk, performance, and continuity requirements.</li>
-              <li>Designed transition strategy to minimize disruption while ensuring data integrity and system reliability.</li>
-              <li>Established risk management approach, proactively identifying issues and adjusting release timing to prevent downstream impact.</li>
-              <li>Maintained stakeholder alignment across engineering and business teams throughout the transition.</li>
-              <li>Delivered a stable, secure platform upgrade with zero data loss, improving system resilience and supporting future scalability.</li>
-            </ul>
-
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> reduced operational and security risks<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> improved platform stability and reliability<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> ensured controlled, risk-managed transition<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> avoided full platform replacement, extending system value
-            </p>
-          </div>
-
-          <!-- Document Data Quality Improvement -->
-          <div class="card project-card">
-            <h3>Enterprise Data Quality & Governance Improvement</h3>
-
-            <p><strong>Objective:</strong> Improve decision reliability and productivity by resolving systemic data quality issues in enterprise knowledge systems.</p>
-
-            <p><strong>Role:</strong> Product Owner, Data Quality & Governance</p>
-
-            <ul>
-              <li>Identified data quality gaps impacting searchability, usability, and decision-making across enterprise documentation.</li>
-              <li>Defined data governance model, including ownership, validation workflows, and quality standards.</li>
-              <li>Designed and executed structured data remediation process, engaging domain owners to validate and correct metadata.</li>
-              <li>Implemented governance practices to ensure ongoing data quality and prevent regression.</li>
-              <li>Restored trust in enterprise data, improving productivity and enabling more reliable downstream decision-making.</li>
-            </ul>
-
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> reduced risk from incorrect or outdated information<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> improved accuracy and consistency of metadata<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> removed workflow inefficiencies and search friction<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> leveraged existing systems, avoiding rework and delays
-            </p>
-          </div>
-
-          <!-- Process Improvement – Agile Implementation -->
-          <div class="card project-card">
-            <h3>Product Delivery Model (Agile Implementation)</h3>
-
-            <p><strong>Objective:</strong> Improve product delivery predictability and alignment by establishing a structured operating model for development teams.</p>
-
-            <p><strong>Role:</strong> Product Owner, Delivery Model & Execution Framework</p>
-
-            <ul>
-              <li>Defined delivery framework, including backlog structure, prioritization model, and stakeholder engagement approach.</li>
-              <li>Established consistent workflows for translating business needs into actionable product increments.</li>
-              <li>Aligned distributed teams around shared execution model to improve transparency and coordination.</li>
-              <li>Enabled predictable delivery cadence and improved alignment between business priorities and engineering execution.</li>
-            </ul>
-
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> clarified ownership and accountability<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> improved consistency of delivered features<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> predictable and transparent execution cadence<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> reduced inefficiencies from unstructured delivery
-            </p>
-          </div>
-
-          <!-- Application Portfolio Management Dashboard -->
-          <div class="card project-card">
-            <h3>Application Portfolio Decision Platform</h3>
-
-            <p><strong>Objective:</strong> Enable enterprise leadership to make consistent, data-driven decisions on application investment, modernization, and risk.</p>
-
-            <p><strong>Role:</strong> Product Owner, Enterprise Decision-Support Platform</p>
-
-            <ul>
-              <li>Defined product vision, decision framework, and success metrics for application portfolio management.</li>
-              <li>Structured data model across 200+ applications, including health, cost, risk, and cloud readiness.</li>
-              <li>Designed decision workflows supporting retain, retire, modernize, and consolidate strategies.</li>
-              <li>Delivered executive platform used in quarterly portfolio reviews with CIO and business leaders.</li>
-              <li>Enabled consistent, repeatable decision-making, reducing legacy footprint and improving investment allocation.</li>
-            </ul>
-
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> identified high-risk applications early<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> improved decision consistency and prioritization<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> enabled predictable portfolio planning cycles<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> reduced legacy spend and optimized investment allocation
-            </p>
-          </div>
-
-          <!-- PMO Office -->
-          <div class="card project-card">
-            <h3>Portfolio Planning & Intake Platform</h3>
-
-            <p><strong>Objective:</strong> Enable structured intake, prioritization, and visibility of enterprise initiatives to support investment and resource decisions.</p>
-
-            <p><strong>Role:</strong> Product Owner, Portfolio Planning Platform</p>
-
-            <ul>
-              <li>Defined intake, prioritization, and workflow model for evaluating and approving initiatives.</li>
-              <li>Designed system to align project demand with strategic priorities and resource capacity.</li>
-              <li>Delivered platform enabling leadership visibility into pipeline, risks, and dependencies.</li>
-              <li>Established standardized workflows improving decision consistency and execution transparency.</li>
-            </ul>
-
-            <p><strong>SQDC:</strong><br>
-              <span style="color:#D4AF37; font-weight:bold;">Safety:</span> surfaced initiative and resource risks early<br>
-              <span style="color:#D4AF37; font-weight:bold;">Quality:</span> improved alignment with strategic priorities<br>
-              <span style="color:#D4AF37; font-weight:bold;">Delivery:</span> streamlined intake and approval workflows<br>
-              <span style="color:#D4AF37; font-weight:bold;">Cost:</span> optimized resource allocation and avoided redundant efforts
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Role Intent Line -->
-  <div class="role-intent">
-    I focus on product roles where enterprise platforms, data, and AI come together to improve decision-making, planning, and operational workflows at scale.
-  </div>
-
-  <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <strong>Kenneth R. Turner</strong>
-        <div style="opacity:0.9">PMP Certified Technical Product Manager</div>
-        <div style="margin-top:8px; font-size:0.95rem">
-          <a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a>
-        </div>
-      </div>
-
-      <div class="footer-right">
-        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-
-      <p>© <span id="year"></span> Kenneth R. Turner | Projects & AI Innovation</p>
-    </div>
-  </footer>
-
-  <script>
-    const navToggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
-
-    navToggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-      navToggle.classList.toggle("open");
-    });
-
-    // Optional: set year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

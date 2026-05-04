@@ -3,247 +3,116 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="AI Benefits Cost & Utilization Analyzer by Kenneth R. Turner demonstrates how AI can bring insight to benefits data. Local prototype with Open Data, Bronze-level datasets ingested, and predictive model planning in progress.">
-  <title>AI Benefits Cost & Utilization Analyzer | Kenneth R. Turner</title>
-
-  <!-- Main styles (site-wide) -->
+  <title>AI Benefits Cost &amp; Utilization Analyzer | Kenneth R. Turner</title>
   <link rel="stylesheet" href="../css/style.css" />
-  <!-- Project-specific styles -->
-  <link rel="stylesheet" href="../css/projects.css" />
-
-  <style>
-    /* Carousel specific styles */
-    .carousel-wrapper{
-      max-width:980px;
-      margin:20px auto 6px;
-      position:relative;
-      --control-size:48px;
-    }
-
-    .carousel {
-      overflow:hidden;
-      border-radius:10px;
-      background:#fff;
-      box-shadow:0 8px 24px rgba(11,30,61,0.06);
-      position:relative;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 320ms cubic-bezier(.22,.9,.3,1);
-      will-change: transform;
-      position: relative;
-    }
-
-    .carousel-slide {
-      min-width: 100%;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      user-select: none;
-      opacity: 0;
-      transition: opacity 500ms ease-in-out;
-    }
-
-    .carousel-slide.active { opacity: 1; }
-
-    .carousel-slide img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-    }
-
-    .carousel-control{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      width:var(--control-size);
-      height:var(--control-size);
-      border-radius:50%;
-      border:none;
-      background:rgba(11,30,61,0.72);
-      color:#fff;
-      font-size:1.25rem;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      box-shadow:0 6px 18px rgba(11,30,61,0.12);
-    }
-
-    .carousel-control:hover{ background:rgba(0,170,255,0.86) }
-    .carousel-control.prev{ left:12px }
-    .carousel-control.next{ right:12px }
-
-    .carousel-dots{
-      display:flex;
-      gap:8px;
-      justify-content:center;
-      margin-top:12px;
-    }
-
-    .carousel-dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:rgba(11,30,61,0.12);
-      cursor:pointer;
-      border:1px solid rgba(11,30,61,0.06);
-    }
-
-    .carousel-dot.active{ background:var(--primary); box-shadow:0 4px 10px rgba(0,170,255,0.12); }
-
-    @media (max-width:768px){
-      .carousel-wrapper{ padding:0 8px }
-      .carousel-control{ --control-size:40px; width:40px; height:40px; font-size:1rem }
-    }
-
-    /* Highlight box for Open Data */
-    .highlight-box {
-      background-color: #e0f7ff;
-      border-left: 4px solid #00aaff;
-      padding: 12px 16px;
-      margin: 12px 0;
-      border-radius: 4px;
-    }
-  </style>
 </head>
-<body>
-  <!-- Header -->
-  <header class="banner" role="banner">
-    <div class="container banner-inner">
-      <div class="banner-left">
-        <div class="site-title"><h1>Kenneth R. Turner</h1></div>
 
-        <!-- Hamburger button -->
-        <button class="nav-toggle" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+<body data-depth="1">
+
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
+
+<main>
+  <section class="project-summary container" style="padding-top:22px;">
+
+    <div class="summary-section" style="margin-bottom:18px;">
+      <h2>Executive Summary</h2>
+      <p>
+        Employee benefit programs are one of the largest controllable expenses
+        for insurers and employers. Organizations often struggle to understand
+        cost drivers or optimize plan performance because data is fragmented
+        across HR systems, finance databases, and third-party reports.
+      </p>
+      <p>
+        The AI Benefits Cost &amp; Utilization Analyzer is an early-stage prototype
+        exploring how predictive analytics, semantic search, and conversational AI
+        could bring structure and actionable insight to this challenge. It operates
+        within a local environment using open data sources and Bronze-level ingested
+        datasets, enabling safe testing and early experimentation.
+      </p>
+
+      <h3 style="margin-top:12px;">Overview</h3>
+      <p>
+        By combining structured and unstructured datasets in a local Data Lakehouse,
+        the prototype provides early visibility into utilization patterns, emerging
+        cost drivers, and potential areas for savings. The architecture uses MinIO,
+        Apache Spark, Project Nessie, and Dremio to build a foundation that scales
+        toward production data pipelines.
+      </p>
+
+      <div style="background:rgba(0,170,255,0.05);border:1px solid rgba(0,170,255,0.18);border-radius:8px;padding:14px 16px;margin:16px 0;">
+        <strong>Open Data:</strong> All datasets used in this prototype are publicly
+        available, ensuring transparency, privacy, and reproducibility.
       </div>
 
-      <!-- Navigation -->
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="/index.html">Home</a>
-        <a href="/about.html">Background</a>
-        <a href="/projects.html">Experience</a>
-        <a href="/products.html" class="active">AI Work</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
+      <h3 style="margin-top:12px;">Planned Capabilities</h3>
+      <ul>
+        <li><strong>Predictive analytics:</strong> Forecast trends using historical claims, demographics, and seasonality</li>
+        <li><strong>Computer vision:</strong> Extract data from claim and invoice images</li>
+        <li><strong>Semantic search:</strong> Natural-language queries across benefit datasets</li>
+        <li><strong>Conversational analytics:</strong> Chatbot interface for benefits exploration</li>
+        <li><strong>Generative reporting:</strong> Executive summaries with charts and insights</li>
+      </ul>
 
-      <div class="banner-center" aria-hidden="true">
-        <h2>AI Benefits Cost & Utilization Analyzer</h2>
-        <h3>AI insights for benefits cost and utilization</h3>
-      </div>
+      <h3 style="margin-top:12px;">Target Users</h3>
+      <ul>
+        <li>HR analytics and benefits teams seeking faster insight into cost drivers</li>
+        <li>Insurance finance analysts tracking utilization trends</li>
+        <li>Data science teams supporting benefits management</li>
+        <li>Executives responsible for cost optimization and plan design</li>
+      </ul>
+
+      <h3 style="margin-top:12px;">Business Value</h3>
+      <ul>
+        <li>Improved cost visibility and forecasting accuracy</li>
+        <li>Reduced manual data preparation and reporting effort</li>
+        <li>Earlier identification of underutilized plans and cost-saving opportunities</li>
+        <li>Data-driven foundation for benefits design and risk management decisions</li>
+      </ul>
+
+      <h3>Technology Overview</h3>
+      <p>
+        The prototype uses open data integrated into a local Data Lakehouse built
+        with MinIO, Apache Spark, Dremio, and Project Nessie. Bronze-level datasets
+        are ingested for profiling and experimentation. Predictive AI, computer vision,
+        and conversational interfaces are planned for future development phases.
+      </p>
+
+      <h3 style="margin-top:12px;">Current Status</h3>
+      <p>
+        Local Data Lakehouse environment installed. Bronze-level datasets ingested
+        and initially profiled. Development of predictive AI, computer vision, and
+        generative reporting is in planning.
+      </p>
+
+      <h3 style="margin-top:12px;">Roadmap</h3>
+      <ul>
+        <li>Phase 2: Expand chatbot capabilities and add automated reporting</li>
+        <li>Phase 3: Integrate with enterprise systems including Workday and SAP SuccessFactors</li>
+        <li>Phase 4: Extend predictive models to underwriting and claims automation</li>
+        <li>Phase 5: Enterprise dashboard for real-time analytics and governance metrics</li>
+      </ul>
     </div>
-    <div class="banner-divider" aria-hidden="true"></div>
-  </header>
 
-  <main>
-    <section class="project-summary container" style="padding-top:22px;">
-      <!-- Executive Summary -->
-      <div class="summary-section" style="margin-bottom:18px;">
-        <h2>Executive Summary</h2>
-        <p>
-          Employee benefit programs are one of the largest controllable expenses for insurers and employers. Organizations often struggle to understand cost drivers or optimize plan performance because data is fragmented across HR systems, finance databases, and third-party reports.
-        </p>
-        <p>
-          The AI Benefits Cost & Utilization Analyzer prototype demonstrates how Predictive AI, Semantic Search, Computer Vision, and Conversational AI *could* bring structure and actionable insight to this challenge. The prototype operates within a local environment using <strong>Open Data sources</strong> and Bronze-level ingested datasets, enabling safe testing and early experimentation.
-        </p>
+  </section>
+</main>
 
-        <h3 style="margin-top:12px;">Overview</h3>
-        <p>
-          By combining structured and unstructured datasets in a local Data Lakehouse, the prototype provides visibility into utilization patterns, emerging cost drivers, and potential areas for savings. This approach gives teams hands-on experience with modern data tools including MinIO, Apache Spark, Project Nessie, and Dremio.
-        </p>
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-        <div class="highlight-box">
-          <strong>Open Data:</strong> All datasets used in this prototype are publicly available Open Data, ensuring transparency, privacy, and reproducibility.
-        </div>
+<script src="../js/portfolio.js"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML  = Portfolio.buildNav(d, 'products.html');
+    document.getElementById('site-footer').innerHTML   = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+  })();
+</script>
 
-        <h3 style="margin-top:12px;">Key Features (Planned)</h3>
-        <ul>
-          <li>Predictive AI: Forecast trends using historical claims, demographics, and seasonality</li>
-          <li>Computer Vision: Extract data from claim and invoice images</li>
-          <li>Semantic Search: Natural-language queries across benefit datasets</li>
-          <li>Conversational Analytics: Chatbot interface for benefits exploration</li>
-          <li>Generative Reporting: Produce executive summaries with charts and insights</li>
-        </ul>
-
-        <h3 style="margin-top:12px;">Target Users</h3>
-        <ul>
-          <li>HR analytics and benefits teams seeking quick insights</li>
-          <li>Insurance finance analysts tracking cost drivers</li>
-          <li>Data science teams supporting benefits management</li>
-          <li>Executives responsible for cost optimization and plan design</li>
-        </ul>
-
-        <h3 style="margin-top:12px;">Business Value</h3>
-        <ul>
-          <li>Improve cost visibility and forecasting accuracy</li>
-          <li>Reduce manual data preparation and reporting effort</li>
-          <li>Identify underutilized plans and cost-saving opportunities</li>
-          <li>Enable data-driven decision-making for benefits design and risk management</li>
-        </ul>
-
-        <h3>Technology Overview</h3>
-        <p>
-          The prototype leverages Open Data integrated into a local Data Lakehouse environment built with MinIO, Apache Spark, Dremio, and Project Nessie. Bronze-level datasets are ingested for profiling and experimentation. Predictive AI, Computer Vision, Streamlit interface, and Conversational AI are planned for future development.
-        </p>
-
-        <h3 style="margin-top:12px;">Current Status</h3>
-        <p>
-          Local Data Lakehouse environment installed. Bronze-level datasets ingested and initially profiled. Development of predictive AI, computer vision, and generative reporting is in planning.
-        </p>
-
-        <h3 style="margin-top:12px;">MVP Scope (Planned)</h3>
-        <ul>
-          <li>Local prototype demonstrating cost and utilization forecasting</li>
-          <li>Claims image extraction using Computer Vision</li>
-          <li>Natural-language query testing through chatbot interface</li>
-          <li>Generative executive summary output</li>
-        </ul>
-
-        <h3 style="margin-top:12px;">Roadmap (Future Enhancements)</h3>
-        <ul>
-          <li>Phase 2: Expand chatbot and add automated reporting features</li>
-          <li>Phase 3: Integrate with enterprise systems like Workday and SAP SuccessFactors</li>
-          <li>Phase 4: Extend predictive models to underwriting and claims automation</li>
-          <li>Phase 5: Develop enterprise dashboard for real-time analytics and governance metrics</li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <strong>Kenneth R. Turner</strong>
-        <div style="opacity:0.9">PMP certified Technical Product Manager</div>
-        <div style="margin-top:8px"><a href="mailto:kturner@kenturnerportfolio.com">kturner@kenturnerportfolio.com</a></div>
-      </div>
-      <div class="footer-right">
-        <a class="footer-btn" href="https://www.linkedin.com/in/kennethrturner" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="footer-btn" href="../products.html">Back to Products</a>
-      </div>
-      <p>© <span id="year"></span> Kenneth R. Turner | Product Management & AI Innovation</p>
-    </div>
-  </footer>
-
-  <script>
-    const navToggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
-
-    navToggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-      navToggle.classList.toggle("open");
-    });
-
-    // Set current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
