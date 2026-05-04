@@ -38,7 +38,7 @@
       "title": "AI Portfolio Rationalization Advisor",
       "subtitle": "A fully deployed Streamlit application demonstrating enterprise AI governance in action.",
       "liveUrl": "https://ai-app-advisor.streamlit.app",
-      "githubRepo": "kjturner56/ai-app-rationalization-advisor",
+      "githubRepo": null,
       "caseStudyUrl": "/Product1/genai-advisor.html",
       "image": "/images/GenAI_Advisor.png",
       "imageAlt": "AI Portfolio Rationalization Advisor dashboard screenshot",
