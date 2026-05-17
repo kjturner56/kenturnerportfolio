@@ -42,14 +42,7 @@
       "caseStudyUrl": "/Product1/genai-advisor.html",
       "image": "/images/GenAI_Advisor.png",
       "imageAlt": "AI Portfolio Rationalization Advisor dashboard screenshot",
-      "tags": [
-        "Claude API",
-        "Python",
-        "Streamlit",
-        "ServiceNow REST API",
-        "GitHub",
-        "Streamlit Cloud"
-      ],
+      "tags": ["Claude API", "Python", "Streamlit", "ServiceNow REST API", "GitHub", "Streamlit Cloud"],
       "summary": "A fully deployed, 6-screen Streamlit application demonstrating a Centaur governance model for enterprise application portfolio rationalization. Built to show AI product thinking beyond a simple chatbot, with governance, explainability, cost management, and human oversight built into the workflow.",
       "capabilities": [
         "Explainable AI recommendation engine with 7-signal scoring",
@@ -70,8 +63,41 @@
       "architectureNote": "Deliberate choices: context stuffing over vector DB for explainability at current scale; direct Claude API over LangChain for transparency and control. Roadmap documents exactly when and why each would change at scale.",
       "businessValue": [
         "Demonstrates AI product thinking beyond output generation, with governance, explainability, and human oversight built into every workflow",
-        "Includes 0\u2192500 customer productization roadmap showing scaling strategy",
+        "Includes 0→500 customer productization roadmap showing scaling strategy",
         "End-to-end delivery in a single weekend proves execution speed and technical depth"
+      ]
+    },
+    {
+      "id": "ai-security-triage-dashboard",
+      "featured": true,
+      "status": "live",
+      "title": "AI Security Triage Dashboard",
+      "subtitle": "Enterprise threat and vulnerability decision-support with human-in-the-loop governance.",
+      "liveUrl": "https://ai-security-triage-dashboard.streamlit.app",
+      "githubRepo": "https://github.com/kjturner56/ai-security-triage-dashboard",
+      "caseStudyUrl": null,
+      "image": "/images/SecurityTriage.png",
+      "imageAlt": "AI Security Triage Dashboard screenshot",
+      "tags": ["Claude API", "Python", "Streamlit", "NIST NVD API", "GitHub", "Streamlit Cloud"],
+      "summary": "A governed AI decision-support tool that helps security analysts triage CVE vulnerabilities, phishing emails, and active URL threat indicators. Built with the same governance architecture as the Portfolio Rationalization Advisor - AI generates a triage summary and recommended action, the analyst approves or overrides before anything executes, and every decision is logged with a full audit trail.",
+      "capabilities": [
+        "Live CVE feed from NIST NVD API with CVSS severity scoring and AI triage summaries",
+        "Phishing email analysis using real labeled dataset (82,500 emails) with AI risk scoring",
+        "URL threat indicator feed with severity classification and AI-generated mitigation recommendations",
+        "Human-in-the-loop review queue - no action executes without analyst approval",
+        "Override tracking - written rationale required before any AI recommendation is overridden",
+        "Full audit log across all three data sources with CSV export",
+        "Bounded agentic routing - AI recommends, human approves, system executes and logs"
+      ],
+      "artifacts": [
+        "Live deployed application on Streamlit Community Cloud",
+        "GitHub repository (kjturner56/ai-security-triage-dashboard)"
+      ],
+      "architectureNote": "Same governance pattern applied to a cybersecurity context: retrieve threat data across multiple sources, AI reasons and recommends, human reviews before action executes, full audit log captures every decision. Demonstrates pattern reusability across domains. Built in response to identifying a cybersecurity domain gap - designed, built, and deployed in under 48 hours.",
+      "businessValue": [
+        "Addresses analyst triage consistency — AI surfaces relevant threat context so every analyst makes decisions from the same information baseline",
+        "Override tracking identifies where AI and human judgment diverge, enabling continuous model improvement without retraining",
+        "Demonstrates governance-first AI PM thinking applied to a new domain under time pressure"
       ]
     },
     {
@@ -85,12 +111,7 @@
       "caseStudyUrl": "/Product2/semantic-search.html",
       "image": "/images/SemanticSearch.png",
       "imageAlt": "Semantic CMDB Search Tool screenshot",
-      "tags": [
-        "OpenAI Embeddings",
-        "ChromaDB",
-        "ServiceNow REST API",
-        "Python"
-      ],
+      "tags": ["OpenAI Embeddings", "ChromaDB", "ServiceNow REST API", "Python"],
       "summary": "A working semantic search prototype connecting to a ServiceNow PDI via REST APIs, generating embeddings with OpenAI, and storing them in ChromaDB to enable natural-language search across CMDB records, surfacing system relationships, dependencies, and infrastructure context.",
       "capabilities": [
         "Natural-language queries across CMDB records",
@@ -98,9 +119,7 @@
         "Live ServiceNow PDI connection via REST API",
         "Highlights CMDB data quality impact on retrieval accuracy"
       ],
-      "artifacts": [
-        "Working local prototype with end-to-end retrieval pipeline"
-      ],
+      "artifacts": ["Working local prototype with end-to-end retrieval pipeline"],
       "architectureNote": null,
       "businessValue": [
         "Reduces time navigating complex system relationships",
@@ -119,12 +138,7 @@
       "caseStudyUrl": "/Product3/ai-BeniCostAnlyzer.html",
       "image": "/images/AI_BA_Analyzer.png",
       "imageAlt": "AI Benefits Cost & Utilization Analyzer screenshot",
-      "tags": [
-        "Python",
-        "Data Lakehouse",
-        "CMS Data",
-        "Predictive Analytics"
-      ],
+      "tags": ["Python", "Data Lakehouse", "CMS Data", "Predictive Analytics"],
       "summary": "A decision-support prototype analyzing benefits and claims data for cost and utilization insights. Built on a Bronze-layer Data Lakehouse using open datasets (CMS, BLS, Medicare), with a roadmap including predictive analytics, document intelligence, and conversational interfaces.",
       "capabilities": [
         "Bronze-layer Data Lakehouse using CMS, BLS, and Medicare datasets",
@@ -132,9 +146,7 @@
         "Roadmap for predictive modeling and document intelligence",
         "Strict data privacy and governance model"
       ],
-      "artifacts": [
-        "Local prototype with ingestion pipeline and analytics layer"
-      ],
+      "artifacts": ["Local prototype with ingestion pipeline and analytics layer"],
       "architectureNote": null,
       "businessValue": [
         "Improves cost visibility for HR and finance stakeholders",
