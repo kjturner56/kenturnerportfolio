@@ -405,7 +405,7 @@
       "items": [
         "Python, Streamlit, Anthropic Claude API (claude-sonnet)",
         "ServiceNow REST API",
-        "GitHub + Streamlit Community Cloud (production deployment)",
+        "GitHub + Streamlit Community Cloud (live deployment with automated CI/CD via git push)",
         "OpenAI Embeddings + ChromaDB (semantic search prototype)"
       ]
     },
