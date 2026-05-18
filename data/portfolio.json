@@ -75,7 +75,7 @@
       "subtitle": "Enterprise threat and vulnerability decision-support with human-in-the-loop governance.",
       "liveUrl": "https://ai-security-triage-dashboard.streamlit.app",
       "githubRepo": "https://github.com/kjturner56/ai-security-triage-dashboard",
-      "caseStudyUrl": null,
+      "caseStudyUrl": "/Product4/security-triage.html",
       "image": "/images/SecurityTriage.png",
       "imageAlt": "AI Security Triage Dashboard screenshot",
       "tags": ["Claude API", "Python", "Streamlit", "NIST NVD API", "GitHub", "Streamlit Cloud", "CISA KEV"],

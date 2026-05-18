@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI Security Triage Dashboard — live deployed decision-support tool by Kenneth R. Turner, Senior AI PM. Demonstrates governed AI triage workflow for CVE vulnerabilities, phishing email analysis, and URL threat indicators with CISA KEV cross-reference and human-in-the-loop governance.">
+  <title>AI Security Triage Dashboard | Kenneth R. Turner</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EG813QJ4B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3EG813QJ4B');
+  </script>
+</head>
+
+<body data-depth="1">
+
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
+
+<main>
+  <div class="container" style="padding-top:28px;padding-bottom:48px;">
+
+    <!-- Live app callout bar -->
+    <div style="background:linear-gradient(135deg,rgba(0,170,255,0.07),rgba(46,204,113,0.07));border:1px solid rgba(0,170,255,0.20);border-radius:10px;padding:16px 20px;margin-bottom:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <span class="badge badge-live">Live</span>
+        <strong style="color:var(--nav-bg);">AI Security Triage Dashboard</strong>
+        <span style="color:var(--subtext);font-size:0.9rem;">Deployed on Streamlit Community Cloud</span>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="https://ai-security-triage-dashboard.streamlit.app" class="btn" target="_blank" rel="noopener noreferrer">&#x1F680; View Live App</a>
+        <a href="https://github.com/kjturner56/ai-security-triage-dashboard" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+      </div>
+    </div>
+
+    <!-- Executive Summary -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">The Problem</h2>
+      <p class="intro" style="margin-top:14px;">
+        Applying for a Principal PM role in cybersecurity services without direct security domain experience creates a specific credibility gap. Talking about governance architecture and human-in-the-loop design is one thing. Demonstrating it in a security context is another. The goal was to close that gap with a working artifact, not a slide deck.
+      </p>
+    </section>
+
+    <!-- The Approach -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">The Approach</h2>
+      <p style="margin-top:14px;">
+        The starting point was the same framework I apply to every AI product decision: define the decision first, then the workflow, then the governance model, then the technology.
+      </p>
+      <p>
+        In a security triage context, the core decision pattern is consistent - should this threat be acted on, escalated, deferred, or monitored, and who owns that call? That framing was familiar. I spent 20 years building decision-support systems around asset inventory, dependency mapping, risk classification, and prioritization dashboards for CIOs. The data layer in security operations - CMDB records, asset exposure, vulnerability scoring, risk-ranked queues - is the same architecture applied to a different domain. The governance and workflow design transfer directly. The domain vocabulary required active learning.
+      </p>
+      <p style="margin-top:12px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--primary);padding:12px 16px;border-radius:0 6px 6px 0;">
+        <strong style="color:var(--nav-bg);">The bridge that works:</strong> CMDB asset inventory → dependency mapping → exposure classification → risk scoring → governance dashboard → workflow action. That is the security data flow. The PM pattern behind it is identical to enterprise portfolio rationalization.
+      </p>
+    </section>
+
+    <!-- What This Demonstrates -->
+    <section style="margin-bottom:36px;background:var(--muted);border-radius:12px;padding:24px 28px;border:1px solid var(--border);">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">What This Demonstrates</h2>
+      <p style="margin-top:14px;">The same governance architecture as the Portfolio Rationalization Advisor, applied to a new domain under time pressure. Pattern reusability is the point.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px;">
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Governance by design</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">AI recommends. Humans decide. Everything is logged. Override tracking identifies where AI and analyst judgment diverge — enabling continuous improvement without retraining.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Exploitability context, not just severity</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">CISA KEV cross-reference separates theoretical CVSS severity from confirmed active exploitation. A CVSS 10.0 with no known exploit is lower priority than a CVSS 7.5 that threat actors are using today.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Three threat surfaces, one architecture</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">CVE vulnerability triage, phishing email analysis, and URL threat indicator classification — each with distinct decision types and distinct analyst actions, unified under the same governance pattern.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Audit trail for compliance</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Every decision logged with timestamp, AI recommendation, human decision, and override rationale. Full CSV export for compliance reporting. Session-scoped with no data persistence risk.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I Built -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">What I Built</h2>
+      <p style="margin-top:14px;">The dashboard integrates three threat data sources through a single governed workflow.</p>
+
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
+
+        <div style="display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--nav-bg);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">&#x1F534; CVE Triage</div>
+            <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">NIST NVD + CISA KEV</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">Live vulnerability feed with exploitability cross-reference</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">Live CVE feed from the NIST National Vulnerability Database, filtered to CVSS 9.0+ critical vulnerabilities published in the last 90 days, cross-referenced against the CISA Known Exploited Vulnerabilities catalog. The KEV integration was a deliberate design decision — CVSS score measures theoretical severity, but KEV status tells an analyst whether threat actors are actively exploiting the vulnerability today. Surfacing that distinction in the UI changes the triage question from "how bad is this" to "how urgent is this right now." Analyst actions: Approve &amp; Route, Escalate, or Override &amp; Defer with mandatory written rationale.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--nav-bg);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">&#x1F4E7; Phishing</div>
+            <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">Email Analysis</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">AI-assisted phishing email triage</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">Phishing email analysis using a labeled research corpus demonstrating AI risk scoring and triage workflow governance. AI analyzes email content for threat indicators, risk level, and recommended action. Analyst confirms block, escalates to SOC, or releases as false positive with written rationale. In production this connects to a live email security gateway feed. Analyst actions: Block &amp; Quarantine, Escalate to SOC, or Release — False Positive with mandatory override rationale.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--nav-bg);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">&#x1F310; URL Indicators</div>
+            <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">Threat Intelligence</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">Active threat indicator classification and response</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">URL threat indicator feed with severity classification across phishing, malware distribution, ransomware, credential harvesting, and account takeover categories. AI generates threat analysis including affected systems and mitigation steps. Analyst approves block or initiates investigation before any action executes. Analyst actions: Block Immediately, Investigate, or False Positive with mandatory rationale.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:start;background:white;border:2px solid var(--primary);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--primary);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">&#x1F4CB; Audit Log</div>
+            <div style="font-size:0.75rem;opacity:0.9;margin-top:2px;">All Decisions</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">Full accountability and override analysis</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">Every analyst decision logged across all three threat sources — approval, escalation, and override — with timestamp, AI recommendation, human decision, and written rationale. Override analysis surfaces where AI and analyst judgment diverge, enabling model quality improvement over time without retraining. Full CSV export for compliance reporting.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Key Design Decisions -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Key Design Decisions</h2>
+      <p style="margin-top:14px;">Each decision was made for an operational reason, not a technical one.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:18px;">
+
+        <div class="card" style="padding:20px;">
+          <h3>KEV Integration — Added Post-Build</h3>
+          <p style="font-size:0.9rem;">The initial build surfaced CVEs by CVSS score alone. That is not how experienced analysts prioritize. A CVSS 10.0 with no known exploit in the wild is lower priority than a CVSS 7.5 that ransomware groups are actively using. Surfacing exploitability context in the expander header - before the analyst opens the record - reduces cognitive load and improves decision quality. That is a PM decision, not an engineering decision.</p>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Mandatory Override Rationale</h3>
+          <p style="font-size:0.9rem;">Override rationale was made mandatory rather than optional for the same reason it is mandatory in the Portfolio Rationalization Advisor: optional rationale produces no audit trail and no feedback signal. Mandatory rationale creates both. When an analyst disagrees with the AI recommendation and there is no written rationale, the disagreement is invisible and unlearnable.</p>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Three-Tab Structure</h3>
+          <p style="font-size:0.9rem;">The three-tab structure mirrors how security teams organize their work — vulnerability management, email security, and threat intelligence are distinct operational functions with distinct decision owners. A single unified queue would obscure that structure rather than support it. Workflow design follows organizational structure, not engineering convenience.</p>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Date-Filtered CVE Feed</h3>
+          <p style="font-size:0.9rem;">The NVD API without a date filter returns historically prominent CVEs, not operationally current ones. Filtering to CVSS 9.0+ published in the last 90 days, then cross-referencing KEV, produces a queue that reflects what a real SOC analyst would actually be working on today - not a historical archive.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Technical Architecture -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Technical Architecture</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:18px;">
+
+        <div class="card" style="padding:20px;">
+          <h3>Stack</h3>
+          <ul>
+            <li><strong>Python + Streamlit</strong> - rapid full-stack deployment without a separate frontend</li>
+            <li><strong>Anthropic Claude API</strong> (claude-sonnet) - AI triage summaries, threat analysis, and phishing risk scoring</li>
+            <li><strong>NIST NVD API</strong> - live CVE feed filtered to CVSS 9.0+ critical, last 90 days</li>
+            <li><strong>CISA KEV API</strong> - daily-refreshed known exploited vulnerabilities catalog</li>
+            <li><strong>GitHub + Streamlit Community Cloud</strong> - production deployment, CI/CD via git push</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Governance Controls</h3>
+          <ul>
+            <li>Human review required before any action executes across all three threat surfaces</li>
+            <li>Mandatory written rationale for every override or false positive decision</li>
+            <li>Full audit log with timestamp, AI recommendation, human decision, and rationale</li>
+            <li>Override analysis - surfaces where AI and analyst judgment diverge</li>
+            <li>CSV export for compliance reporting</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Data Sources</h3>
+          <ul>
+            <li><strong>NIST NVD</strong> - authoritative CVE database, live API, date-filtered and severity-filtered</li>
+            <li><strong>CISA KEV</strong> - confirmed active exploitation catalog, daily refresh</li>
+            <li><strong>Phishing research corpus</strong> - labeled dataset demonstrating triage workflow and governance architecture; production connects to live email security gateway</li>
+            <li><strong>URL threat indicator feed</strong> - severity-classified active malicious URL indicators</li>
+          </ul>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Deliberate Choices</h3>
+          <ul>
+            <li><strong>On-demand AI generation:</strong> Triage summaries generated on analyst request rather than pre-scored at ingestion - demonstrates the interaction pattern while controlling API costs at demo scale. Production would pre-generate on ingestion.</li>
+            <li><strong>Date + severity + KEV filtering:</strong> Three-layer CVE filtering produces an operationally realistic queue rather than a historical artifact list.</li>
+            <li><strong>Same governance pattern as Portfolio Advisor:</strong> Deliberate - demonstrates pattern reusability across domains, not one-off capability.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- What It Demonstrates -->
+    <section style="margin-bottom:36px;background:var(--muted);border-radius:12px;padding:24px 28px;border:1px solid var(--border);">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">What It Demonstrates</h2>
+      <p style="margin-top:14px;">
+        The governance pattern is the same as the Portfolio Rationalization Advisor - retrieve context, generate recommendations, require human review, execute, and log outcomes. That pattern transfers across domains because the underlying problem is the same: AI surfaces relevant context faster than a human can, but humans own the decision and the accountability.
+      </p>
+      <p style="margin-top:12px;">
+        Built and deployed in under 48 hours, this case study demonstrates how enterprise AI governance and decision-support experience can transfer into a cybersecurity services environment. The domain required active learning. The underlying PM pattern did not: define the decision, structure the workflow, manage risk, keep humans accountable, and create the audit trail required for trusted AI adoption.
+      </p>
+    </section>
+
+    <!-- Artifacts -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Artifacts Produced</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:18px;">
+        <div class="card" style="padding:18px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:8px;">&#x1F680;</div>
+          <strong style="color:var(--nav-bg);">Live Application</strong>
+          <p style="font-size:0.88rem;margin-top:6px;">Fully deployed on Streamlit Community Cloud. Open in any browser, no install required.</p>
+          <a href="https://ai-security-triage-dashboard.streamlit.app" class="btn" style="margin-top:10px;font-size:0.85rem;" target="_blank" rel="noopener noreferrer">Open App</a>
+        </div>
+        <div class="card" style="padding:18px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:8px;">&#x1F4BB;</div>
+          <strong style="color:var(--nav-bg);">GitHub Repository</strong>
+          <p style="font-size:0.88rem;margin-top:6px;">Full source code including governance architecture, KEV integration, and data pipeline.</p>
+          <a href="https://github.com/kjturner56/ai-security-triage-dashboard" class="btn btn-outline" style="margin-top:10px;font-size:0.85rem;" target="_blank" rel="noopener noreferrer">View Repo</a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+</main>
+
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
+
+<script src="../js/portfolio.js"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML  = Portfolio.buildNav(d, 'products.html');
+    document.getElementById('site-footer').innerHTML   = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+  })();
+</script>
+
+</body>
+</html>
