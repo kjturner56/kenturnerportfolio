@@ -1,0 +1,14 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: deep navy, rounded square, thin electric-blue outline -->
+  <rect x="2" y="2" width="60" height="60" rx="11" fill="#0b1e3d" stroke="#00aaff" stroke-width="2"/>
+
+  <!-- T horizontal bar: three stacked layers, echoing the operating-model graphic.
+       Reads as one solid bar at small sizes, shows the layering at larger sizes. -->
+  <rect x="16" y="18.0" width="32" height="2.2" rx="0.6" fill="#ffffff"/>
+  <rect x="16" y="20.9" width="32" height="2.2" rx="0.6" fill="#ffffff"/>
+  <rect x="16" y="23.8" width="32" height="2.2" rx="0.6" fill="#ffffff"/>
+
+  <!-- T vertical stem: structured pillar with a subtle center seam -->
+  <rect x="28" y="26" width="8" height="22" rx="0.8" fill="#ffffff"/>
+  <line x1="32" y1="28" x2="32" y2="46" stroke="#0b1e3d" stroke-width="0.6"/>
+</svg>

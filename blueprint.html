@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Enterprise AI Blueprint | Kenneth R. Turner</title>
+  <meta name="description" content="A structured executive framework for moving Enterprise AI from isolated pilots to a governed, scalable, and measurable business capability." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EG813QJ4B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3EG813QJ4B');
+  </script>
+</head>
+
+<body class="has-subnav" data-depth="0">
+
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
+
+<div class="section-nav" id="section-nav">
+  <div class="container section-nav-inner">
+  <a href="#struggle">Why It Matters</a>
+  <a href="#steps">The Six Steps</a>
+  <a href="#how-it-works">How It Works</a>
+  <a href="#relationship">Enterprise AI</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- Hero -->
+  <section class="section" style="padding:var(--space-hero-padding);">
+    <div class="container">
+      <div style="max-width:var(--text-width-standard);">
+        <div class="eyebrow" id="bp-hero-eyebrow"></div>
+        <h1 class="hero-headline" id="bp-hero-headline" style="font-size:2.15rem;line-height:1.28;color:var(--nav-bg);margin:0 0 20px;font-weight:700;"></h1>
+        <div id="bp-hero-body"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Organizations Struggle -->
+  <section id="struggle" class="section light-bg">
+    <div class="container">
+      <span class="section-label" id="struggle-label"></span>
+      <h2 id="struggle-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-wide);"></h2>
+      <p class="intro" id="struggle-intro" style="max-width:var(--text-width-wide);"></p>
+      <div class="pattern-grid" id="struggle-patterns"></div>
+    </div>
+  </section>
+
+  <!-- The Six-Step Blueprint -->
+  <section id="steps" class="section">
+    <div class="container">
+      <span class="section-label" id="steps-label"></span>
+      <h2 id="steps-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-wide);"></h2>
+      <p class="intro" id="steps-intro" style="max-width:var(--text-width-standard);"></p>
+
+      <!-- Quick visual overview, same component used on the homepage -->
+      <div id="steps-overview-slot"></div>
+
+      <!-- Detailed executive question / purpose / outcome per phase -->
+      <div class="bp-steps-grid" id="steps-detail"></div>
+    </div>
+  </section>
+
+  <!-- How the Blueprint Works -->
+  <section id="how-it-works" class="section light-bg">
+    <div class="container">
+      <div style="max-width:var(--text-width-standard);">
+        <span class="section-label" id="how-label"></span>
+        <h2 id="how-headline" style="border-bottom:none;padding-bottom:0;"></h2>
+        <div id="how-body"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Relationship to Enterprise AI -->
+  <section id="relationship" class="section">
+    <div class="container">
+      <span class="section-label" id="rel-label"></span>
+      <h2 id="rel-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-wide);"></h2>
+      <p id="rel-body" style="max-width:var(--text-width-standard);"></p>
+      <div id="rel-pillars-slot"></div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="section light-bg">
+    <div class="container" style="text-align:center;">
+      <h2 id="closing-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-narrow);margin-left:auto;margin-right:auto;"></h2>
+      <p id="closing-body" style="max-width:var(--text-width-narrow);margin-left:auto;margin-right:auto;"></p>
+      <div class="closing-links" id="closing-links"></div>
+    </div>
+  </section>
+
+</main>
+
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
+
+<script src="/js/portfolio.js"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'blueprint.html');
+    document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+
+    const bp = d.blueprintPage;
+    const steps = d.home.blueprint.steps;
+
+    // Hero
+    document.getElementById('bp-hero-eyebrow').textContent = bp.hero.eyebrow;
+    document.getElementById('bp-hero-headline').textContent = bp.hero.headline;
+    document.getElementById('bp-hero-body').innerHTML = bp.hero.body.map(p => `<p>${p}</p>`).join('');
+
+    // Why Organizations Struggle
+    document.getElementById('struggle-label').textContent = bp.struggle.label;
+    document.getElementById('struggle-headline').textContent = bp.struggle.headline;
+    document.getElementById('struggle-intro').textContent = bp.struggle.intro;
+    document.getElementById('struggle-patterns').innerHTML = Portfolio.buildPatternCards(bp.struggle.patterns);
+
+    // Six-Step Blueprint
+    document.getElementById('steps-label').textContent = bp.steps.label;
+    document.getElementById('steps-headline').textContent = bp.steps.headline;
+    document.getElementById('steps-intro').textContent = bp.steps.intro;
+    document.getElementById('steps-overview-slot').innerHTML = Portfolio.buildBlueprintSteps(steps);
+    document.getElementById('steps-detail').innerHTML = Portfolio.buildDetailedSteps(steps);
+
+    // How It Works
+    document.getElementById('how-label').textContent = bp.howItWorks.label;
+    document.getElementById('how-headline').textContent = bp.howItWorks.headline;
+    document.getElementById('how-body').innerHTML = bp.howItWorks.body.map(p => `<p>${p}</p>`).join('');
+
+    // Relationship to Enterprise AI
+    document.getElementById('rel-label').textContent = bp.relationship.label;
+    document.getElementById('rel-headline').textContent = bp.relationship.headline;
+    document.getElementById('rel-body').textContent = bp.relationship.body;
+    document.getElementById('rel-pillars-slot').innerHTML = Portfolio.buildPovPillars(bp.relationship.pillars);
+
+    // Closing CTA
+    document.getElementById('closing-headline').textContent = bp.closing.headline;
+    document.getElementById('closing-body').textContent = bp.closing.body;
+    document.getElementById('closing-links').innerHTML = Portfolio.buildClosingLinks(bp.closing.links);
+
+    // Scrollspy, same pattern as the homepage
+    const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
+    const targets = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+    const fixedOffset = () => {
+      const raw = getComputedStyle(document.documentElement).getPropertyValue('--total-fixed-h');
+      const parsed = parseFloat(raw);
+      return (isNaN(parsed) ? 172 : parsed) + 16;
+    };
+    const spy = () => {
+      const y = window.scrollY + fixedOffset();
+      let current = null;
+      targets.forEach(t => { if (t && t.offsetTop <= y) current = t; });
+      navLinks.forEach(a => a.classList.remove('active'));
+      if (current) {
+        const match = navLinks.find(a => a.getAttribute('href') === '#' + current.id);
+        if (match) match.classList.add('active');
+      }
+    };
+    window.addEventListener('scroll', spy, { passive: true });
+    window.addEventListener('resize', spy);
+    spy();
+  })();
+</script>
+
+</body>
+</html>

@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kenneth R. Turner | Background</title>
+  <title>About | Kenneth R. Turner</title>
+  <meta name="description" content="Why I've devoted this stage of my career to Enterprise AI Operationalization." />
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EG813QJ4B"></script>
   <script>
@@ -15,23 +20,99 @@
   </script>
 </head>
 
-<body data-depth="0">
+<body class="has-subnav" data-depth="0">
 
 <header class="banner" role="banner">
   <div class="container banner-inner" id="banner-inner"></div>
   <div class="banner-divider" aria-hidden="true"></div>
 </header>
 
+<div class="section-nav" id="section-nav">
+  <div class="container section-nav-inner">
+  <a href="#leadership">Leadership</a>
+  <a href="#why-ai">Why AI</a>
+  <a href="#applied">Applied AI</a>
+  <a href="#ahead">Looking Ahead</a>
+  </div>
+</div>
+
 <main>
-  <section class="section">
-    <div class="container">
-      <div class="page-title-container">
-        <h2 class="page-title">About Me</h2>
+
+  <!-- Hero: narrative opening with headshot -->
+  <section class="section" style="padding:var(--space-hero-padding);">
+    <div class="container about-preview-grid">
+      <img src="/images/MyPic2.jpg" alt="Kenneth R. Turner" class="about-preview-pic" />
+      <div class="about-preview-text">
+        <div class="eyebrow" id="hero-eyebrow"></div>
+        <h1 class="hero-headline" id="hero-headline" style="font-size:2.1rem;line-height:1.28;color:var(--nav-bg);margin:0 0 18px;font-weight:700;"></h1>
+        <div id="hero-narrative"></div>
       </div>
-      <p class="about-intro" id="about-intro"></p>
-      <div class="cards-container" id="about-cards"></div>
     </div>
   </section>
+
+  <!-- Enterprise Leadership -->
+  <section id="leadership" class="section light-bg" style="padding:var(--space-section-py) 20px;">
+    <div class="container">
+      <span class="section-label" id="leadership-label"></span>
+      <h2 id="leadership-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-standard);"></h2>
+      <p style="max-width:var(--text-width-standard);" id="leadership-body"></p>
+    </div>
+  </section>
+
+  <!-- Why Enterprise AI (the most important section) -->
+  <section id="why-ai" class="section" style="padding:var(--space-section-py) 20px;">
+    <div class="container">
+      <span class="section-label" id="whyai-label"></span>
+      <h2 id="whyai-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-standard);"></h2>
+      <div id="whyai-body" style="max-width:var(--text-width-standard);"></div>
+    </div>
+  </section>
+
+  <!-- Building Applied AI -->
+  <section id="applied" class="section light-bg" style="padding:var(--space-section-py) 20px;">
+    <div class="container">
+      <span class="section-label" id="applied-label"></span>
+      <h2 id="applied-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-narrow);"></h2>
+      <p style="max-width:var(--text-width-standard);" id="applied-body"></p>
+      <div style="margin-top:6px;">
+        <a href="/products.html" class="btn btn-outline" id="applied-cta"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Reflection: What Changed (visual centerpiece of the page) -->
+  <section class="section" style="padding:var(--space-feature-py) 20px;">
+    <div class="container">
+      <div style="max-width:var(--text-width-wide);">
+        <span class="section-label" id="reflection-label"></span>
+        <blockquote class="pull-quote pull-quote-featured" id="reflection-quote" style="margin-top:20px;"></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Looking Ahead → Professional Foundation → Closing Thought:
+       one continuous section so the ending reads as a single arc
+       rather than three isolated blocks. Only the final closing
+       gets a deliberate pause above it, since that's the moment
+       meant to land as the takeaway. -->
+  <section id="ahead" class="section light-bg" style="padding:var(--space-section-py) 20px var(--space-feature-py);">
+    <div class="container">
+      <span class="section-label" id="ahead-label"></span>
+      <h2 id="ahead-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-narrow);"></h2>
+      <p style="max-width:var(--text-width-standard);" id="ahead-body"></p>
+
+      <div style="margin-top:var(--space-block-gap);">
+        <span class="section-label" id="edu-label"></span>
+        <ul id="edu-list" style="max-width:var(--text-width-narrow);font-size:0.92rem;line-height:1.9;margin-top:14px;"></ul>
+      </div>
+
+      <div style="margin-top:var(--space-block-gap-lg);text-align:center;">
+        <p style="max-width:var(--text-width-narrow);margin:0 auto 22px;font-size:1.1rem;line-height:1.75;color:var(--text);font-style:italic;" id="emotional-close"></p>
+        <p style="max-width:var(--text-width-standard);margin-left:auto;margin-right:auto;font-size:1.1rem;line-height:1.75;color:var(--nav-bg);font-weight:600;" id="closing-statement"></p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <div class="role-intent" id="role-intent"></div>
@@ -41,13 +122,73 @@
 <script>
   (async () => {
     const d = await Portfolio.loadData();
-    document.getElementById('banner-inner').innerHTML  = Portfolio.buildNav(d, 'about.html');
-    document.getElementById('site-footer').innerHTML   = Portfolio.buildFooter(d);
+    document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'about.html');
+    document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
     document.getElementById('role-intent').textContent = d.meta.tagline;
-    document.getElementById('about-intro').innerHTML = d.about.intro;
-    document.getElementById('about-cards').innerHTML   = Portfolio.buildAboutCards(d, '0');
     Portfolio.initNavToggle();
     Portfolio.setYear();
+
+    const a = d.about;
+
+    // Hero
+    document.getElementById('hero-eyebrow').textContent = a.hero.eyebrow;
+    document.getElementById('hero-headline').textContent = a.hero.headline;
+    document.getElementById('hero-narrative').innerHTML = a.hero.narrative.map(p => `<p>${p}</p>`).join('');
+
+    // Enterprise Leadership
+    document.getElementById('leadership-label').textContent = a.leadership.label;
+    document.getElementById('leadership-headline').textContent = a.leadership.headline;
+    document.getElementById('leadership-body').textContent = a.leadership.body;
+
+    // Why Enterprise AI
+    document.getElementById('whyai-label').textContent = a.whyAI.label;
+    document.getElementById('whyai-headline').textContent = a.whyAI.headline;
+    document.getElementById('whyai-body').innerHTML = a.whyAI.body.map(p => `<p>${p}</p>`).join('');
+
+    // Building Applied AI
+    document.getElementById('applied-label').textContent = a.applied.label;
+    document.getElementById('applied-headline').textContent = a.applied.headline;
+    document.getElementById('applied-body').textContent = a.applied.body;
+    document.getElementById('applied-cta').textContent = a.applied.cta;
+
+    // Personal Reflection
+    document.getElementById('reflection-label').textContent = a.reflection.label;
+    document.getElementById('reflection-quote').textContent = a.reflection.quote;
+
+    // Looking Ahead
+    document.getElementById('ahead-label').textContent = a.lookingAhead.label;
+    document.getElementById('ahead-headline').textContent = a.lookingAhead.headline;
+    document.getElementById('ahead-body').textContent = a.lookingAhead.body;
+
+    // Education & Certifications
+    document.getElementById('edu-label').textContent = a.education.label;
+    document.getElementById('edu-list').innerHTML = a.education.items.map(i => `<li>${i}</li>`).join('');
+
+    // Closing
+    document.getElementById('emotional-close').textContent = a.emotionalClose;
+    document.getElementById('closing-statement').textContent = a.closing;
+
+    // Scrollspy, same pattern as the rest of the site
+    const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
+    const targets = navLinks.map(link => document.querySelector(link.getAttribute('href')));
+    const fixedOffset = () => {
+      const raw = getComputedStyle(document.documentElement).getPropertyValue('--total-fixed-h');
+      const parsed = parseFloat(raw);
+      return (isNaN(parsed) ? 172 : parsed) + 16;
+    };
+    const spy = () => {
+      const y = window.scrollY + fixedOffset();
+      let current = null;
+      targets.forEach(t => { if (t && t.offsetTop <= y) current = t; });
+      navLinks.forEach(link => link.classList.remove('active'));
+      if (current) {
+        const match = navLinks.find(link => link.getAttribute('href') === '#' + current.id);
+        if (match) match.classList.add('active');
+      }
+    };
+    window.addEventListener('scroll', spy, { passive: true });
+    window.addEventListener('resize', spy);
+    spy();
   })();
 </script>
 

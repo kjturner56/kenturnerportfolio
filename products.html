@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kenneth R. Turner | AI Products</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Applied Enterprise AI | Kenneth R. Turner</title>
+  <meta name="description" content="Working AI products that translate governance, decision support, and product thinking into practice." />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EG813QJ4B"></script>
   <script>
@@ -22,51 +27,121 @@
   <div class="banner-divider" aria-hidden="true"></div>
 </header>
 
-<div class="section-nav">
-  <a href="#pov">My POV</a>
-  <a href="#approach">Approach</a>
-  <a href="#products">AI Products</a>
+<div class="section-nav" id="section-nav">
+  <div class="container section-nav-inner">
+  <a href="#products">Products</a>
+  <a href="#principles">Thinking</a>
   <a href="#technology">Technology</a>
+  </div>
 </div>
 
 <main>
 
-  <!-- POV -->
-  <section id="pov" class="section">
+  <!-- Hero -->
+  <section class="section" style="padding:var(--space-hero-padding);">
     <div class="container">
-      <h2>My Point of View on Enterprise AI</h2>
-      <div id="pov-body"></div>
+      <div style="max-width:var(--text-width-standard);">
+        <div class="eyebrow" id="hero-eyebrow"></div>
+        <h1 class="hero-headline" id="hero-headline" style="font-size:2.15rem;line-height:1.28;color:var(--nav-bg);margin:0 0 18px;font-weight:700;"></h1>
+        <div id="hero-body"></div>
+      </div>
     </div>
   </section>
 
-  <!-- Product Approach -->
-  <section id="approach" class="section light-bg">
+  <!-- Featured Products (moved directly after hero) -->
+  <section id="products" class="section" style="padding-top:20px;">
     <div class="container">
-      <h2>My Product Approach</h2>
-      <div class="approach-grid" id="approach-grid"></div>
-    </div>
-  </section>
-
-  <!-- AI Products -->
-  <section id="products" class="section">
-    <div class="container">
-      <h2>AI Products &amp; Prototypes</h2>
-      <p>Each of these projects starts with a specific business decision that
-         needed to be made better. The AI capability came second, after the
-         decision, the workflow, and the governance model were defined.</p>
+      <span class="section-label" id="products-label"></span>
+      <h2 id="products-headline" style="border-bottom:none;padding-bottom:0;"></h2>
+      <p class="intro" id="products-intro" style="max-width:var(--text-width-standard);"></p>
       <div class="card-grid" id="product-cards"></div>
     </div>
   </section>
 
-  <!-- Technology -->
-  <section id="technology" class="section light-bg">
+  <!-- Product Thinking -->
+  <section id="principles" class="section light-bg">
     <div class="container">
-      <h2>Technical Capabilities</h2>
+      <span class="section-label" id="principles-label"></span>
+      <h2 id="principles-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-narrow);"></h2>
+      <div class="capability-grid" id="principles-cards"></div>
+    </div>
+  </section>
+
+  <!-- Technical Capabilities -->
+  <section id="technology" class="section">
+    <div class="container">
+      <span class="section-label" id="tech-label"></span>
+      <h2 id="tech-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-narrow);"></h2>
       <div class="card-grid" id="tech-cards"></div>
     </div>
   </section>
 
 </main>
+
+<!-- Product Case Study Modal (reusable shell, content generated per product) -->
+<div class="modal-overlay" id="prod-modal-overlay">
+  <div class="modal-box" id="prod-modal-box" role="dialog" aria-modal="true" aria-labelledby="prod-modal-title">
+    <button class="modal-close" id="prod-modal-close" aria-label="Close case study">&times;</button>
+    <div class="modal-scroll">
+      <div class="modal-header">
+        <div style="margin-bottom:8px;" id="prod-modal-badge"></div>
+        <h2 id="prod-modal-title"></h2>
+        <div class="modal-role" id="prod-modal-subtitle"></div>
+      </div>
+
+      <div class="modal-section">
+        <h3>Executive Summary</h3>
+        <p id="prod-modal-summary"></p>
+      </div>
+
+      <div class="modal-section">
+        <h3>Business Problem</h3>
+        <p id="prod-modal-problem"></p>
+      </div>
+
+      <div class="modal-section">
+        <h3>Product Vision</h3>
+        <p id="prod-modal-vision"></p>
+      </div>
+
+      <div class="modal-section">
+        <h3>AI Capabilities</h3>
+        <ul id="prod-modal-capabilities"></ul>
+      </div>
+
+      <div class="modal-section">
+        <h3>Technical Architecture</h3>
+        <p id="prod-modal-architecture"></p>
+      </div>
+
+      <div class="modal-section">
+        <h3>Technologies Used</h3>
+        <div id="prod-modal-tech"></div>
+      </div>
+
+      <div class="modal-section">
+        <h3>Key Features</h3>
+        <ul id="prod-modal-features"></ul>
+      </div>
+
+      <div class="modal-section">
+        <h3>Business Value</h3>
+        <div class="modal-outcomes" id="prod-modal-value"></div>
+      </div>
+
+      <div class="modal-section modal-blueprint-section">
+        <h3>Relationship to the Enterprise AI Blueprint</h3>
+        <p id="prod-modal-blueprint"></p>
+      </div>
+    </div>
+
+    <div class="modal-nav">
+      <button class="modal-nav-btn" id="prod-modal-prev">&#8249; Previous Product</button>
+      <span class="modal-counter" id="prod-modal-counter"></span>
+      <button class="modal-nav-btn" id="prod-modal-next">Next Product &#8250;</button>
+    </div>
+  </div>
+</div>
 
 <div class="role-intent" id="role-intent"></div>
 <footer class="site-footer" role="contentinfo" id="site-footer"></footer>
@@ -78,24 +153,54 @@
     document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'products.html');
     document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
     document.getElementById('role-intent').textContent = d.meta.tagline;
-
-    const pov = d.pov;
-    document.getElementById('pov-body').innerHTML = `
-      <p>${pov.body}</p>
-      <h3>Core Insight</h3>
-      <p>${pov.coreInsight}</p>
-      <h3>How I Approach It</h3>
-      <ul>${pov.approach.map(a => `<li>${a}</li>`).join('')}</ul>`;
-
-    document.getElementById('approach-grid').innerHTML =
-      Portfolio.buildApproachCards(d.productApproach);
-    document.getElementById('product-cards').innerHTML =
-      Portfolio.buildProductCards(d.aiProducts, '0');
-    document.getElementById('tech-cards').innerHTML =
-      Portfolio.buildTechCards(d.technologyCapabilities);
-
     Portfolio.initNavToggle();
     Portfolio.setYear();
+
+    const ap = d.appliedPage;
+
+    // Hero
+    document.getElementById('hero-eyebrow').textContent = ap.hero.eyebrow;
+    document.getElementById('hero-headline').textContent = ap.hero.headline;
+    document.getElementById('hero-body').innerHTML = ap.hero.body.map(p => `<p>${p}</p>`).join('');
+
+    // Featured Products
+    document.getElementById('products-label').textContent = ap.products.label;
+    document.getElementById('products-headline').textContent = ap.products.headline;
+    document.getElementById('products-intro').textContent = ap.products.intro;
+    document.getElementById('product-cards').innerHTML = Portfolio.buildProductCards(d.aiProducts, '0');
+    Portfolio.initProductModal(d.aiProducts);
+
+    // Product Thinking
+    document.getElementById('principles-label').textContent = ap.principles.label;
+    document.getElementById('principles-headline').textContent = ap.principles.headline;
+    document.getElementById('principles-cards').innerHTML = Portfolio.buildPrincipleCards(ap.principles.items);
+
+    // Technical Capabilities
+    document.getElementById('tech-label').textContent = ap.technology.label;
+    document.getElementById('tech-headline').textContent = ap.technology.headline;
+    document.getElementById('tech-cards').innerHTML = Portfolio.buildTechCards(d.technologyCapabilities);
+
+    // Scrollspy, same pattern as the rest of the site
+    const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
+    const targets = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+    const fixedOffset = () => {
+      const raw = getComputedStyle(document.documentElement).getPropertyValue('--total-fixed-h');
+      const parsed = parseFloat(raw);
+      return (isNaN(parsed) ? 172 : parsed) + 16;
+    };
+    const spy = () => {
+      const y = window.scrollY + fixedOffset();
+      let current = null;
+      targets.forEach(t => { if (t && t.offsetTop <= y) current = t; });
+      navLinks.forEach(a => a.classList.remove('active'));
+      if (current) {
+        const match = navLinks.find(a => a.getAttribute('href') === '#' + current.id);
+        if (match) match.classList.add('active');
+      }
+    };
+    window.addEventListener('scroll', spy, { passive: true });
+    window.addEventListener('resize', spy);
+    spy();
   })();
 </script>
 

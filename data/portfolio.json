@@ -1,12 +1,12 @@
 {
   "meta": {
     "name": "Kenneth R. Turner",
-    "title": "Senior AI Product Manager",
-    "subtitle": "Enterprise AI and Decision-Support Platforms",
+    "title": "Enterprise AI & Product Leadership",
+    "subtitle": "Governance, Operating Models & Applied AI",
     "email": "kturner@kenturnerportfolio.com",
     "linkedin": "https://www.linkedin.com/in/kennethrturner",
     "github": "https://github.com/kjturner56",
-    "tagline": "I focus on AI Product Manager roles where enterprise platforms, data, and AI come together to improve decision-making, adoption, and workflow integration at scale."
+    "tagline": "Helping organizations operationalize Enterprise AI responsibly and at scale."
   },
   "nav": [
     {
@@ -14,16 +14,20 @@
       "href": "/index.html"
     },
     {
-      "label": "Background",
-      "href": "/about.html"
+      "label": "Enterprise AI Blueprint",
+      "href": "/blueprint.html"
     },
     {
-      "label": "Experience",
+      "label": "Enterprise Experience",
       "href": "/projects.html"
     },
     {
-      "label": "AI Products",
+      "label": "Applied AI",
       "href": "/products.html"
+    },
+    {
+      "label": "About",
+      "href": "/about.html"
     },
     {
       "label": "Contact",
@@ -42,7 +46,14 @@
       "caseStudyUrl": "/Product1/genai-advisor.html",
       "image": "/images/GenAI_Advisor.png",
       "imageAlt": "AI Portfolio Rationalization Advisor dashboard screenshot",
-      "tags": ["Claude API", "Python", "Streamlit", "ServiceNow REST API", "GitHub", "Streamlit Cloud"],
+      "tags": [
+        "Claude API",
+        "Python",
+        "Streamlit",
+        "ServiceNow REST API",
+        "GitHub",
+        "Streamlit Cloud"
+      ],
       "summary": "A fully deployed, 6-screen Streamlit application demonstrating a Centaur governance model for enterprise application portfolio rationalization. Built to show AI product thinking beyond a simple chatbot, with governance, explainability, cost management, and human oversight built into the workflow.",
       "capabilities": [
         "Explainable AI recommendation engine with 7-signal scoring",
@@ -63,9 +74,19 @@
       "architectureNote": "Deliberate choices: context stuffing over vector DB for explainability at current scale; direct Claude API over LangChain for transparency and control. Roadmap documents exactly when and why each would change at scale.",
       "businessValue": [
         "Demonstrates AI product thinking beyond output generation, with governance, explainability, and human oversight built into every workflow",
-        "Includes 0→500 customer productization roadmap showing scaling strategy",
+        "Includes 0\u2192500 customer productization roadmap showing scaling strategy",
         "End-to-end delivery in a single weekend proves execution speed and technical depth"
-      ]
+      ],
+      "businessProblem": "Enterprise application portfolios routinely include hundreds of systems, and retain, retire, or modernize decisions are often made on incomplete information or institutional memory rather than consistent, defensible criteria. Without structured decision support, organizations either move too slowly or make costly modernization mistakes.",
+      "productVision": "The opportunity was to bring the same governance discipline used in the GE Vernova APM Dashboard to an AI-assisted version, one where AI accelerates the recommendation without removing human accountability for the decision.",
+      "technicalArchitecture": "A governed decision-support architecture: enterprise portfolio data feeds a scoring and recommendation layer, every recommendation is explainable and routed through human review before any action is taken, and every decision is logged for auditability.",
+      "keyFeatures": [
+        "Six-screen guided workflow from data intake to executive-ready recommendation",
+        "Accept, override, or escalate on every AI recommendation, with rationale required for overrides",
+        "Session-level governance controls to manage API usage responsibly",
+        "Exportable outputs designed for stakeholder and leadership review"
+      ],
+      "blueprintConnection": "PortfolioIQ demonstrates governance, executive decision support, and value realization, the same disciplines the Blueprint treats as inseparable, applied here to AI-assisted portfolio decisions specifically."
     },
     {
       "id": "ai-security-triage-dashboard",
@@ -78,7 +99,15 @@
       "caseStudyUrl": "/Product4/security-triage.html",
       "image": "/images/SecurityTriage.png",
       "imageAlt": "AI Security Triage Dashboard screenshot",
-      "tags": ["Claude API", "Python", "Streamlit", "NIST NVD API", "GitHub", "Streamlit Cloud", "CISA KEV"],
+      "tags": [
+        "Claude API",
+        "Python",
+        "Streamlit",
+        "NIST NVD API",
+        "GitHub",
+        "Streamlit Cloud",
+        "CISA KEV"
+      ],
       "summary": "A governed AI decision-support tool that helps security analysts triage CVE vulnerabilities, phishing emails, and active URL threat indicators. Built with the same governance architecture as the Portfolio Rationalization Advisor - AI generates a triage summary and recommended action, the analyst approves or overrides before anything executes, and every decision is logged with a full audit trail.",
       "capabilities": [
         "CISA KEV cross-reference -  live exploitation status overlaid on every CVE, separating theoretical severity from operational priority.",
@@ -96,10 +125,20 @@
       ],
       "architectureNote": "Same governance pattern applied to a cybersecurity context: retrieve threat data across multiple sources, AI reasons and recommends, human reviews before action executes, full audit log captures every decision. Demonstrates pattern reusability across domains. Built in response to identifying a cybersecurity domain gap - designed, built, and deployed in under 48 hours.",
       "businessValue": [
-        "Addresses analyst triage consistency — AI surfaces relevant threat context so every analyst makes decisions from the same information baseline",
+        "Addresses analyst triage consistency \u2014 AI surfaces relevant threat context so every analyst makes decisions from the same information baseline",
         "Override tracking identifies where AI and human judgment diverge, enabling continuous model improvement without retraining",
         "Demonstrates governance-first AI PM thinking applied to a new domain under time pressure"
-      ]
+      ],
+      "businessProblem": "Security analysts face a constant volume of CVEs, phishing reports, and threat indicators, more than can be manually triaged with consistent judgment. Inconsistent triage means real threats get buried under noise, and different analysts reach different conclusions from the same data.",
+      "productVision": "The opportunity was to apply the same governed AI pattern used in portfolio decisions to a different domain under real time pressure, testing whether the governance model generalizes rather than being specific to one use case.",
+      "technicalArchitecture": "A shared governance pattern applied to security operations: live threat data is retrieved from multiple sources, AI generates a triage recommendation, an analyst reviews and approves before anything executes, and every decision is captured in an audit trail.",
+      "keyFeatures": [
+        "Unified triage view across CVEs, phishing reports, and URL threat indicators",
+        "Live exploitation status overlaid on every vulnerability, not just theoretical severity",
+        "Required written rationale before overriding any AI recommendation",
+        "Full exportable audit log across all three data sources"
+      ],
+      "blueprintConnection": "The Security Triage Dashboard demonstrates operational governance, the same human-in-the-loop, audit-first pattern proven on portfolio decisions, applied to a different domain to test whether the governance model actually generalizes."
     },
     {
       "id": "semantic-cmdb-search",
@@ -112,7 +151,12 @@
       "caseStudyUrl": "/Product2/semantic-search.html",
       "image": "/images/SemanticSearch.png",
       "imageAlt": "Semantic CMDB Search Tool screenshot",
-      "tags": ["OpenAI Embeddings", "ChromaDB", "ServiceNow REST API", "Python"],
+      "tags": [
+        "OpenAI Embeddings",
+        "ChromaDB",
+        "ServiceNow REST API",
+        "Python"
+      ],
       "summary": "A working semantic search prototype connecting to a ServiceNow PDI via REST APIs, generating embeddings with OpenAI, and storing them in ChromaDB to enable natural-language search across CMDB records, surfacing system relationships, dependencies, and infrastructure context.",
       "capabilities": [
         "Natural-language queries across CMDB records",
@@ -120,13 +164,24 @@
         "Live ServiceNow PDI connection via REST API",
         "Highlights CMDB data quality impact on retrieval accuracy"
       ],
-      "artifacts": ["Working local prototype with end-to-end retrieval pipeline"],
+      "artifacts": [
+        "Working local prototype with end-to-end retrieval pipeline"
+      ],
       "architectureNote": null,
       "businessValue": [
         "Reduces time navigating complex system relationships",
         "Surfaces dependencies and infrastructure context faster",
         "Demonstrates real-world constraints of CMDB data quality on AI retrieval"
-      ]
+      ],
+      "businessProblem": "Enterprise CMDB systems hold critical information about system dependencies and infrastructure relationships, but keyword search fails when people don't know the exact naming conventions or system IDs, so valuable context routinely goes unfound.",
+      "productVision": "The opportunity was to test whether natural-language search could make an existing CMDB investment more usable, without replacing or duplicating the system of record.",
+      "technicalArchitecture": "A retrieval-based architecture: enterprise CMDB data is indexed for semantic search, and natural-language queries return relevant system relationships and context rather than exact keyword matches.",
+      "keyFeatures": [
+        "Natural-language query interface, no exact system names required",
+        "Surfaces system relationships and dependencies, not just matching records",
+        "Live connection to a ServiceNow instance via REST API"
+      ],
+      "blueprintConnection": "Semantic CMDB Search demonstrates organizational knowledge and AI-enabled discovery, making information the organization already has actually findable, one of the readiness gaps the Blueprint asks organizations to assess before scaling AI further."
     },
     {
       "id": "benefits-cost-analyzer",
@@ -139,7 +194,12 @@
       "caseStudyUrl": "/Product3/ai-BeniCostAnlyzer.html",
       "image": "/images/AI_BA_Analyzer.png",
       "imageAlt": "AI Benefits Cost & Utilization Analyzer screenshot",
-      "tags": ["Python", "Data Lakehouse", "CMS Data", "Predictive Analytics"],
+      "tags": [
+        "Python",
+        "Data Lakehouse",
+        "CMS Data",
+        "Predictive Analytics"
+      ],
       "summary": "A decision-support prototype analyzing benefits and claims data for cost and utilization insights. Built on a Bronze-layer Data Lakehouse using open datasets (CMS, BLS, Medicare), with a roadmap including predictive analytics, document intelligence, and conversational interfaces.",
       "capabilities": [
         "Bronze-layer Data Lakehouse using CMS, BLS, and Medicare datasets",
@@ -147,13 +207,24 @@
         "Roadmap for predictive modeling and document intelligence",
         "Strict data privacy and governance model"
       ],
-      "artifacts": ["Local prototype with ingestion pipeline and analytics layer"],
+      "artifacts": [
+        "Local prototype with ingestion pipeline and analytics layer"
+      ],
       "architectureNote": null,
       "businessValue": [
         "Improves cost visibility for HR and finance stakeholders",
         "Demonstrates enterprise data architecture thinking",
         "Roadmap shows path to conversational interface and HR system integration"
-      ]
+      ],
+      "businessProblem": "HR and finance stakeholders need visibility into benefits cost and utilization trends, but the underlying data is often fragmented across sources and requires significant manual work to turn into a usable view.",
+      "productVision": "The opportunity was to demonstrate an enterprise data architecture, ingestion through analytics, that could support cost visibility today and predictive, conversational capabilities as the roadmap matures.",
+      "technicalArchitecture": "A layered data architecture: benefits and claims data is ingested into a structured analytics layer, enabling cost and utilization analysis with a clear path toward predictive and conversational capabilities.",
+      "keyFeatures": [
+        "Cost and utilization trend views built from real public benefits datasets",
+        "Structured, layered data pipeline built for future scale",
+        "Roadmap toward predictive modeling and a conversational interface"
+      ],
+      "blueprintConnection": "The Benefits Analyzer demonstrates enterprise data architecture thinking, building the data foundation a capability needs before adding predictive or conversational features on top of it, the same sequencing discipline behind the Blueprint's Capability Gaps phase."
     }
   ],
   "enterpriseProjects": [
@@ -174,7 +245,28 @@
         "quality": "Prioritized improvements based on data rather than opinion",
         "delivery": "Established a predictable quarterly portfolio review cadence",
         "cost": "Reduced maintenance spend and optimized investment allocation"
-      }
+      },
+      "organization": "GE Vernova",
+      "challenge": "Leadership had no consolidated way to see application health, cost, and risk across a 200+ application portfolio.",
+      "outcomes": [
+        "50% improvement in application portfolio health scores",
+        "40% reduction in portfolio size through rationalization",
+        "Became the primary tool for quarterly CIO and Director portfolio reviews"
+      ],
+      "capabilities": [
+        "Enterprise Portfolio Management",
+        "Governance",
+        "Product Management"
+      ],
+      "executiveSummary": "GE Vernova needed to make application investment decisions on evidence rather than opinion, across a global portfolio of more than 200 applications. This initiative built the decision-support system that made that possible, and it became the mechanism through which CIOs and Directors actually made retain, retire, and modernize calls.",
+      "businessChallenge": "The portfolio had grown organically for years with no consistent way to compare applications on health, cost, or risk. Directors and CIOs were making high-stakes modernization and retirement decisions largely on institutional memory rather than structured data, with no shared definition across the organization of what \"healthy\" or \"at risk\" actually meant.",
+      "myRole": "I owned the dashboard end to end, from defining the decision framework it was built to support through to the data model, scoring approach, and the recurring executive review cadence that put it to use. The work was less about building a tool and more about designing the decision itself: what leadership needed to see, in what order, and what action each view was meant to drive.",
+      "keyContributions": [
+        "Defined the data model, decision framework, and success metrics that shaped what the dashboard measured and how decisions got made from it.",
+        "Consolidated health scores, technical debt, cost, and cloud adoption data into a single executive view.",
+        "Established a quarterly portfolio review cadence directly with the CIO and business leaders."
+      ],
+      "blueprintConnection": "This is where the idea that AI recommendations need a decision framework before they need a model took shape. The dashboard only worked because the decision criteria existed before the data did, the same sequencing that later became the Current State and Operating Model phases of the Enterprise AI Blueprint."
     },
     {
       "id": "predictive-maintenance",
@@ -194,7 +286,28 @@
         "quality": "Proper governance, training, and user adoption from day one",
         "delivery": "Smooth cross-functional rollout across 6+ teams",
         "cost": "Avoided wasted software investment through disciplined deployment"
-      }
+      },
+      "organization": "GE Vernova",
+      "challenge": "An externally purchased predictive maintenance product needed to move from purchase to real production impact.",
+      "outcomes": [
+        "Coordinated 6+ cross-functional teams to deliver into production",
+        "Gave engineers live visibility into customer asset health",
+        "Avoided wasted software spend by ensuring proper deployment and adoption"
+      ],
+      "capabilities": [
+        "Enterprise Transformation",
+        "Product Management",
+        "Operating Models"
+      ],
+      "executiveSummary": "GE Power had already purchased a predictive maintenance platform. The harder problem was making it actually operational, integrated, adopted, and trusted enough that engineers used it to make real maintenance calls rather than letting the investment sit unused.",
+      "businessChallenge": "Vendor software purchases routinely stall between procurement and production, especially when they require coordination across cloud, security, and architecture teams who weren't part of the original buying decision. The risk here wasn't technical failure, it was the far more common failure of a good tool never reaching the people who needed to use it.",
+      "myRole": "I led the deployment as the single point of accountability across six-plus cross-functional teams, translating a vendor relationship into an internally adopted capability. That meant defining the requirements the vendor needed to meet, sequencing the technical rollout, and personally ensuring the platform reached the engineers who would rely on it.",
+      "keyContributions": [
+        "Defined business requirements and success metrics directly with stakeholders before implementation began.",
+        "Coordinated vendor, cloud, security, and architecture teams around a single delivery plan.",
+        "Built and delivered the training that made adoption possible from day one."
+      ],
+      "blueprintConnection": "This is where I saw firsthand that a good tool with no adoption plan is just an expensive shelf item. That distinction, between deploying technology and operationalizing a capability, is the difference the Enterprise AI Blueprint is built to address for AI initiatives specifically."
     },
     {
       "id": "knowledge-platform",
@@ -214,7 +327,28 @@
         "quality": "Solution aligned with user needs through stakeholder-led requirements",
         "delivery": "Smooth phased rollout with minimal disruption",
         "cost": "Leveraged existing enterprise platform, avoiding new tooling costs"
-      }
+      },
+      "organization": "GE Power",
+      "challenge": "A failing legacy knowledge system put critical engineering documentation at risk.",
+      "outcomes": [
+        "Migrated and preserved critical engineering documentation with zero data loss",
+        "Phased rollout minimized disruption to engineering teams",
+        "Adoption support had teams productive on the new platform from day one"
+      ],
+      "capabilities": [
+        "Knowledge Management",
+        "Enterprise Transformation",
+        "Process Improvement"
+      ],
+      "executiveSummary": "A failing Lotus Notes knowledge system put years of engineering documentation at risk of becoming inaccessible. This initiative replaced the platform without losing the knowledge it held or disrupting the engineering teams who depended on it daily.",
+      "businessChallenge": "The system was end-of-life and increasingly unstable, but it also held institutional knowledge accumulated over years, with no clean way to migrate it. Any misstep risked either losing critical documentation or disrupting engineering teams who had no tolerance for downtime.",
+      "myRole": "I owned the platform decision and the migration strategy, from evaluating alternatives through to leading the technical migration and the adoption plan that came with it. The harder part wasn't the technology choice, it was designing a rollout that protected continuity for teams who couldn't afford to lose access to their own documentation.",
+      "keyContributions": [
+        "Defined requirements and adoption strategy through direct stakeholder interviews.",
+        "Selected SharePoint over alternatives to leverage existing tools and reduce cost.",
+        "Led the technical migration, including data extraction, cleaning, and deployment."
+      ],
+      "blueprintConnection": "This project reinforced that migrations succeed or fail on adoption, not technology, a lesson that shows up directly in the Blueprint's treatment of adoption and change enablement as a distinct phase, not an afterthought bolted onto delivery."
     },
     {
       "id": "sharepoint-modernization",
@@ -233,7 +367,28 @@
         "quality": "Validated, reliable platform delivered with data integrity confirmed",
         "delivery": "Smooth, risk-managed rollout with proactive issue response",
         "cost": "Avoided costly rebuilds by optimizing existing infrastructure"
-      }
+      },
+      "organization": "GE Power",
+      "challenge": "Aging SharePoint infrastructure had become an operational and security risk.",
+      "outcomes": [
+        "Zero data issues through a carefully sequenced cutover",
+        "Improved platform stability, security, and operational resilience",
+        "Paused and re-sequenced go-live when risk was detected, protecting continuity"
+      ],
+      "capabilities": [
+        "Governance",
+        "Enterprise Transformation",
+        "Operating Models"
+      ],
+      "executiveSummary": "Aging SharePoint infrastructure had become a real operational and security exposure. This initiative upgraded the platform through a carefully sequenced cutover that protected data integrity for a global user base.",
+      "businessChallenge": "The platform was out of support and increasingly risky to run, but it was also in active use by a large global population, meaning any upgrade had to be executed with zero tolerance for data loss and minimal tolerance for downtime.",
+      "myRole": "I owned the risk framework and the cutover strategy, including the judgment call, mid-execution, to pause the go-live when early signals suggested a problem, rather than push through on schedule. That decision protected the outcome at the cost of the original timeline.",
+      "keyContributions": [
+        "Defined the success criteria and risk framework that governed the upgrade.",
+        "Designed a weekend cutover approach that minimized disruption while protecting data integrity.",
+        "Made the call to pause go-live when issues were detected, preventing downstream impact."
+      ],
+      "blueprintConnection": "The decision to pause a live cutover rather than protect a deadline is the same judgment the Blueprint asks organizations to build into AI governance: knowing when to stop is as important as knowing how to scale."
     },
     {
       "id": "data-quality",
@@ -252,7 +407,28 @@
         "quality": "Validated, accurate metadata across the document library",
         "delivery": "Removed workflow blockers and restored team productivity",
         "cost": "Leveraged existing tools, avoiding new spend and saving time"
-      }
+      },
+      "organization": "GE Power",
+      "challenge": "Long-standing metadata quality issues were slowing teams down and eroding trust in the platform.",
+      "outcomes": [
+        "Restored validated, accurate metadata across the document library",
+        "Removed workflow blockers and restored team productivity",
+        "Resolved the issue using existing tools, avoiding new spend"
+      ],
+      "capabilities": [
+        "Process Improvement",
+        "Governance",
+        "Knowledge Management"
+      ],
+      "executiveSummary": "Long-standing metadata quality issues had quietly eroded trust in a platform teams relied on daily. This initiative diagnosed the root cause and restored both the data and the confidence in it.",
+      "businessChallenge": "The problem had existed long enough that it was treated as a known limitation rather than a solvable issue, and it was slowing down teams who no longer trusted the platform's data enough to act on it without double-checking.",
+      "myRole": "I led the remediation as a change effort as much as a technical one, designing the correction process and, more importantly, getting document owners to take direct accountability for their own data so the problem wouldn't simply return.",
+      "keyContributions": [
+        "Diagnosed the root cause of a persistent data quality issue that had gone unresolved.",
+        "Designed the remediation process for validating, correcting, and refreshing metadata.",
+        "Engaged document owners directly and coached teams on governance practices to prevent regression."
+      ],
+      "blueprintConnection": "This is where the idea that governance has to include ownership, not just process, took hold, a principle that carries directly into how the Blueprint treats accountability as part of the operating model, not a separate compliance layer."
     },
     {
       "id": "agile-delivery",
@@ -272,7 +448,28 @@
         "quality": "Consistent feedback loops improved output quality",
         "delivery": "Predictable sprint cadence replaced ad hoc delivery",
         "cost": "Avoided delays and rework from unstructured processes"
-      }
+      },
+      "organization": "GE Power",
+      "challenge": "Ad hoc delivery practices were undermining predictability and cross-team collaboration.",
+      "outcomes": [
+        "Replaced ad hoc delivery with a predictable sprint cadence",
+        "Established a stakeholder engagement cadence across US and India teams",
+        "Agile ways of working became the foundation for consistent execution"
+      ],
+      "capabilities": [
+        "Agile Delivery",
+        "Process Improvement",
+        "Product Management"
+      ],
+      "executiveSummary": "Ad hoc delivery practices across distributed U.S. and India teams were undermining predictability. This initiative introduced Agile ways of working that became the team's lasting foundation for execution.",
+      "businessChallenge": "Distributed teams working without a shared delivery framework struggled with inconsistent stakeholder visibility and unpredictable output, the kind of friction that compounds across time zones and erodes trust between teams and the leadership relying on them.",
+      "myRole": "I acted as both the case-maker and the coach, building the argument for why Agile was the right fit for this team's context, then designing how ceremonies, backlog structure, and stakeholder engagement would actually work across two continents.",
+      "keyContributions": [
+        "Made the case for Agile as the right delivery framework for the team's specific context.",
+        "Designed ceremonies, backlog structure, and cross-continent stakeholder engagement.",
+        "Coached teams directly on Agile practices and ran workshops to build buy-in."
+      ],
+      "blueprintConnection": "Delivery predictability doesn't come from adopting a framework, it comes from designing how that framework fits a specific team's context. That same instinct, fit before framework, shapes how the Blueprint's Operating Model phase avoids one-size-fits-all prescriptions."
     },
     {
       "id": "portfolio-planning",
@@ -292,45 +489,119 @@
         "quality": "Consistent execution aligned with strategic goals",
         "delivery": "Faster approvals and maintained delivery momentum",
         "cost": "Leveraged existing tools, avoiding new tooling spend"
-      }
+      },
+      "organization": "GE Vernova",
+      "challenge": "Leadership had no consistent visibility into project delivery, risk, or prioritization.",
+      "outcomes": [
+        "Stood up a global PMO function from scratch",
+        "Gave leadership consistent visibility into progress, risk, and tradeoffs",
+        "Brought discipline and consistency to how work was prioritized"
+      ],
+      "capabilities": [
+        "Governance",
+        "Operating Models",
+        "Enterprise Portfolio Management"
+      ],
+      "executiveSummary": "Leadership had no consistent way to see project delivery, risk, or prioritization across the portfolio. This initiative stood up a lightweight global PMO from scratch that gave leadership that visibility without adding bureaucratic weight.",
+      "businessChallenge": "Without structured intake, approval, and tracking, delivery decisions were being made without a shared view of risk, dependencies, or capacity, leaving leadership to make prioritization calls with incomplete information.",
+      "myRole": "I designed the PMO from a blank page, intake, approval, tracking, and reporting, deliberately choosing existing tools over new ones to keep the function lightweight enough that teams would actually use it rather than route around it.",
+      "keyContributions": [
+        "Designed the intake, approval, and tracking workflows and governance model from scratch.",
+        "Chose Smartsheet deliberately to leverage existing tools and avoid new tooling costs.",
+        "Built transparent reporting on progress, risk, and dependencies for leadership."
+      ],
+      "blueprintConnection": "A PMO only works if people don't route around it, which meant designing for adoption from the first decision, not bolting it on later. That same discipline is why the Blueprint treats operating model design and adoption as connected, not sequential afterthoughts."
+    },
+    {
+      "id": "itar-ear-compliance",
+      "title": "ITAR/EAR Compliant Collaboration Templates",
+      "objective": "Enable regulated engineering data to be managed safely within everyday enterprise collaboration workflows.",
+      "role": "Technical Product Manager / SharePoint Governance Lead",
+      "organization": "Pratt & Whitney",
+      "challenge": "Regulated engineering data needed a compliant way to be managed inside everyday collaboration workflows, without slowing teams down.",
+      "outcomes": [
+        "Delivered the compliance solution on time and under budget, saving $43K",
+        "Reduced end-user certification training from 2 days to 4 hours",
+        "Enabled regulated data management without disrupting existing workflows"
+      ],
+      "capabilities": [
+        "Governance",
+        "Process Improvement",
+        "Operating Models"
+      ],
+      "bullets": [
+        "Partnered with a vendor to architect ITAR- and EAR-compliant SharePoint templates for regulated data.",
+        "Delivered the compliance solution on time and under budget, saving $43K.",
+        "Streamlined end-user certification training from a 2-day classroom program to a 4-hour virtual format.",
+        "Improved adoption across the organization by reducing the time and disruption required for certification."
+      ],
+      "sqdc": {
+        "safety": "Ensured regulated data stayed within compliant, auditable workflows",
+        "quality": "Vendor-architected templates met ITAR/EAR requirements from day one",
+        "delivery": "Delivered on time and under budget",
+        "cost": "Saved $43K on the compliance solution and cut training time by 75%"
+      },
+      "executiveSummary": "Regulated engineering data needed to be managed inside everyday collaboration workflows without slowing teams down or exposing the organization to compliance risk. This initiative delivered a compliant solution that protected both regulatory posture and day-to-day productivity.",
+      "businessChallenge": "ITAR and EAR requirements are unforgiving, but the organization also couldn't afford a compliance solution so heavy that it discouraged the very teams it was meant to protect from using it correctly.",
+      "myRole": "I partnered directly with the vendor to architect templates that met regulatory requirements without becoming a burden on the teams using them daily, and I owned the training redesign that made the difference between compliance on paper and compliance in practice.",
+      "keyContributions": [
+        "Partnered with a vendor to architect ITAR- and EAR-compliant SharePoint templates.",
+        "Delivered the compliance solution on time and under budget.",
+        "Redesigned end-user certification training from a 2-day classroom program to a 4-hour virtual format."
+      ],
+      "blueprintConnection": "Compliance that people avoid isn't actually compliance. Designing governance that people would use, not just tolerate, is a principle that carries directly into how the Blueprint approaches AI governance: oversight has to be usable, or it gets bypassed."
     }
   ],
   "about": {
-    "intro": "I spent 20+ years at GE Vernova, GE Power, Pratt & Whitney, and Alstom Power building the decision-support platforms that leadership used to manage application portfolios, prioritize investment, and guide modernization across complex global environments. I owned those systems end to end, from defining the product strategy and decision framework to working directly with CIOs and business leaders to make sure the outputs drove real decisions. Over the past year I have built independently — designing and deploying two live AI decision-support tools and developing two additional tools — along with AAACF, the AI Adoption and Augmentation Change Framework, which addresses the behavioral and governance side of AI adoption that technical rollouts consistently underestimate.",
-    "cards": [
-      {
-        "title": "Professional Experience",
-        "body": "PMP-certified Senior AI Product Manager with 20+ years owning and delivering enterprise platforms across GE Vernova, GE Power, Pratt & Whitney, and Alstom Power. I specialize in application portfolio management, modernization planning, and decision-support systems that help organizations evaluate cost, risk, and investment priorities at scale. Over the past year I have been building independently - designing and deploying AI decision-support tools that apply governance-first thinking to real enterprise workflows, where adoption, trust, and accountability matter as much as the model."
-      },
-      {
-        "title": "AI & Product Innovation",
-        "body": "I design and ship AI decision-support tools that address real enterprise challenges, particularly where data is fragmented and decisions require context, validation, and accountability. My work focuses on applying AI within structured workflows, surfacing relevant insights while maintaining transparency, human ownership, and control over final decisions.",
-        "featuredProject": {
-          "name": "AI Portfolio Rationalization Advisor",
-          "description": "A fully deployed Streamlit application demonstrating a Centaur governance model for enterprise application portfolio rationalization. Built and shipped in a single weekend.",
-          "url": "/Product1/genai-advisor.html",
-          "liveUrl": "https://ai-app-advisor.streamlit.app"
-        }
-      },
-      {
-        "title": "Skills & Expertise",
-        "body": "Enterprise AI product management, application portfolio management, and decision-support system design. I work at the intersection of business, technology, and data, translating fragmented inputs into clear, actionable products that improve visibility, alignment, and execution. I apply this foundation to AI decision-support, designing workflows where outputs are grounded in enterprise data, validated by decision owners, and governed to build trust and reduce over-reliance."
-      },
-      {
-        "title": "Career Vision",
-        "body": "My focus is on enterprise AI products that help organizations make better decisions from the data they already have, whether that data is clean or fragmented, structured or not. I prioritize use cases where decision quality, transparency, and accountability are critical, and where someone has to own the outcome."
-      },
-      {
-        "title": "Education & Certifications",
-        "items": [
-          "Graduate Certificate in Enterprise AI, Stevens Institute of Technology (Expected June 2026)",
-          "Bachelor of Science, Aviation Management and Flight Operations, Daniel Webster College",
-          "PMP, Project Management Professional",
-          "ITIL Foundation",
-          "In Progress: SAFe Product Owner / Product Manager (POPM), AWS Cloud Practitioner"
-        ]
-      }
-    ]
+    "hero": {
+      "eyebrow": "THE STORY BEHIND THE WORK",
+      "headline": "From Enterprise Technology to Enterprise AI",
+      "narrative": [
+        "Over two decades leading enterprise technology initiatives, I discovered that organizations rarely struggle because of technology alone. They struggle because governance, operating models, leadership, and adoption aren't connected. That realization ultimately led me to focus on Enterprise AI Operationalization.",
+        "AI didn't introduce a new category of organizational failure. It exposed the same one, at a larger scale, moving faster, with less room to recover from getting it wrong."
+      ]
+    },
+    "leadership": {
+      "label": "ENTERPRISE LEADERSHIP",
+      "headline": "Twenty years building the systems that determine whether technology investments actually work.",
+      "body": "Product management, portfolio management, governance, decision support, and modernization, at executive scale, across GE Vernova, GE Power, Pratt & Whitney, and Alstom Power. That experience isn't the credential. It's the foundation the rest of this perspective is built on."
+    },
+    "whyAI": {
+      "label": "WHY ENTERPRISE AI",
+      "headline": "The hardest problems were never really about the technology.",
+      "body": [
+        "The deeper I got into enterprise technology leadership, the more I noticed that the hardest problems came down to whether an organization could govern a decision, build an operating model people would actually use, and get people to adopt a change instead of quietly working around it.",
+        "Enterprise AI didn't change that pattern. It raised the stakes on it. The organizations that succeed with AI won't be the ones with the best models, they'll be the ones who can operationalize it the way they'd operationalize any enterprise capability: with governance, ownership, adoption, and a way to measure whether it's actually working.",
+        "That's the problem I became interested in solving, not AI as a technology, but AI as something an organization has to be built to sustain. That interest is what eventually became the Enterprise AI Blueprint."
+      ]
+    },
+    "applied": {
+      "label": "BUILDING APPLIED AI",
+      "headline": "Testing the thinking by building it.",
+      "body": "My applied AI products demonstrate how these ideas translate into working software.",
+      "cta": "View Applied AI"
+    },
+    "reflection": {
+      "label": "WHAT CHANGED",
+      "quote": "Organizations rarely struggle because of the technology itself. They struggle because governance, operating models, product leadership, adoption, and business alignment were never connected to begin with, each one solved in isolation, if it gets solved at all. That realization became the foundation for everything I've built since."
+    },
+    "lookingAhead": {
+      "label": "LOOKING AHEAD",
+      "headline": "Where I'm focused now.",
+      "body": "Helping organizations move from AI experimentation to a governed, scalable, measurable enterprise capability, the same disciplines that made a difference long before AI was the assignment, applied to the one in front of us now."
+    },
+    "education": {
+      "label": "PROFESSIONAL FOUNDATION",
+      "items": [
+        "Graduate Certificate in Enterprise AI, Stevens Institute of Technology",
+        "Bachelor of Science, Aviation Management and Flight Operations, Daniel Webster College",
+        "PMP, Project Management Professional",
+        "ITIL Foundation",
+        "In Progress: SAFe Product Owner / Product Manager (POPM), AWS Cloud Practitioner"
+      ]
+    },
+    "closing": "Enterprise AI isn't just another technology shift. It's an organizational transformation. My work today is focused on helping organizations build the structures, governance, and leadership needed to make Enterprise AI a lasting business capability.",
+    "emotionalClose": "Enterprise AI isn't the destination for me, it became the natural evolution of everything I'd spent my career solving. The technology changed. The organizational challenges did not."
   },
   "pov": {
     "headline": "My Point of View on Enterprise AI",
@@ -374,58 +645,388 @@
     {
       "title": "AI Patterns & Capabilities",
       "items": [
-        "Retrieval-augmented generation (RAG) via context stuffing and vector-based approaches",
-        "Conversational semantic search powered by Claude API",
+        "Retrieval-augmented generation via context stuffing and vector-based approaches",
         "Explainable AI recommendation engines with multi-signal scoring",
-        "Jagged Frontier classification for AI task suitability (identifying where AI is reliable versus where human judgment is essential)",
-        "Recommendation change detection",
-        "Per-session API governance with call limits"
+        "Jagged Frontier classification for AI task suitability",
+        "Recommendation change detection"
       ]
     },
     {
       "title": "Governance & Human-in-the-Loop",
       "items": [
         "Centaur governance model: AI recommends, humans decide",
-        "Access-controlled AI features with password gate",
         "Human validation workflows built into every decision point",
-        "Designed to prevent over-reliance and ensure accountable decision-making"
+        "Access-controlled AI features with session-level governance"
       ]
     },
     {
       "title": "Data Architecture",
       "items": [
-        "Live ServiceNow REST API integration with graceful CSV fallback",
-        "Bronze-layer Data Lakehouse supporting scalable analytics",
-        "Vector-based indexing (ChromaDB) for context-aware retrieval",
-        "Structured portfolio data models across 200+ enterprise applications"
+        "Live REST API integration with graceful fallback",
+        "Vector-based indexing for context-aware retrieval",
+        "Structured data models across enterprise-scale datasets"
       ]
     },
     {
       "title": "Stack & Deployment",
       "items": [
-        "Python, Streamlit, Anthropic Claude API (claude-sonnet)",
-        "ServiceNow REST API",
-        "GitHub + Streamlit Community Cloud (live deployment with automated CI/CD via git push)",
-        "OpenAI Embeddings + ChromaDB (semantic search prototype)"
+        "Python, Streamlit, Anthropic Claude API",
+        "GitHub with automated CI/CD via git push",
+        "Live cloud deployment, not local-only prototypes"
       ]
     },
     {
       "title": "Outputs & Decision Support",
       "items": [
-        "AI-generated recommendations with supporting rationale and context",
-        "Structured outputs designed for stakeholder review and validation",
-        "Portfolio-level reporting and dashboards",
-        "Exportable decision reports for leadership review"
+        "AI-generated recommendations with supporting rationale",
+        "Structured outputs designed for stakeholder review",
+        "Exportable decision reports for leadership"
       ]
     },
     {
       "title": "Product Ownership",
       "items": [
-        "End-to-end product delivery from vision to production deployment",
+        "End-to-end delivery from vision to production deployment",
         "MVP scope definition and architecture decision-making",
-        "24-month productization roadmaps with 0\u2192500 customer scaling strategy",
-        "Deliberate architectural choices with documented rationale for scale"
+        "Documented rationale for every deliberate technical choice"
       ]
     }
-  ]
+  ],
+  "home": {
+    "hero": {
+      "eyebrow": "ENTERPRISE AI OPERATIONALIZATION & TRANSFORMATION",
+      "headline": "Helping organizations operationalize Enterprise AI as a governed, scalable, and measurable business capability.",
+      "body": [
+        "Most organizations can launch AI pilots. Far fewer can operationalize Enterprise AI across the business through the governance, operating models, product leadership, adoption, and organizational capabilities required for long-term success.",
+        "Over more than two decades of enterprise technology leadership\u2014including product strategy, governance, and application portfolio management at GE Vernova\u2014I helped organizations make better technology investment decisions, contributing to a 50% improvement in portfolio health and a 40% reduction in portfolio size.",
+        "Building on that experience, I have developed a structured approach for helping organizations assess readiness, identify capability gaps, and operationalize Enterprise AI responsibly and at scale."
+      ]
+    },
+    "experience": {
+      "label": "ENTERPRISE EXPERIENCE",
+      "headline": "Proven experience improving how enterprise technology investments are evaluated, governed, and managed.",
+      "intro": "Before focusing on Enterprise AI, I spent years working on the organizational disciplines that determine whether complex technology investments succeed: portfolio strategy, product leadership, governance, modernization, executive decision support, and lifecycle management.",
+      "stats": [
+        {
+          "value": "200+",
+          "label": "Applications",
+          "body": "Enterprise application intake, evaluation, governance, and portfolio decision support."
+        },
+        {
+          "value": "50%",
+          "label": "Improvement",
+          "body": "Improvement in application portfolio health through structured governance, prioritization, and modernization planning."
+        },
+        {
+          "value": "40%",
+          "label": "Reduction",
+          "body": "Reduction in application portfolio size through rationalization and improved investment decisions."
+        },
+        {
+          "value": "20+",
+          "label": "Years",
+          "body": "Enterprise leadership across GE Vernova, GE Power, Alstom, Pratt & Whitney, and the United States Air Force."
+        }
+      ]
+    },
+    "pointOfView": {
+      "label": "POINT OF VIEW",
+      "headline": "Enterprise AI is not simply a technology deployment. It is an organizational capability.",
+      "body": "Many organizations can fund pilots and deploy new tools. Far fewer establish the enterprise capabilities required to consistently choose the right initiatives, govern them responsibly, coordinate delivery, drive adoption, and measure sustained business value.",
+      "pillars": [
+        "Strategy and portfolio management",
+        "Platform and technology decisions",
+        "Product and delivery leadership",
+        "Governance and human accountability",
+        "Adoption and change enablement",
+        "Value realization and continuous improvement"
+      ],
+      "pullQuote": "AI becomes an enterprise capability when governance, delivery, adoption, and value realization operate as one system."
+    },
+    "blueprint": {
+      "label": "STRUCTURED METHODOLOGY",
+      "headline": "The Enterprise AI Blueprint",
+      "body": [
+        "The Enterprise AI Blueprint is a structured executive methodology I developed to help organizations understand their current position, assess readiness, identify capability gaps, establish an operating model, operationalize AI, and connect implementation to measurable business outcomes.",
+        "It draws on more than two decades of enterprise technology leadership, recent applied AI product work, and focused research into how organizations move AI from experimentation to sustained enterprise capability."
+      ],
+      "steps": [
+        {
+          "n": "01",
+          "title": "Current State",
+          "body": "Understand where the organization stands today.",
+          "question": "Where does our organization actually stand today, beyond isolated pilots?",
+          "purpose": "Establish an honest, evidence-based picture of existing AI activity, technology investment, and organizational capability before committing to a path forward.",
+          "outcome": "A shared, factual understanding of current-state reality that leadership can act on with confidence."
+        },
+        {
+          "n": "02",
+          "title": "AI Readiness",
+          "body": "Assess organizational readiness to adopt AI responsibly.",
+          "question": "Are we organizationally ready to adopt AI responsibly, or are we ahead of our own capability?",
+          "purpose": "Evaluate whether the governance, talent, data, and operational foundations exist to support AI initiatives at the level leadership intends to pursue them.",
+          "outcome": "A readiness position that keeps the organization from scaling AI faster than it can govern."
+        },
+        {
+          "n": "03",
+          "title": "Capability Gaps",
+          "body": "Identify what's missing between current and target state.",
+          "question": "What actually stands between where we are and where we need to be?",
+          "purpose": "Identify the organizational, technical, and governance gaps that will determine whether AI initiatives succeed or stall.",
+          "outcome": "A prioritized view of what must be built, acquired, or strengthened before scaling."
+        },
+        {
+          "n": "04",
+          "title": "Operating Model",
+          "body": "Define how AI initiatives will be governed and delivered.",
+          "question": "Who owns AI decisions, and how do initiatives actually get governed and delivered?",
+          "purpose": "Define the structure, accountability, and decision rights required to move AI from ad hoc activity to a managed enterprise function.",
+          "outcome": "A defined operating model that gives leadership a repeatable way to govern and deliver AI initiatives."
+        },
+        {
+          "n": "05",
+          "title": "Operationalize AI",
+          "body": "Move from pilot to scaled, adopted capability.",
+          "question": "How do we move from a successful pilot to a capability the business actually relies on?",
+          "purpose": "Translate the operating model into practice, connecting delivery, adoption, and change enablement so AI becomes part of how the organization works.",
+          "outcome": "AI capability that is adopted, trusted, and embedded in real business workflows."
+        },
+        {
+          "n": "06",
+          "title": "Business Outcomes",
+          "body": "Connect implementation to measurable value.",
+          "question": "How do we know this is actually working, and how do we sustain it?",
+          "purpose": "Connect implementation back to measurable business value, establishing the feedback loops that justify continued investment.",
+          "outcome": "A defensible, measurable link between AI investment and business results."
+        }
+      ],
+      "cta": "Explore the Enterprise AI Blueprint"
+    },
+    "appliedWork": {
+      "label": "FROM FRAMEWORK TO PRACTICE",
+      "headline": "Turning governance, explainability, and structured decision-making into working capabilities.",
+      "cards": [
+        {
+          "title": "PortfolioIQ",
+          "subtitle": "AI-Powered Application Portfolio Decision Support",
+          "body": "PortfolioIQ helps enterprise leaders evaluate application investments through structured data, transparent scoring, AI-assisted recommendations, and human review.",
+          "highlights": [
+            "Explainable recommendations",
+            "Accept, override, and escalate governance",
+            "Human accountability",
+            "Auditability",
+            "Portfolio-level insight"
+          ],
+          "cta": "View PortfolioIQ",
+          "url": "/Product1/genai-advisor.html"
+        },
+        {
+          "title": "Semantic CMDB Search",
+          "subtitle": "Contextual Retrieval for Enterprise Technology Data",
+          "body": "A proof of concept using semantic search and contextual retrieval to help users find relevant application and configuration information beyond exact keyword matching.",
+          "highlights": [],
+          "cta": "View Semantic CMDB Search",
+          "url": "/Product2/semantic-search.html"
+        },
+        {
+          "title": "Enterprise AI Operating Model",
+          "subtitle": "Target-State Architecture for Operationalizing Enterprise AI",
+          "body": "A structured model defining the capability domains, delivery lifecycle, continuous disciplines, governance, and business outcomes required to operationalize AI across the enterprise.",
+          "highlights": [],
+          "cta": "View the Operating Model",
+          "url": "/blueprint.html"
+        }
+      ]
+    },
+    "capabilities": {
+      "label": "CORE CAPABILITIES",
+      "headline": "Where enterprise product leadership and AI transformation come together.",
+      "items": [
+        {
+          "title": "Enterprise AI Strategy",
+          "body": "Defining where and how AI creates real business value."
+        },
+        {
+          "title": "Enterprise AI Operationalization",
+          "body": "Moving AI from pilot to governed, scaled capability."
+        },
+        {
+          "title": "AI Governance",
+          "body": "Establishing accountability, oversight, and trust in AI-assisted decisions."
+        },
+        {
+          "title": "Product & Portfolio Leadership",
+          "body": "Prioritizing investment across complex enterprise portfolios."
+        },
+        {
+          "title": "Operating Model Design",
+          "body": "Structuring how AI initiatives are delivered and governed."
+        },
+        {
+          "title": "Adoption & Value Realization",
+          "body": "Driving change enablement and measuring sustained outcomes."
+        }
+      ]
+    }
+  },
+  "blueprintPage": {
+    "hero": {
+      "eyebrow": "STRUCTURED EXECUTIVE METHODOLOGY",
+      "headline": "The Enterprise AI Blueprint",
+      "body": [
+        "The Enterprise AI Blueprint is a structured executive framework for moving Enterprise AI from isolated pilots to a governed, scalable, and measurable business capability.",
+        "It reflects more than two decades of enterprise technology leadership, applied AI product work, and focused study in how organizations actually operationalize AI, not just experiment with it."
+      ]
+    },
+    "struggle": {
+      "label": "WHY ORGANIZATIONS STRUGGLE",
+      "headline": "Most organizations can launch an AI pilot. Far fewer can turn one into an enterprise capability.",
+      "intro": "Pilots are relatively easy to fund and easy to demo. What's difficult is everything after the demo: governance that holds up under real use, delivery that survives contact with existing systems, adoption that outlasts the initial enthusiasm, and a way to prove the investment was worth it. Most AI initiatives don't fail because the model was wrong. They stall because the organization never built the capability to run them at scale.",
+      "patterns": [
+        {
+          "title": "Treated as a project, not a capability",
+          "body": "The pilot succeeds, then ends, because there was never a plan to operate it as an ongoing part of the business."
+        },
+        {
+          "title": "Governance added after the fact",
+          "body": "Oversight gets bolted on once something goes wrong, instead of being designed into the initiative from the start."
+        },
+        {
+          "title": "Adoption left to chance",
+          "body": "The tool is deployed, but no one owns whether people actually change how they work because of it."
+        }
+      ]
+    },
+    "steps": {
+      "label": "THE SIX-STEP BLUEPRINT",
+      "headline": "A structured path from fragmented activity to operational AI capability.",
+      "intro": "Each phase answers a specific executive question. Together, they move an organization from uncertainty about where it stands to a governed capability it can measure and sustain."
+    },
+    "howItWorks": {
+      "label": "HOW THE BLUEPRINT WORKS",
+      "headline": "Each phase builds on the one before it.",
+      "body": [
+        "The Blueprint is sequential, not because process demands it, but because each phase produces something the next phase depends on. You cannot design a credible operating model before you understand your actual readiness. You cannot operationalize AI at scale on top of a governance structure that doesn't yet exist.",
+        "In practice, the phases are iterative. Organizations revisit earlier phases as conditions change, new initiatives emerge, or readiness gaps close. What stays constant is the discipline of not skipping ahead. Most of the AI initiatives that stall did so because a later-stage problem, usually adoption or governance, was never addressed at the stage where it needed to be."
+      ]
+    },
+    "relationship": {
+      "label": "RELATIONSHIP TO ENTERPRISE AI",
+      "headline": "The Blueprint connects the disciplines that operationalizing AI actually requires.",
+      "body": "Enterprise AI is not one initiative or one technology decision. It is the product of several disciplines operating as a single system, and the Blueprint is the structure that connects them.",
+      "pillars": [
+        "Strategy and portfolio management",
+        "Organizational readiness and governance",
+        "Operating model and decision rights",
+        "Product and delivery leadership",
+        "Adoption and change enablement",
+        "Value realization and continuous improvement"
+      ]
+    },
+    "closing": {
+      "headline": "Interested in how this framework can be applied in practice?",
+      "body": "The Blueprint is the framework. The conversation is where it gets specific to your organization's current state, constraints, and goals.",
+      "links": [
+        {
+          "label": "Explore the Operating Model",
+          "url": "#step-04",
+          "style": "outline"
+        },
+        {
+          "label": "View Enterprise Experience",
+          "url": "/projects.html",
+          "style": "outline"
+        },
+        {
+          "label": "View Applied AI",
+          "url": "/products.html",
+          "style": "outline"
+        },
+        {
+          "label": "Start a Conversation",
+          "url": "/contact.html",
+          "style": "primary"
+        }
+      ]
+    }
+  },
+  "experiencePage": {
+    "hero": {
+      "eyebrow": "ENTERPRISE EXPERIENCE",
+      "headline": "The experience behind the Enterprise AI Blueprint.",
+      "intro": "My experience spans enterprise portfolio management, governance, product leadership, modernization, and operational excellence across global organizations, the same disciplines the Enterprise AI Blueprint is built on."
+    },
+    "themes": {
+      "label": "ENTERPRISE THEMES",
+      "headline": "The capability areas this experience spans.",
+      "items": [
+        "Enterprise Portfolio Management",
+        "Product Management",
+        "Governance",
+        "Operating Models",
+        "Enterprise Transformation",
+        "Process Improvement",
+        "Knowledge Management",
+        "Agile Delivery"
+      ]
+    },
+    "projects": {
+      "label": "FEATURED PROJECTS",
+      "headline": "A selection of platforms and initiatives I've owned end to end.",
+      "intro": "Each of these was a real leadership assignment inside a global organization, not a case study written after the fact."
+    },
+    "relationship": {
+      "label": "RELATIONSHIP TO THE BLUEPRINT",
+      "headline": "The Blueprint Didn't Appear in Isolation",
+      "body": [
+        "These projects represent years of solving the same category of problem across four organizations: governance, portfolio management, modernization, delivery, and transformation, each one a real leadership assignment, not a case study written after the fact.",
+        "The Enterprise AI Blueprint is the result of synthesizing those experiences into a repeatable executive framework, applied to Enterprise AI specifically. The experience came first. The framework is how I've since codified it."
+      ],
+      "cta": "View the Enterprise AI Blueprint"
+    }
+  },
+  "appliedPage": {
+    "hero": {
+      "eyebrow": "APPLIED ENTERPRISE AI",
+      "headline": "Where governance, decision support, and product thinking become working solutions.",
+      "body": [
+        "These products translate the principles behind the Enterprise AI Blueprint into practice: explainable recommendations, human accountability, and measurable outcomes, built into working software rather than described in a slide."
+      ]
+    },
+    "products": {
+      "label": "FEATURED PRODUCTS",
+      "headline": "What I've built.",
+      "intro": "Each of these started with a specific business decision that needed to be made better. The AI capability came second, after the decision, the workflow, and the governance model were defined."
+    },
+    "principles": {
+      "label": "PRODUCT THINKING",
+      "headline": "Five principles behind how these get built.",
+      "items": [
+        {
+          "title": "Start With the Decision",
+          "body": "Define what needs to be decided, who owns it, and what success looks like before any model gets involved."
+        },
+        {
+          "title": "Separate Pattern From Judgment",
+          "body": "AI supports pattern recognition. Humans own the tradeoffs and the accountability."
+        },
+        {
+          "title": "Keep AI Advisory",
+          "body": "Every recommendation requires human validation before it becomes an action."
+        },
+        {
+          "title": "Track What Goes Wrong",
+          "body": "False positives, false negatives, and business impact get measured, not assumed."
+        },
+        {
+          "title": "Assign Ownership",
+          "body": "Every capability has a named owner and a feedback loop that keeps it honest over time."
+        }
+      ]
+    },
+    "technology": {
+      "label": "TECHNICAL CAPABILITIES",
+      "headline": "The technical foundation behind these products."
+    }
+  }
 }

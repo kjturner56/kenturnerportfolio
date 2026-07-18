@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kenneth R. Turner | Experience</title>
+  <title>Enterprise Experience | Kenneth R. Turner</title>
+  <meta name="description" content="Two decades of enterprise portfolio management, governance, product leadership, and modernization across global organizations." />
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EG813QJ4B"></script>
   <script>
@@ -15,24 +20,121 @@
   </script>
 </head>
 
-<body data-depth="0">
+<body class="has-subnav" data-depth="0">
 
 <header class="banner" role="banner">
   <div class="container banner-inner" id="banner-inner"></div>
   <div class="banner-divider" aria-hidden="true"></div>
 </header>
 
+<div class="section-nav" id="section-nav">
+  <div class="container section-nav-inner">
+  <a href="#themes">Themes</a>
+  <a href="#projects">Projects</a>
+  <a href="#relationship">Blueprint</a>
+  </div>
+</div>
+
 <main>
-  <section class="section">
+
+  <!-- Hero -->
+  <section class="section" style="padding:var(--space-hero-padding);">
     <div class="container">
-      <h2>Selected Enterprise Projects</h2>
-      <p>A selection of platforms I have owned and delivered, each focused on
-         improving how leadership makes decisions around application investment,
-         modernization, and risk.</p>
-      <div class="card-grid" id="project-cards"></div>
+      <div style="max-width:var(--text-width-standard);">
+        <div class="eyebrow" id="exp-hero-eyebrow"></div>
+        <h1 class="hero-headline" id="exp-hero-headline" style="font-size:2.15rem;line-height:1.28;color:var(--nav-bg);margin:0 0 20px;font-weight:700;"></h1>
+        <p id="exp-hero-intro" style="font-size:1.05rem;line-height:1.7;"></p>
+      </div>
     </div>
   </section>
+
+  <!-- Enterprise Themes -->
+  <section id="themes" class="section light-bg">
+    <div class="container">
+      <span class="section-label" id="themes-label"></span>
+      <h2 id="themes-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-standard);"></h2>
+      <div class="theme-chip-row" id="themes-chips"></div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section id="projects" class="section" style="padding-bottom:64px;">
+    <div class="container">
+      <span class="section-label" id="projects-label"></span>
+      <h2 id="projects-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-standard);"></h2>
+      <p class="intro" id="projects-intro" style="max-width:var(--text-width-standard);"></p>
+      <div class="exp-grid" id="projects-cards"></div>
+    </div>
+  </section>
+
+  <!-- Relationship to the Blueprint -->
+  <section id="relationship" class="section light-bg" style="padding-top:68px;padding-bottom:76px;">
+    <div class="container" style="text-align:center;">
+      <span class="section-label" id="rel-label"></span>
+      <h2 id="rel-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-narrow);margin-left:auto;margin-right:auto;"></h2>
+      <div id="rel-body" style="max-width:var(--text-width-narrow);margin:0 auto;text-align:left;"></div>
+      <div style="margin-top:22px;">
+        <a href="/blueprint.html" class="btn" id="rel-cta"></a>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<!-- Executive Case Study Modal (reusable shell, content generated per project) -->
+<div class="modal-overlay" id="exp-modal-overlay">
+  <div class="modal-box" id="exp-modal-box" role="dialog" aria-modal="true" aria-labelledby="exp-modal-title">
+    <button class="modal-close" id="exp-modal-close" aria-label="Close case study">&times;</button>
+    <div class="modal-scroll">
+      <div class="modal-header">
+        <span class="modal-org" id="exp-modal-org"></span>
+        <h2 id="exp-modal-title"></h2>
+        <div class="modal-role" id="exp-modal-role"></div>
+      </div>
+
+      <div class="modal-section">
+        <h3>Executive Summary</h3>
+        <p id="exp-modal-summary"></p>
+      </div>
+
+      <div class="modal-section">
+        <h3>Business Challenge</h3>
+        <p id="exp-modal-challenge"></p>
+      </div>
+
+      <div class="modal-section">
+        <h3>My Role</h3>
+        <p id="exp-modal-myrole"></p>
+      </div>
+
+      <div class="modal-section">
+        <h3>Key Contributions</h3>
+        <ul id="exp-modal-contributions"></ul>
+      </div>
+
+      <div class="modal-section">
+        <h3>Business Outcomes</h3>
+        <div class="modal-outcomes" id="exp-modal-outcomes"></div>
+      </div>
+
+      <div class="modal-section">
+        <h3>Enterprise Capabilities Demonstrated</h3>
+        <div class="tag-list" id="exp-modal-capabilities"></div>
+      </div>
+
+      <div class="modal-section modal-blueprint-section">
+        <h3>Relationship to the Enterprise AI Blueprint</h3>
+        <p id="exp-modal-blueprint"></p>
+      </div>
+    </div>
+
+    <div class="modal-nav">
+      <button class="modal-nav-btn" id="exp-modal-prev">&#8249; Previous Project</button>
+      <span class="modal-counter" id="exp-modal-counter"></span>
+      <button class="modal-nav-btn" id="exp-modal-next">Next Project &#8250;</button>
+    </div>
+  </div>
+</div>
 
 <div class="role-intent" id="role-intent"></div>
 <footer class="site-footer" role="contentinfo" id="site-footer"></footer>
@@ -44,10 +146,55 @@
     document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'projects.html');
     document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
     document.getElementById('role-intent').textContent = d.meta.tagline;
-    document.getElementById('project-cards').innerHTML =
-      Portfolio.buildProjectCards(d.enterpriseProjects);
     Portfolio.initNavToggle();
     Portfolio.setYear();
+
+    const ep = d.experiencePage;
+
+    // Hero
+    document.getElementById('exp-hero-eyebrow').textContent = ep.hero.eyebrow;
+    document.getElementById('exp-hero-headline').textContent = ep.hero.headline;
+    document.getElementById('exp-hero-intro').textContent = ep.hero.intro;
+
+    // Enterprise Themes
+    document.getElementById('themes-label').textContent = ep.themes.label;
+    document.getElementById('themes-headline').textContent = ep.themes.headline;
+    document.getElementById('themes-chips').innerHTML = Portfolio.buildThemeChips(ep.themes.items);
+
+    // Featured Projects
+    document.getElementById('projects-label').textContent = ep.projects.label;
+    document.getElementById('projects-headline').textContent = ep.projects.headline;
+    document.getElementById('projects-intro').textContent = ep.projects.intro;
+    document.getElementById('projects-cards').innerHTML = Portfolio.buildExperienceCards(d.enterpriseProjects);
+    Portfolio.initExpModal(d.enterpriseProjects);
+
+    // Relationship to the Blueprint
+    document.getElementById('rel-label').textContent = ep.relationship.label;
+    document.getElementById('rel-headline').textContent = ep.relationship.headline;
+    document.getElementById('rel-body').innerHTML = ep.relationship.body.map(p => `<p>${p}</p>`).join('');
+    document.getElementById('rel-cta').textContent = ep.relationship.cta;
+
+    // Scrollspy, same pattern as Home and Blueprint
+    const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
+    const targets = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+    const fixedOffset = () => {
+      const raw = getComputedStyle(document.documentElement).getPropertyValue('--total-fixed-h');
+      const parsed = parseFloat(raw);
+      return (isNaN(parsed) ? 172 : parsed) + 16;
+    };
+    const spy = () => {
+      const y = window.scrollY + fixedOffset();
+      let current = null;
+      targets.forEach(t => { if (t && t.offsetTop <= y) current = t; });
+      navLinks.forEach(a => a.classList.remove('active'));
+      if (current) {
+        const match = navLinks.find(a => a.getAttribute('href') === '#' + current.id);
+        if (match) match.classList.add('active');
+      }
+    };
+    window.addEventListener('scroll', spy, { passive: true });
+    window.addEventListener('resize', spy);
+    spy();
   })();
 </script>
 

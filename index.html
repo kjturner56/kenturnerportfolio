@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kenneth R. Turner | Senior AI Product Manager</title>
+  <title>Kenneth R. Turner | Enterprise AI & Product Leadership</title>
+  <meta name="description" content="Helping organizations operationalize Enterprise AI as a governed, scalable, and measurable business capability." />
   <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EG813QJ4B"></script>
   <script>
@@ -23,115 +28,121 @@
 </header>
 
 <div class="section-nav" id="section-nav">
-  <a href="#value">The Value I Bring</a>
-  <a href="#experience">My Experience</a>
-  <a href="#vision">Career Vision</a>
-  <a href="#highlights">Work Highlights</a>
+  <div class="container section-nav-inner">
+  <a href="#experience">Enterprise Experience</a>
+  <a href="#pov">Point of View</a>
+  <a href="#blueprint">Blueprint</a>
+  <a href="#applied-work">Applied Work</a>
+  <a href="#capabilities">Capabilities</a>
+  </div>
 </div>
 
 <main>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <h2>Hello, I'm <span>Ken</span></h2>
-        <p>I am a Senior AI Product Manager focused on applying AI to enterprise
-           decision-making, where adoption, trust, and workflow integration matter
-           more than the model.</p>
-        <p>I build decision-support tools that combine AI-generated recommendations
-           with human validation, clear ownership, and governance built into the
-           workflow from the start.</p>
-        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="/about.html" class="btn">Learn More About Me</a>
-          <a href="/products.html" class="btn btn-outline">View AI Products</a>
+  <!-- Section 1: Hero -->
+  <section class="section home-hero">
+    <div class="container home-hero-grid">
+      <div class="home-hero-text">
+        <div class="eyebrow" id="hero-eyebrow"></div>
+        <h1 class="hero-headline" id="hero-headline"></h1>
+        <div class="hero-body" id="hero-body"></div>
+        <div class="hero-actions">
+          <a href="/products.html" class="btn">Explore My Work</a>
+          <a href="/projects.html" class="btn btn-outline">View Enterprise Experience</a>
         </div>
       </div>
-      <div class="hero-image">
-        <img src="/images/MyPic2.jpg" alt="Kenneth R. Turner" class="profile-pic" />
-      </div>
+      <div id="hero-visual-slot" class="home-hero-visual-col"></div>
     </div>
-  </section>
-
-  <!-- Value -->
-  <section id="value" class="section light-bg" style="padding-top:28px;padding-bottom:28px;">
     <div class="container">
-      <div class="value-card">
-        <h2>The Value I Bring</h2>
-        <p>At GE Vernova, GE Power, Pratt &amp; Whitney, and Alstom Power, I owned
-           and delivered the platforms leadership relied on to make application
-           portfolio, investment, and modernization decisions. That includes an
-           Application Portfolio Management dashboard that delivered a 50%
-           improvement in application health scores and reduced the portfolio
-           by 40%.</p>
-        <p>I apply that same approach to AI, designing decision-support tools that
-           improve decision quality while keeping human ownership, validation, and
-           governance at the center of every workflow.</p>
+      <div class="credibility-strip">
+        <span>20+ Years</span><span class="dot">&middot;</span>
+        <span>GE Vernova</span><span class="dot">&middot;</span>
+        <span>PMP</span><span class="dot">&middot;</span>
+        <span>Graduate Certificate in Enterprise AI</span>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
-  <section id="experience" class="section" style="padding-top:28px;padding-bottom:28px;">
+  <!-- Section 2: Enterprise Experience -->
+  <section id="experience" class="section light-bg">
     <div class="container">
-      <div class="value-card">
-        <h2>My Experience</h2>
-        <p>With twenty years of experience across GE Vernova, GE Power, Pratt &amp; Whitney,
-           and Alstom Power, I have led products from strategy through delivery, working
-           directly with CIOs, Directors, and engineering leaders to prioritize investment,
-           manage portfolios, and guide modernization at scale.</p>
-        <p>See the <a href="/projects.html">Experience</a> section for selected
-           projects and outcomes.</p>
+      <span class="section-label">ENTERPRISE EXPERIENCE</span>
+      <h2 id="exp-headline" style="border-bottom:none;padding-bottom:0;"></h2>
+      <p class="intro" id="exp-intro" style="max-width:var(--text-width-wide);"></p>
+      <div class="stat-grid" id="exp-stats"></div>
+      <div style="margin-top:26px;">
+        <a href="/projects.html" class="btn btn-outline">Explore Enterprise Experience</a>
       </div>
     </div>
   </section>
 
-  <!-- Career Vision -->
-  <section id="vision" class="section light-bg" style="padding-top:28px;padding-bottom:28px;">
+  <!-- Section 3: Point of View -->
+  <section id="pov" class="section">
     <div class="container">
-      <div class="value-card">
-        <h2>Career Vision</h2>
-        <p>I look for opportunities where AI supports real business decisions,
-           not just generates output. My focus is on application portfolio
-           management, modernization planning, and investment prioritization,
-           where decisions have to be defensible and someone has to own
-           the outcome.</p>
-        <p>I bring a product-led approach to these challenges, ensuring that AI
-           enhances decision-making without replacing accountability, and that
-           solutions integrate into how teams actually work.</p>
-      </div>
+      <span class="section-label">POINT OF VIEW</span>
+      <h2 id="pov-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-wide);"></h2>
+      <p id="pov-body" style="max-width:var(--text-width-standard);"></p>
+      <div id="pov-pillars-slot"></div>
+      <blockquote class="pull-quote" id="pov-quote"></blockquote>
     </div>
   </section>
 
-  <!-- Work Highlights -->
-  <section id="highlights" class="section" style="padding-top:28px;padding-bottom:28px;">
+  <!-- Section 4: Enterprise AI Blueprint -->
+  <section id="blueprint" class="section light-bg">
     <div class="container">
-      <div class="value-card">
-        <h2>Work Highlights</h2>
-        <p>The <strong>AI Portfolio Rationalization Advisor</strong> is my most
-           recent work, a fully deployed Streamlit application running live on
-           Streamlit Community Cloud. It demonstrates enterprise AI governance
-           in action, combining explainable AI recommendations, human-in-the-loop
-           validation, recommendation change detection, and conversational search
-           powered by the Claude API.
-           <a href="/Product1/genai-advisor.html">See the full case study</a> or
-           <a href="https://ai-app-advisor.streamlit.app" target="_blank" rel="noopener noreferrer">view the live app</a>.</p>
-        <p>The <a href="/projects.html">Experience</a> section covers enterprise
-           initiatives across application portfolio management, modernization, and
-           operational platforms. The <a href="/products.html">AI Products</a>
-           section features deployed and prototype decision-support tools built
-           on real enterprise use cases.</p>
+      <span class="section-label">STRUCTURED METHODOLOGY</span>
+      <h2 id="blueprint-headline" style="border-bottom:none;padding-bottom:0;"></h2>
+      <div id="blueprint-body"></div>
+      <div id="blueprint-steps-slot"></div>
+      <div style="margin-top:26px;">
+        <a href="/blueprint.html" class="btn btn-outline" id="blueprint-cta"></a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- Section 5: Applied Work -->
+  <section id="applied-work" class="section">
+    <div class="container">
+      <span class="section-label">FROM FRAMEWORK TO PRACTICE</span>
+      <h2 id="applied-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-wide);"></h2>
+      <div class="applied-grid" id="applied-cards"></div>
+    </div>
+  </section>
+
+  <!-- Section 6: Core Capabilities -->
+  <section id="capabilities" class="section light-bg">
+    <div class="container">
+      <span class="section-label">CORE CAPABILITIES</span>
+      <h2 id="cap-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-wide);"></h2>
+      <div class="capability-grid" id="cap-cards"></div>
+    </div>
+  </section>
+
+  <!-- Section 7: About preview -->
+  <section id="about-preview" class="section">
+    <div class="container about-preview-grid">
+      <img src="/images/MyPic2.jpg" alt="Kenneth R. Turner" class="about-preview-pic" />
+      <div class="about-preview-text">
+        <span class="section-label">ABOUT</span>
+        <h2 style="border-bottom:none;padding-bottom:0;">Enterprise experience. Product discipline. A practical approach to AI.</h2>
+        <p>I am an enterprise product and technology leader with more than 20 years of experience helping
+          organizations manage complex platforms, portfolios, investments, and transformation initiatives.
+          My work is grounded in what actually gets adopted inside large organizations, not just what performs
+          well in a demo.</p>
+        <p>My perspective is shaped by leadership roles at GE Vernova, GE Power, Alstom, Pratt &amp; Whitney,
+          and the United States Air Force, along with graduate-level study in Enterprise AI.</p>
+        <a href="/about.html" class="btn btn-outline" style="margin-top:8px;">Read My Full Background</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Contact CTA -->
   <section class="section light-bg">
     <div class="container" style="text-align:center;">
-      <h2>Let's Connect</h2>
-      <p>If you are building enterprise AI platforms that support planning,
-         decision-making, and operational workflows, I'd love to connect.</p>
-      <a href="/contact.html" class="btn" style="margin-top:8px;">Contact Me</a>
+      <h2 style="border-bottom:none;padding-bottom:0;">Let's discuss how Enterprise AI moves from strategy to sustained business capability.</h2>
+      <p style="max-width:var(--text-width-narrow);margin:0 auto 8px;">I am open to conversations about Enterprise AI transformation, AI governance,
+        technical product leadership, operating models, portfolio strategy, and executive decision-support initiatives.</p>
+      <a href="/contact.html" class="btn" style="margin-top:12px;">Contact Me</a>
     </div>
   </section>
 
@@ -149,6 +160,61 @@
     document.getElementById('role-intent').textContent = d.meta.tagline;
     Portfolio.initNavToggle();
     Portfolio.setYear();
+
+    const home = d.home;
+
+    // Hero
+    document.getElementById('hero-eyebrow').textContent = home.hero.eyebrow;
+    document.getElementById('hero-headline').textContent = home.hero.headline;
+    document.getElementById('hero-body').innerHTML = home.hero.body.map(p => `<p>${p}</p>`).join('');
+    document.getElementById('hero-visual-slot').innerHTML = Portfolio.buildHeroVisual();
+
+    // Enterprise Experience
+    document.getElementById('exp-headline').textContent = home.experience.headline;
+    document.getElementById('exp-intro').textContent = home.experience.intro;
+    document.getElementById('exp-stats').innerHTML = Portfolio.buildStatCards(home.experience.stats);
+
+    // Point of View
+    document.getElementById('pov-headline').textContent = home.pointOfView.headline;
+    document.getElementById('pov-body').textContent = home.pointOfView.body;
+    document.getElementById('pov-pillars-slot').innerHTML = Portfolio.buildPovPillars(home.pointOfView.pillars);
+    document.getElementById('pov-quote').textContent = home.pointOfView.pullQuote;
+
+    // Blueprint
+    document.getElementById('blueprint-headline').textContent = home.blueprint.headline;
+    document.getElementById('blueprint-body').innerHTML = home.blueprint.body.map(p => `<p>${p}</p>`).join('');
+    document.getElementById('blueprint-steps-slot').innerHTML = Portfolio.buildBlueprintSteps(home.blueprint.steps);
+    document.getElementById('blueprint-cta').textContent = home.blueprint.cta;
+
+    // Applied Work
+    document.getElementById('applied-headline').textContent = home.appliedWork.headline;
+    document.getElementById('applied-cards').innerHTML = Portfolio.buildAppliedCards(home.appliedWork.cards);
+
+    // Capabilities
+    document.getElementById('cap-headline').textContent = home.capabilities.headline;
+    document.getElementById('cap-cards').innerHTML = Portfolio.buildCapabilityCards(home.capabilities.items);
+
+    // Scrollspy: highlight the active section-nav link as the visitor scrolls
+    const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
+    const targets = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+    const fixedOffset = () => {
+      const raw = getComputedStyle(document.documentElement).getPropertyValue('--total-fixed-h');
+      const parsed = parseFloat(raw);
+      return (isNaN(parsed) ? 172 : parsed) + 16;
+    };
+    const spy = () => {
+      const y = window.scrollY + fixedOffset();
+      let current = null;
+      targets.forEach(t => { if (t && t.offsetTop <= y) current = t; });
+      navLinks.forEach(a => a.classList.remove('active'));
+      if (current) {
+        const match = navLinks.find(a => a.getAttribute('href') === '#' + current.id);
+        if (match) match.classList.add('active');
+      }
+    };
+    window.addEventListener('scroll', spy, { passive: true });
+    window.addEventListener('resize', spy);
+    spy();
   })();
 </script>
 
