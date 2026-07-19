@@ -39,13 +39,13 @@
       "id": "ai-rationalization-advisor",
       "featured": true,
       "status": "live",
-      "title": "AI Portfolio Rationalization Advisor",
+      "title": "PortfolioIQ",
       "subtitle": "A fully deployed Streamlit application demonstrating enterprise AI governance in action.",
       "liveUrl": "https://ai-app-advisor.streamlit.app",
       "githubRepo": null,
       "caseStudyUrl": "/Product1/genai-advisor.html",
       "image": "/images/GenAI_Advisor.png",
-      "imageAlt": "AI Portfolio Rationalization Advisor dashboard screenshot",
+      "imageAlt": "PortfolioIQ dashboard screenshot",
       "tags": [
         "Claude API",
         "Python",
@@ -54,7 +54,7 @@
         "GitHub",
         "Streamlit Cloud"
       ],
-      "summary": "A fully deployed, 6-screen Streamlit application demonstrating a Centaur governance model for enterprise application portfolio rationalization. Built to show AI product thinking beyond a simple chatbot, with governance, explainability, cost management, and human oversight built into the workflow.",
+      "summary": "A fully deployed, 6-screen Streamlit application demonstrating a Centaur governance model for enterprise application portfolio rationalization. Built to demonstrate enterprise AI product thinking beyond a simple chatbot, with governance, explainability, cost management, and human oversight built into the workflow.",
       "capabilities": [
         "Explainable AI recommendation engine with 7-signal scoring",
         "Jagged Frontier classification (a framework identifying where AI performs reliably versus where human judgment is essential): Inside, Edge, or Outside",
@@ -557,7 +557,7 @@
       "eyebrow": "THE STORY BEHIND THE WORK",
       "headline": "From Enterprise Technology to Enterprise AI",
       "narrative": [
-        "Over two decades leading enterprise technology initiatives, I discovered that organizations rarely struggle because of technology alone. They struggle because governance, operating models, leadership, and adoption aren't connected. That realization ultimately led me to focus on Enterprise AI Operationalization.",
+        "Over two decades leading enterprise technology initiatives, I discovered that organizations rarely struggle because of technology alone. They struggle because governance, operating models, leadership, and adoption aren't connected. That realization ultimately led me to focus on how organizations operationalize Enterprise AI.",
         "AI didn't introduce a new category of organizational failure. It exposed the same one, at a larger scale, moving faster, with less room to recover from getting it wrong."
       ]
     },
@@ -697,9 +697,9 @@
       "eyebrow": "ENTERPRISE AI OPERATIONALIZATION & TRANSFORMATION",
       "headline": "Helping organizations operationalize Enterprise AI as a governed, scalable, and measurable business capability.",
       "body": [
-        "Most organizations can launch AI pilots. Far fewer can operationalize Enterprise AI across the business through the governance, operating models, product leadership, adoption, and organizational capabilities required for long-term success.",
+        "Most organizations can launch AI pilots. Far fewer can operationalize Enterprise AI across the business because operationalization requires more than technology. It requires governance, operating models, product leadership, adoption, and the organizational capabilities needed to sustain AI at enterprise scale.",
         "Over more than two decades of enterprise technology leadership\u2014including product strategy, governance, and application portfolio management at GE Vernova\u2014I helped organizations make better technology investment decisions, contributing to a 50% improvement in portfolio health and a 40% reduction in portfolio size.",
-        "Building on that experience, I have developed a structured approach for helping organizations assess readiness, identify capability gaps, and operationalize Enterprise AI responsibly and at scale."
+        "Building on that experience, I developed the Enterprise AI Blueprint, a structured executive methodology that helps organizations assess AI readiness, identify capability gaps, design an operating model, and operationalize Enterprise AI responsibly and at scale."
       ]
     },
     "experience": {
@@ -806,16 +806,25 @@
       "label": "FROM FRAMEWORK TO PRACTICE",
       "headline": "Turning governance, explainability, and structured decision-making into working capabilities.",
       "cards": [
+                {
+          "title": "Enterprise AI Operating Model",
+          "subtitle": "Target-State Architecture for Operationalizing Enterprise AI",
+          "body": "A structured model defining the capability domains, delivery lifecycle, continuous disciplines, governance, and business outcomes required to operationalize AI across the enterprise.",
+          "highlights": [],
+          "cta": "View the Operating Model",
+          "url": "/blueprint.html"
+        },
         {
           "title": "PortfolioIQ",
           "subtitle": "AI-Powered Application Portfolio Decision Support",
           "body": "PortfolioIQ helps enterprise leaders evaluate application investments through structured data, transparent scoring, AI-assisted recommendations, and human review.",
           "highlights": [
-            "Explainable recommendations",
-            "Accept, override, and escalate governance",
-            "Human accountability",
-            "Auditability",
-            "Portfolio-level insight"
+            "Explainable AI recommendations",
+            "Human-in-the-loop governance",
+            "Multi-signal decision scoring",
+            "Recommendation override tracking",
+            "Complete audit trail",
+            "Live cloud deployment"
           ],
           "cta": "View PortfolioIQ",
           "url": "/Product1/genai-advisor.html"
@@ -827,14 +836,6 @@
           "highlights": [],
           "cta": "View Semantic CMDB Search",
           "url": "/Product2/semantic-search.html"
-        },
-        {
-          "title": "Enterprise AI Operating Model",
-          "subtitle": "Target-State Architecture for Operationalizing Enterprise AI",
-          "body": "A structured model defining the capability domains, delivery lifecycle, continuous disciplines, governance, and business outcomes required to operationalize AI across the enterprise.",
-          "highlights": [],
-          "cta": "View the Operating Model",
-          "url": "/blueprint.html"
         }
       ]
     },
@@ -875,7 +876,8 @@
       "headline": "The Enterprise AI Blueprint",
       "body": [
         "The Enterprise AI Blueprint is a structured executive framework for moving Enterprise AI from isolated pilots to a governed, scalable, and measurable business capability.",
-        "It reflects more than two decades of enterprise technology leadership, applied AI product work, and focused study in how organizations actually operationalize AI, not just experiment with it."
+        "The Enterprise AI Blueprint emerged from a simple observation: the organizational disciplines that determine whether enterprise technology succeeds also determine whether Enterprise AI succeeds. Governance, product leadership, operating models, adoption, and value realization are not AI-specific. They are enterprise capabilities that become even more critical as organizations operationalize AI.",
+        "That perspective was shaped through more than two decades of enterprise product management, governance, and technology investment leadership across large enterprise organizations."
       ]
     },
     "struggle": {
@@ -924,7 +926,7 @@
       ]
     },
     "closing": {
-      "headline": "Interested in how this framework can be applied in practice?",
+      "headline": "Ready to operationalize Enterprise AI?",
       "body": "The Blueprint is the framework. The conversation is where it gets specific to your organization's current state, constraints, and goals.",
       "links": [
         {
@@ -990,7 +992,7 @@
       "eyebrow": "APPLIED ENTERPRISE AI",
       "headline": "Where governance, decision support, and product thinking become working solutions.",
       "body": [
-        "These products translate the principles behind the Enterprise AI Blueprint into practice: explainable recommendations, human accountability, and measurable outcomes, built into working software rather than described in a slide."
+        "These products demonstrate how the principles behind the Enterprise AI Blueprint become working enterprise software through explainable AI, human accountability, and governance by design."
       ]
     },
     "products": {
