@@ -121,7 +121,7 @@
       "artifacts": [
         "Live deployed application on Streamlit Community Cloud"
       ],
-      "architectureNote": "Same governance pattern applied to a cybersecurity context: retrieve threat data across multiple sources, AI reasons and recommends, human reviews before action executes, full audit log captures every decision. Demonstrates pattern reusability across domains. Built in response to identifying a cybersecurity domain gap - designed, built, and deployed in under 48 hours.",
+      "architectureNote": "Same governance pattern applied to a cybersecurity context: retrieve threat data across multiple sources, AI reasons and recommends, human reviews before action executes, full audit log captures every decision. Demonstrates pattern reusability across domains. Built in response to identifying a cybersecurity domain gap - designed, built, and deployed in a couple of days.",
       "businessValue": [
         "Addresses analyst triage consistency \u2014 AI surfaces relevant threat context so every analyst makes decisions from the same information baseline",
         "Override tracking identifies where AI and human judgment diverge, enabling continuous model improvement without retraining",
@@ -883,7 +883,7 @@
       "body": [
         "The Enterprise AI Blueprint is a structured executive framework for moving Enterprise AI from isolated pilots to a governed, scalable, and measurable business capability.",
         "The Enterprise AI Blueprint emerged from a simple observation: the organizational disciplines that determine whether enterprise technology succeeds also determine whether Enterprise AI succeeds. Governance, product leadership, operating models, adoption, and value realization are not AI-specific. They are enterprise capabilities that become even more critical as organizations operationalize AI.",
-        "That perspective was shaped through more than two decades of enterprise product management, governance, and technology investment leadership across large enterprise organizations."
+        "That perspective was shaped through more than two decades leading enterprise technology investment, governance, and product management at GE Vernova, GE Power, Pratt & Whitney, and Alstom Power."
       ]
     },
     "struggle": {
