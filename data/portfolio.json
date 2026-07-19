@@ -67,7 +67,6 @@
       ],
       "artifacts": [
         "Live deployed application on Streamlit Community Cloud",
-        "GitHub repository (kjturner56/ai-app-rationalization-advisor)",
         "Professional user guide PDF",
         "24-month product roadmap (visual + PDF)"
       ],
@@ -75,7 +74,7 @@
       "businessValue": [
         "Demonstrates AI product thinking beyond output generation, with governance, explainability, and human oversight built into every workflow",
         "Includes 0\u2192500 customer productization roadmap showing scaling strategy",
-        "End-to-end delivery in a single weekend proves execution speed and technical depth"
+        "Rapid end-to-end delivery demonstrates the ability to move quickly from concept to working software."
       ],
       "businessProblem": "Enterprise application portfolios routinely include hundreds of systems, and retain, retire, or modernize decisions are often made on incomplete information or institutional memory rather than consistent, defensible criteria. Without structured decision support, organizations either move too slowly or make costly modernization mistakes.",
       "productVision": "The opportunity was to bring the same governance discipline used in the GE Vernova APM Dashboard to an AI-assisted version, one where AI accelerates the recommendation without removing human accountability for the decision.",
@@ -95,7 +94,7 @@
       "title": "AI Security Triage Dashboard",
       "subtitle": "Enterprise threat and vulnerability decision-support with human-in-the-loop governance.",
       "liveUrl": "https://ai-security-triage-dashboard.streamlit.app",
-      "githubRepo": "https://github.com/kjturner56/ai-security-triage-dashboard",
+      "githubRepo": null,
       "caseStudyUrl": "/Product4/security-triage.html",
       "image": "/images/SecurityTriage.png",
       "imageAlt": "AI Security Triage Dashboard screenshot",
@@ -112,7 +111,7 @@
       "capabilities": [
         "CISA KEV cross-reference -  live exploitation status overlaid on every CVE, separating theoretical severity from operational priority.",
         "Live CVE feed from NIST NVD API with CVSS severity scoring and AI triage summaries",
-        "Phishing email analysis using a labeled research corpus demonstrating AI risk scoring and triage workflow governance - in production, connects to a live email security gateway feed.",
+        "Phishing email analysis using a labeled research corpus to demonstrate AI risk scoring, explainable recommendations, and triage workflow governance. The architecture is designed to integrate with enterprise email security gateways in production deployments.",
         "URL threat indicator feed with severity classification and AI-generated mitigation recommendations",
         "Human-in-the-loop review queue - no action executes without analyst approval",
         "Override tracking - written rationale required before any AI recommendation is overridden",
@@ -120,8 +119,7 @@
         "Bounded agentic routing - AI recommends, human approves, system executes and logs"
       ],
       "artifacts": [
-        "Live deployed application on Streamlit Community Cloud",
-        "GitHub repository (kjturner56/ai-security-triage-dashboard)"
+        "Live deployed application on Streamlit Community Cloud"
       ],
       "architectureNote": "Same governance pattern applied to a cybersecurity context: retrieve threat data across multiple sources, AI reasons and recommends, human reviews before action executes, full audit log captures every decision. Demonstrates pattern reusability across domains. Built in response to identifying a cybersecurity domain gap - designed, built, and deployed in under 48 hours.",
       "businessValue": [
@@ -664,7 +662,7 @@
       "items": [
         "Live REST API integration with graceful fallback",
         "Vector-based indexing for context-aware retrieval",
-        "Structured data models across enterprise-scale datasets"
+        "Structured data models using publicly available enterprise-style datasets to demonstrate scalable retrieval and decision-support patterns"
       ]
     },
     {
@@ -698,7 +696,7 @@
       "headline": "Helping organizations operationalize Enterprise AI as a governed, scalable, and measurable business capability.",
       "body": [
         "Most organizations can launch AI pilots. Far fewer can operationalize Enterprise AI across the business because operationalization requires more than technology. It requires governance, operating models, product leadership, adoption, and the organizational capabilities needed to sustain AI at enterprise scale.",
-        "Over more than two decades of enterprise technology leadership\u2014including product strategy, governance, and application portfolio management at GE Vernova\u2014I helped organizations make better technology investment decisions, contributing to a 50% improvement in portfolio health and a 40% reduction in portfolio size.",
+        "Over more than two decades of enterprise technology leadership, including product strategy, governance, and application portfolio management at GE Vernova, I helped organizations make better technology investment decisions, contributing to a 50% improvement in portfolio health and a 40% reduction in portfolio size.",
         "Building on that experience, I developed the Enterprise AI Blueprint, a structured executive methodology that helps organizations assess AI readiness, identify capability gaps, design an operating model, and operationalize Enterprise AI responsibly and at scale."
       ]
     },
@@ -732,7 +730,7 @@
     "pointOfView": {
       "label": "POINT OF VIEW",
       "headline": "Enterprise AI is not simply a technology deployment. It is an organizational capability.",
-      "body": "Many organizations can fund pilots and deploy new tools. Far fewer establish the enterprise capabilities required to consistently choose the right initiatives, govern them responsibly, coordinate delivery, drive adoption, and measure sustained business value.",
+      "body": "Organizations have become increasingly capable of funding AI pilots and deploying new tools. Far fewer establish the enterprise capabilities required to consistently select the right initiatives, govern them responsibly, coordinate delivery, drive adoption, and measure sustained business value.",
       "pillars": [
         "Strategy and portfolio management",
         "Platform and technology decisions",
@@ -806,14 +804,7 @@
       "label": "FROM FRAMEWORK TO PRACTICE",
       "headline": "Turning governance, explainability, and structured decision-making into working capabilities.",
       "cards": [
-                {
-          "title": "Enterprise AI Operating Model",
-          "subtitle": "Target-State Architecture for Operationalizing Enterprise AI",
-          "body": "A structured model defining the capability domains, delivery lifecycle, continuous disciplines, governance, and business outcomes required to operationalize AI across the enterprise.",
-          "highlights": [],
-          "cta": "View the Operating Model",
-          "url": "/blueprint.html"
-        },
+
         {
           "title": "PortfolioIQ",
           "subtitle": "AI-Powered Application Portfolio Decision Support",
@@ -830,12 +821,27 @@
           "url": "/Product1/genai-advisor.html"
         },
         {
-          "title": "Semantic CMDB Search",
-          "subtitle": "Contextual Retrieval for Enterprise Technology Data",
-          "body": "A proof of concept using semantic search and contextual retrieval to help users find relevant application and configuration information beyond exact keyword matching.",
+          "title": "AI Security Triage Dashboard",
+          "subtitle": "Enterprise Threat & Vulnerability Decision Support",
+          "body": "A governed AI decision-support platform that helps security analysts triage vulnerabilities, phishing emails, and threat indicators through explainable recommendations and human oversight.",
+          "highlights": [
+            "Live NIST & CISA threat intelligence",
+            "Human-in-the-loop governance",
+            "AI-assisted security triage",
+            "Override tracking",
+            "Complete audit trail",
+            "Live cloud deployment"
+          ],
+          "cta": "View AI Security Triage Dashboard",
+          "url": "/Product4/security-triage.html"
+        },
+                {
+          "title": "Enterprise AI Operating Model",
+          "subtitle": "Target-State Architecture for Operationalizing Enterprise AI",
+          "body": "A structured model defining the capability domains, delivery lifecycle, continuous disciplines, governance, and business outcomes required to operationalize AI across the enterprise.",
           "highlights": [],
-          "cta": "View Semantic CMDB Search",
-          "url": "/Product2/semantic-search.html"
+          "cta": "View the Operating Model",
+          "url": "/blueprint.html"
         }
       ]
     },
@@ -882,7 +888,7 @@
     },
     "struggle": {
       "label": "WHY ORGANIZATIONS STRUGGLE",
-      "headline": "Most organizations can launch an AI pilot. Far fewer can turn one into an enterprise capability.",
+      "headline": "Launching an AI pilot is often the easy part. Building the governance, operating model, and organizational capabilities required to sustain AI as an enterprise capability is much harder.",
       "intro": "Pilots are relatively easy to fund and easy to demo. What's difficult is everything after the demo: governance that holds up under real use, delivery that survives contact with existing systems, adoption that outlasts the initial enthusiasm, and a way to prove the investment was worth it. Most AI initiatives don't fail because the model was wrong. They stall because the organization never built the capability to run them at scale.",
       "patterns": [
         {
