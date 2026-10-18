@@ -40,7 +40,7 @@
       "featured": true,
       "status": "live",
       "title": "PortfolioIQ",
-      "subtitle": "A fully deployed Streamlit application demonstrating enterprise AI governance in action.",
+      "subtitle": "A deployed Streamlit prototype demonstrating enterprise AI governance in action, running as a public demo on sample data.",
       "liveUrl": "https://ai-app-advisor.streamlit.app",
       "githubRepo": null,
       "caseStudyUrl": "/Product1/genai-advisor.html",
@@ -54,38 +54,38 @@
         "GitHub",
         "Streamlit Cloud"
       ],
-      "summary": "A fully deployed, 6-screen Streamlit application demonstrating a Centaur governance model for enterprise application portfolio rationalization. Built to demonstrate enterprise AI product thinking beyond a simple chatbot, with governance, explainability, cost management, and human oversight built into the workflow.",
+      "summary": "A deployed, 6-screen Streamlit prototype demonstrating a Centaur governance model for enterprise application portfolio rationalization. A deterministic, rules-based engine produces explainable recommendations; Claude powers a separate conversational analysis screen. Built to demonstrate enterprise AI product thinking beyond a simple chatbot, with governance, explainability, cost management, and human oversight built into the review workflow.",
       "capabilities": [
-        "Explainable AI recommendation engine with 7-signal scoring",
-        "Jagged Frontier classification (a framework identifying where AI performs reliably versus where human judgment is essential): Inside, Edge, or Outside",
+        "Explainable rules-based recommendation engine: eight supporting signals displayed per application, some applied directly by the decision rules and others indirectly through the technical debt score",
+        "Jagged Frontier classification (a framework identifying where automated recommendations are reliable versus where human judgment is essential): Inside, Edge, or Outside, derived from a rules-based confidence score",
         "Human-in-the-loop Centaur governance model",
-        "Recommendation change detection",
-        "Conversational semantic search powered by Claude",
+        "Recommendation drift indicator (simulated in the prototype)",
+        "Conversational portfolio analysis powered by Claude, with the full portfolio supplied as context",
         "Per-session API governance with call limits",
-        "Access-controlled AI features with password gate",
-        "Live ServiceNow REST API with CSV fallback auto-detection"
+        "Access-controlled AI features with a shared passphrase gate (no individual user accounts)",
+        "ServiceNow Table API connector with automatic CSV fallback (the public demo runs on sample CSV data)"
       ],
       "artifacts": [
-        "Live deployed application on Streamlit Community Cloud",
+        "Public demo on Streamlit Community Cloud (sample data)",
         "Professional user guide PDF",
-        "24-month product roadmap (visual + PDF)"
+        "Proposed 24-month product roadmap (visual + PDF)"
       ],
-      "architectureNote": "Deliberate choices: context stuffing over vector DB for explainability at current scale; direct Claude API over LangChain for transparency and control. Roadmap documents exactly when and why each would change at scale.",
+      "architectureNote": "Design choices: recommendations come from deterministic rules, and Claude is used only for conversational analysis; context stuffing over a vector database at the current 15-application scale; direct Claude API calls over LangChain for transparency and control. The proposed roadmap outlines when each would change at scale.",
       "businessValue": [
-        "Demonstrates AI product thinking beyond output generation, with governance, explainability, and human oversight built into every workflow",
-        "Includes 0\u2192500 customer productization roadmap showing scaling strategy",
+        "Demonstrates AI product thinking beyond output generation, with governance, explainability, and human oversight built into the review workflow",
+        "Includes a proposed 0\u2192500 customer productization roadmap; its customer and revenue targets are hypothetical planning assumptions",
         "Rapid end-to-end delivery demonstrates the ability to move quickly from concept to working software."
       ],
       "businessProblem": "Enterprise application portfolios routinely include hundreds of systems, and retain, retire, or modernize decisions are often made on incomplete information or institutional memory rather than consistent, defensible criteria. Without structured decision support, organizations either move too slowly or make costly modernization mistakes.",
-      "productVision": "The opportunity was to bring the same governance discipline used in the GE Vernova APM Dashboard to an AI-assisted version, one where AI accelerates the recommendation without removing human accountability for the decision.",
-      "technicalArchitecture": "A governed decision-support architecture: enterprise portfolio data feeds a scoring and recommendation layer, every recommendation is explainable and routed through human review before any action is taken, and every decision is logged for auditability.",
+      "productVision": "The opportunity was to bring the same governance discipline used in the GE Vernova APM Dashboard to an AI-assisted version, one where automation accelerates the recommendation without removing human accountability for the decision.",
+      "technicalArchitecture": "A governed decision-support architecture: enterprise portfolio data feeds a deterministic, rules-based scoring and recommendation layer; every recommendation is explainable and routed through human review; and every decision is recorded in a session audit log with CSV export. Claude provides conversational analysis over the same data and does not set recommendations.",
       "keyFeatures": [
-        "Six-screen guided workflow from data intake to executive-ready recommendation",
-        "Accept, override, or escalate on every AI recommendation, with rationale required for overrides",
+        "Six-screen guided workflow from portfolio overview to a reviewed, exportable decision",
+        "Approve, override, or escalate every recommendation, with written rationale required for overrides",
         "Session-level governance controls to manage API usage responsibly",
-        "Exportable outputs designed for stakeholder and leadership review"
+        "Exportable decision audit log (CSV) for stakeholder and leadership review"
       ],
-      "blueprintConnection": "PortfolioIQ demonstrates governance, executive decision support, and value realization, the same disciplines the Blueprint treats as inseparable, applied here to AI-assisted portfolio decisions specifically."
+      "blueprintConnection": "PortfolioIQ demonstrates governance and executive decision support, with an illustrative, sample-data view of value tracking, the same disciplines the Blueprint treats as inseparable, applied here to AI-assisted portfolio decisions specifically."
     },
     {
       "id": "ai-security-triage-dashboard",
@@ -107,7 +107,7 @@
         "Streamlit Cloud",
         "CISA KEV"
       ],
-      "summary": "A governed AI decision-support tool that helps security analysts triage CVE vulnerabilities, phishing emails, and active URL threat indicators. Built with the same governance architecture as the Portfolio Rationalization Advisor - AI generates a triage summary and recommended action, the analyst approves or overrides before anything executes, and every decision is logged with a full audit trail.",
+      "summary": "A governed AI decision-support tool that helps security analysts triage CVE vulnerabilities, phishing emails, and active URL threat indicators. Built with the same governance architecture as PortfolioIQ - AI generates a triage summary and recommended action, the analyst approves or overrides before anything executes, and every decision is logged with a full audit trail.",
       "capabilities": [
         "CISA KEV cross-reference -  live exploitation status overlaid on every CVE, separating theoretical severity from operational priority.",
         "Live CVE feed from NIST NVD API with CVSS severity scoring and AI triage summaries",
@@ -644,23 +644,23 @@
       "title": "AI Patterns & Capabilities",
       "items": [
         "Retrieval-augmented generation via context stuffing and vector-based approaches",
-        "Explainable AI recommendation engines with multi-signal scoring",
+        "Explainable rules-based recommendation engines with multi-signal scoring",
         "Jagged Frontier classification for AI task suitability",
-        "Recommendation change detection"
+        "Recommendation drift indicators (simulated in the PortfolioIQ prototype)"
       ]
     },
     {
       "title": "Governance & Human-in-the-Loop",
       "items": [
-        "Centaur governance model: AI recommends, humans decide",
-        "Human validation workflows built into every decision point",
+        "Centaur governance model: the system recommends, humans decide",
+        "Human validation built into the recommendation workflow",
         "Access-controlled AI features with session-level governance"
       ]
     },
     {
       "title": "Data Architecture",
       "items": [
-        "Live REST API integration with graceful fallback",
+        "REST API integration with graceful fallback",
         "Vector-based indexing for context-aware retrieval",
         "Structured data models using publicly available enterprise-style datasets to demonstrate scalable retrieval and decision-support patterns"
       ]
@@ -669,14 +669,14 @@
       "title": "Stack & Deployment",
       "items": [
         "Python, Streamlit, Anthropic Claude API",
-        "GitHub with automated CI/CD via git push",
-        "Live cloud deployment, not local-only prototypes"
+        "GitHub with automatic redeploy on push (Streamlit Community Cloud)",
+        "Live cloud deployments for the featured products"
       ]
     },
     {
       "title": "Outputs & Decision Support",
       "items": [
-        "AI-generated recommendations with supporting rationale",
+        "Rules-based and AI-generated recommendations with supporting rationale",
         "Structured outputs designed for stakeholder review",
         "Exportable decision reports for leadership"
       ]
@@ -684,9 +684,9 @@
     {
       "title": "Product Ownership",
       "items": [
-        "End-to-end delivery from vision to production deployment",
+        "End-to-end delivery from vision to public cloud deployment",
         "MVP scope definition and architecture decision-making",
-        "Documented rationale for every deliberate technical choice"
+        "Documented rationale for key technical choices"
       ]
     }
   ],
@@ -808,14 +808,14 @@
         {
           "title": "PortfolioIQ",
           "subtitle": "AI-Powered Application Portfolio Decision Support",
-          "body": "PortfolioIQ helps enterprise leaders evaluate application investments through structured data, transparent scoring, AI-assisted recommendations, and human review.",
+          "body": "PortfolioIQ helps enterprise leaders evaluate application investments through structured data, transparent rules-based scoring, Claude-powered conversational analysis, and human review.",
           "highlights": [
-            "Explainable AI recommendations",
+            "Explainable rules-based recommendations",
             "Human-in-the-loop governance",
             "Multi-signal decision scoring",
             "Recommendation override tracking",
-            "Complete audit trail",
-            "Live cloud deployment"
+            "Decision audit log with CSV export",
+            "Public cloud demo"
           ],
           "cta": "View PortfolioIQ",
           "url": "/Product1/genai-advisor.html"
