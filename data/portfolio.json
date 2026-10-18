@@ -512,39 +512,38 @@
     },
     {
       "id": "itar-ear-compliance",
-      "title": "ITAR/EAR Collaboration Templates & Training",
+      "title": "ITAR/EAR Collaboration Templates",
       "objective": "Enable regulated engineering data to be managed safely within everyday enterprise collaboration workflows.",
       "role": "Technical Product Manager / SharePoint Governance Lead",
       "organization": "Pratt & Whitney",
       "challenge": "Regulated engineering data needed SharePoint collaboration that supported ITAR and EAR export-control requirements without slowing teams down.",
       "outcomes": [
-        "Delivered SharePoint templates supporting ITAR and EAR requirements, with export logging and scanning controls, in partnership with vendors",
-        "Redesigned end-user certification training from two classroom days to four virtual hours, based on user feedback",
-        "Engaged a new vendor for SharePoint support and site creation"
+        "Collaborated with vendors on SharePoint collaboration templates supporting ITAR and EAR requirements",
+        "Collaborated with vendors and with IT, security, legal, and compliance partners on export logging and scanning controls for regulated sites"
       ],
       "capabilities": [
         "Governance",
-        "Process Improvement",
-        "Operating Models"
+        "Export-Control Requirements",
+        "Vendor Collaboration"
       ],
       "bullets": [
-        "Partnered with vendors to deliver SharePoint templates supporting ITAR and EAR requirements.",
-        "Delivered export logging and scanning controls for regulated sites.",
-        "Redesigned end-user certification training from two classroom days to four virtual hours, based on user feedback."
+        "Collaborated with vendors on SharePoint collaboration templates supporting ITAR and EAR requirements.",
+        "Collaborated with vendors on export logging and scanning controls for regulated sites.",
+        "Worked with IT, security, legal, and compliance partners on SharePoint governance for regulated sites."
       ],
       "sqdc": {
         "safety": "Supported controls for regulated data; security-incident impact was not measured",
         "quality": "Templates and controls aligned with export-control requirements",
-        "delivery": "Scheduled training reduced from two classroom days to four virtual hours",
-        "cost": "Savings were not measured"
+        "delivery": "Templates and controls developed with vendors for regulated sites",
+        "cost": "Cost impact was not measured"
       },
-      "executiveSummary": "SharePoint at Pratt & Whitney had to support ITAR and EAR export-control requirements for regulated engineering data. I worked with IT, security, legal, and compliance partners and with vendors to deliver templates with export logging and scanning controls, and I redesigned the end-user certification training from two classroom days to four virtual hours based on user feedback.",
-      "businessChallenge": "ITAR and EAR requirements are unforgiving, but the organization also couldn't afford a compliance solution so heavy that it discouraged the very teams it was meant to protect from using it correctly.",
-      "myRole": "I led SharePoint governance for these sites, partnered with vendors on the templates and controls, and owned the training redesign.",
+      "executiveSummary": "At Pratt & Whitney, I supported SharePoint governance for sites handling export-controlled engineering information. I collaborated with vendors and internal IT, security, legal, and compliance stakeholders on collaboration templates and export logging and scanning controls designed to support ITAR and EAR requirements.",
+      "businessChallenge": "Export-control requirements are strict, but controls that are too heavy discourage the teams they are meant to protect.",
+      "myRole": "I led SharePoint governance for these sites and collaborated with vendors on the collaboration templates and controls.",
       "keyContributions": [
-        "Partnered with vendors to deliver SharePoint templates supporting ITAR and EAR requirements.",
-        "Delivered export logging and scanning controls for regulated sites.",
-        "Redesigned end-user certification training from a 2-day classroom program to a 4-hour virtual format."
+        "Collaborated with vendors on SharePoint collaboration templates supporting ITAR and EAR requirements.",
+        "Collaborated with vendors on export logging and scanning controls for regulated sites.",
+        "Worked with IT, security, legal, and compliance partners on SharePoint governance for regulated sites."
       ],
       "blueprintConnection": "Compliance that people avoid isn't actually compliance. Designing governance that people would use, not just tolerate, is a principle that carries directly into how the Blueprint approaches AI governance: oversight has to be usable, or it gets bypassed."
     }
