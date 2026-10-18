@@ -522,6 +522,16 @@ function renderProductModal() {
     p.businessValue.map(v => `<div class="modal-outcome-pill"><span class="check">&#10003;</span>${v}</div>`).join('');
   document.getElementById('prod-modal-blueprint').textContent = p.blueprintConnection;
 
+  // Optional per-product link (only products with architectureLink show it)
+  const linkSection = document.getElementById('prod-modal-link-section');
+  if (linkSection) {
+    const link = p.architectureLink;
+    document.getElementById('prod-modal-link').innerHTML = link
+      ? `<a href="${link.url}" class="btn btn-outline">${link.label} &rarr;</a>`
+      : '';
+    linkSection.style.display = link ? '' : 'none';
+  }
+
   const prevBtn = document.getElementById('prod-modal-prev');
   const nextBtn = document.getElementById('prod-modal-next');
   prevBtn.disabled = PROD_INDEX === 0;

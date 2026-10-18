@@ -35,6 +35,7 @@
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
         <a href="https://ai-app-advisor.streamlit.app" class="btn" target="_blank" rel="noopener noreferrer">&#x1F680; View Live App</a>
+        <a href="architecture.html" class="btn btn-outline">Architecture &amp; Evolution</a>
       </div>
     </div>
 
@@ -47,7 +48,7 @@
       <p>
         Enterprise organizations waste significant budget on redundant, aging, and poorly governed application portfolios. The decision process is typically fragmented, spreadsheet-driven, and
         inconsistent across business units. This application structures that decision into a governed,
-        explainable workflow with session-level decision logging and CSV export: a deterministic rules engine scores each application and produces the recommendation, Claude answers questions about the portfolio, and humans retain full accountability for every outcome.
+        explainable workflow with session-level decision logging and CSV export: a deterministic rules engine scores each application and produces the recommendation, Claude answers questions about the portfolio, and the final decision on a reviewed recommendation rests with a person.
       </p>
       <p>
         Built using Python, Streamlit, and the Anthropic Claude API, the app is live at
@@ -98,7 +99,7 @@
         <div style="background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.25);border-radius:10px;padding:18px;">
           <div style="font-size:1.4rem;margin-bottom:8px;">&#x1F464;</div>
           <strong style="color:var(--nav-bg);">Layer 2 &mdash; APM Review</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">The Application Portfolio Manager can review each rules-generated recommendation in the Validation Queue and approve it, override it (with mandatory written rationale), or escalate it to the CIO.</p>
+          <p style="margin-top:6px;font-size:0.9rem;">The Application Portfolio Manager reviews the rules-generated recommendations placed in the Validation Queue and can approve, override (with mandatory written rationale), or escalate each one to the CIO.</p>
         </div>
         <div style="background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.20);border-radius:10px;padding:18px;">
           <div style="font-size:1.4rem;margin-bottom:8px;">&#x1F3E2;</div>
@@ -147,7 +148,7 @@
           </div>
           <div>
             <strong style="color:var(--nav-bg);">The APM's primary workspace</strong>
-            <p style="margin-top:4px;font-size:0.9rem;">All pending recommendations requiring human review in the current cycle. Three decision actions: Approve, Override (requires mandatory written rationale &mdash; a deliberate governance control that forces the APM to articulate their reasoning and creates a record that can inform future rule tuning), or Escalate to CIO.</p>
+            <p style="margin-top:4px;font-size:0.9rem;">Recommendations awaiting review in the current cycle: four in the demo, while the other eleven applications carry pre-loaded sample decisions. Review is available but not enforced; unreviewed recommendations simply remain pending. Three decision actions: Approve, Override (requires mandatory written rationale &mdash; a deliberate governance control that forces the APM to articulate their reasoning and creates a record that can inform future rule tuning), or Escalate to CIO.</p>
           </div>
         </div>
 
@@ -208,7 +209,7 @@
         <div class="card" style="padding:20px;">
           <h3>Design Choices</h3>
           <ul>
-            <li><strong>Context stuffing over vector DB:</strong> At 15-application demo scale, stuffing the full portfolio into the Claude context window is faster, more transparent, and easier to debug than a retrieval pipeline. The proposed roadmap introduces pgvector on Postgres in Phase 2.</li>
+            <li><strong>Context stuffing over vector DB:</strong> At 15-application demo scale, stuffing the full portfolio into the Claude context window is faster, more transparent, and easier to debug than a retrieval pipeline. Retrieval would be evaluated only when the portfolio outgrows the prompt budget (see Architecture &amp; Evolution).</li>
             <li><strong>Direct Claude API over LangChain:</strong> LangChain would add abstraction the prototype does not need. Direct API calls keep prompts and responses transparent and controllable.</li>
           </ul>
         </div>
@@ -239,37 +240,12 @@
       </p>
     </section>
 
-    <!-- Proposed Next Phase (not implemented) -->
+    <!-- Architecture & Evolution link -->
     <section style="margin-bottom:36px;">
-      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Proposed Next Phase: Evidence-Based Incident &amp; Problem Analysis</h2>
-      <p style="margin-top:16px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 6px 6px 0;">
-        <strong style="color:var(--nav-bg);">Proposed design &mdash; not implemented.</strong> Nothing in this section exists in the current prototype. It describes how AI analysis of ServiceNow incident (INC) and problem (PRB) records could be added without letting the model set the recommendation.
-      </p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px;">
-        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
-          <strong style="color:var(--nav-bg);">1. Retrieve</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">Pull INC and PRB records for each application from ServiceNow through a read-only, paginated Table API integration, linked to the application by configuration item.</p>
-        </div>
-        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
-          <strong style="color:var(--nav-bg);">2. Analyze with Claude</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">Claude reads descriptions and resolution notes and returns structured findings, such as recurring failure themes and <em>suspected</em> root causes. Every finding must cite the INC or PRB number it came from. Record text is redacted before sending and treated as data, never as instructions.</p>
-        </div>
-        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
-          <strong style="color:var(--nav-bg);">3. Validate the evidence</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">Deterministic checks reject any finding whose cited record does not exist, belongs to a different application, or whose quoted text does not match the source. Counts and trends are calculated from the records themselves, not taken from the model.</p>
-        </div>
-        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
-          <strong style="color:var(--nav-bg);">4. Suspected vs. confirmed root cause</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">A root cause identified by AI stays labeled <em>suspected</em>. It becomes <em>confirmed</em> only when a ServiceNow problem record documents that cause or a human reviewer confirms it, and every confirmation is recorded in the audit log.</p>
-        </div>
-        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
-          <strong style="color:var(--nav-bg);">5. Recommend deterministically</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">Validated record counts and confirmed root causes become additional signals in the existing rules engine. Suspected causes are shown to reviewers but do not change the recommendation. The model never sets the disposition.</p>
-        </div>
-        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
-          <strong style="color:var(--nav-bg);">6. Human review</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">Findings appear in the Validation Queue with links to their source records, clearly marked suspected or confirmed. Approve, Override, and Escalate work as they do today; in this design, decisions would also be stored in a persistent audit log, which does not exist yet.</p>
-        </div>
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Architecture &amp; Evolution</h2>
+      <p style="margin-top:14px;">The architectural decisions and tradeoffs behind this prototype, and a proposed, governed path from deterministic recommendations toward bounded agentic workflows, are covered on a separate page. Everything beyond the implemented prototype on that page is a proposed design and has not been built.</p>
+      <div style="margin-top:14px;">
+        <a href="architecture.html" class="btn btn-outline">PortfolioIQ Architecture &amp; Evolution &rarr;</a>
       </div>
     </section>
 
@@ -290,7 +266,7 @@
             <div style="font-size:0.8rem;opacity:0.8;">3 design partners</div>
           </div>
           <div style="padding:14px 16px;background:white;">
-            <p style="font-size:0.85rem;margin:0;">User auth, multi-user sessions, decision persistence, prompt A/B testing, Postgres for audit log persistence, CSV import for customer portfolio data. <strong>Key question: Will they pay?</strong></p>
+            <p style="font-size:0.85rem;margin:0;">User auth, multi-user sessions, decision persistence, prompt A/B testing, Postgres for audit log persistence, CSV import for customer portfolio data, rule tests and evaluation baselines. <strong>Key question: Will they pay?</strong></p>
           </div>
         </div>
 
@@ -301,7 +277,7 @@
             <div style="font-size:0.8rem;opacity:0.8;">10 paying customers</div>
           </div>
           <div style="padding:14px 16px;background:white;">
-            <p style="font-size:0.85rem;margin:0;">Self-serve onboarding, tiered pricing (Starter / Growth / Enterprise), LangChain for large portfolios, pgvector, model routing &mdash; cheap models for simple queries, Claude for complex reasoning. ServiceNow partner ecosystem outreach. <strong>Key question: Can we retain them?</strong></p>
+            <p style="font-size:0.85rem;margin:0;">Self-serve onboarding, tiered pricing (Starter / Growth / Enterprise), read-only INC/PRB evidence analysis with validated citations, retrieval and orchestration frameworks evaluated rather than assumed, model routing &mdash; cheap models for simple queries, Claude for complex reasoning. ServiceNow partner ecosystem outreach. <strong>Key question: Can we retain them?</strong></p>
           </div>
         </div>
 
@@ -312,7 +288,7 @@
             <div style="font-size:0.8rem;opacity:0.8;">50 customers</div>
           </div>
           <div style="padding:14px 16px;background:white;">
-            <p style="font-size:0.85rem;margin:0;">LangGraph agentic layer (writes back to ServiceNow after human approval), drift detection v2, fine-tuned model on anonymized customer data, SOC 2 Type II, SSO/SAML, LangSmith for AI observability. <strong>Key question: Can we grow without me?</strong></p>
+            <p style="font-size:0.85rem;margin:0;">Bounded tool-using agent with human-approved write-back to ServiceNow, if adoption criteria are met; drift detection v2; fine-tuning evaluated only on consented, anonymized data; SOC 2 Type II; SSO/SAML; AI observability and tracing. <strong>Key question: Can we grow without me?</strong></p>
           </div>
         </div>
 
@@ -323,7 +299,7 @@
             <div style="font-size:0.8rem;opacity:0.9;">200&ndash;500 customers</div>
           </div>
           <div style="padding:14px 16px;background:white;">
-            <p style="font-size:0.85rem;margin:0;">Full agentic cycle management, proprietary model trained on anonymized customer data, adjacent markets (cloud cost governance, vendor rationalization, tech debt management), multi-region deployment, Series A or acquisition. <strong>Key question: Platform or exit?</strong></p>
+            <p style="font-size:0.85rem;margin:0;">Approval-gated, orchestrated cycle workflows; a proprietary model only if evaluation and customer data agreements support it; adjacent markets (cloud cost governance, vendor rationalization, tech debt management), multi-region deployment, Series A or acquisition. <strong>Key question: Platform or exit?</strong></p>
           </div>
         </div>
 

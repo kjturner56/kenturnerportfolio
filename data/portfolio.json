@@ -44,6 +44,10 @@
       "liveUrl": "https://ai-app-advisor.streamlit.app",
       "githubRepo": null,
       "caseStudyUrl": "/Product1/genai-advisor.html",
+      "architectureLink": {
+        "label": "PortfolioIQ Architecture & Evolution",
+        "url": "/Product1/architecture.html"
+      },
       "image": "/images/GenAI_Advisor.png",
       "imageAlt": "PortfolioIQ dashboard screenshot",
       "tags": [
@@ -78,10 +82,10 @@
       ],
       "businessProblem": "Enterprise application portfolios routinely include hundreds of systems, and retain, retire, or modernize decisions are often made on incomplete information or institutional memory rather than consistent, defensible criteria. Without structured decision support, organizations either move too slowly or make costly modernization mistakes.",
       "productVision": "The opportunity was to bring the same governance discipline used in the GE Vernova APM Dashboard to an AI-assisted version, one where automation accelerates the recommendation without removing human accountability for the decision.",
-      "technicalArchitecture": "A governed decision-support architecture: enterprise portfolio data feeds a deterministic, rules-based scoring and recommendation layer; every recommendation is explainable and routed through human review; and every decision is recorded in a session audit log with CSV export. Claude provides conversational analysis over the same data and does not set recommendations.",
+      "technicalArchitecture": "A governed decision-support architecture: enterprise portfolio data feeds a deterministic, rules-based scoring and recommendation layer; every recommendation is explainable and can be routed to a human review queue; and every decision is recorded in a session audit log with CSV export. Claude provides conversational analysis over the same data and does not set recommendations.",
       "keyFeatures": [
         "Six-screen guided workflow from portfolio overview to a reviewed, exportable decision",
-        "Approve, override, or escalate every recommendation, with written rationale required for overrides",
+        "Approve, override, or escalate recommendations in the review queue, with written rationale required for overrides",
         "Session-level governance controls to manage API usage responsibly",
         "Exportable decision audit log (CSV) for stakeholder and leadership review"
       ],

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PortfolioIQ Architecture &amp; Evolution — architectural decisions and tradeoffs behind the implemented Streamlit prototype, and a proposed, governed path toward agentic AI workflows. Stages 1–4 are proposed and not implemented.">
+  <title>PortfolioIQ Architecture &amp; Evolution | Kenneth R. Turner</title>
+  <link rel="stylesheet" href="../css/style.css" />
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EG813QJ4B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3EG813QJ4B');
+  </script>
+</head>
+
+<body data-depth="1">
+
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
+
+<main>
+  <div class="container" style="padding-top:28px;padding-bottom:48px;">
+
+    <!-- Context bar -->
+    <div style="background:linear-gradient(135deg,rgba(0,170,255,0.07),rgba(46,204,113,0.07));border:1px solid rgba(0,170,255,0.20);border-radius:10px;padding:16px 20px;margin-bottom:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <strong style="color:var(--nav-bg);">PortfolioIQ Architecture &amp; Evolution</strong>
+        <span class="badge badge-live">Stage 0 implemented</span>
+        <span class="badge badge-prototype">Stages 1&ndash;4 proposed</span>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="genai-advisor.html" class="btn btn-outline">&larr; PortfolioIQ Case Study</a>
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Overview</h2>
+      <p class="intro" style="margin-top:14px;">
+        This page explains the architectural reasoning behind the PortfolioIQ Streamlit prototype and proposes how it could evolve, in governed stages, from deterministic recommendations and conversational AI toward bounded agentic workflows.
+      </p>
+      <p>
+        It follows one framework throughout: <strong>Problem &rarr; Requirements &rarr; Architecture &rarr; Tradeoffs &rarr; Risks &rarr; Validation &rarr; Delivery &amp; Operations</strong>. The implemented prototype is described in the <a href="genai-advisor.html">PortfolioIQ case study</a>.
+      </p>
+      <p style="margin-top:16px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--primary);padding:12px 16px;border-radius:0 6px 6px 0;">
+        <strong style="color:var(--nav-bg);">How to read the labels:</strong> <strong>Implemented</strong> means it exists in the prototype today. <strong>Proposed</strong> means it is a design that has not been built. For each decision, <strong>Documented</strong> means the reasoning is recorded in the project&rsquo;s README, code notes, or the original case study; <strong>Present-day assessment</strong> means it is an architectural evaluation written now, not a record of the original reasoning.
+      </p>
+    </section>
+
+    <!-- SECTION A -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Architectural Decisions &amp; Technical Tradeoffs</h2>
+      <p style="margin-top:14px;">How the implemented prototype was put together, what each choice costs, and what evidence would justify a more complex architecture.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px;">
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">1. Problem</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Retain, retire, and modernize decisions are often made on incomplete information and institutional memory rather than consistent, defensible criteria.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">2. Requirements</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Explainable recommendations, with a human accountable for the final decision. A demo that runs without infrastructure. Bounded AI cost on a public demo. <em>(Documented: project brief, README, and Screen 6 code notes.)</em></p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">3. Architecture (implemented)</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">A single Streamlit app: sample CSV data (or an optional ServiceNow connector) feeds deterministic Python scoring rules; results and decisions live in session state; Claude answers questions on one passphrase-gated screen.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:28px;color:var(--nav-bg);">4. Tradeoffs</h3>
+      <p style="font-size:0.9rem;">Each card shows the prototype&rsquo;s choice, the basis for it, what it costs, and the condition that would justify changing it.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:14px;">
+
+        <div class="card" style="padding:20px;">
+          <h3>Deterministic rules vs. LLM recommendations</h3>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> Python rules set every recommendation; Claude only answers questions. <em>(Implemented.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why</strong> <em>(present-day assessment, not a documented original rationale)</em><strong>:</strong> The decision criteria (lifecycle, technical debt, duplication, replacement availability, criticality) are structured fields. Rules give reproducible, testable, explainable outcomes at no API cost. Generative AI adds value where evidence is unstructured, such as incident and problem notes.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> Rules cannot read free-text evidence, and their thresholds need manual tuning.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> Unstructured evidence materially affects decisions. Use the LLM to extract cited evidence; keep the rules for the disposition.</p>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Build vs. buy vs. integrate</h3>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> Build the scoring and governance workflow; integrate with ServiceNow rather than replace it. <em>(Documented: roadmap build-vs-buy notes.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why:</strong> The governance model and signal engine are the differentiating parts; the CMDB already exists as the system of record.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> Output quality depends on the customer&rsquo;s CMDB data quality.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> A capability is commodity (authentication, observability, compliance tooling). Buy it rather than build it.</p>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Streamlit vs. a production web architecture</h3>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> Streamlit. <em>(Documented: README, chosen to ship a working demo quickly.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why:</strong> One Python codebase covers UI, logic, and deployment.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> State lives in one browser session, the script reruns on every interaction, and there are no user accounts.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> Multiple users, persistent records, or external integrations are required. Move to a web front end, a service layer with an API, and a database.</p>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Direct Claude API vs. orchestration frameworks</h3>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> Direct API calls. <em>(Documented: original case study.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why:</strong> A single question-and-answer call needs no orchestration; prompts and responses stay transparent.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> Retries, tracing, and multi-step flows must be built by hand.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> Workflows become multi-step and stateful, with branching, resumable runs, and tool calls. Evaluate frameworks against a hand-built workflow before adopting one.</p>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Context stuffing vs. retrieval / vector search</h3>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> The full 15-application portfolio is sent in every prompt. <em>(Documented: original case study.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why:</strong> At demo scale it is simple, inspectable, and needs no index to maintain.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> Prompt size, cost, and latency grow with the portfolio, and every call sends all of the data.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> The portfolio no longer fits a set prompt budget, or measured cost or latency becomes unacceptable. Retrieval is a scaling response, not a default.</p>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Data integration &amp; system boundaries</h3>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> Read-only ServiceNow Table API connector (three tables, small page size, short timeout) with automatic CSV fallback. Secrets stay on the server; only the Screen 6 chat sends data to Anthropic. <em>(Documented: connector code notes.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> The fallback keeps the demo running but hides integration failures, and there is no pagination.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> Real portfolios are loaded. Add pagination, visible data-source health, and alerts on fallback.</p>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Security, scalability, reliability, latency &amp; cost</h3>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> Shared passphrase gate and a 20-call session cap on Screen 6; secrets kept out of source control; in-memory state. <em>(Documented: Screen 6 code notes, README.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> No individual identity; the cap resets on reload; no retries on API errors; one process holds all state.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> More than a demo audience uses it. Add per-user authentication, server-side quotas and budgets, retries with backoff, and horizontal hosting.</p>
+        </div>
+
+        <div class="card" style="padding:20px;">
+          <h3>Human-in-the-loop governance</h3>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> A review queue where the APM can approve, override (rationale required), or escalate. <em>(Documented: README.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why:</strong> Accountability and a written record of disagreement with the rules.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> Reviewer effort. Review is available but not enforced, and decisions are not persisted.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> Decisions carry real consequences. Enforce review before export or action, persist decisions, and tie them to authenticated reviewers.</p>
+        </div>
+
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:22px;">
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">5. Risks (implemented prototype)</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">The Screen 6 system prompt includes every application&rsquo;s record fields and the first 80 characters of each reviewer-entered override rationale, so text from either source could carry injected instructions. The silent fallback can hide integration failures. There are no automated tests.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">6. Validation</strong>
+          <p style="margin-top:6px;font-size:0.9rem;"><em>Today:</em> manual checks against the sample data. <em>Proposed:</em> unit tests for the rule functions, a reference dataset of expected recommendations, prompt-injection test cases, and an evaluation set for Claude&rsquo;s answers.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">7. Delivery &amp; Operations</strong>
+          <p style="margin-top:6px;font-size:0.9rem;"><em>Today:</em> GitHub to Streamlit Community Cloud with automatic redeploy on push; rollback by reverting the commit; no monitoring. <em>Proposed:</em> tests in CI before deploy, a staging environment, error logging, and a cost dashboard.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:16px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--primary);padding:12px 16px;border-radius:0 6px 6px 0;">
+        <strong style="color:var(--nav-bg);">Production-readiness gaps:</strong> user authentication and roles, persistent storage and audit history, automated tests and CI, monitoring and alerting, paginated integration with visible health, and multi-user hosting. Each is a prerequisite for the stages below, not an optional extra.
+      </p>
+    </section>
+
+    <!-- SECTION B -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Governed Agentic AI Evolution</h2>
+      <p style="margin-top:16px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 6px 6px 0;">
+        <strong style="color:var(--nav-bg);">Stages 1&ndash;4 are proposed and not implemented.</strong> No agents, orchestration framework, persistent storage, retrieval index, or production-grade controls exist in the prototype today. Each stage would begin only after the previous stage meets its success criteria.
+      </p>
+      <p style="margin-top:14px;"><strong>Design principles:</strong> recommendations stay deterministic and the model never sets the disposition; nothing is written to ServiceNow without recorded human approval; and an agent is used only where a simpler workflow has been shown to fall short.</p>
+
+      <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
+
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--nav-bg);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">Stage 0</div>
+            <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">Implemented</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">Deterministic recommendations + conversational AI</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">Rules-based recommendations with explainable signals; Claude-powered conversational analysis behind a shared passphrase gate; a review queue; a session-level decision log with CSV export.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--nav-bg-2);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">Stage 1</div>
+            <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">Proposed</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">Foundations (no new AI)</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">User authentication and roles; a persistent, append-only decision audit log; unit tests for the rules and a labeled evaluation set; and measured SQDC baselines. Every later target is set from these baselines.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:#1a4a7a;color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">Stage 2</div>
+            <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">Proposed</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">Evidence retrieval &amp; cited analysis (a fixed pipeline, not an agent)</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">Read-only, paginated retrieval of ServiceNow incident (INC) and problem (PRB) records per application. Claude extracts structured findings, such as recurring failure themes and <em>suspected</em> root causes, and every finding must cite its source record. Deterministic checks reject findings whose citation does not exist, belongs to another application, or does not match the source text. A root cause becomes <em>confirmed</em> only when a ServiceNow problem record documents it or a reviewer confirms it. Only validated counts and confirmed causes become new signals for the rules engine.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--primary);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">Stage 3</div>
+            <div style="font-size:0.75rem;opacity:0.9;margin-top:2px;">Proposed</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">Bounded tool-using agent</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">An agent that may call only an allow-listed set of read tools (fetch records, query CMDB relationships, run the rules engine) within fixed step, time, and token budgets. Workflow state is saved so runs can resume after failure. Any proposed ServiceNow change is prepared as a draft; a human must approve it before it is written, using a separate, narrowly scoped write credential.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;align-items:start;background:white;border:2px solid var(--primary);border-radius:10px;padding:16px;">
+          <div style="text-align:center;background:var(--primary);color:white;border-radius:8px;padding:10px 8px;">
+            <div style="font-size:1.1rem;font-weight:700;">Stage 4</div>
+            <div style="font-size:0.75rem;opacity:0.9;margin-top:2px;">Proposed</div>
+          </div>
+          <div>
+            <strong style="color:var(--nav-bg);">Orchestrated, approval-gated cycle workflows</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">Multi-step workflows across a rationalization cycle (gather evidence, score, route for review, draft follow-up records), with defined escalation paths and human approval at every write. Autonomy expands only as far as the evaluation and audit record support.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 style="margin-top:28px;color:var(--nav-bg);">Cross-cutting controls (proposed)</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:14px;">
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Least privilege &amp; boundaries</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">A read-only service account for retrieval; a separate write credential used only after approval; record text treated as data, never as instructions; sensitive fields redacted before model calls; tenant data isolated.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Errors, retries &amp; recovery</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Timeouts and bounded retries with backoff; writes keyed to an approval ID so a retry cannot apply a change twice; failed or low-confidence runs escalate to a person; runs resume from saved state; no silent fallbacks.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Decision &amp; execution audit trails</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">A persistent, append-only record of who approved what and why, plus every tool call with its inputs, outputs, model version, and prompt version.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Observability &amp; evaluation</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">A trace for every run; dashboards for latency, error rate, cost per run, and override rate; the evaluation set re-run on every prompt or model change; sampled human review of live output.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:28px;color:var(--nav-bg);">When is an agent justified?</h3>
+      <p style="font-size:0.9rem;">A fixed workflow is cheaper, faster, and easier to test, so it remains the default. An agent is justified only when all of these hold:</p>
+      <ul style="font-size:0.9rem;">
+        <li>The task needs a sequence of steps that cannot be fixed in advance.</li>
+        <li>The Stage 2 pipeline has been measured and falls short on that task.</li>
+        <li>Every tool the agent can call is bounded, logged, and either reversible or approval-gated.</li>
+        <li>Evaluation shows stable quality on a labeled set.</li>
+        <li>The measured value outweighs the added cost, latency, and operational burden.</li>
+      </ul>
+
+      <h3 style="margin-top:28px;color:var(--nav-bg);">Proposed SQDC success criteria</h3>
+      <p style="font-size:0.9rem;">One control is mandatory from the first write-capable stage. Every other target would be set from Stage 1 baselines and evaluation results; none has been measured or validated.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:14px;">
+        <div style="background:rgba(0,170,255,0.06);border:1px solid rgba(0,170,255,0.18);border-radius:10px;padding:18px;">
+          <strong style="color:var(--nav-bg);">Safety</strong>
+          <p style="margin-top:6px;font-size:0.9rem;"><strong>Mandatory control:</strong> zero ServiceNow writes without a recorded human approval.</p>
+          <p style="font-size:0.9rem;">Also tracked: findings blocked for invalid citations; prompt-injection test results before each release.</p>
+        </div>
+        <div style="background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.25);border-radius:10px;padding:18px;">
+          <strong style="color:var(--nav-bg);">Quality</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Citation validity and suspected-cause accuracy on the evaluation set; override rate and reasons per cycle. Targets set after baseline. Recommendations remain reproducible because the rules are deterministic.</p>
+        </div>
+        <div style="background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.20);border-radius:10px;padding:18px;">
+          <strong style="color:var(--nav-bg);">Delivery</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">APM review time per application; analysis latency per application; share of agent runs completed without manual restart. Targets set after baseline.</p>
+        </div>
+        <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:18px;">
+          <strong style="color:var(--nav-bg);">Cost</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Model cost per application analyzed and per workflow run, against a budget set from Stage 2 measurements; runs that exceed their budget stop and escalate.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap alignment -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Alignment with the Proposed 24-Month Roadmap</h2>
+      <p style="margin-top:14px;">Each architecture stage maps to one business phase in the <a href="genai-advisor.html">case study roadmap</a>. A stage advances only when both the phase&rsquo;s business question and the stage&rsquo;s SQDC criteria are met. Timelines, customer counts, and revenue figures remain hypothetical planning assumptions.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px;">
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Phase 1 &middot; Validate &rarr; Stage 1</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Authentication, persistence, audit log, tests, evaluation set, and baselines.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Phase 2 &middot; Launch &rarr; Stage 2</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Read-only INC/PRB evidence with cited, validated analysis. Retrieval and orchestration frameworks evaluated, not assumed.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Phase 3 &middot; Scale &rarr; Stage 3</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Bounded tool-using agent with saved workflow state and human-approved write-back, if the adoption conditions are met.</p>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
+          <strong style="color:var(--nav-bg);">Phase 4 &middot; Expand &rarr; Stage 4</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Orchestrated cycle workflows with approval gates retained at every write.</p>
+        </div>
+      </div>
+      <div style="margin-top:22px;">
+        <a href="genai-advisor.html" class="btn btn-outline">&larr; Back to the PortfolioIQ Case Study</a>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+</main>
+
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
+
+<script src="../js/portfolio.js"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML  = Portfolio.buildNav(d, 'products.html');
+    document.getElementById('site-footer').innerHTML   = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+  })();
+
+</script>
+
+</body>
+</html>
