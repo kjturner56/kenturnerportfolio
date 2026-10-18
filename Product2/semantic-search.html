@@ -28,19 +28,19 @@
       <div class="summary-section" style="margin-bottom:18px;">
         <h2 id="project-summary-title">Executive Summary</h2>
         <p>
-          The Semantic CMDB Search Tool is an AI-powered prototype that enables natural language access to ServiceNow PDI CMDB records, allowing users to surface configuration items, relationships, metadata, and ownership details from the test dataset. Users can ask questions
-          in plain English to surface configuration items, relationships, metadata,
-          and ownership details from the test dataset.
+          The Semantic CMDB Search Tool is a local prototype that uses embedding-based semantic retrieval
+          to answer plain-English questions with matching configuration records, metadata, and ownership
+          details from a ServiceNow developer-instance test dataset.
         </p>
         <p>
-          Inspired by my experience as an Application Portfolio Manager, this prototype
+          Inspired by my experience leading application portfolio management, this prototype
           solves the challenge of locating accurate information within large, distributed
           CMDB datasets. Traditional CMDB interfaces often require specialized knowledge
           and manual filtering, slowing discovery for IT teams and business stakeholders.
         </p>
         <p>
-          By combining structured enterprise data with embedding-based semantic search, the prototype
-          modernizes workflows while keeping sensitive data private and secure.
+          By combining structured CMDB data with embedding-based semantic retrieval, the prototype
+          makes CMDB discovery easier, using test data from a ServiceNow developer instance.
         </p>
 
         <h3 style="margin-top:12px;">Overview</h3>
@@ -56,31 +56,31 @@
         <ul>
           <li><strong>Natural Language Search:</strong> Ask questions in plain English.</li>
           <li><strong>Semantic Matching:</strong> Embeddings enable similarity-based search beyond keyword matching.</li>
-          <li><strong>Private & Secure:</strong> All CMDB data and embeddings remain within your local PDI environment. Vectors are stored in a local Chroma DB, and queries are processed locally, ensuring no sensitive information leaves your system.</li>
-          <li><strong>Fast Retrieval:</strong> Vector search returns results in seconds.</li>
+          <li><strong>Data handling:</strong> Records come from a ServiceNow Personal Developer Instance with test data. Record text and user queries are sent to the OpenAI embeddings API to create vectors; the vectors and metadata are stored locally in ChromaDB. Using real enterprise data would require an approved embedding service or a self-hosted model.</li>
+          <li><strong>Similarity search:</strong> Returns the closest-matching records for a natural-language question.</li>
           <li><strong>Extensible Design:</strong> Can be extended to ingest additional systems or data sources.</li>
         </ul>
 
         <h3 style="margin-top:12px;">Target Users</h3>
         <ul>
-          <li>Application Portfolio Managers needing fast visibility into systems and dependencies.</li>
+          <li>Application Portfolio Managers needing fast visibility into systems and their configuration details.</li>
           <li>ServiceNow Admins wanting easier CMDB search and analysis.</li>
           <li>IT Operations teams during incident response and audits.</li>
           <li>Business stakeholders who need access without deep technical expertise.</li>
         </ul>
 
-        <h3 style="margin-top:12px;">Business Value</h3>
+        <h3 style="margin-top:12px;">Intended Value (not measured)</h3>
         <ul>
           <li><strong>Efficiency:</strong> Faster CMDB discovery and analysis.</li>
           <li><strong>Accessibility:</strong> Makes complex data usable for all stakeholder groups.</li>
           <li><strong>Faster Decisions:</strong> Supports incident response, reviews, and audits.</li>
-          <li><strong>Governance & Security:</strong> Maintains data integrity and privacy.</li>
+          <li><strong>Traceability:</strong> Every result links back to its source CMDB record.</li>
         </ul>
 
         <h3>Technology Overview</h3>
         <ul>
-          <li><strong>OpenAI Embeddings:</strong> Power semantic understanding of user queries.</li>
-          <li><strong>Chroma Vector DB:</strong> Stores embeddings and enables fast similarity search.</li>
+          <li><strong>OpenAI Embeddings API:</strong> Generates vectors for CMDB records and user queries (processed by OpenAI).</li>
+          <li><strong>Chroma Vector DB:</strong> Stores embeddings locally and performs similarity search.</li>
           <li><strong>Python Backend:</strong> Orchestrates embedding generation and query routing.</li>
           <li><strong>Streamlit UI:</strong> Provides a clean, interactive interface.</li>
           <li><strong>ServiceNow PDI Integration:</strong> Retrieves realistic CMDB records for safe testing.</li>
@@ -141,17 +141,11 @@
             <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 8 — Before and After">
               <img src="BeforeAfter.png" alt="Slide 8 — Before and After" />
             </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 9 — Business Impact">
-              <img src="BusinessImpact.png" alt="Slide 9 — Business Impact" />
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 9 — Skills Demonstrated">
+              <img src="SkillsDemo.png" alt="Slide 9 — Skills Demonstrated" />
             </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 10 — Why AI">
-              <img src="WhyAI.png" alt="Slide 10 — Why AI" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 11 — Skills Demonstrated">
-              <img src="SkillsDemo.png" alt="Slide 11 — Skills Demonstrated" />
-            </div>
-            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 12 — Roadmap">
-              <img src="Roadmap.png" alt="Slide 12 — Roadmap" />
+            <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Slide 10 — Roadmap">
+              <img src="Roadmap.png" alt="Slide 10 — Roadmap" />
             </div>
           </div>
 

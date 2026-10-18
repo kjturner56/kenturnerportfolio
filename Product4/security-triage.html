@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="AI Security Triage Dashboard — live deployed decision-support tool by Kenneth R. Turner, Senior AI PM. Demonstrates governed AI triage workflow for CVE vulnerabilities, phishing email analysis, and URL threat indicators with CISA KEV cross-reference and human-in-the-loop governance.">
+  <meta name="description" content="AI Security Triage Dashboard — public demo of a decision-support tool by Kenneth R. Turner. Demonstrates a governed AI triage workflow for CVE vulnerabilities, phishing email analysis, and URL threat indicators with CISA KEV cross-reference and human-in-the-loop governance.">
   <title>AI Security Triage Dashboard | Kenneth R. Turner</title>
   <link rel="stylesheet" href="../css/style.css" />
   <!-- Google tag (gtag.js) -->
@@ -31,7 +31,7 @@
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
         <span class="badge badge-live">Live</span>
         <strong style="color:var(--nav-bg);">AI Security Triage Dashboard</strong>
-        <span style="color:var(--subtext);font-size:0.9rem;">Deployed on Streamlit Community Cloud</span>
+        <span style="color:var(--subtext);font-size:0.9rem;">Public demo on Streamlit Community Cloud</span>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
         <a href="https://ai-security-triage-dashboard.streamlit.app" class="btn" target="_blank" rel="noopener noreferrer">&#x1F680; View Live App</a>
@@ -43,7 +43,7 @@
     <section style="margin-bottom:36px;">
       <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">The Problem</h2>
       <p class="intro" style="margin-top:14px;">
-        Applying for a Principal PM role in cybersecurity services without direct security domain experience creates a specific credibility gap. Talking about governance architecture and human-in-the-loop design is one thing. Demonstrating it in a security context is another. The goal was to close that gap with a working artifact, not a slide deck.
+        Security analysts face more CVEs, phishing reports, and threat indicators than they can review with consistent judgment. I built this to test whether the human-in-the-loop decision pattern I use for portfolio decisions holds up in security operations, a domain I was learning, with a working application rather than a slide deck.
       </p>
     </section>
 
@@ -54,7 +54,7 @@
         The starting point was the same framework I apply to every AI product decision: define the decision first, then the workflow, then the governance model, then the technology.
       </p>
       <p>
-        In a security triage context, the core decision pattern is consistent: should this threat be acted on, escalated, deferred, or monitored, and who owns that call? That framing was familiar. I spent 20 years building decision-support systems around asset inventory, dependency mapping, risk classification, and prioritization dashboards for CIOs. The data layer in security operations - CMDB records, asset exposure, vulnerability scoring, risk-ranked queues - is the same architecture applied to a different domain. The governance and workflow design transfer directly. The domain vocabulary required active learning.
+        In a security triage context, the core decision pattern is consistent: should this threat be acted on, escalated, deferred, or monitored, and who owns that call? That framing was familiar. I have spent more than ten years on decision support for application inventory, dependency mapping, risk classification, and CIO prioritization. The data layer in security operations - CMDB records, asset exposure, vulnerability scoring, risk-ranked queues - is the same architecture applied to a different domain. The governance and workflow design transfer directly. The domain vocabulary required active learning.
       </p>
       <p style="margin-top:12px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--primary);padding:12px 16px;border-radius:0 6px 6px 0;">
         <strong style="color:var(--nav-bg);">The bridge that works:</strong> CMDB asset inventory → dependency mapping → exposure classification → risk scoring → governance dashboard → workflow action. That is the security data flow. The PM pattern behind it is identical to enterprise portfolio rationalization.
@@ -68,7 +68,7 @@
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px;">
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">Governance by design</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">AI recommends. Humans decide. Everything is logged. Override tracking identifies where AI and analyst judgment diverge — enabling continuous improvement without retraining.</p>
+          <p style="margin-top:6px;font-size:0.9rem;">AI recommends. The analyst decides. Every decision is logged. Override counts show where AI and analyst judgment diverge. No security actions are automated.</p>
         </div>
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">Exploitability context, not just severity</strong>
@@ -79,8 +79,8 @@
           <p style="margin-top:6px;font-size:0.9rem;">CVE vulnerability triage, phishing email analysis, and URL threat indicator classification — each with distinct decision types and distinct analyst actions, unified under the same governance pattern.</p>
         </div>
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
-          <strong style="color:var(--nav-bg);">Audit trail for compliance</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">Every decision logged with timestamp, AI recommendation, human decision, and override rationale. Full CSV export for compliance reporting. Session-scoped with no data persistence risk.</p>
+          <strong style="color:var(--nav-bg);">Decision audit trail</strong>
+          <p style="margin-top:6px;font-size:0.9rem;">Every decision is logged with timestamp, AI recommendation, analyst decision, and rationale, with CSV export. Logs are session-scoped and not stored after the session.</p>
         </div>
       </div>
     </section>
@@ -88,7 +88,7 @@
     <!-- What I Built -->
     <section style="margin-bottom:36px;">
       <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">What I Built</h2>
-      <p style="margin-top:14px;">The dashboard integrates three threat data sources through a single governed workflow.</p>
+      <p style="margin-top:14px;">The dashboard brings three threat data sources into a single governed workflow. Analyst actions are recorded as decisions in the audit log; the demo does not block, quarantine, or route anything.</p>
 
       <div style="display:flex;flex-direction:column;gap:14px;margin-top:18px;">
 
@@ -99,7 +99,7 @@
           </div>
           <div>
             <strong style="color:var(--nav-bg);">Live vulnerability feed with exploitability cross-reference</strong>
-            <p style="margin-top:4px;font-size:0.9rem;">Live CVE feed from the NIST National Vulnerability Database, filtered to CVSS 9.0+ critical vulnerabilities published in the last 90 days, cross-referenced against the CISA Known Exploited Vulnerabilities catalog. The KEV integration was a deliberate design decision — CVSS score measures theoretical severity, but KEV status tells an analyst whether threat actors are actively exploiting the vulnerability today. Surfacing that distinction in the UI changes the triage question from "how bad is this" to "how urgent is this right now." Analyst actions: Approve &amp; Route, Escalate, or Override &amp; Defer with mandatory written rationale.</p>
+            <p style="margin-top:4px;font-size:0.9rem;">Live CVE feed from the NIST National Vulnerability Database, filtered to CVSS 9.0+ critical vulnerabilities published in the last 90 days, cross-referenced against the CISA Known Exploited Vulnerabilities catalog. The KEV integration was a deliberate design decision — CVSS score measures theoretical severity, but KEV status tells an analyst whether threat actors are actively exploiting the vulnerability today. Surfacing that distinction in the UI changes the triage question from "how bad is this" to "how urgent is this right now." Analyst decisions: Approve &amp; Route, Escalate, or Override &amp; Defer with mandatory written rationale.</p>
           </div>
         </div>
 
@@ -110,7 +110,7 @@
           </div>
           <div>
             <strong style="color:var(--nav-bg);">AI-assisted phishing email triage</strong>
-            <p style="margin-top:4px;font-size:0.9rem;">Phishing email analysis using a labeled research corpus demonstrating AI risk scoring and triage workflow governance. AI analyzes email content for threat indicators, risk level, and recommended action. Analyst confirms block, escalates to SOC, or releases as false positive with written rationale. In production this connects to a live email security gateway feed. Analyst actions: Block &amp; Quarantine, Escalate to SOC, or Release — False Positive with mandatory override rationale.</p>
+            <p style="margin-top:4px;font-size:0.9rem;">Phishing email analysis on a 10-email sample from a labeled public research corpus, demonstrating AI risk scoring and triage workflow governance. AI analyzes email content for threat indicators, risk level, and recommended action. The analyst records a decision to block, escalate to SOC, or release as a false positive, with written rationale. A production version would need an email security gateway integration. Analyst decisions: Block &amp; Quarantine, Escalate to SOC, or Release — False Positive with mandatory override rationale.</p>
           </div>
         </div>
 
@@ -120,8 +120,8 @@
             <div style="font-size:0.75rem;opacity:0.8;margin-top:2px;">Threat Intelligence</div>
           </div>
           <div>
-            <strong style="color:var(--nav-bg);">Active threat indicator classification and response</strong>
-            <p style="margin-top:4px;font-size:0.9rem;">URL threat indicator feed with severity classification across phishing, malware distribution, ransomware, credential harvesting, and account takeover categories. AI generates threat analysis including affected systems and mitigation steps. Analyst approves block or initiates investigation before any action executes. Analyst actions: Block Immediately, Investigate, or False Positive with mandatory rationale.</p>
+            <strong style="color:var(--nav-bg);">Threat indicator classification and analyst decisions</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">A static sample set of URL threat indicators with severity classification across phishing, malware distribution, ransomware, credential harvesting, and account takeover categories. AI generates threat analysis including affected systems and mitigation steps. The analyst records a decision to block or investigate; no blocking is performed by the demo. Analyst decisions: Block Immediately, Investigate, or False Positive with mandatory rationale.</p>
           </div>
         </div>
 
@@ -131,8 +131,8 @@
             <div style="font-size:0.75rem;opacity:0.9;margin-top:2px;">All Decisions</div>
           </div>
           <div>
-            <strong style="color:var(--nav-bg);">Full accountability and override analysis</strong>
-            <p style="margin-top:4px;font-size:0.9rem;">Every analyst decision logged across all three threat sources — approval, escalation, and override — with timestamp, AI recommendation, human decision, and written rationale. Override analysis surfaces where AI and analyst judgment diverge, enabling model quality improvement over time without retraining. Full CSV export for compliance reporting.</p>
+            <strong style="color:var(--nav-bg);">Decision log and override counts</strong>
+            <p style="margin-top:4px;font-size:0.9rem;">Every analyst decision is logged across all three threat sources — approval, escalation, and override — with timestamp, AI recommendation, analyst decision, and written rationale. An override count shows where AI and analyst judgment diverge. CSV export of the session log.</p>
           </div>
         </div>
 
@@ -181,29 +181,29 @@
             <li><strong>Python + Streamlit</strong> - rapid full-stack deployment without a separate frontend</li>
             <li><strong>Anthropic Claude API</strong> (claude-sonnet) - AI triage summaries, threat analysis, and phishing risk scoring</li>
             <li><strong>NIST NVD API</strong> - live CVE feed filtered to CVSS 9.0+ critical, last 90 days</li>
-            <li><strong>CISA KEV API</strong> - daily-refreshed known exploited vulnerabilities catalog</li>
-            <li><strong>GitHub + Streamlit Community Cloud</strong> - live deployed application with automated deployment on push</li>
+            <li><strong>CISA KEV feed</strong> - known exploited vulnerabilities catalog, refreshed daily</li>
+            <li><strong>GitHub + Streamlit Community Cloud</strong> - public demo with automatic redeploy on push</li>
           </ul>
         </div>
 
         <div class="card" style="padding:20px;">
           <h3>Governance Controls</h3>
           <ul>
-            <li>Human review required before any action executes across all three threat surfaces</li>
+            <li>Every AI recommendation requires an analyst decision; no security actions are automated</li>
             <li>Mandatory written rationale for every override or false positive decision</li>
             <li>Full audit log with timestamp, AI recommendation, human decision, and rationale</li>
-            <li>Override analysis - surfaces where AI and analyst judgment diverge</li>
-            <li>CSV export for compliance reporting</li>
+            <li>Override count - shows where AI and analyst judgment diverge</li>
+            <li>CSV export of the session decision log</li>
           </ul>
         </div>
 
         <div class="card" style="padding:20px;">
           <h3>Data Sources</h3>
           <ul>
-            <li><strong>NIST NVD</strong> - authoritative CVE database, live API, date-filtered and severity-filtered</li>
+            <li><strong>NIST NVD</strong> - authoritative CVE database, live API (refreshed hourly), date-filtered and severity-filtered</li>
             <li><strong>CISA KEV</strong> - confirmed active exploitation catalog, daily refresh</li>
-            <li><strong>Phishing research corpus</strong> - labeled dataset demonstrating triage workflow and governance architecture; production connects to live email security gateway</li>
-            <li><strong>URL threat indicator feed</strong> - severity-classified active malicious URL indicators</li>
+            <li><strong>Phishing research sample</strong> - 10 labeled emails from a public research corpus, used to demonstrate the triage workflow</li>
+            <li><strong>URL threat indicators</strong> - a static, severity-classified sample set bundled with the app</li>
           </ul>
         </div>
 
@@ -212,7 +212,7 @@
           <ul>
             <li><strong>On-demand AI generation:</strong> Triage summaries generated on analyst request rather than pre-scored at ingestion - demonstrates the interaction pattern while controlling API costs at demo scale. Production would pre-generate on ingestion.</li>
             <li><strong>Date + severity + KEV filtering:</strong> Three-layer CVE filtering produces an operationally realistic queue rather than a historical artifact list.</li>
-            <li><strong>Same governance pattern as Portfolio Advisor:</strong> Deliberate - demonstrates pattern reusability across domains, not one-off capability.</li>
+            <li><strong>Same governance pattern as PortfolioIQ:</strong> Deliberate - demonstrates pattern reusability across domains, not one-off capability.</li>
           </ul>
         </div>
 
@@ -226,7 +226,7 @@
         The core governance pattern - retrieve context, generate recommendations, require human review, and log outcomes - is the same pattern applied in PortfolioIQ. It transfers across domains because the underlying problem is the same: AI surfaces relevant context faster than a human can, but humans own the decision and the accountability.
       </p>
       <p style="margin-top:12px;">
-        Built and deployed in under 48 hours, this case study demonstrates how enterprise AI governance and decision-support experience transfers into a cybersecurity services environment. The domain required active learning. The underlying PM pattern did not: define the decision, structure the workflow, manage risk, keep humans accountable, and create the audit trail required for trusted AI adoption.
+        Built and deployed in under 48 hours, this demo shows that the same decision-support pattern transfers to security operations. The domain required active learning. The underlying PM pattern did not: define the decision, structure the workflow, manage risk, keep humans accountable, and create the audit trail required for trusted AI adoption.
       </p>
     </section>
 
@@ -237,7 +237,7 @@
         <div class="card" style="padding:18px;text-align:center;">
           <div style="font-size:2rem;margin-bottom:8px;">&#x1F680;</div>
           <strong style="color:var(--nav-bg);">Live Application</strong>
-          <p style="font-size:0.88rem;margin-top:6px;">Fully deployed on Streamlit Community Cloud. Open in any browser, no install required.</p>
+          <p style="font-size:0.88rem;margin-top:6px;">Public demo on Streamlit Community Cloud. Open in any browser, no install required.</p>
           <a href="https://ai-security-triage-dashboard.streamlit.app" class="btn" style="margin-top:10px;font-size:0.85rem;" target="_blank" rel="noopener noreferrer">Open App</a>
         </div>
         <div class="card" style="padding:18px;text-align:center;">
