@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Enterprise Experience | Kenneth R. Turner</title>
-  <meta name="description" content="Over ten years of enterprise portfolio management, governance, technical program leadership, and modernization at GE Vernova, GE Power, and Pratt &amp; Whitney." />
+  <meta name="description" content="Enterprise product, program, and portfolio leadership at GE Vernova, GE Power, and Pratt &amp; Whitney: modernization, governance, and delivery." />
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
@@ -30,7 +30,8 @@
 <div class="section-nav" id="section-nav">
   <div class="container section-nav-inner">
   <a href="#themes">Themes</a>
-  <a href="#projects">Projects</a>
+  <a href="#projects">Featured</a>
+  <a href="#additional">Additional</a>
   <a href="#relationship">Blueprint</a>
   </div>
 </div>
@@ -67,6 +68,16 @@
     </div>
   </section>
 
+  <!-- Additional Enterprise Experience -->
+  <section id="additional" class="section" style="padding-top:8px;padding-bottom:64px;">
+    <div class="container">
+      <span class="section-label" id="additional-label"></span>
+      <h2 id="additional-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-standard);"></h2>
+      <p class="intro" id="additional-intro" style="max-width:var(--text-width-standard);"></p>
+      <div class="exp-grid" id="additional-cards"></div>
+    </div>
+  </section>
+
   <!-- Relationship to the Blueprint -->
   <section id="relationship" class="section light-bg" style="padding-top:68px;padding-bottom:76px;">
     <div class="container" style="text-align:center;">
@@ -81,10 +92,10 @@
 
 </main>
 
-<!-- Executive Case Study Modal (reusable shell, content generated per project) -->
+<!-- Project Details Modal (reusable shell, content generated per project) -->
 <div class="modal-overlay" id="exp-modal-overlay">
   <div class="modal-box" id="exp-modal-box" role="dialog" aria-modal="true" aria-labelledby="exp-modal-title">
-    <button class="modal-close" id="exp-modal-close" aria-label="Close case study">&times;</button>
+    <button class="modal-close" id="exp-modal-close" aria-label="Close project details">&times;</button>
     <div class="modal-scroll">
       <div class="modal-header">
         <span class="modal-org" id="exp-modal-org"></span>
@@ -165,8 +176,17 @@
     document.getElementById('projects-label').textContent = ep.projects.label;
     document.getElementById('projects-headline').textContent = ep.projects.headline;
     document.getElementById('projects-intro').textContent = ep.projects.intro;
-    document.getElementById('projects-cards').innerHTML = Portfolio.buildExperienceCards(d.enterpriseProjects);
-    Portfolio.initExpModal(d.enterpriseProjects);
+    // Featured first, then additional; one modal list keeps Prev/Next across both
+    const featured = d.enterpriseProjects.filter(p => p.featured);
+    const additional = d.enterpriseProjects.filter(p => !p.featured);
+    document.getElementById('projects-cards').innerHTML = Portfolio.buildExperienceCards(featured);
+    Portfolio.initExpModal(featured.concat(additional));
+
+    // Additional Enterprise Experience
+    document.getElementById('additional-label').textContent = ep.additional.label;
+    document.getElementById('additional-headline').textContent = ep.additional.headline;
+    document.getElementById('additional-intro').textContent = ep.additional.intro;
+    document.getElementById('additional-cards').innerHTML = Portfolio.buildExperienceCards(additional, featured.length);
 
     // Relationship to the Blueprint
     document.getElementById('rel-label').textContent = ep.relationship.label;

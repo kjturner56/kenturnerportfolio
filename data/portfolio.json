@@ -231,12 +231,55 @@
   ],
   "enterpriseProjects": [
     {
+      "id": "boiler-performance-tools",
+      "title": "Boiler Performance Tools Modernization",
+      "objective": "Move roughly 20 legacy engineering applications to AWS while keeping the functionality engineering needed and providing secure access for internal users and external licensees.",
+      "role": "Assignment: Technical Product Owner & Scrum Master",
+      "bullets": [
+        "Served as Product Owner and Scrum Master for re-platforming roughly 20 FORTRAN engineering applications to AWS.",
+        "Defined requirements and user stories with business stakeholders and the solution architect.",
+        "Replaced the original conversion story with the engineers' wrapper approach, had the team size it, and adjusted the sprint plan.",
+        "Coordinated business test cases and user acceptance testing in staging before production releases.",
+        "The team re-platformed the applications, and licensees moved to hosted access."
+      ],
+      "sqdc": {
+        "safety": "Hosted access replaced executable distribution, helping protect intellectual property",
+        "quality": "Business-defined test cases and staging user acceptance testing before production releases",
+        "delivery": "Backlog and sprint plan adjusted when direct conversion wasn't possible; re-platforming completed",
+        "cost": "Moved off legacy infrastructure that was increasingly costly to support"
+      },
+      "organization": "GE Power",
+      "challenge": "About 20 legacy FORTRAN engineering applications, some dating to the 1960s, ran on aging infrastructure, and external licensees received installable executables.",
+      "outcomes": [
+        "Defined requirements and owned the backlog and sprint plan for the move to AWS",
+        "Reworked the backlog when some FORTRAN modules couldn't be converted directly",
+        "The team re-platformed roughly 20 applications to AWS, and licensees moved to hosted access"
+      ],
+      "capabilities": [
+        "Product Ownership",
+        "Legacy Modernization",
+        "Cloud Migration",
+        "Agile Delivery"
+      ],
+      "executiveSummary": "About 20 legacy FORTRAN engineering applications, some dating to the 1960s, ran on infrastructure that was aging and increasingly costly to support. As Product Owner and Scrum Master, I defined requirements and user stories with business stakeholders and the solution architect, owned the backlog, and ran the Scrum ceremonies. When engineers found that some modules couldn't be converted directly to C#, they designed a wrapper. I replaced the original story, had the team size the new work, and adjusted the sprint plan. Business users validated releases through test cases and user acceptance testing in staging. The team re-platformed the applications to AWS. Licensees previously received installable executables; moving to hosted access gave the business more control over its software and intellectual property.",
+      "businessChallenge": "The applications ran on infrastructure that was aging and increasingly costly to support, and the delivery model sent installable executables to external licensees.",
+      "myRole": "I owned requirements, the backlog, prioritization, and sprint planning, and coordinated business validation. The software engineers and solution architect owned the technical design, including the FORTRAN wrapper. The cloud engineering team provisioned the AWS environment.",
+      "keyContributions": [
+        "Defined requirements and user stories with business stakeholders and the solution architect.",
+        "Replaced the blocked conversion story with the wrapper work and adjusted the sprint plan.",
+        "Coordinated business test cases and user acceptance testing in staging before production releases."
+      ],
+      "blueprintConnection": "This connects to the Blueprint's focus on modernizing the systems a business depends on while keeping the functionality it still needs.",
+      "featured": true
+    },
+    {
       "id": "apm-dashboard",
-      "title": "Application Portfolio Management (APM) Dashboard",
-      "objective": "Give leadership actionable visibility into the enterprise application portfolio to support investment, modernization, and retirement decisions.",
-      "role": "Senior Staff Technical Program Manager \u00b7 Application Portfolio Management Lead",
+      "title": "Application Portfolio Management",
+      "objective": "Give Steam IT leadership a consolidated view of its application portfolio to support investment, modernization, and retirement decisions.",
+      "role": "Senior Staff Technical Program Manager \u00b7 Assignment: Application Portfolio Management Lead",
       "bullets": [
         "Took over application portfolio management for Steam IT's 200+ applications during an IT reorganization.",
+        "Worked with the CIO and directors to identify the dashboard metrics they needed.",
         "Built and maintained the dashboard, consolidating health scores, technical debt, cost, and cloud adoption data into a single view.",
         "Ran quarterly portfolio reviews with CIOs, directors, and application owners.",
         "Worked with application owners and technical teams to help raise portfolio governance health to the centrally required targets for critical and noncritical applications in about two quarters."
@@ -248,32 +291,157 @@
         "cost": "Made decommissioning and cloud candidates visible to support cost decisions; savings were not measured"
       },
       "organization": "GE Vernova",
-      "challenge": "Leadership lacked a consolidated, actionable view of application health, cost, and risk across a 200+ application portfolio.",
+      "challenge": "Leadership didn't have a consolidated view of Steam IT's 200+ applications, and new central governance metrics required information that hadn't been captured before.",
       "outcomes": [
-        "Helped raise portfolio governance health to the centrally required targets for critical and noncritical applications in about two quarters, working with application owners and technical teams",
-        "Consolidated quarterly view of 200+ applications for CIOs, directors, and application owners",
+        "Worked with the CIO and directors to identify the dashboard metrics they needed, then built the dashboard",
+        "Helped raise portfolio governance health to the centrally required targets in about two quarters, with application owners and technical teams",
+        "Quarterly portfolio reviews with CIOs, directors, and application owners",
         "Surfaced lifecycle and technical-debt risks to inform prioritization"
       ],
       "capabilities": [
         "Enterprise Portfolio Management",
-        "Governance",
-        "Product Management"
+        "Requirements & Discovery",
+        "Governance"
       ],
-      "executiveSummary": "Steam IT at GE Vernova needed a consolidated, actionable view of more than 200 applications to support investment decisions. I built a Smartsheet tracking and dashboard workflow, worked with application owners and technical teams to close governance gaps, and used it in quarterly reviews with CIOs, directors, and application owners.",
+      "executiveSummary": "When I took over application portfolio management for Steam IT's more than 200 applications, leadership didn't have a consolidated view of the portfolio, and new central governance metrics required information that hadn't been captured before. I identified that visibility gap, worked with the CIO and directors to identify the metrics they needed, and built a Smartsheet tracking system and dashboard covering application health, technical debt, hosting, cloud candidates, and decommissioning candidates. I worked with application owners to close information gaps, coordinated technical-debt and security follow-up with technical teams, and sent weekly updates to the central team so governance scores were recalculated. In about two quarters, the portfolio groups reached their centrally required targets, though some individual applications still had open issues. I used the dashboard in quarterly reviews with CIOs, directors, and application owners.",
       "businessChallenge": "New central governance metrics required information that had not previously been captured, and leadership needed one view of application health, technical debt, hosting, and decommissioning candidates.",
-      "myRole": "I owned the portfolio reporting and the governance-improvement work. A central team defined the scoring rules; I built the tracking and dashboard workflow, coordinated updates with application owners and technical teams, and ran the quarterly reviews.",
+      "myRole": "I owned the dashboard requirements and the tracking and dashboard workflow, and coordinated follow-up with application owners and technical teams. The governance scoring methodology was defined centrally and calculated by the governance system; I didn't design it. Technical teams owned remediation.",
       "keyContributions": [
+        "Identified leadership's portfolio visibility gap and worked with the CIO and directors to identify the dashboard metrics.",
         "Built a Smartsheet tracking system and dashboard for more than 200 applications.",
-        "Consolidated health scores, technical debt, cost, and cloud adoption data into a single executive view.",
-        "Established a quarterly portfolio review cadence directly with the CIO and business leaders."
+        "Closed information gaps with application owners and supplied weekly updates for score recalculation."
       ],
-      "blueprintConnection": "This is where the idea that AI recommendations need a decision framework before they need a model took shape. The dashboard only worked because the decision criteria existed before the data did, the same sequencing that later became the Current State and Operating Model phases of the Enterprise AI Blueprint."
+      "blueprintConnection": "This connects to the Blueprint's starting point: agree on what leaders need to decide before building the reporting or the model.",
+      "featured": true
+    },
+    {
+      "id": "tendering-application",
+      "title": "U.S. Steam Tendering Application",
+      "objective": "Give U.S. Steam Tendering one application for tender documents, status, reviews, and approvals.",
+      "role": "Assignment: Requirements, backlog, and platform recommendation",
+      "bullets": [
+        "Gathered tendering users' requirements and managed the backlog and working versions.",
+        "Compared Box and SharePoint against the required document, status, review, and approval workflows.",
+        "Recommended SharePoint; the IT director agreed.",
+        "The application was delivered and used."
+      ],
+      "sqdc": {
+        "safety": "No direct safety outcome",
+        "quality": "Document review and approval workflow matched to business requirements",
+        "delivery": "Application delivered with stakeholder agreement on the platform",
+        "cost": "Reused existing SharePoint capability"
+      },
+      "organization": "GE Power",
+      "challenge": "U.S. Steam Tendering needed one application for tender documents, status, reviews, and approvals, and an IT director proposed using Box.",
+      "outcomes": [
+        "Gathered users' requirements and owned the backlog and working versions",
+        "Compared Box and SharePoint against the required workflows and recommended SharePoint",
+        "The director agreed, and the application was delivered and used"
+      ],
+      "capabilities": [
+        "Product Ownership",
+        "Requirements & Discovery",
+        "Platform Tradeoffs"
+      ],
+      "executiveSummary": "U.S. Steam Tendering needed an application to manage tender documents, status, reviews, and approvals. An IT director proposed using Box. I gathered the users' requirements, managed the backlog and the working versions of the application, and compared what each platform could do against the document, status, review, and approval workflows the team needed. Based on that comparison, I recommended SharePoint. The director agreed, and the application was delivered and used.",
+      "businessChallenge": "The tendering workflow depended on tracking documents through status, review, and approval, and the platform choice had to support that workflow.",
+      "myRole": "I owned the requirements, the backlog, the working versions of the application, and the platform recommendation.",
+      "keyContributions": [
+        "Gathered tendering users' requirements.",
+        "Managed the backlog and working versions of the application.",
+        "Compared platform capabilities against the required workflows and recommended SharePoint."
+      ],
+      "blueprintConnection": "This connects to the Blueprint's emphasis on choosing technology based on the workflow the business needs.",
+      "featured": true
+    },
+    {
+      "id": "me-intranet-recovery",
+      "title": "ME Intranet Migration Recovery",
+      "objective": "Get a stalled business-unit intranet migration to SharePoint back on track and rebuild the unit's working relationship with IT.",
+      "role": "Assignment: Recovery plan, schedule, and delivery",
+      "bullets": [
+        "Took over a stalled Dreamweaver-to-SharePoint intranet migration.",
+        "Built a task-level Microsoft Project schedule from owner estimates.",
+        "Secured development and data-migration commitments from the IT services vendor.",
+        "Ran weekly progress meetings with the application owner and the vendor.",
+        "Delivered on the date set during the recovery, under the original budget, with about $43K in reported savings."
+      ],
+      "sqdc": {
+        "safety": "No direct safety outcome",
+        "quality": "Started from the business unit's pain points and needs",
+        "delivery": "Recovered a stalled migration and delivered on the date set during the recovery",
+        "cost": "Under the original budget, with about $43K in reported savings"
+      },
+      "organization": "Pratt & Whitney",
+      "challenge": "A business unit's move from an outdated Dreamweaver intranet to SharePoint had stalled, and that unit's confidence in IT was low.",
+      "outcomes": [
+        "Listened to the business first, then rebuilt the plan from task-owner estimates",
+        "Secured development and data-migration commitments from the IT services vendor",
+        "Delivered on the date set during the recovery, under the original budget, with about $43K in reported savings",
+        "Improved working relationship with the business unit"
+      ],
+      "capabilities": [
+        "Customer Trust",
+        "Project Recovery",
+        "Stakeholder Management"
+      ],
+      "executiveSummary": "When I joined Pratt & Whitney, the ME business unit's migration from an outdated Dreamweaver intranet to SharePoint had stalled. The application owner was trying to manage it without the IT support they needed, and the IT services vendor was committed elsewhere. I met with the application owner and business stakeholders to understand their pain points and what they needed from the new intranet. I broke the remaining work into tasks with owners and estimates, built the schedule in Microsoft Project, and set a delivery date. I explained the business impact to the vendor's director, secured commitments for development and data migration, and ran weekly progress meetings. The migration was completed by that date and under the original budget, with about $43K in reported savings, and the working relationship with the business unit improved.",
+      "businessChallenge": "The business unit had been waiting on a stalled migration, and the vendor's team was committed to other work.",
+      "myRole": "I owned the recovery: the plan, the schedule and delivery date, the resource commitments, and progress tracking. SharePoint had already been selected. I didn't manage the original budget; the savings were reported against it.",
+      "keyContributions": [
+        "Met with the application owner and stakeholders to understand their pain points and needs.",
+        "Built a Microsoft Project schedule from task-owner estimates and set the delivery date.",
+        "Secured vendor commitments and ran weekly progress meetings."
+      ],
+      "blueprintConnection": "This connects to the Blueprint's emphasis on earning stakeholder trust through clear plans and follow-through.",
+      "featured": true
+    },
+    {
+      "id": "portfolio-planning",
+      "title": "Steam IT PMO",
+      "objective": "Establish a PMO for Steam IT that gives leadership one consistent view of project requests and ongoing work.",
+      "role": "Senior Staff Technical Program Manager \u00b7 Assignment: Program Manager / PMO Lead",
+      "bullets": [
+        "Established the Steam IT PMO at the CIO's request.",
+        "Customized Smartsheet PMO templates for intake, approvals, project templates, automation, and dashboards.",
+        "Trained Project Managers on the lifecycle, tollgates, and the system.",
+        "Ran quarterly project health reviews with the CIO and Domain Directors.",
+        "Leadership gained one place to see project requests, health, costs, and timelines."
+      ],
+      "sqdc": {
+        "safety": "Earlier visibility of project risk; no safety metric was measured",
+        "quality": "Consistent intake, required status updates, and one source of truth for reporting",
+        "delivery": "Project timelines and health visible in quarterly reviews; on-time delivery impact was not measured",
+        "cost": "Project cost visibility; savings were not measured"
+      },
+      "organization": "GE Vernova",
+      "challenge": "The CIO could see major strategic projects, but issues on smaller Steam IT projects often came up only in one-on-one meetings.",
+      "outcomes": [
+        "Set up intake, approval, planning, and reporting across Steam IT's domains",
+        "Trained Project Managers and kept Smartsheet as the single source for reporting",
+        "Leadership gained one place to see project requests, health, costs, and timelines"
+      ],
+      "capabilities": [
+        "Program Governance",
+        "Operating Models",
+        "Enterprise Portfolio Management"
+      ],
+      "executiveSummary": "The Steam IT CIO could see major strategic projects but didn't have a consolidated view of smaller ones, and issues often surfaced only in one-on-one meetings. The CIO brought me on to set up a PMO. I customized Smartsheet's PMO templates into intake forms, approval workflows, project templates, automation, and dashboards, set up the intake, approval, and reporting process, and trained the Project Managers. Some wanted to keep their own spreadsheets, so I let them use those day to day but kept Smartsheet as the single source for reporting. Before each quarterly review I checked that project information was current, then walked the CIO and Domain Directors through project health. Leadership gained one place to see project requests, health, costs, and timelines.",
+      "businessChallenge": "Smaller projects across Steam IT were tracked in different ways, so their schedule and cost status were hard to review together.",
+      "myRole": "I designed and ran the PMO process. The Project Managers reported to their Domain Directors, not to me, so adoption depended on influence rather than authority. I surfaced project health; I didn't own every project's recovery plan.",
+      "keyContributions": [
+        "Customized Smartsheet PMO templates for intake, approvals, and tracking.",
+        "Trained Project Managers on the lifecycle, tollgates, and the system.",
+        "Ran quarterly project health reviews with the CIO and Domain Directors."
+      ],
+      "blueprintConnection": "A PMO only works if people don't route around it, which meant designing for adoption from the first decision, not bolting it on later. That same discipline is why the Blueprint treats operating model design and adoption as connected, not sequential afterthoughts.",
+      "featured": true
     },
     {
       "id": "predictive-maintenance",
       "title": "Predictive-Maintenance Application: AWS Deployment",
       "objective": "Put a purchased predictive-maintenance application into service on AWS for engineering users.",
-      "role": "Senior Staff Technical Program Manager \u00b7 Technical Product Manager",
+      "role": "Senior Staff Technical Program Manager \u00b7 Assignment: Technical Product Manager",
       "bullets": [
         "Took ownership of bringing the purchased application into service.",
         "Coordinated engineering users, enterprise architecture, cloud, security, and the vendor on requirements and the delivery approach.",
@@ -299,7 +467,7 @@
         "Product Management",
         "Operating Models"
       ],
-      "executiveSummary": "GE Vernova had purchased a predictive-maintenance application that needed an implementation owner. I coordinated engineering users, enterprise architecture, cloud, security, and the vendor, personally installed and configured the application on AWS, and created access documentation, a training video, and training for engineering users.",
+      "executiveSummary": "GE Vernova had purchased a predictive-maintenance application that needed an implementation owner. I coordinated engineering users, enterprise architecture, cloud, security, and the vendor, personally installed and configured the application on AWS, and created access documentation, a training video, and training for engineering users. The application was deployed on AWS and made available to engineering users.",
       "businessChallenge": "Purchased software often depends on cloud, security, and architecture teams that were not part of the buying decision, so it needs an owner to carry it into production.",
       "myRole": "As Technical Product Manager, I coordinated the deployment across engineering users, enterprise architecture, cloud engineering, security, and the vendor. I personally installed and configured the application, working with the cloud engineering team on the AWS environment.",
       "keyContributions": [
@@ -307,32 +475,73 @@
         "Personally installed and configured the application on AWS.",
         "Created environment-access documentation and a training video, and trained engineering users."
       ],
-      "blueprintConnection": "Buying technology and putting it into service are different steps. The Blueprint treats that handoff as part of the plan for AI initiatives."
+      "blueprintConnection": "Buying technology and putting it into service are different steps. The Blueprint treats that handoff as part of the plan for AI initiatives.",
+      "featured": true
+    },
+    {
+      "id": "sharepoint-modernization",
+      "title": "SharePoint Upgrade: The No-Go Decision",
+      "objective": "Move engineering's SharePoint 2007 environment to a 64-bit version supported by the data center without losing data.",
+      "role": "Assignment: Cutover planning and go/no-go decision",
+      "bullets": [
+        "Stopped the cutover when the old environment was restarted, accepting the schedule delay.",
+        "Took ownership of the unclear shutdown instructions and reset responsibilities and checkpoints.",
+        "Validated the migration before the second cutover.",
+        "The second cutover had no reported post-launch data-integrity issues."
+      ],
+      "sqdc": {
+        "safety": "Avoided relying on potentially incomplete data after the restart",
+        "quality": "Migration validated before retry; no reported post-launch data-integrity issues",
+        "delivery": "Accepted a schedule delay and completed the second cutover",
+        "cost": "Reduced rework risk; not quantified"
+      },
+      "organization": "GE Power",
+      "challenge": "Engineering's SharePoint 2007 environment had to be upgraded to a version supported by the data center.",
+      "outcomes": [
+        "Stopped the cutover when the old environment was restarted, accepting a schedule delay to protect data integrity",
+        "Reset responsibilities and checkpoints and validated the migration before retrying",
+        "No reported post-launch data-integrity issues after the second cutover"
+      ],
+      "capabilities": [
+        "Risk Management",
+        "Data Integrity",
+        "Enterprise Transformation"
+      ],
+      "executiveSummary": "Engineering's SharePoint 2007 project-execution environment had to move to a 64-bit version supported by the data center. During the cutover, the old environment was restarted, which meant data could diverge between the old and new systems. I made the no-go decision and accepted the delay. I took ownership of the unclear shutdown instructions that had allowed the restart, reset responsibilities and checkpoints, and validated the migration before retrying. The second cutover had no reported post-launch data-integrity issues.",
+      "businessChallenge": "The platform supported engineering's project execution, so the upgrade could not risk losing data.",
+      "myRole": "I made the no-go decision and owned the reset: clearer responsibilities and checkpoints, and validation before the second cutover. I also took ownership of the unclear shutdown instructions that contributed to the restart.",
+      "keyContributions": [
+        "Stopped the cutover when the old environment was restarted, accepting the schedule delay.",
+        "Took ownership of the unclear shutdown instructions and reset responsibilities and checkpoints.",
+        "Validated the migration before the second cutover."
+      ],
+      "blueprintConnection": "The decision to pause a live cutover rather than protect a deadline is the same judgment the Blueprint asks organizations to build into AI governance: knowing when to stop is as important as knowing how to scale.",
+      "featured": false
     },
     {
       "id": "knowledge-platform",
-      "title": "Knowledge DB Replacement (Lotus Notes to SharePoint)",
-      "objective": "Replace a failing legacy knowledge system with a modern platform that preserved critical engineering documentation and improved access.",
-      "role": "Technical Product Manager / Project Lead",
+      "title": "Engineering Knowledge Database Replacement",
+      "objective": "Replace the retiring Lotus Notes knowledge database while preserving engineering's access to its documentation.",
+      "role": "Assignment: Requirements, platform choice, and phased rollout",
       "bullets": [
-        "Identified the business risk of staying on Lotus Notes and defined the requirements and adoption strategy through stakeholder interviews.",
-        "Evaluated platform options and made the call to use SharePoint, recognizing it would leverage existing tools, reduce cost, and accelerate adoption.",
-        "Designed the phased rollout approach to validate adoption and minimize disruption to engineering teams.",
-        "Led the technical migration, including data extraction, cleaning, and deployment.",
-        "Added training in response to early user feedback.",
+        "Interviewed department leads to map their requirements.",
+        "Chose the existing SharePoint platform for the replacement.",
+        "Piloted with the smallest department, then expanded the migration.",
+        "Added week-long training in response to early user feedback.",
         "Replaced the legacy system and preserved access to engineering documentation."
       ],
       "sqdc": {
-        "safety": "Knowledge continuity preserved throughout the transition",
-        "quality": "Solution aligned with user needs through stakeholder-led requirements",
+        "safety": "Preserved access to engineering documentation",
+        "quality": "Requirements mapped with department leads; usability feedback addressed with training",
         "delivery": "Phased rollout starting with the smallest department",
-        "cost": "Leveraged existing enterprise platform, avoiding new tooling costs"
+        "cost": "Reused the existing SharePoint platform rather than buying another"
       },
       "organization": "GE Power",
-      "challenge": "A failing legacy knowledge system put critical engineering documentation at risk.",
+      "challenge": "Lotus Notes was being retired, putting engineering's access to its knowledge and documentation at risk.",
       "outcomes": [
-        "Migrated engineering documentation to the new SharePoint platform",
-        "Piloted with the smallest department before expanding",
+        "Interviewed department leads to map their needs",
+        "Chose the existing SharePoint platform and piloted with the smallest department before expanding",
+        "Replaced the legacy system and preserved access to engineering documentation",
         "Responded to early user feedback with week-long training"
       ],
       "capabilities": [
@@ -340,181 +549,62 @@
         "Enterprise Transformation",
         "Process Improvement"
       ],
-      "executiveSummary": "A retiring Lotus Notes knowledge system put access to years of engineering documentation at risk. This initiative replaced the platform and preserved access to the engineering knowledge it held.",
-      "businessChallenge": "The system was end-of-life, but it also held institutional knowledge accumulated over years, with no clean way to migrate it. Any misstep risked either losing critical documentation or disrupting engineering teams who had no tolerance for downtime.",
-      "myRole": "I owned the platform decision and the migration strategy, from evaluating alternatives through to leading the technical migration and the adoption plan that came with it. The harder part wasn't the technology choice, it was designing a rollout that protected continuity for teams who couldn't afford to lose access to their own documentation.",
+      "executiveSummary": "A retiring Lotus Notes knowledge system put access to years of engineering documentation at risk. I interviewed department leads to map their needs, chose to build the replacement on the existing SharePoint platform, piloted it with the smallest department, and then expanded the migration. When early users gave negative feedback, we added week-long training. The legacy system was replaced, and engineering kept access to its documentation.",
+      "businessChallenge": "The system was being retired, but engineering still relied on the knowledge and documentation it held.",
+      "myRole": "I owned the requirements discovery, the platform choice, the phased rollout plan, and the response to user feedback.",
       "keyContributions": [
-        "Defined requirements and adoption strategy through direct stakeholder interviews.",
-        "Selected SharePoint over alternatives to leverage existing tools and reduce cost.",
-        "Led the technical migration, including data extraction, cleaning, and deployment."
+        "Interviewed department leads to map their requirements.",
+        "Chose the existing SharePoint platform for the replacement.",
+        "Piloted with the smallest department, then expanded the migration."
       ],
-      "blueprintConnection": "This project reinforced that migrations succeed or fail on adoption, not technology, a lesson that shows up directly in the Blueprint's treatment of adoption and change enablement as a distinct phase, not an afterthought bolted onto delivery."
-    },
-    {
-      "id": "sharepoint-modernization",
-      "title": "SharePoint 2007 Tech Debt Upgrade",
-      "objective": "Address accumulated technical debt by upgrading SharePoint 2007 to modern 64-bit infrastructure before it became an operational or security risk.",
-      "role": "Technical Product Manager / Project Lead",
-      "bullets": [
-        "Identified the business impact of aging infrastructure and defined the success criteria and risk framework for the upgrade.",
-        "Designed the weekend cutover approach, choosing a strategy that minimized disruption while protecting data integrity.",
-        "Coordinated engineering teams through the cutover and made the call to pause the go-live when issues were detected, preventing downstream impact.",
-        "Maintained stakeholder alignment throughout, communicating clearly on risks, decisions, and progress.",
-        "The second cutover completed with no reported post-launch data-integrity issues."
-      ],
-      "sqdc": {
-        "safety": "Mitigated operational and security risks from aging infrastructure",
-        "quality": "Migration validated before retry; no reported post-launch data-integrity issues",
-        "delivery": "Smooth, risk-managed rollout with proactive issue response",
-        "cost": "Reduced rework risk; not quantified"
-      },
-      "organization": "GE Power",
-      "challenge": "Engineering's SharePoint 2007 environment had to be upgraded to a version supported by the data center.",
-      "outcomes": [
-        "No reported post-launch data-integrity issues after the second cutover",
-        "Upgraded to a 64-bit version supported by the data center",
-        "Paused and re-sequenced go-live when risk was detected, protecting continuity"
-      ],
-      "capabilities": [
-        "Governance",
-        "Enterprise Transformation",
-        "Operating Models"
-      ],
-      "executiveSummary": "Engineering's SharePoint 2007 project-execution environment had to move to a 64-bit version supported by the data center. When the old environment was restarted mid-cutover, I stopped the go-live, reset checkpoints, validated the migration, and completed a second cutover.",
-      "businessChallenge": "The platform supported engineering's project execution, so the upgrade could not risk losing data.",
-      "myRole": "I owned the risk framework and the cutover strategy, including the judgment call, mid-execution, to pause the go-live when early signals suggested a problem, rather than push through on schedule. That decision protected the outcome at the cost of the original timeline.",
-      "keyContributions": [
-        "Defined the success criteria and risk framework that governed the upgrade.",
-        "Designed a weekend cutover approach that minimized disruption while protecting data integrity.",
-        "Made the call to pause go-live when issues were detected, preventing downstream impact."
-      ],
-      "blueprintConnection": "The decision to pause a live cutover rather than protect a deadline is the same judgment the Blueprint asks organizations to build into AI governance: knowing when to stop is as important as knowing how to scale."
+      "blueprintConnection": "This connects to the Blueprint's treatment of adoption as its own phase: the training added after early feedback showed why adoption needs planning from the start.",
+      "featured": false
     },
     {
       "id": "data-quality",
       "title": "Document Data Quality Improvement",
-      "objective": "Resolve long-standing document metadata quality issues that were slowing teams down and eroding trust in the platform.",
-      "role": "Technical Product Manager / Change Leader",
+      "objective": "Resolve a long-standing SharePoint metadata problem without waiting for developer capacity.",
+      "role": "Assignment: Metadata correction process and owner coordination",
       "bullets": [
-        "Identified the root cause of a persistent data quality problem that had gone unresolved and defined an approach to fix it.",
-        "Designed the remediation process, including how metadata would be exported, validated by owners, corrected, and refreshed back into SharePoint.",
-        "Engaged document owners directly to validate and correct their data.",
-        "Communicated progress to stakeholders throughout to maintain trust and momentum.",
-        "Resolved a long-standing metadata issue without custom development."
+        "Exported the metadata into department-specific Excel files using a third-party tool.",
+        "Had document owners validate the corrections.",
+        "Reimported the corrected metadata without custom development.",
+        "Resolved a long-standing metadata issue without waiting for developer capacity."
       ],
       "sqdc": {
         "safety": "Safety impact was not measured",
         "quality": "Document owners validated the corrected metadata",
         "delivery": "Resolved without waiting for developer availability",
-        "cost": "Leveraged existing tools, avoiding new spend and saving time"
+        "cost": "Used existing tools and distributed review"
       },
       "organization": "GE Power",
       "challenge": "A long-standing SharePoint metadata issue had gone unresolved while developer capacity was unavailable.",
       "outcomes": [
         "Document owners validated the corrected metadata",
         "Resolved the issue without waiting for developer capacity",
-        "Resolved the issue using existing tools, avoiding new spend"
+        "Used existing tools rather than custom development"
       ],
       "capabilities": [
         "Process Improvement",
         "Governance",
         "Knowledge Management"
       ],
-      "executiveSummary": "A SharePoint metadata problem had gone unresolved for over a year while developer capacity was unavailable. I exported the metadata into department files, had document owners validate the corrections, and reimported it.",
+      "executiveSummary": "A SharePoint metadata problem had gone unresolved for over a year while developer capacity was unavailable. I used a third-party tool to export the metadata into department-specific Excel files, had document owners validate the corrections, and reimported it. That resolved the issue without custom development.",
       "businessChallenge": "The issue had remained unresolved for over a year because developer capacity was not available.",
-      "myRole": "I led the remediation as a change effort as much as a technical one, designing the correction process and, more importantly, getting document owners to take direct accountability for their own data so the problem wouldn't simply return.",
+      "myRole": "I designed the correction process and coordinated the document owners, who validated the corrections to their own data.",
       "keyContributions": [
-        "Diagnosed the root cause of a persistent data quality issue that had gone unresolved.",
-        "Designed the remediation process for validating, correcting, and refreshing metadata.",
-        "Engaged document owners directly to validate corrections."
+        "Exported the metadata into department-specific Excel files using a third-party tool.",
+        "Had document owners validate the corrections.",
+        "Reimported the corrected metadata without custom development."
       ],
-      "blueprintConnection": "This is where the idea that governance has to include ownership, not just process, took hold, a principle that carries directly into how the Blueprint treats accountability as part of the operating model, not a separate compliance layer."
-    },
-    {
-      "id": "agile-delivery",
-      "title": "Process Improvement: Agile Implementation",
-      "objective": "Introduce Agile ways of working to improve delivery predictability, team collaboration, and stakeholder visibility.",
-      "role": "Technical Product Manager / Agile Coach",
-      "bullets": [
-        "Introduced Agile practices to the engineering software team at the director's request.",
-        "Defined the delivery process, backlog structure, and Scrum ceremonies for the team.",
-        "Created user stories, prioritized the backlog, and coached teams on Agile practices and ways of working.",
-        "Ran workshops to build team buy-in, demonstrate sprint value, and encourage cross-functional collaboration.",
-        "The team adopted a more consistent planning and delivery approach."
-      ],
-      "sqdc": {
-        "safety": "Safety impact was not measured",
-        "quality": "More consistent feedback and review rhythm",
-        "delivery": "Shared planning cadence; cycle-time change was not measured",
-        "cost": "Cost impact was not measured"
-      },
-      "organization": "GE Power",
-      "challenge": "A newly consolidated engineering software team had inconsistent planning and delivery practices.",
-      "outcomes": [
-        "Introduced Scrum and trained the team at the director's request",
-        "Facilitated Scrum ceremonies and coached the team through adoption",
-        "Team adopted a more consistent planning and delivery approach"
-      ],
-      "capabilities": [
-        "Agile Delivery",
-        "Process Improvement",
-        "Product Management"
-      ],
-      "executiveSummary": "After GE Power consolidated its engineering software developers into one team, practices remained inconsistent. At the director's request, I introduced Agile: I defined the delivery process, trained the developers, facilitated Scrum ceremonies, and coached the team through adoption.",
-      "businessChallenge": "A newly consolidated team brought different habits for planning and tracking work, which made delivery harder to plan and coordinate.",
-      "myRole": "At the director's request, I introduced Agile to the team, defined how ceremonies and the backlog would work, trained the developers, and coached them through adoption.",
-      "keyContributions": [
-        "Introduced Agile at the director's request and defined the delivery process.",
-        "Designed ceremonies and backlog structure for the team.",
-        "Coached teams directly on Agile practices and ran workshops to build buy-in."
-      ],
-      "blueprintConnection": "Delivery predictability doesn't come from adopting a framework, it comes from designing how that framework fits a specific team's context. That same instinct, fit before framework, shapes how the Blueprint's Operating Model phase avoids one-size-fits-all prescriptions."
-    },
-    {
-      "id": "portfolio-planning",
-      "title": "Steam IT PMO",
-      "objective": "Establish a PMO for Steam IT that gives leadership one consistent view of project requests and ongoing work.",
-      "role": "Senior Staff Technical Program Manager \u00b7 Program Manager / PMO Lead",
-      "bullets": [
-        "Established the Steam IT PMO at the CIO's request.",
-        "Customized Smartsheet PMO templates for intake, approvals, project templates, automation, and dashboards.",
-        "Trained Project Managers on the lifecycle, tollgates, and the system.",
-        "Ran quarterly project health reviews with the CIO and Domain Directors.",
-        "Leadership gained one place to see project requests, health, costs, and timelines."
-      ],
-      "sqdc": {
-        "safety": "Earlier visibility of project risk; no safety metric was measured",
-        "quality": "Consistent intake, required status updates, and one source of truth for reporting",
-        "delivery": "Project timelines and health visible in quarterly reviews; on-time delivery impact was not measured",
-        "cost": "Project cost visibility; savings were not measured"
-      },
-      "organization": "GE Vernova",
-      "challenge": "Major strategic initiatives had established visibility, but smaller projects across Steam IT were tracked inconsistently and were hard to see in one place.",
-      "outcomes": [
-        "Established a PMO covering Steam IT's domains, built on customized Smartsheet templates",
-        "Gave leadership one view of project requests, health, costs, and timelines",
-        "Standard intake, approval, and reporting process supported by Project Manager training"
-      ],
-      "capabilities": [
-        "Governance",
-        "Operating Models",
-        "Enterprise Portfolio Management"
-      ],
-      "executiveSummary": "The Steam IT CIO asked me to establish a PMO. I customized Smartsheet PMO templates for intake, approvals, automation, and dashboards, trained the Project Managers, and ran quarterly reviews, giving leadership one place to see project requests, health, costs, and timelines.",
-      "businessChallenge": "Smaller projects across Steam IT were tracked in different ways, so their schedule and cost status were hard to review together.",
-      "myRole": "I designed and ran the PMO mechanism: intake, approvals, planning, reporting, and training. The Project Managers reported to their Domain Directors, so adoption depended on influence rather than authority.",
-      "keyContributions": [
-        "Customized Smartsheet PMO templates for intake, approvals, and tracking.",
-        "Trained Project Managers on the lifecycle, tollgates, and the system.",
-        "Built transparent reporting on progress, risk, and dependencies for leadership."
-      ],
-      "blueprintConnection": "A PMO only works if people don't route around it, which meant designing for adoption from the first decision, not bolting it on later. That same discipline is why the Blueprint treats operating model design and adoption as connected, not sequential afterthoughts."
+      "blueprintConnection": "This connects to the Blueprint's view that governance needs clear data ownership, not just process.",
+      "featured": false
     },
     {
       "id": "itar-ear-compliance",
       "title": "ITAR/EAR Collaboration Templates",
       "objective": "Enable regulated engineering data to be managed safely within everyday enterprise collaboration workflows.",
-      "role": "Technical Product Manager / SharePoint Governance Lead",
+      "role": "Assignment: Technical Product Manager / SharePoint Governance Lead",
       "organization": "Pratt & Whitney",
       "challenge": "Regulated engineering data needed SharePoint collaboration that supported ITAR and EAR export-control requirements without slowing teams down.",
       "outcomes": [
@@ -545,7 +635,48 @@
         "Collaborated with vendors on export logging and scanning controls for regulated sites.",
         "Worked with IT, security, legal, and compliance partners on SharePoint governance for regulated sites."
       ],
-      "blueprintConnection": "Compliance that people avoid isn't actually compliance. Designing governance that people would use, not just tolerate, is a principle that carries directly into how the Blueprint approaches AI governance: oversight has to be usable, or it gets bypassed."
+      "blueprintConnection": "Compliance that people avoid isn't actually compliance. Designing governance that people would use, not just tolerate, is a principle that carries directly into how the Blueprint approaches AI governance: oversight has to be usable, or it gets bypassed.",
+      "featured": false
+    },
+    {
+      "id": "agile-delivery",
+      "title": "Agile Introduction",
+      "objective": "Introduce a consistent Agile approach for a newly consolidated engineering software team.",
+      "role": "Assignment: Agile introduction, training, and Scrum facilitation",
+      "bullets": [
+        "Introduced Agile at the director's request.",
+        "Trained the developers and facilitated Scrum ceremonies.",
+        "Coached the team through adoption.",
+        "The team adopted a more consistent planning and delivery approach."
+      ],
+      "sqdc": {
+        "safety": "Safety impact was not measured",
+        "quality": "More consistent feedback and review rhythm",
+        "delivery": "Shared planning cadence; cycle-time change was not measured",
+        "cost": "Cost impact was not measured"
+      },
+      "organization": "GE Power",
+      "challenge": "A newly consolidated engineering software team had inconsistent planning and delivery practices.",
+      "outcomes": [
+        "Introduced Scrum and trained the team at the director's request",
+        "Facilitated Scrum ceremonies and coached the team through adoption",
+        "Team adopted a more consistent planning and delivery approach"
+      ],
+      "capabilities": [
+        "Agile Delivery",
+        "Process Improvement",
+        "Coaching"
+      ],
+      "executiveSummary": "After GE Power consolidated its engineering software developers into one team, practices remained inconsistent. At the director's request, I introduced Agile: I defined the delivery process, trained the developers, facilitated Scrum ceremonies, and coached the team through adoption.",
+      "businessChallenge": "A newly consolidated team brought different habits for planning and tracking work, which made delivery harder to plan and coordinate.",
+      "myRole": "At the director's request, I introduced Agile to the team, trained the developers, facilitated the Scrum ceremonies, and coached them through adoption.",
+      "keyContributions": [
+        "Introduced Agile at the director's request.",
+        "Trained the developers and facilitated Scrum ceremonies.",
+        "Coached the team through adoption."
+      ],
+      "blueprintConnection": "Delivery predictability doesn't come from adopting a framework, it comes from designing how that framework fits a specific team's context. That same instinct, fit before framework, shapes how the Blueprint's Operating Model phase avoids one-size-fits-all prescriptions.",
+      "featured": false
     }
   ],
   "about": {
@@ -954,34 +1085,39 @@
   "experiencePage": {
     "hero": {
       "eyebrow": "ENTERPRISE EXPERIENCE",
-      "headline": "The experience behind the Enterprise AI Blueprint.",
-      "intro": "My experience spans enterprise portfolio management, governance, product leadership, modernization, and operational excellence across global organizations, the same disciplines the Enterprise AI Blueprint is built on."
+      "headline": "Enterprise product, program, and portfolio leadership.",
+      "intro": "I've owned products, run programs, and managed application portfolios at GE Vernova, GE Power, and Pratt & Whitney. That meant finding the problem, learning what customers needed, setting priorities, making tradeoffs, and seeing the work through delivery and into operation."
     },
     "themes": {
       "label": "ENTERPRISE THEMES",
       "headline": "The capability areas this experience spans.",
       "items": [
-        "Enterprise Portfolio Management",
-        "Product Management",
-        "Governance",
-        "Operating Models",
-        "Enterprise Transformation",
-        "Process Improvement",
-        "Knowledge Management",
+        "Product Ownership",
+        "Requirements & Discovery",
+        "Portfolio Management",
+        "Program Governance",
+        "Legacy Modernization",
+        "Cloud Migration",
+        "Customer Trust",
         "Agile Delivery"
       ]
     },
     "projects": {
       "label": "FEATURED PROJECTS",
-      "headline": "A selection of platforms and initiatives I've owned end to end.",
-      "intro": "Each of these was a real leadership assignment inside a global organization, not a case study written after the fact."
+      "headline": "Product, program, and portfolio work.",
+      "intro": "Each project covers the problem, what I decided and did, and the result."
+    },
+    "additional": {
+      "label": "ADDITIONAL EXPERIENCE",
+      "headline": "Judgment, governance, and change.",
+      "intro": "Further examples of enterprise delivery and leadership."
     },
     "relationship": {
       "label": "RELATIONSHIP TO THE BLUEPRINT",
-      "headline": "The Blueprint Didn't Appear in Isolation",
+      "headline": "How This Work Informs the Blueprint",
       "body": [
-        "These projects represent years of solving the same category of problem across four organizations: governance, portfolio management, modernization, delivery, and transformation, each one a real leadership assignment, not a case study written after the fact.",
-        "The Enterprise AI Blueprint is the result of synthesizing those experiences into a repeatable executive framework, applied to Enterprise AI specifically. The experience came first. The framework is how I've since codified it."
+        "This work stands on its own: products delivered, programs run, and portfolios managed inside large organizations.",
+        "It also shaped the Enterprise AI Blueprint. The same things kept deciding the outcome: clear decision criteria, governance people would use, modernization that protected what the business relied on, and adoption planned from the start. The Blueprint turns those lessons into a framework for Enterprise AI."
       ],
       "cta": "View the Enterprise AI Blueprint"
     }

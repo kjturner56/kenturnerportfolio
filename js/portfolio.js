@@ -358,13 +358,16 @@ function buildThemeChips(items) {
 /* ----- Experience page: concise project cards. Clicking
    anywhere on a card opens the executive case-study modal
    for that project. */
-function buildExperienceCards(projects) {
-  return projects.map((p, i) => {
+function buildExperienceCards(projects, offset = 0) {
+  // offset keeps card indexes aligned with the modal list when
+  // projects are split across more than one grid
+  return projects.map((p, j) => {
+    const i = j + offset;
     const outcomes = p.outcomes.slice(0, 3).map(o => `<li>${o}</li>`).join('');
     const capabilities = p.capabilities.map(c => `<span class="tag">${c}</span>`).join('');
     return `
       <div class="exp-card" tabindex="0" role="button" aria-haspopup="dialog"
-        aria-label="View case study: ${p.title}"
+        aria-label="View project details: ${p.title}"
         onclick="Portfolio.openExpModal(${i})"
         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();Portfolio.openExpModal(${i});}">
         <div class="exp-card-top">
@@ -374,7 +377,7 @@ function buildExperienceCards(projects) {
         <p class="exp-challenge">${p.challenge}</p>
         <ul class="exp-outcomes">${outcomes}</ul>
         <div class="tag-list" style="margin-bottom:14px;">${capabilities}</div>
-        <span class="exp-view-link">View Case Study &#8250;</span>
+        <span class="exp-view-link">View Project Details &#8250;</span>
       </div>`;
   }).join('');
 }
