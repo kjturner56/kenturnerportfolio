@@ -55,88 +55,88 @@
     <!-- SECTION A -->
     <section style="margin-bottom:36px;">
       <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Architectural Decisions &amp; Technical Tradeoffs</h2>
-      <p style="margin-top:14px;">How the implemented prototype was put together, what each choice costs, and what evidence would justify a more complex architecture.</p>
+      <p style="margin-top:14px;">Here&rsquo;s how we built the prototype, what each choice costs, and what would make a more complex design worth it.</p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px;">
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">1. Problem</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">Retain, retire, and modernize decisions are often made on incomplete information and institutional memory rather than consistent, defensible criteria.</p>
+          <p style="margin-top:6px;font-size:0.9rem;">Teams often decide whether to keep, retire, or modernize an application with incomplete information or what people remember, instead of clear criteria they can defend.</p>
         </div>
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">2. Requirements</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">Explainable recommendations, with a human accountable for the final decision. A demo that runs without infrastructure. Bounded AI cost on a public demo. <em>(Documented: project brief, README, and Screen 6 code notes.)</em></p>
+          <p style="margin-top:6px;font-size:0.9rem;">Recommendations had to be easy to explain, with a person responsible for the final decision. The demo had to be easy to run without setting up external services, and public AI usage needed limits to control cost. <em>(Documented: project brief, README, and Screen 6 code notes.)</em></p>
         </div>
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">3. Architecture (implemented)</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">A single Streamlit app: sample CSV data (or an optional ServiceNow connector) feeds deterministic Python scoring rules; results and decisions live in session state; Claude answers questions on one passphrase-gated screen.</p>
+          <p style="margin-top:6px;font-size:0.9rem;">It&rsquo;s one Streamlit app. Sample CSV data, or an optional ServiceNow connector, feeds deterministic Python scoring rules. Results and decisions stay in the session. Claude answers questions on one screen behind a passphrase.</p>
         </div>
       </div>
 
       <h3 style="margin-top:28px;color:var(--nav-bg);">4. Tradeoffs</h3>
-      <p style="font-size:0.9rem;">Each card shows the prototype&rsquo;s choice, the basis for it, what it costs, and the condition that would justify changing it.</p>
+      <p style="font-size:0.9rem;">Each card covers what we chose, why, what it costs, and when I&rsquo;d change it.</p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:14px;">
 
         <div class="card" style="padding:20px;">
           <h3>Deterministic rules vs. LLM recommendations</h3>
-          <p style="font-size:0.9rem;"><strong>Choice:</strong> Python rules set every recommendation; Claude only answers questions. <em>(Implemented.)</em></p>
-          <p style="font-size:0.9rem;"><strong>Why</strong> <em>(present-day assessment, not a documented original rationale)</em><strong>:</strong> The decision criteria (lifecycle, technical debt, duplication, replacement availability, criticality) are structured fields. Rules give reproducible, testable, explainable outcomes at no API cost. Generative AI adds value where evidence is unstructured, such as incident and problem notes.</p>
-          <p style="font-size:0.9rem;"><strong>Cost:</strong> Rules cannot read free-text evidence, and their thresholds need manual tuning.</p>
-          <p style="font-size:0.9rem;"><strong>Change when:</strong> Unstructured evidence materially affects decisions. Use the LLM to extract cited evidence; keep the rules for the disposition.</p>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> Python rules make every recommendation, and a person makes the final decision. Claude only answers questions. <em>(Implemented.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why</strong> <em>(present-day assessment, not a documented original rationale)</em><strong>:</strong> We have defined fields: lifecycle, technical debt, duplicate functionality, whether a replacement exists, and how critical the app is. That makes a rules-based approach a good fit. The rules are deterministic, so the same inputs always give the same answer. They&rsquo;re easy to test and explain, and they don&rsquo;t add AI cost. AI could help if we need to find patterns in information such as incident and problem summaries.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> The rules don&rsquo;t interpret incident summaries, and we have to update the scoring criteria ourselves.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> If incident summaries contain important information that the defined fields miss. Then I&rsquo;d use AI to pull out that evidence and show where it came from. The rules would still make the recommendation, and a person would still make the final decision.</p>
         </div>
 
         <div class="card" style="padding:20px;">
           <h3>Build vs. buy vs. integrate</h3>
-          <p style="font-size:0.9rem;"><strong>Choice:</strong> Build the scoring and governance workflow; integrate with ServiceNow rather than replace it. <em>(Documented: roadmap build-vs-buy notes.)</em></p>
-          <p style="font-size:0.9rem;"><strong>Why:</strong> The governance model and signal engine are the differentiating parts; the CMDB already exists as the system of record.</p>
-          <p style="font-size:0.9rem;"><strong>Cost:</strong> Output quality depends on the customer&rsquo;s CMDB data quality.</p>
-          <p style="font-size:0.9rem;"><strong>Change when:</strong> A capability is commodity (authentication, observability, compliance tooling). Buy it rather than build it.</p>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> We built the scoring and governance workflow. The approach is to integrate with ServiceNow rather than replace it. <em>(Documented: roadmap build-vs-buy notes.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why:</strong> The governance model and the scoring signals are what make the product different. The CMDB already exists, and it stays the system of record.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> The recommendations are only as good as the customer&rsquo;s CMDB data.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> If something is a commodity, like login, monitoring, or compliance tooling, I&rsquo;d buy it instead of building it.</p>
         </div>
 
         <div class="card" style="padding:20px;">
           <h3>Streamlit vs. a production web architecture</h3>
           <p style="font-size:0.9rem;"><strong>Choice:</strong> Streamlit. <em>(Documented: README, chosen to ship a working demo quickly.)</em></p>
-          <p style="font-size:0.9rem;"><strong>Why:</strong> One Python codebase covers UI, logic, and deployment.</p>
-          <p style="font-size:0.9rem;"><strong>Cost:</strong> State lives in one browser session, the script reruns on every interaction, and there are no user accounts.</p>
-          <p style="font-size:0.9rem;"><strong>Change when:</strong> Multiple users, persistent records, or external integrations are required. Move to a web front end, a service layer with an API, and a database.</p>
+          <p style="font-size:0.9rem;"><strong>Why:</strong> One Python codebase handles the screens, the logic, and the deployment.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> Results and decisions are held for the current session rather than saved permanently. The script reruns as users interact with the app. This prototype has no user accounts.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> If users need shared records, different access permissions, or integrations the current design cannot support well, I&rsquo;d consider a separate web front end, an API, and a database.</p>
         </div>
 
         <div class="card" style="padding:20px;">
           <h3>Direct Claude API vs. orchestration frameworks</h3>
-          <p style="font-size:0.9rem;"><strong>Choice:</strong> Direct API calls. <em>(Documented: original case study.)</em></p>
-          <p style="font-size:0.9rem;"><strong>Why:</strong> A single question-and-answer call needs no orchestration; prompts and responses stay transparent.</p>
-          <p style="font-size:0.9rem;"><strong>Cost:</strong> Retries, tracing, and multi-step flows must be built by hand.</p>
-          <p style="font-size:0.9rem;"><strong>Change when:</strong> Workflows become multi-step and stateful, with branching, resumable runs, and tool calls. Evaluate frameworks against a hand-built workflow before adopting one.</p>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> We call the Claude API directly. <em>(Documented: original case study.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why:</strong> Each request is one question and one answer, so we don&rsquo;t need an orchestration framework. It also keeps the prompts and responses easy to see.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> We have to build retries, tracing, and multi-step flows ourselves.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> If workflows need several steps, branching, runs that can pick up where they stopped, or tool calls. Even then, I&rsquo;d compare a framework against a hand-built workflow before adopting one.</p>
         </div>
 
         <div class="card" style="padding:20px;">
           <h3>Context stuffing vs. retrieval / vector search</h3>
-          <p style="font-size:0.9rem;"><strong>Choice:</strong> The full 15-application portfolio is sent in every prompt. <em>(Documented: original case study.)</em></p>
-          <p style="font-size:0.9rem;"><strong>Why:</strong> At demo scale it is simple, inspectable, and needs no index to maintain.</p>
-          <p style="font-size:0.9rem;"><strong>Cost:</strong> Prompt size, cost, and latency grow with the portfolio, and every call sends all of the data.</p>
-          <p style="font-size:0.9rem;"><strong>Change when:</strong> The portfolio no longer fits a set prompt budget, or measured cost or latency becomes unacceptable. Retrieval is a scaling response, not a default.</p>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> We send the full 15-application portfolio with every prompt. That&rsquo;s called context stuffing. <em>(Documented: original case study.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why:</strong> At demo size it&rsquo;s simple, easy to inspect, and there&rsquo;s no search index to maintain.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> As the portfolio grows, prompts get bigger, slower, and more expensive. Every call also sends all of the data.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> If the portfolio no longer fits a set prompt size, or the cost or response time we measure gets too high. Retrieval is how we&rsquo;d scale, not where we&rsquo;d start.</p>
         </div>
 
         <div class="card" style="padding:20px;">
           <h3>Data integration &amp; system boundaries</h3>
-          <p style="font-size:0.9rem;"><strong>Choice:</strong> Read-only ServiceNow Table API connector (three tables, small page size, short timeout) with automatic CSV fallback. Secrets stay on the server; only the Screen 6 chat sends data to Anthropic. <em>(Documented: connector code notes.)</em></p>
-          <p style="font-size:0.9rem;"><strong>Cost:</strong> The fallback keeps the demo running but hides integration failures, and there is no pagination.</p>
-          <p style="font-size:0.9rem;"><strong>Change when:</strong> Real portfolios are loaded. Add pagination, visible data-source health, and alerts on fallback.</p>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> A read-only connector to the ServiceNow Table API. It reads three tables, pulls a small batch of records, and gives up quickly if ServiceNow doesn&rsquo;t respond. If it fails, the app switches to CSV data automatically. Secrets stay on the server, and only the Screen 6 chat sends data to Anthropic. <em>(Documented: connector code notes.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> The fallback keeps the demo running, but it can hide a broken connection. It also can&rsquo;t page through more records than that first batch.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> Once real portfolios are loaded. Then I&rsquo;d add paging, show whether the data source is healthy, and send an alert when the app falls back to CSV.</p>
         </div>
 
         <div class="card" style="padding:20px;">
           <h3>Security, scalability, reliability, latency &amp; cost</h3>
-          <p style="font-size:0.9rem;"><strong>Choice:</strong> Shared passphrase gate and a 20-call session cap on Screen 6; secrets kept out of source control; in-memory state. <em>(Documented: Screen 6 code notes, README.)</em></p>
-          <p style="font-size:0.9rem;"><strong>Cost:</strong> No individual identity; the cap resets on reload; no retries on API errors; one process holds all state.</p>
-          <p style="font-size:0.9rem;"><strong>Change when:</strong> More than a demo audience uses it. Add per-user authentication, server-side quotas and budgets, retries with backoff, and horizontal hosting.</p>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> Screen 6 is behind a shared passphrase and limited to 20 AI calls per session. Secrets stay out of source control, and data is held in memory. <em>(Documented: Screen 6 code notes, README.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> There are no individual logins. The call limit resets when the page reloads, so it does not cap total spending. API errors aren&rsquo;t retried, and session data is held in one app process.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> Before broader use, I&rsquo;d add individual logins and server-side usage limits and budgets. I&rsquo;d add retries with increasing delays for temporary API failures, and consider multiple servers if measured demand or availability needs justify them.</p>
         </div>
 
         <div class="card" style="padding:20px;">
           <h3>Human-in-the-loop governance</h3>
-          <p style="font-size:0.9rem;"><strong>Choice:</strong> A review queue where the APM can approve, override (rationale required), or escalate. <em>(Documented: README.)</em></p>
-          <p style="font-size:0.9rem;"><strong>Why:</strong> Accountability and a written record of disagreement with the rules.</p>
-          <p style="font-size:0.9rem;"><strong>Cost:</strong> Reviewer effort. Review is available but not enforced, and decisions are not persisted.</p>
-          <p style="font-size:0.9rem;"><strong>Change when:</strong> Decisions carry real consequences. Enforce review before export or action, persist decisions, and tie them to authenticated reviewers.</p>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> A review queue where the APM can approve, override with a required reason, or escalate. <em>(Documented: README.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why:</strong> A person stays accountable for the decision, and there&rsquo;s a written record whenever someone disagrees with the rules.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> Reviews take time. Review is available but not required, and decisions aren&rsquo;t saved after the session.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> Once decisions have real consequences. Then I&rsquo;d require review before anything is exported or acted on, save every decision, and tie each one to a signed-in reviewer.</p>
         </div>
 
       </div>
@@ -144,20 +144,20 @@
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:22px;">
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">5. Risks (implemented prototype)</strong>
-          <p style="margin-top:6px;font-size:0.9rem;">The Screen 6 system prompt includes every application&rsquo;s record fields and the first 80 characters of each reviewer-entered override rationale, so text from either source could carry injected instructions. The silent fallback can hide integration failures. There are no automated tests.</p>
+          <p style="margin-top:6px;font-size:0.9rem;">Screen 6 puts every application&rsquo;s record fields, plus the first 80 characters of each reviewer&rsquo;s override reason, into the system prompt. Text from either source could carry hidden instructions. That&rsquo;s called prompt injection. The automatic CSV fallback can hide integration failures. There are no automated tests.</p>
         </div>
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">6. Validation</strong>
-          <p style="margin-top:6px;font-size:0.9rem;"><em>Today:</em> manual checks against the sample data. <em>Proposed:</em> unit tests for the rule functions, a reference dataset of expected recommendations, prompt-injection test cases, and an evaluation set for Claude&rsquo;s answers.</p>
+          <p style="margin-top:6px;font-size:0.9rem;"><em>Today:</em> we check results by hand against the sample data. <em>Proposed:</em> unit tests for the rules, a reference set of expected recommendations, prompt-injection test cases, and an evaluation set for Claude&rsquo;s answers.</p>
         </div>
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">7. Delivery &amp; Operations</strong>
-          <p style="margin-top:6px;font-size:0.9rem;"><em>Today:</em> GitHub to Streamlit Community Cloud with automatic redeploy on push; rollback by reverting the commit; no monitoring. <em>Proposed:</em> tests in CI before deploy, a staging environment, error logging, and a cost dashboard.</p>
+          <p style="margin-top:6px;font-size:0.9rem;"><em>Today:</em> pushing to GitHub automatically redeploys the app on Streamlit Community Cloud. To roll back, we revert the commit. There&rsquo;s no monitoring. <em>Proposed:</em> automated tests in CI before each deploy, a staging environment, error logging, and a cost dashboard.</p>
         </div>
       </div>
 
       <p style="margin-top:16px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--primary);padding:12px 16px;border-radius:0 6px 6px 0;">
-        <strong style="color:var(--nav-bg);">Production-readiness gaps:</strong> user authentication and roles, persistent storage and audit history, automated tests and CI, monitoring and alerting, paginated integration with visible health, and multi-user hosting. Each is a prerequisite for the stages below, not an optional extra.
+        <strong style="color:var(--nav-bg);">Production-readiness gaps:</strong> User logins and roles, permanent storage and audit history, automated tests and CI, monitoring and alerts, a ServiceNow integration that can read all required records and show connection problems, and support for multiple users. These gaps need to be addressed at the appropriate stage before the app is used for real business decisions.
       </p>
     </section>
 
