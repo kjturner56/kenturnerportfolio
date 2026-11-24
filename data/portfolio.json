@@ -1,12 +1,12 @@
 {
   "meta": {
     "name": "Kenneth R. Turner",
-    "title": "Enterprise AI & Product Leadership",
-    "subtitle": "Governance, Operating Models & Applied AI",
+    "title": "Enterprise Product & AI Leadership",
+    "subtitle": "Enterprise Product Management \u00b7 Enterprise AI Operationalization \u00b7 Independent Product Innovation",
     "email": "kturner@kenturnerportfolio.com",
     "linkedin": "https://www.linkedin.com/in/kennethrturner",
     "github": "https://github.com/kjturner56",
-    "tagline": "Helping organizations operationalize Enterprise AI responsibly and at scale."
+    "tagline": "Enterprise product leadership, with AI as a differentiator."
   },
   "nav": [
     {
@@ -14,16 +14,16 @@
       "href": "/index.html"
     },
     {
-      "label": "Enterprise AI Blueprint",
-      "href": "/blueprint.html"
-    },
-    {
       "label": "Enterprise Experience",
       "href": "/projects.html"
     },
     {
-      "label": "Applied AI",
+      "label": "Products",
       "href": "/products.html"
+    },
+    {
+      "label": "Enterprise AI Blueprint",
+      "href": "/blueprint.html"
     },
     {
       "label": "About",
@@ -741,16 +741,16 @@
   "about": {
     "hero": {
       "eyebrow": "THE STORY BEHIND THE WORK",
-      "headline": "From Enterprise Technology to Enterprise AI",
+      "headline": "Enterprise product leadership, with AI as a differentiator.",
       "narrative": [
-        "Over ten years leading enterprise technology initiatives, I discovered that organizations rarely struggle because of technology alone. They struggle because governance, operating models, leadership, and adoption aren't connected. That realization ultimately led me to focus on how organizations operationalize Enterprise AI.",
+        "Over ten years leading enterprise technology initiatives, I discovered that organizations rarely struggle because of technology alone. They struggle because governance, operating models, leadership, and adoption aren't connected. That realization shapes how I lead products today, and it led me to add Enterprise AI operationalization to that work.",
         "AI didn't introduce a new category of organizational failure. It exposed the same one, at a larger scale, moving faster, with less room to recover from getting it wrong."
       ]
     },
     "leadership": {
       "label": "ENTERPRISE LEADERSHIP",
       "headline": "Over ten years building the systems that determine whether technology investments actually work.",
-      "body": "Product management, portfolio management, governance, decision support, and modernization, at executive scale, across GE Vernova, GE Power, Pratt & Whitney, and Alstom Power. That experience isn't the credential. It's the foundation the rest of this perspective is built on."
+      "body": "Product management, portfolio management, governance, decision support, and modernization, at executive scale, across GE Vernova, GE Power, Pratt & Whitney, and Alstom Power. That experience is the core of what I bring, and the foundation for my AI and product work."
     },
     "whyAI": {
       "label": "WHY ENTERPRISE AI",
@@ -762,10 +762,10 @@
       ]
     },
     "applied": {
-      "label": "BUILDING APPLIED AI",
+      "label": "INDEPENDENT PRODUCT INNOVATION",
       "headline": "Testing the thinking by building it.",
-      "body": "My applied AI products demonstrate how these ideas translate into working software.",
-      "cta": "View Applied AI"
+      "body": "My products, including the Enterprise Product & Delivery Playbook and PortfolioIQ, show how these ideas become working software.",
+      "cta": "View My Products"
     },
     "reflection": {
       "label": "WHAT CHANGED",
@@ -774,7 +774,7 @@
     "lookingAhead": {
       "label": "LOOKING AHEAD",
       "headline": "Where I'm focused now.",
-      "body": "Helping organizations move from AI experimentation to a governed, scalable, measurable enterprise capability, the same disciplines that made a difference long before AI was the assignment, applied to the one in front of us now."
+      "body": "I'm pursuing Senior Technical Product Manager roles where I can lead enterprise products with the disciplines that made a difference long before AI was the assignment, using AI as a differentiator where it creates real value."
     },
     "education": {
       "label": "PROFESSIONAL FOUNDATION",
@@ -880,18 +880,18 @@
   ],
   "home": {
     "hero": {
-      "eyebrow": "ENTERPRISE AI OPERATIONALIZATION & TRANSFORMATION",
-      "headline": "Helping organizations operationalize Enterprise AI as a governed, scalable, and measurable business capability.",
+      "eyebrow": "ENTERPRISE PRODUCT MANAGEMENT \u00b7 ENTERPRISE AI \u00b7 PRODUCT INNOVATION",
+      "headline": "Leading enterprise products from business problem to measurable outcomes.",
       "body": [
-        "Most organizations can launch AI pilots. Far fewer can operationalize Enterprise AI across the business because operationalization requires more than technology. It requires governance, operating models, product leadership, adoption, and the organizational capabilities needed to sustain AI at enterprise scale.",
+        "I lead enterprise products, programs and portfolios: identifying the problem, learning what customers need, setting priorities, making tradeoffs, and seeing the work through delivery and into operation.",
         "Across more than ten years of enterprise technology leadership, including product strategy, governance, and application portfolio management at GE Vernova, I supported technology investment decisions for a portfolio of more than 200 applications.",
-        "Building on that experience, I developed the Enterprise AI Blueprint, a structured executive methodology that helps organizations assess AI readiness, identify capability gaps, design an operating model, and operationalize Enterprise AI responsibly and at scale."
+        "AI is a differentiator in that work. I developed the Enterprise AI Blueprint for operationalizing AI responsibly, and I build products, including the Enterprise Product & Delivery Playbook and PortfolioIQ, that put governed delivery into practice."
       ]
     },
     "experience": {
       "label": "ENTERPRISE EXPERIENCE",
       "headline": "Proven experience improving how enterprise technology investments are evaluated, governed, and managed.",
-      "intro": "Before focusing on Enterprise AI, I spent years working on the organizational disciplines that determine whether complex technology investments succeed: portfolio strategy, product leadership, governance, modernization, executive decision support, and lifecycle management.",
+      "intro": "Across GE Vernova, GE Power, Alstom and Pratt & Whitney, I've worked on the organizational disciplines that determine whether complex technology investments succeed: portfolio strategy, product leadership, governance, modernization, executive decision support, and lifecycle management.",
       "stats": [
         {
           "value": "200+",
@@ -984,10 +984,24 @@
       "cta": "Explore the Enterprise AI Blueprint"
     },
     "appliedWork": {
-      "label": "FROM FRAMEWORK TO PRACTICE",
-      "headline": "Turning governance, explainability, and structured decision-making into working capabilities.",
+      "label": "INDEPENDENT PRODUCT INNOVATION",
+      "headline": "Products I've created and lead.",
       "cards": [
-
+        {
+          "title": "Enterprise Product & Delivery Playbook",
+          "subtitle": "Governed Product & Delivery Lifecycle",
+          "body": "An enterprise product I created and lead: a six-phase, 18-step methodology for governed delivery, tested in a working proof of concept and now evolving into a multi-organization web platform.",
+          "highlights": [
+            "Six-phase, 18-step governed lifecycle",
+            "Working proof of concept",
+            "Web platform foundation verified",
+            "Decision traceability",
+            "Executive visibility",
+            "Product walkthrough video"
+          ],
+          "cta": "View the Playbook",
+          "url": "/Product5/playbook.html"
+        },
         {
           "title": "PortfolioIQ",
           "subtitle": "AI-Powered Application Portfolio Decision Support",
@@ -1017,44 +1031,24 @@
           ],
           "cta": "View AI Security Triage Dashboard",
           "url": "/Product4/security-triage.html"
-        },
-                {
-          "title": "Enterprise AI Operating Model",
-          "subtitle": "Target-State Architecture for Operationalizing Enterprise AI",
-          "body": "A structured model defining the capability domains, delivery lifecycle, continuous disciplines, governance, and business outcomes required to operationalize AI across the enterprise.",
-          "highlights": [],
-          "cta": "View the Operating Model",
-          "url": "/blueprint.html"
         }
       ]
     },
     "capabilities": {
-      "label": "CORE CAPABILITIES",
-      "headline": "Where enterprise product leadership and AI transformation come together.",
+      "label": "AREAS OF EXPERTISE",
+      "headline": "Three complementary areas of expertise.",
       "items": [
         {
-          "title": "Enterprise AI Strategy",
-          "body": "Defining where and how AI creates real business value."
+          "title": "Enterprise Product Management",
+          "body": "Product, program and portfolio leadership at GE Vernova, GE Power and Pratt & Whitney, covering discovery, requirements, prioritization, tradeoffs, delivery and operations."
         },
         {
           "title": "Enterprise AI Operationalization",
-          "body": "Moving AI from pilot to governed, scaled capability."
+          "body": "The Enterprise AI Blueprint and operating model, covering the governance, adoption and value realization that move AI from pilot to sustained capability."
         },
         {
-          "title": "AI Governance",
-          "body": "Establishing accountability, oversight, and trust in AI-assisted decisions."
-        },
-        {
-          "title": "Product & Portfolio Leadership",
-          "body": "Prioritizing investment across complex enterprise portfolios."
-        },
-        {
-          "title": "Operating Model Design",
-          "body": "Structuring how AI initiatives are delivered and governed."
-        },
-        {
-          "title": "Adoption & Value Realization",
-          "body": "Driving change enablement and measuring sustained outcomes."
+          "title": "Independent Product Innovation",
+          "body": "Products I've created and lead, including the Enterprise Product & Delivery Playbook, PortfolioIQ and the AI Security Triage Dashboard."
         }
       ]
     }
@@ -1129,7 +1123,7 @@
           "style": "outline"
         },
         {
-          "label": "View Applied AI",
+          "label": "View Products",
           "url": "/products.html",
           "style": "outline"
         },
@@ -1183,7 +1177,7 @@
   },
   "appliedPage": {
     "hero": {
-      "eyebrow": "APPLIED ENTERPRISE AI",
+      "eyebrow": "INDEPENDENT PRODUCT INNOVATION",
       "headline": "Where governance, decision support, and product thinking become working solutions.",
       "body": [
         "These products demonstrate how the principles behind the Enterprise AI Blueprint become working enterprise software through explainable AI, human accountability, and governance by design."
@@ -1192,7 +1186,7 @@
     "products": {
       "label": "FEATURED PRODUCTS",
       "headline": "What I've built.",
-      "intro": "Each of these started with a specific business decision that needed to be made better. The AI capability came second, after the decision, the workflow, and the governance model were defined."
+      "intro": "Each of these started with a specific business problem or decision that needed to be handled better. The technology came second, whether a governed delivery platform or applied AI, after the decision, the workflow and the governance model were defined."
     },
     "principles": {
       "label": "PRODUCT THINKING",

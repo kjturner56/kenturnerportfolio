@@ -45,7 +45,7 @@ function buildFooter(data) {
       <div class="footer-right">
         <a class="footer-btn" href="${data.meta.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
-      <p>© <span id="yr"></span> ${data.meta.name} | Product Management &amp; AI Innovation</p>
+      <p>© <span id="yr"></span> ${data.meta.name} | Enterprise Product Management &middot; Enterprise AI &middot; Product Innovation</p>
     </div>`;
 }
 
@@ -244,7 +244,7 @@ function buildHeroVisual() {
           <rect x="15" y="12" width="1.6" height="1.6" fill="#0b1e3d"/>
         </g>
         <text x="${cx}" y="${nodeY + 58}" text-anchor="middle" font-family="Segoe UI, sans-serif"
-          font-size="16" font-weight="700" letter-spacing="0.5" fill="#0b1e3d">ENTERPRISE AI CAPABILITY</text>
+          font-size="16" font-weight="700" letter-spacing="0.5" fill="#0b1e3d">ENTERPRISE PRODUCT &amp; AI LEADERSHIP</text>
       </svg>
     </div>`;
 }
@@ -290,7 +290,7 @@ function buildAppliedCards(cards) {
   }).join('');
 }
 
-/* ----- Home: core capabilities grid ------------------------- */
+/* ----- Home: areas of expertise grid ------------------------ */
 const CAP_ICONS = {
   'Enterprise AI Strategy':
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l4-8 5 5 5-9 4 12"/><circle cx="3" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="21" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>',
@@ -305,6 +305,9 @@ const CAP_ICONS = {
   'Adoption & Value Realization':
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18l5-6 4 3 7-9"/><path d="M14 6h6v6"/></svg>'
 };
+// Areas of Expertise reuse existing icons
+CAP_ICONS['Enterprise Product Management'] = CAP_ICONS['Product & Portfolio Leadership'];
+CAP_ICONS['Independent Product Innovation'] = CAP_ICONS['Operating Model Design'];
 
 function buildCapabilityCards(items) {
   return items.map(i => `
