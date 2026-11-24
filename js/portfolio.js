@@ -86,7 +86,7 @@ function buildProductCards(products, depth) {
 }
 
 function buildFeaturedCard(p, prefix, i) {
-  const liveBtn  = p.liveUrl  ? `<a href="${p.liveUrl}" class="btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">&#x1F680; View Live App</a>` : '';
+  const liveBtn  = p.liveUrl  ? `<a href="${p.liveUrl}" class="btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">${p.liveLabel || '&#x1F680; View Live App'}</a>` : '';
   const ghBtn    = p.githubRepo ? `<a href="https://github.com/${p.githubRepo}" class="btn btn-outline" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">GitHub Repo</a>` : '';
   const caseBtn  = p.caseStudyUrl ? `<a href="${prefix + p.caseStudyUrl.replace(/^\//, '')}" class="btn btn-outline" onclick="event.stopPropagation()">Full Case Study</a>` : '';
   const capItems = p.capabilities.map(c => `<li>${c}</li>`).join('');
@@ -108,7 +108,7 @@ function buildFeaturedCard(p, prefix, i) {
         <p>${p.summary}</p>
         ${tagList(p.tags)}
         <div>
-          <strong style="font-size:0.88rem;color:var(--nav-bg);text-transform:uppercase;letter-spacing:0.5px;">AI Capabilities Demonstrated</strong>
+          <strong style="font-size:0.88rem;color:var(--nav-bg);text-transform:uppercase;letter-spacing:0.5px;">${p.cardCapabilitiesLabel || 'AI Capabilities Demonstrated'}</strong>
           <ul style="margin-top:6px;">${capItems}</ul>
         </div>
         <span class="exp-view-link" style="display:block;margin-top:4px;">Explore This Product &#8250;</span>
@@ -521,8 +521,17 @@ function renderProductModal() {
   document.getElementById('prod-modal-tech').innerHTML = tagList(p.tags);
   document.getElementById('prod-modal-features').innerHTML =
     p.keyFeatures.map(f => `<li>${f}</li>`).join('');
+  // Optional per-product section headings; defaults keep the existing products unchanged
+  const labels = p.modalLabels || {};
+  document.getElementById('prod-modal-capabilities-label').textContent = labels.capabilities || 'AI Capabilities';
+  document.getElementById('prod-modal-value-label').textContent = labels.value || 'Business Value';
+  document.getElementById('prod-modal-blueprint-label').textContent = labels.blueprint || 'Relationship to the Enterprise AI Blueprint';
+  document.getElementById('prod-modal-link-label').textContent = labels.link || 'Architecture & Evolution';
+  document.getElementById('prod-modal-tech-label').textContent = labels.tech || 'Technologies Used';
+  // Intended (unmeasured) value uses an arrow instead of a check mark
+  const valueIcon = p.valueIsIntended ? '&#8594;' : '&#10003;';
   document.getElementById('prod-modal-value').innerHTML =
-    p.businessValue.map(v => `<div class="modal-outcome-pill"><span class="check">&#10003;</span>${v}</div>`).join('');
+    p.businessValue.map(v => `<div class="modal-outcome-pill"><span class="check">${valueIcon}</span>${v}</div>`).join('');
   document.getElementById('prod-modal-blueprint').textContent = p.blueprintConnection;
 
   // Optional per-product link (only products with architectureLink show it)

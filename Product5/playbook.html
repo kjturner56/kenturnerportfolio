@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Enterprise Product & Delivery Playbook by Kenneth R. Turner: an enterprise product for governed AI and non-AI delivery, from methodology and working proof of concept to a multi-organization web platform.">
+  <title>Enterprise Product &amp; Delivery Playbook | Kenneth R. Turner</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EG813QJ4B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3EG813QJ4B');
+  </script>
+  <style>
+    .pb-h2 { display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px; }
+    .pb-section { margin-bottom:36px; }
+    .pb-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:16px; }
+    .pb-card { background:white;border:1px solid var(--border);border-radius:10px;padding:16px 18px; }
+    .pb-card h3 { margin:0 0 6px;font-size:1.02rem; }
+    .pb-card p { margin:0;font-size:0.9rem; }
+    .pb-value { margin-top:8px !important;font-size:0.85rem !important;color:var(--subtext); }
+    .pb-status { display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;border-radius:999px;padding:3px 10px;margin-bottom:8px; }
+    .pb-done { background:rgba(46,204,113,0.14);color:#1e7e45; }
+    .pb-next { background:rgba(0,170,255,0.12);color:#0b6fa4; }
+    .pb-planned { background:rgba(11,30,61,0.07);color:var(--subtext); }
+    .pb-group { font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--nav-bg);margin:22px 0 0; }
+    .pb-steps { list-style:none;padding:0;margin:16px 0 0;display:flex;flex-direction:column;gap:10px; }
+    .pb-steps li { display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:12px 16px; }
+    .pb-num { width:30px;height:30px;border-radius:50%;background:var(--nav-bg);color:white;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:0.9rem; }
+    .pb-steps li.pb-current { border:2px solid var(--primary); }
+    .pb-steps li.pb-current .pb-num { background:var(--primary); }
+    .pb-details { background:white;border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-top:14px; }
+    .pb-details summary { cursor:pointer;font-weight:600;color:var(--nav-bg); }
+    .pb-details[open] summary { margin-bottom:10px; }
+  </style>
+</head>
+
+<body data-depth="1">
+
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
+
+<main>
+  <div class="container" style="padding-top:28px;padding-bottom:48px;">
+
+    <!-- Title, walkthrough and status -->
+    <section style="margin-bottom:32px;">
+      <h1 style="font-size:2rem;line-height:1.25;color:var(--nav-bg);margin:0 0 6px;">Enterprise Product &amp; Delivery Playbook</h1>
+      <p style="font-style:italic;color:var(--subtext);margin:0 0 18px;">An evolving enterprise product for governed AI and non-AI delivery &middot; Product owner and creator</p>
+
+      <div style="background:linear-gradient(135deg,rgba(0,170,255,0.07),rgba(46,204,113,0.07));border:1px solid rgba(0,170,255,0.20);border-radius:10px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
+        <div style="max-width:640px;">
+          <strong style="color:var(--nav-bg);">Product walkthrough</strong>
+          <p style="margin:6px 0 0;font-size:0.92rem;">An AI-narrated demonstration covering the business problem, the methodology, the working proof of concept, my background and approach, and the future vision. It shows the original proof of concept; the product has since evolved into the enterprise web platform described below.</p>
+        </div>
+        <a href="https://www.youtube.com/watch?v=br-WlIileFI" class="btn" target="_blank" rel="noopener noreferrer">&#9654; Watch the Product Walkthrough</a>
+      </div>
+
+      <div class="pb-grid">
+        <div class="pb-card">
+          <span class="pb-status pb-done">Working</span>
+          <h3>Proof of concept</h3>
+          <p>A local, single-user application that puts the six phases and 18 steps into practice.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-done">Verified &amp; accepted</span>
+          <h3>Web platform foundation</h3>
+          <p>Milestones 1 and 2: organization isolation, collaboration, evidence and executive rollup. Verified locally with synthetic data; not yet deployed.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-next">In planning</span>
+          <h3>Next: governed lifecycle</h3>
+          <p>Milestone 3 brings the full six-phase, 18-step journey into the web platform.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="pb-section">
+      <h2 class="pb-h2">The Problem</h2>
+      <p class="intro" style="margin-top:14px;">
+        Organizations run many initiatives at once: AI tools, system replacements, process changes. Teams piece together decisions, evidence and readiness information from delivery tools, documents and spreadsheets, and leaders lack one view of what is ready, what is at risk and what needs a decision.
+      </p>
+    </section>
+
+    <!-- Vision and role -->
+    <section class="pb-section" style="background:var(--muted);border-radius:12px;padding:24px 28px;border:1px solid var(--border);">
+      <h2 class="pb-h2">Product Vision and My Role</h2>
+      <p style="margin-top:14px;">
+        The vision is to deliver an enterprise platform that guides Product Managers and teams through a consistent, governed lifecycle, from identifying a business problem through requirements, design, delivery, adoption and ongoing operation.
+      </p>
+      <p>
+        The platform is designed to support AI, non-AI and hybrid solutions, with configurable guidance, AI-assisted recommendations and controlled agentic execution within defined boundaries. Humans retain governance authority, oversight and accountability.
+      </p>
+      <p>
+        The intended users include Product Managers, initiative leads, decision authorities, organization administrators and executives who need visibility into initiative progress, risks, decisions and business outcomes.
+      </p>
+      <h3 style="margin:18px 0 6px;color:var(--nav-bg);">My role</h3>
+      <p>
+        As Product Owner and creator, I defined the product vision, strategy, methodology, requirements, roadmap, governance framework, architectural direction and acceptance criteria. I manage scope, establish priorities, evaluate tradeoffs and determine whether each milestone meets its acceptance criteria.
+      </p>
+      <p>
+        I use AI coding assistance to accelerate implementation while retaining ownership of product decisions, technical direction, verification and acceptance.
+      </p>
+    </section>
+
+    <!-- Product Evolution -->
+    <section class="pb-section">
+      <h2 class="pb-h2">How the Product Evolved</h2>
+      <ol class="pb-steps">
+        <li><span class="pb-num">1</span><div><strong style="color:var(--nav-bg);">Enterprise experience</strong><p style="margin:4px 0 0;font-size:0.92rem;">My experience managing enterprise products, programs and application portfolios helped me recognize the need for consistent delivery practices, governance, accountability and executive visibility. <a href="../projects.html">Enterprise Experience</a></p></div></li>
+        <li><span class="pb-num">2</span><div><strong style="color:var(--nav-bg);">Graduate education in Enterprise AI</strong><p style="margin:4px 0 0;font-size:0.92rem;">My Graduate Certificate in Enterprise AI from Stevens Institute of Technology expanded my understanding of AI strategy, architecture, governance, responsible AI, organizational adoption and business value realization.</p></div></li>
+        <li><span class="pb-num">3</span><div><strong style="color:var(--nav-bg);">Enterprise AI Blueprint and supporting frameworks</strong><p style="margin:4px 0 0;font-size:0.92rem;">I brought my professional experience and education together to develop an Enterprise AI Blueprint and supporting frameworks covering enterprise strategy, operating models, intake and prioritization, governance, adoption, human oversight and performance management. <a href="../blueprint.html">Enterprise AI Blueprint</a></p></div></li>
+        <li><span class="pb-num">4</span><div><strong style="color:var(--nav-bg);">Product and delivery methodology</strong><p style="margin:4px 0 0;font-size:0.92rem;">I translated these concepts into a consistent, repeatable six-phase, 18-step methodology designed to guide Product Managers through AI, non-AI and hybrid initiatives while maintaining flexibility, accountability and decision traceability.</p></div></li>
+        <li><span class="pb-num">5</span><div><strong style="color:var(--nav-bg);">Working proof of concept</strong><p style="margin:4px 0 0;font-size:0.92rem;">I developed a working application with AI coding assistance to test the methodology, guided questions, governance reviews, evidence management, risk management and reassessment capabilities. The proof of concept also helped identify the architectural limitations of a single-user application.</p></div></li>
+        <li class="pb-current"><span class="pb-num">6</span><div><strong style="color:var(--nav-bg);">Enterprise web platform</strong><p style="margin:4px 0 0;font-size:0.92rem;">Recognizing the need for enterprise collaboration and executive visibility, I made the product decision to transition to a web-based architecture. The platform is being developed incrementally to support multiple Product Managers, organizational security, configurable governance, controlled AI assistance and enterprise decision support.</p></div></li>
+      </ol>
+      <details class="pb-details">
+        <summary>See the proof of concept</summary>
+        <img src="../images/Playbook_Phase_Gates.png" alt="Playbook proof of concept: six phase cards, each showing its gate decision and open conditions (fictional example data)" loading="lazy" style="width:100%;max-width:720px;border:1px solid var(--border);border-radius:8px;">
+        <p style="font-size:0.85rem;color:var(--subtext);margin-top:6px;">Each phase shows its gate decision (proceed, conditional or constrain) and any open conditions. Fictional example data.</p>
+      </details>
+    </section>
+
+    <!-- Product vision: enterprise capabilities -->
+    <section class="pb-section">
+      <h2 class="pb-h2">Product Vision: Enterprise Capabilities</h2>
+      <p style="margin-top:14px;">The complete product the vision describes. It draws on my AI Adoption &amp; Augmentation Change Framework, Enterprise AI Operating Model, Intake &amp; Prioritization Framework and Product Manager guidance. Each capability shows where it stands today; anything beyond the verified foundation is product direction, scoped and approved milestone by milestone.</p>
+      <p style="font-size:0.85rem;margin-top:8px;">
+        <span class="pb-status pb-done" style="margin:0 6px 0 0;">Verified</span>in the web platform
+        <span class="pb-status pb-next" style="margin:0 6px 0 14px;">Working</span>in the proof of concept
+        <span class="pb-status pb-planned" style="margin:0 6px 0 14px;">Planned</span>product direction
+      </p>
+      <div class="pb-grid">
+        <div class="pb-card">
+          <span class="pb-status pb-next">Working</span> <span class="pb-status pb-planned">Planned</span>
+          <h3>Intake, problem definition and solution suitability</h3>
+          <p>Define the business problem and intended outcome, then compare non-AI, AI and hybrid approaches before assuming AI. Planned: an intake handoff that carries merit and funding decisions, conditions and owners into delivery.</p>
+          <p class="pb-value"><strong>Intended value:</strong> invest in the right problems, with the right kind of solution.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-next">Working</span> <span class="pb-status pb-planned">Planned</span>
+          <h3>Guided lifecycle, configurable questions and stakeholder guidance</h3>
+          <p>Six phases and 18 steps with guided questions and clear next actions. Planned: questions that adapt to the solution type, risk and jurisdiction, and Product Manager guidance tailored to business, user, engineering, operations, security and legal stakeholders.</p>
+          <p class="pb-value"><strong>Intended value:</strong> a consistent, repeatable way of working that still fits each initiative.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-next">Working</span> <span class="pb-status pb-planned">Planned</span>
+          <h3>Requirements, backlog, architecture and data readiness</h3>
+          <p>Steps for the solution approach, product requirements, data foundation and controlled MVP. Planned: early stories, acceptance criteria and continuous backlog refinement for iterative, predictive or hybrid delivery.</p>
+          <p class="pb-value"><strong>Intended value:</strong> designs and backlogs that trace back to the business need.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-next">Working</span> <span class="pb-status pb-planned">Planned</span>
+          <h3>Risk, controls and regulatory applicability</h3>
+          <p>Risk and control registers, with hard blockers that stop progress until resolved. Planned: recording which laws, regulations and contractual obligations apply, confirmed by an accountable person and linked to controls and evidence.</p>
+          <p class="pb-value"><strong>Intended value:</strong> problems surface before they reach production.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-done">Verified</span> <span class="pb-status pb-next">Working</span> <span class="pb-status pb-planned">Planned</span>
+          <h3>Governance, approvals and decision traceability</h3>
+          <p>Gate reviews record who decided, why and under what conditions, and changes trigger reassessment. The web platform verifies roles, version-checked edits and a permanent audit history. Planned: delegated authority, exceptions and organization-specific review rules.</p>
+          <p class="pb-value"><strong>Intended value:</strong> decisions anyone can trace and defend.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-planned">Planned</span>
+          <h3>Responsible AI, FATE and controlled agentic execution</h3>
+          <p>Fairness, accountability, transparency and ethics considered throughout. Administrators enable AI agents phase by phase, product managers set each task's limits, and people review results. Agents can draft or act only within approved limits and never approve work.</p>
+          <p class="pb-value"><strong>Intended value:</strong> faster delivery with human oversight intact.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-planned">Planned</span>
+          <h3>Enterprise and departmental AI readiness, adoption and change</h3>
+          <p>Uses the Enterprise AI Operating Model to clarify what the enterprise provides and what a department needs. The AI Adoption &amp; Augmentation Change Framework matches adoption support to how strongly AI influences the work, covering readiness, trust, role changes, resistance and reinforcement.</p>
+          <p class="pb-value"><strong>Intended value:</strong> solutions people actually adopt and use well.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-next">Working</span> <span class="pb-status pb-planned">Planned</span>
+          <h3>Value realization, SQDC and operational ownership</h3>
+          <p>Scale-phase steps that compare results with expectations, and an operating review. Planned: SQDC and value measures defined early and compared with actual results, a named accountable owner for every solution, and handover, incident and retirement reviews.</p>
+          <p class="pb-value"><strong>Intended value:</strong> success judged by business outcomes, with accountability after launch.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-done">Verified</span> <span class="pb-status pb-planned">Planned</span>
+          <h3>Enterprise collaboration and executive visibility</h3>
+          <p>Separate workspaces for each organization, several product managers per initiative, protected evidence and an executive rollup limited to what each viewer may see. Planned: richer lifecycle and portfolio views for leaders.</p>
+          <p class="pb-value"><strong>Intended value:</strong> one trusted view of progress, risk and pending decisions.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-planned">Planned</span>
+          <h3>Optional enterprise integrations</h3>
+          <p>Optional links to existing delivery and governance tools and to other program products through defined interfaces. The Playbook remains fully usable without them.</p>
+          <p class="pb-value"><strong>Intended value:</strong> less duplicated work, without lock-in.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivery roadmap -->
+    <section class="pb-section">
+      <h2 class="pb-h2">Delivery Roadmap</h2>
+      <p style="margin-top:14px;">How the vision is delivered incrementally. Each milestone has a user outcome and acceptance criteria. Milestones 4 to 8 are a proposed roadmap; scope and timing are not yet committed.</p>
+      <ol class="pb-steps">
+        <li><span class="pb-num" style="background:#1e7e45;">1</span><div><span class="pb-status pb-done">Accepted</span> <strong style="color:var(--nav-bg);">Identity and organization isolation.</strong> <span style="font-size:0.92rem;">People sign in and work only within their own organization.</span></div></li>
+        <li><span class="pb-num" style="background:#1e7e45;">2</span><div><span class="pb-status pb-done">Accepted</span> <strong style="color:var(--nav-bg);">Governed initiatives and evidence.</strong> <span style="font-size:0.92rem;">Teams manage authorized initiative work and evidence with a full audit history.</span></div></li>
+        <li class="pb-current"><span class="pb-num">3</span><div><span class="pb-status pb-next">In planning</span> <strong style="color:var(--nav-bg);">Usable governed lifecycle.</strong> <span style="font-size:0.92rem;">The six phases and 18 steps, relevant questions, evidence, risks and controls, and human decisions.</span></div></li>
+        <li><span class="pb-num">4</span><div><span class="pb-status pb-planned">Proposed</span> <strong style="color:var(--nav-bg);">Organization tailoring and governance depth.</strong></div></li>
+        <li><span class="pb-num">5</span><div><span class="pb-status pb-planned">Proposed</span> <strong style="color:var(--nav-bg);">Pilot, adoption and value.</strong></div></li>
+        <li><span class="pb-num">6</span><div><span class="pb-status pb-planned">Proposed</span> <strong style="color:var(--nav-bg);">Operational readiness and continuing review.</strong></div></li>
+        <li><span class="pb-num">7</span><div><span class="pb-status pb-planned">Proposed</span> <strong style="color:var(--nav-bg);">Optional assistance and integrations.</strong></div></li>
+        <li><span class="pb-num">8</span><div><span class="pb-status pb-planned">Proposed</span> <strong style="color:var(--nav-bg);">Enterprise release readiness.</strong></div></li>
+      </ol>
+    </section>
+
+    <!-- Product leadership -->
+    <section class="pb-section">
+      <h2 class="pb-h2">Product Leadership in Practice</h2>
+      <div class="pb-grid">
+        <div class="pb-card">
+          <h3>Vision and strategy</h3>
+          <p>One lifecycle for AI, non-AI and hybrid work, in a product that organizations can adopt on its own.</p>
+        </div>
+        <div class="pb-card">
+          <h3>Requirements and change control</h3>
+          <p>A baselined requirements set. New needs are reviewed and approved before they change it.</p>
+        </div>
+        <div class="pb-card">
+          <h3>Prioritization</h3>
+          <p>Governance, security and data isolation first. A deliberately thin second milestone proved collaboration and governance before the full workflow.</p>
+        </div>
+        <div class="pb-card">
+          <h3>Architectural tradeoffs</h3>
+          <p>One modular application with no mandatory paid services, run locally or self-hosted. Integrations stay optional.</p>
+        </div>
+        <div class="pb-card">
+          <h3>Roadmap management</h3>
+          <p>Every part of the vision has a place on the roadmap. Work can move between milestones, but it cannot silently disappear.</p>
+        </div>
+        <div class="pb-card">
+          <h3>Validation and acceptance</h3>
+          <p>Each milestone is accepted against criteria I define. Milestone 2 was verified with automated tests and a recorded walkthrough before acceptance, and Milestone 3 requires screen and user review first.</p>
+        </div>
+      </div>
+      <p style="margin-top:16px;">
+        Every gate decision records who decided, why and under what conditions. When something material changes, earlier steps reopen and dependent approvals are reviewed again.
+      </p>
+    </section>
+
+    <!-- Intended value through SQDC -->
+    <section class="pb-section" style="background:var(--muted);border-radius:12px;padding:24px 28px;border:1px solid var(--border);">
+      <h2 class="pb-h2">Intended Business Value through SQDC</h2>
+      <div class="pb-grid">
+        <div class="pb-card"><h3>Safety</h3><p>Mandatory controls, hard blockers and a named accountable owner before work proceeds.</p></div>
+        <div class="pb-card"><h3>Quality</h3><p>Decisions tied to reviewed evidence, with history preserved when things change.</p></div>
+        <div class="pb-card"><h3>Delivery</h3><p>Clear next actions and less repeated data entry, for faster, clearer decisions.</p></div>
+        <div class="pb-card"><h3>Cost</h3><p>Pilots and value reviews that show whether outcomes justify further investment.</p></div>
+      </div>
+      <p style="margin-top:14px;font-size:0.9rem;">These are the outcomes the product is designed to test. Measures are defined, and baselines will be set with representative users.</p>
+    </section>
+
+    <!-- Program context -->
+    <section class="pb-section">
+      <h2 class="pb-h2">Enterprise AI Platform Program</h2>
+      <p style="margin-top:14px;">The Playbook is one of several independently operable products in the Enterprise AI Platform Program. Each product works on its own.</p>
+      <div class="pb-grid">
+        <div class="pb-card">
+          <span class="pb-status pb-next">This product</span>
+          <h3>Enterprise Product &amp; Delivery Playbook</h3>
+          <p>Guided, governed delivery: decisions, evidence, risks and approvals across the initiative lifecycle.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-done">Working prototype</span>
+          <h3>PortfolioIQ</h3>
+          <p>Application portfolio assessment and decision support, with recommendations a person confirms. <a href="../Product1/genai-advisor.html">View PortfolioIQ</a></p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-planned">In discovery</span>
+          <h3>Leadership Dashboard</h3>
+          <p>A proposed product giving leaders decision-focused views of operational signals, SQDC and human oversight.</p>
+        </div>
+      </div>
+      <p style="margin-top:16px;"><strong style="color:var(--nav-bg);">Planned integration:</strong> the architectural direction is optional integration through defined interfaces rather than a shared database. For example, PortfolioIQ's assessments could inform Playbook decisions. This cross-product integration is not yet implemented.</p>
+    </section>
+
+    <!-- Lessons -->
+    <section class="pb-section">
+      <h2 class="pb-h2">Product Lessons</h2>
+      <div class="pb-grid">
+        <div class="pb-card">
+          <h3>Test the method before scaling</h3>
+          <p>The proof of concept put all 18 steps and six gates into practice before I committed to a multi-user architecture.</p>
+        </div>
+        <div class="pb-card">
+          <h3>Collaboration and visibility together</h3>
+          <p>The single-user limit showed that several product managers need to share an initiative while executives see an authorized, organization-wide view.</p>
+        </div>
+        <div class="pb-card">
+          <h3>Humans own the decisions</h3>
+          <p>AI-assisted development accelerated the build, but scope, tradeoffs and acceptance stayed with me.</p>
+        </div>
+        <div class="pb-card">
+          <h3>Governance before functionality</h3>
+          <p>Isolation, roles and audit history came before any workflow, and no real customer data is used until a pilot security checklist is met.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supporting technical detail (progressive disclosure) -->
+    <section class="pb-section">
+      <details class="pb-details">
+        <summary>Supporting technical detail</summary>
+        <ul style="font-size:0.9rem;margin:0;">
+          <li><strong>Proof of concept:</strong> a local, single-user web application with no network access beyond the computer it runs on.</li>
+          <li><strong>Web platform:</strong> Next.js, TypeScript and PostgreSQL, with each organization's data kept separate by the database's own security rules.</li>
+          <li><strong>Verification:</strong> the platform foundation is backed by 133 database checks and 28 application tests, which failed as expected when the code was deliberately broken. Milestone 2 added browser tests that run in continuous integration. All testing uses synthetic data.</li>
+        </ul>
+      </details>
+    </section>
+
+  </div><!-- /container -->
+</main>
+
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
+
+<script src="../js/portfolio.js"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML  = Portfolio.buildNav(d, 'products.html');
+    document.getElementById('site-footer').innerHTML   = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+  })();
+</script>
+
+</body>
+</html>

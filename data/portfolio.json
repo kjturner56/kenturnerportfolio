@@ -36,6 +36,65 @@
   ],
   "aiProducts": [
     {
+      "id": "enterprise-product-delivery-playbook",
+      "featured": true,
+      "status": "prototype",
+      "title": "Enterprise Product & Delivery Playbook",
+      "subtitle": "Evolving enterprise product \u00b7 Web platform foundation verified \u00b7 Working proof of concept",
+      "liveUrl": "https://www.youtube.com/watch?v=br-WlIileFI",
+      "liveLabel": "&#9654; Watch the Product Walkthrough",
+      "githubRepo": null,
+      "caseStudyUrl": "/Product5/playbook.html",
+      "architectureLink": {
+        "label": "Read the Full Case Study",
+        "url": "/Product5/playbook.html"
+      },
+      "image": "/images/Playbook_Phase_Gates_card.png",
+      "imageAlt": "Playbook proof of concept: six phase cards, each showing its gate decision and open conditions (fictional example data)",
+      "tags": [
+        "Product Vision",
+        "Delivery Methodology",
+        "Governance",
+        "Decision Traceability",
+        "Executive Visibility",
+        "AI-Assisted Development"
+      ],
+      "summary": "An enterprise product for governed AI and non-AI delivery that I created and lead. It grew from my enterprise experience, graduate study in Enterprise AI and the Enterprise AI Blueprint into a six-phase, 18-step methodology, a working proof of concept and a multi-organization web platform. I own the vision, requirements, roadmap, governance and acceptance; implementation uses AI coding assistance.",
+      "cardCapabilitiesLabel": "Product Leadership Demonstrated",
+      "capabilities": [
+        "Product vision and strategy: one governed lifecycle for AI, non-AI and hybrid initiatives",
+        "Requirements under change control and a milestone roadmap tied to user outcomes",
+        "Prioritization: governance, security and data isolation before workflow features",
+        "Decision traceability: every gate decision records who decided, why and under what conditions",
+        "Validation and acceptance: each milestone accepted against criteria I define"
+      ],
+      "modalLabels": {
+        "capabilities": "Product Leadership",
+        "tech": "Focus Areas",
+        "value": "Intended Value through SQDC",
+        "blueprint": "Enterprise AI Platform Program",
+        "link": "Full Case Study"
+      },
+      "valueIsIntended": true,
+      "businessProblem": "Organizations run many initiatives at once: AI tools, system replacements, process changes. Teams piece together decisions, evidence and readiness information from delivery tools, documents and spreadsheets, and leaders lack one view of what is ready, what is at risk and what needs a decision.",
+      "productVision": "An enterprise platform that guides Product Managers and teams through a consistent, governed lifecycle, from identifying a business problem through requirements, design, delivery, adoption and ongoing operation. It is designed to support AI, non-AI and hybrid solutions, with configurable guidance, AI-assisted recommendations and controlled agentic execution within defined boundaries. Humans retain governance authority, oversight and accountability.",
+      "technicalArchitecture": "One modular web application with a separate workspace for each organization, role-based access and a permanent change history, verified locally with synthetic data and not yet deployed. It runs locally or self-hosted, with no mandatory paid services; integrations stay optional. The original proof of concept is a local, single-user application.",
+      "keyFeatures": [
+        "Working proof of concept: all 18 steps and six gated phase reviews, decisions with conditions, risk and evidence registers, and reassessment when answers change",
+        "Implemented and verified (Milestones 1\u20132): organization isolation, roles and audit history; several product managers per initiative; protected evidence; an executive rollup limited to what each viewer may see",
+        "Next, in planning (Milestone 3): the full six-phase, 18-step governed lifecycle in the web platform",
+        "Product vision (planned): intake and solution suitability, configurable questions and stakeholder guidance, regulatory applicability, responsible AI and controlled agentic execution, departmental AI readiness and adoption, and value realization through SQDC",
+        "Planned (proposed roadmap): organization tailoring, pilot and value tracking, operational review, optional integrations and enterprise release readiness"
+      ],
+      "businessValue": [
+        "Safety: mandatory controls and a named accountable owner before work proceeds",
+        "Quality: decisions tied to reviewed evidence, with history preserved",
+        "Delivery: clear next actions and less repeated data entry",
+        "Cost: pilots and value reviews that show whether outcomes justify investment"
+      ],
+      "blueprintConnection": "The Playbook is one of several independently operable products in the Enterprise AI Platform Program, alongside PortfolioIQ (working prototype) and a proposed Leadership Dashboard (in discovery). Each works on its own; optional integration through defined interfaces is the planned architectural direction and is not yet implemented."
+    },
+    {
       "id": "ai-rationalization-advisor",
       "featured": true,
       "status": "live",
