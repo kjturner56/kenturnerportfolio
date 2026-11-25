@@ -33,11 +33,26 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Assemble approved site files
+        # Publish only the paths listed in .github/site-files.txt; fail if one is missing
+        run: |
+          set -euo pipefail
+          mkdir _site
+          while IFS= read -r entry || [ -n "$entry" ]; do
+            case "$entry" in ''|'#'*) continue ;; esac
+            if [ ! -e "$entry" ]; then echo "Approved path not found: $entry"; exit 1; fi
+            cp -R --parents "$entry" _site/
+          done < .github/site-files.txt
+          # Never publish files removed for disclosure reasons, even after a rollback restores them
+          blocked=$(find _site \( -name 'CLAUDE*' -o -path '_site/Archive*' -o -path '_site/Drafts*' -o -name 'AI_Portfolio_Advisor_*.pdf' -o -name '.env*' \) -print)
+          if [ -n "$blocked" ]; then echo "Blocked files in publish set:"; echo "$blocked"; exit 1; fi
+          echo "Files to publish:"
+          find _site -type f | sort
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Upload only the assembled, approved site files
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
