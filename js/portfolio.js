@@ -381,6 +381,7 @@ function buildExperienceCards(projects, offset = 0) {
         <ul class="exp-outcomes">${outcomes}</ul>
         <div class="tag-list" style="margin-bottom:14px;">${capabilities}</div>
         <span class="exp-view-link">View Project Details &#8250;</span>
+        ${p.caseStudyUrl ? `<a href="${p.caseStudyUrl}" class="exp-view-link" style="display:block;margin-top:8px;" onclick="event.stopPropagation()">Read the Full Case Study &#8250;</a>` : ''}
       </div>`;
   }).join('');
 }
@@ -447,6 +448,14 @@ function renderExpModal() {
   document.getElementById('exp-modal-capabilities').innerHTML =
     p.capabilities.map(c => `<span class="tag">${c}</span>`).join('');
   document.getElementById('exp-modal-blueprint').textContent = p.blueprintConnection;
+
+  // Optional full case-study link (flagship projects only)
+  const csSection = document.getElementById('exp-modal-link-section');
+  if (csSection) {
+    document.getElementById('exp-modal-link').innerHTML = p.caseStudyUrl
+      ? `<a href="${p.caseStudyUrl}" class="btn btn-outline">Read the Full Case Study &rarr;</a>` : '';
+    csSection.style.display = p.caseStudyUrl ? '' : 'none';
+  }
 
   const prevBtn = document.getElementById('exp-modal-prev');
   const nextBtn = document.getElementById('exp-modal-next');

@@ -290,6 +290,50 @@
   ],
   "enterpriseProjects": [
     {
+      "id": "knowledge-platform",
+      "title": "Engineering Knowledge Database Replacement",
+      "objective": "Replace the retiring Lotus Notes knowledge database while preserving engineering's access to its documentation.",
+      "role": "Assignment: Requirements, platform choice, and phased rollout",
+      "bullets": [
+        "Interviewed department leads to map their requirements.",
+        "Chose the existing SharePoint platform for the replacement.",
+        "Piloted with the smallest department, then expanded the migration.",
+        "Added a week of lunchtime hands-on workshops after early user feedback.",
+        "Replaced the legacy system and preserved access to engineering documentation."
+      ],
+      "sqdc": {
+        "safety": "Preserved access to engineering documentation",
+        "quality": "Requirements mapped with department leads; usability feedback addressed with lunchtime workshops",
+        "delivery": "Phased rollout starting with the smallest department",
+        "cost": "Reused the existing SharePoint platform rather than buying another"
+      },
+      "organization": "GE Power",
+      "challenge": "Lotus Notes was being retired, putting engineering's access to its knowledge and documentation at risk.",
+      "outcomes": [
+        "Interviewed department leads to map their needs",
+        "Chose the existing SharePoint platform and piloted with the smallest department before expanding",
+        "Replaced the legacy system and preserved access to engineering documentation",
+        "Added a week of lunchtime hands-on workshops after early user feedback"
+      ],
+      "capabilities": [
+        "Knowledge Management",
+        "Enterprise Transformation",
+        "Process Improvement"
+      ],
+      "executiveSummary": "A retiring Lotus Notes knowledge system put access to years of engineering documentation at risk. I interviewed department leads to map their needs, chose to build the replacement on the existing SharePoint platform, piloted it with the smallest department, and then expanded the migration. When an engineer asked for an enhancement to the retiring system, I kept it in the backlog for the replacement rather than invest further in a system being retired. After early user feedback, we added a week of lunchtime hands-on workshops. The legacy system was replaced, and engineering kept access to its documentation.",
+      "businessChallenge": "The system was being retired, but engineering still relied on the knowledge and documentation it held.",
+      "myRole": "I owned the requirements discovery, the platform choice, the phased rollout plan, and the response to user feedback.",
+      "keyContributions": [
+        "Interviewed department leads to map their requirements.",
+        "Chose the existing SharePoint platform for the replacement.",
+        "Piloted with the smallest department, then expanded the migration.",
+        "Deferred an engineer's requested enhancement to the retiring system, keeping it in the backlog for the replacement."
+      ],
+      "blueprintConnection": "This connects to the Blueprint's treatment of adoption as its own phase: the workshops added after early feedback showed why adoption needs planning from the start.",
+      "featured": true,
+      "caseStudyUrl": "/Experience/engineering-knowledge-database.html"
+    },
+    {
       "id": "boiler-performance-tools",
       "title": "Boiler Performance Tools Modernization",
       "objective": "Move roughly 20 legacy engineering applications to AWS while keeping the functionality engineering needed and providing secure access for internal users and external licensees.",
@@ -329,7 +373,8 @@
         "Coordinated business test cases and user acceptance testing in staging before production releases."
       ],
       "blueprintConnection": "This connects to the Blueprint's focus on modernizing the systems a business depends on while keeping the functionality it still needs.",
-      "featured": true
+      "featured": true,
+      "caseStudyUrl": "/Experience/boiler-performance-tools.html"
     },
     {
       "id": "apm-dashboard",
@@ -371,7 +416,50 @@
         "Closed information gaps with application owners and supplied weekly updates for score recalculation."
       ],
       "blueprintConnection": "This connects to the Blueprint's starting point: agree on what leaders need to decide before building the reporting or the model.",
-      "featured": true
+      "featured": true,
+      "caseStudyUrl": "/Experience/application-portfolio-management.html"
+    },
+    {
+      "id": "predictive-maintenance",
+      "title": "Predictive-Maintenance Application: AWS Deployment",
+      "objective": "Put a purchased predictive-maintenance application into service on AWS for engineering users.",
+      "role": "Senior Staff Technical Program Manager \u00b7 Assignment: Technical Product Manager",
+      "bullets": [
+        "Took ownership of bringing the purchased application into service.",
+        "Coordinated engineering users, enterprise architecture, cloud, security, and the vendor on requirements and the delivery approach.",
+        "Personally installed and configured the application, working with the cloud engineering team on the AWS environment.",
+        "Created environment-access documentation and a training video, and trained engineering users.",
+        "Deployed the application on AWS and made it available to engineering users."
+      ],
+      "sqdc": {
+        "safety": "Safety and downtime impact were not measured",
+        "quality": "Architecture and security requirements coordinated before go-live",
+        "delivery": "Purchased application brought through AWS deployment and user training",
+        "cost": "Put a purchased application into use; savings were not measured"
+      },
+      "organization": "GE Vernova",
+      "challenge": "A purchased predictive-maintenance application needed an implementation owner to bring it into service.",
+      "outcomes": [
+        "Deployed the application on AWS and made it available to engineering users",
+        "Coordinated engineering users, enterprise architecture, cloud, security, and the vendor",
+        "Created access documentation and a training video, and trained engineering users"
+      ],
+      "capabilities": [
+        "Enterprise Transformation",
+        "Product Management",
+        "Operating Models"
+      ],
+      "executiveSummary": "GE Vernova had purchased a predictive-maintenance application that needed an implementation owner. I coordinated engineering users, enterprise architecture, cloud, security, and the vendor, personally installed and configured the application on AWS, and created access documentation, a training video, and training for engineering users. The application was deployed on AWS and made available to engineering users.",
+      "businessChallenge": "Purchased software often depends on cloud, security, and architecture teams that were not part of the buying decision, so it needs an owner to carry it into production.",
+      "myRole": "As Technical Product Manager, I coordinated the deployment across engineering users, enterprise architecture, cloud engineering, security, and the vendor. I personally installed and configured the application, working with the cloud engineering team on the AWS environment.",
+      "keyContributions": [
+        "Coordinated architecture, cloud, security, and vendor requirements and approvals.",
+        "Personally installed and configured the application on AWS.",
+        "Created environment-access documentation and a training video, and trained engineering users."
+      ],
+      "blueprintConnection": "Buying technology and putting it into service are different steps. The Blueprint treats that handoff as part of the plan for AI initiatives.",
+      "featured": true,
+      "caseStudyUrl": "/Experience/predictive-maintenance-deployment.html"
     },
     {
       "id": "tendering-application",
@@ -381,7 +469,7 @@
       "bullets": [
         "Gathered tendering users' requirements and managed the backlog and working versions.",
         "Compared Box and SharePoint against the required document, status, review, and approval workflows.",
-        "Recommended SharePoint; the IT director agreed.",
+        "Presented the business requirements and platform tradeoffs to the IT and Tendering directors, securing agreement to proceed with SharePoint.",
         "The application was delivered and used."
       ],
       "sqdc": {
@@ -395,14 +483,14 @@
       "outcomes": [
         "Gathered users' requirements and owned the backlog and working versions",
         "Compared Box and SharePoint against the required workflows and recommended SharePoint",
-        "The director agreed, and the application was delivered and used"
+        "Secured the IT and Tendering directors' agreement to proceed with SharePoint; the application was delivered and used"
       ],
       "capabilities": [
         "Product Ownership",
         "Requirements & Discovery",
         "Platform Tradeoffs"
       ],
-      "executiveSummary": "U.S. Steam Tendering needed an application to manage tender documents, status, reviews, and approvals. An IT director proposed using Box. I gathered the users' requirements, managed the backlog and the working versions of the application, and compared what each platform could do against the document, status, review, and approval workflows the team needed. Based on that comparison, I recommended SharePoint. The director agreed, and the application was delivered and used.",
+      "executiveSummary": "U.S. Steam Tendering needed an application to manage tender documents, status, reviews, and approvals. An IT director proposed using Box. I gathered the users' requirements, managed the backlog and the working versions of the application, and compared what each platform could do against the document, status, review, and approval workflows the team needed. I presented the business requirements and platform tradeoffs to the IT and Tendering directors, securing agreement to proceed with SharePoint. The application was delivered and used.",
       "businessChallenge": "The tendering workflow depended on tracking documents through status, review, and approval, and the platform choice had to support that workflow.",
       "myRole": "I owned the requirements, the backlog, the working versions of the application, and the platform recommendation.",
       "keyContributions": [
@@ -497,47 +585,6 @@
       "featured": true
     },
     {
-      "id": "predictive-maintenance",
-      "title": "Predictive-Maintenance Application: AWS Deployment",
-      "objective": "Put a purchased predictive-maintenance application into service on AWS for engineering users.",
-      "role": "Senior Staff Technical Program Manager \u00b7 Assignment: Technical Product Manager",
-      "bullets": [
-        "Took ownership of bringing the purchased application into service.",
-        "Coordinated engineering users, enterprise architecture, cloud, security, and the vendor on requirements and the delivery approach.",
-        "Personally installed and configured the application, working with the cloud engineering team on the AWS environment.",
-        "Created environment-access documentation and a training video, and trained engineering users.",
-        "Deployed the application on AWS and made it available to engineering users."
-      ],
-      "sqdc": {
-        "safety": "Safety and downtime impact were not measured",
-        "quality": "Architecture and security requirements coordinated before go-live",
-        "delivery": "Purchased application brought through AWS deployment and user training",
-        "cost": "Put a purchased application into use; savings were not measured"
-      },
-      "organization": "GE Vernova",
-      "challenge": "A purchased predictive-maintenance application needed an implementation owner to bring it into service.",
-      "outcomes": [
-        "Deployed the application on AWS and made it available to engineering users",
-        "Coordinated engineering users, enterprise architecture, cloud, security, and the vendor",
-        "Created access documentation and a training video, and trained engineering users"
-      ],
-      "capabilities": [
-        "Enterprise Transformation",
-        "Product Management",
-        "Operating Models"
-      ],
-      "executiveSummary": "GE Vernova had purchased a predictive-maintenance application that needed an implementation owner. I coordinated engineering users, enterprise architecture, cloud, security, and the vendor, personally installed and configured the application on AWS, and created access documentation, a training video, and training for engineering users. The application was deployed on AWS and made available to engineering users.",
-      "businessChallenge": "Purchased software often depends on cloud, security, and architecture teams that were not part of the buying decision, so it needs an owner to carry it into production.",
-      "myRole": "As Technical Product Manager, I coordinated the deployment across engineering users, enterprise architecture, cloud engineering, security, and the vendor. I personally installed and configured the application, working with the cloud engineering team on the AWS environment.",
-      "keyContributions": [
-        "Coordinated architecture, cloud, security, and vendor requirements and approvals.",
-        "Personally installed and configured the application on AWS.",
-        "Created environment-access documentation and a training video, and trained engineering users."
-      ],
-      "blueprintConnection": "Buying technology and putting it into service are different steps. The Blueprint treats that handoff as part of the plan for AI initiatives.",
-      "featured": true
-    },
-    {
       "id": "sharepoint-modernization",
       "title": "SharePoint Upgrade: The No-Go Decision",
       "objective": "Move engineering's SharePoint 2007 environment to a 64-bit version supported by the data center without losing data.",
@@ -575,48 +622,6 @@
         "Validated the migration before the second cutover."
       ],
       "blueprintConnection": "The decision to pause a live cutover rather than protect a deadline is the same judgment the Blueprint asks organizations to build into AI governance: knowing when to stop is as important as knowing how to scale.",
-      "featured": false
-    },
-    {
-      "id": "knowledge-platform",
-      "title": "Engineering Knowledge Database Replacement",
-      "objective": "Replace the retiring Lotus Notes knowledge database while preserving engineering's access to its documentation.",
-      "role": "Assignment: Requirements, platform choice, and phased rollout",
-      "bullets": [
-        "Interviewed department leads to map their requirements.",
-        "Chose the existing SharePoint platform for the replacement.",
-        "Piloted with the smallest department, then expanded the migration.",
-        "Added week-long training in response to early user feedback.",
-        "Replaced the legacy system and preserved access to engineering documentation."
-      ],
-      "sqdc": {
-        "safety": "Preserved access to engineering documentation",
-        "quality": "Requirements mapped with department leads; usability feedback addressed with training",
-        "delivery": "Phased rollout starting with the smallest department",
-        "cost": "Reused the existing SharePoint platform rather than buying another"
-      },
-      "organization": "GE Power",
-      "challenge": "Lotus Notes was being retired, putting engineering's access to its knowledge and documentation at risk.",
-      "outcomes": [
-        "Interviewed department leads to map their needs",
-        "Chose the existing SharePoint platform and piloted with the smallest department before expanding",
-        "Replaced the legacy system and preserved access to engineering documentation",
-        "Responded to early user feedback with week-long training"
-      ],
-      "capabilities": [
-        "Knowledge Management",
-        "Enterprise Transformation",
-        "Process Improvement"
-      ],
-      "executiveSummary": "A retiring Lotus Notes knowledge system put access to years of engineering documentation at risk. I interviewed department leads to map their needs, chose to build the replacement on the existing SharePoint platform, piloted it with the smallest department, and then expanded the migration. When early users gave negative feedback, we added week-long training. The legacy system was replaced, and engineering kept access to its documentation.",
-      "businessChallenge": "The system was being retired, but engineering still relied on the knowledge and documentation it held.",
-      "myRole": "I owned the requirements discovery, the platform choice, the phased rollout plan, and the response to user feedback.",
-      "keyContributions": [
-        "Interviewed department leads to map their requirements.",
-        "Chose the existing SharePoint platform for the replacement.",
-        "Piloted with the smallest department, then expanded the migration."
-      ],
-      "blueprintConnection": "This connects to the Blueprint's treatment of adoption as its own phase: the training added after early feedback showed why adoption needs planning from the start.",
       "featured": false
     },
     {
