@@ -29,12 +29,12 @@
     <!-- Live app callout bar -->
     <div style="background:linear-gradient(135deg,rgba(0,170,255,0.07),rgba(46,204,113,0.07));border:1px solid rgba(0,170,255,0.20);border-radius:10px;padding:16px 20px;margin-bottom:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-        <span class="badge badge-live">Live</span>
+        <span class="badge badge-prototype">Prototype</span>
         <strong style="color:var(--nav-bg);">PortfolioIQ</strong>
-        <span style="color:var(--subtext);font-size:0.9rem;">Deployed on Streamlit Community Cloud &middot; Public demo on sample data</span>
+        <span style="color:var(--subtext);font-size:0.9rem;">Public demo on sample data (Streamlit Community Cloud)</span>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <a href="https://ai-app-advisor.streamlit.app" class="btn" target="_blank" rel="noopener noreferrer">&#x1F680; View Live App</a>
+        <a href="https://ai-app-advisor.streamlit.app" class="btn" target="_blank" rel="noopener noreferrer">Try the Public Demo</a>
         <a href="architecture.html" class="btn btn-outline">Architecture &amp; Evolution</a>
       </div>
     </div>
@@ -43,24 +43,30 @@
     <section style="margin-bottom:36px;">
       <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Executive Summary</h2>
       <p class="intro" style="margin-top:14px;">
-        PortfolioIQ (originally named the <em>AI Portfolio Rationalization Advisor</em>; the app&rsquo;s own header reads <em>AI Portfolio Advisor</em>) is a deployed Streamlit prototype demonstrating how a Centaur governance model can be applied to one of the most common and costly problems in enterprise IT: deciding which applications to retain, modernize, retire, or replace.
+        PortfolioIQ (originally named the <em>AI Portfolio Rationalization Advisor</em>; the app&rsquo;s own header reads <em>AI Portfolio Advisor</em>) is a working prototype that applies a Centaur governance model to application portfolio decisions: whether to retain, modernize, retire or replace each application.
       </p>
       <p>
-        Enterprise organizations waste significant budget on redundant, aging, and poorly governed application portfolios. The decision process is typically fragmented, spreadsheet-driven, and
-        inconsistent across business units. This application structures that decision into a governed,
+        Application portfolios can include hundreds of systems, and these decisions need consistent, defensible criteria. PortfolioIQ explores how structured, explainable decision support can help. It turns the decision into a governed,
         explainable workflow with session-level decision logging and CSV export: a deterministic rules engine scores each application and produces the recommendation, Claude answers questions about the portfolio, and the final decision on a reviewed recommendation rests with a person.
       </p>
       <p>
-        Built using Python, Streamlit, and the Anthropic Claude API, the app is live at
+        Built using Python, Streamlit, and the Anthropic Claude API, the public demo runs at
         <a href="https://ai-app-advisor.streamlit.app" target="_blank" rel="noopener noreferrer">ai-app-advisor.streamlit.app</a>
         and deployed from a GitHub repository on Streamlit Community Cloud.
       </p>
     </section>
 
+    <!-- My Role -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">My Role</h2>
+      <p style="margin-top:14px;">As product owner and creator, I defined the product vision, strategy, requirements, roadmap, architectural direction, governance requirements and acceptance criteria. I used AI coding assistance for implementation while retaining ownership of product decisions and verification.</p>
+      <p>The opportunity was to bring the governance discipline of my GE Vernova Application Portfolio Management dashboard to an AI-assisted version, where automation accelerates the recommendation without removing human accountability for the decision. <a href="../Experience/application-portfolio-management.html">Read the Application Portfolio Management case study &rarr;</a></p>
+    </section>
+
     <!-- What this demonstrates -->
     <section style="margin-bottom:36px;background:var(--muted);border-radius:12px;padding:24px 28px;border:1px solid var(--border);">
       <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">What This Demonstrates</h2>
-      <p style="margin-top:14px;">Most AI prototypes demonstrate a chatbot. This demonstrates AI product thinking at a Senior PM level: governance, explainability, cost management, and human oversight incorporated into the recommendation review workflow.</p>
+      <p style="margin-top:14px;">PortfolioIQ goes beyond a chatbot. It builds governance, explainability, cost management and human oversight into the recommendation review workflow.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px;">
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">Governance by design</strong>
@@ -108,7 +114,7 @@
         </div>
       </div>
       <p style="margin-top:16px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--primary);padding:12px 16px;border-radius:0 6px 6px 0;">
-        <strong style="color:var(--nav-bg);">Why this matters:</strong> Enterprise AI buyers are under growing regulatory and board-level pressure to demonstrate AI accountability and auditability. That accountability has to be designed into the workflow from the start rather than retrofitted, and this prototype shows one way to do it.
+        <strong style="color:var(--nav-bg);">Why this matters:</strong> PortfolioIQ makes every recommendation explainable, shows how closely each one should be validated, sends recommendations to a human reviewer for the final decision, and records who decided, why and when. Accountability for each portfolio decision stays with a named person, and the workflow is designed that way from the start.
       </p>
     </section>
 
@@ -249,65 +255,87 @@
       </div>
     </section>
 
-    <!-- 24-Month Roadmap -->
+    <!-- Enterprise AI Platform Program -->
     <section style="margin-bottom:36px;">
-      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">24-Month Product Roadmap (Proposed)</h2>
-      <p style="margin-top:14px;">A proposed 0&rarr;500 customer scaling strategy with four phase gates, each to be unlocked only when the previous phase's key question is answered with evidence from paying customers rather than assumptions.</p>
-      <p style="margin-top:16px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 6px 6px 0;">
-        <strong style="color:var(--nav-bg);">Hypothetical planning assumptions:</strong> The customer counts, revenue targets, timelines, and funding or acquisition scenarios in this roadmap are planning assumptions. They are not validated forecasts, commitments, or results.
-      </p>
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Enterprise AI Platform Program</h2>
+      <p style="margin-top:14px;">PortfolioIQ is the application portfolio assessment product of the Enterprise AI Platform Program, alongside the <a href="../Product5/playbook.html">Enterprise Product &amp; Delivery Playbook</a> and a proposed Leadership Dashboard (in discovery). Each product is designed to operate independently. Integration through defined interfaces, such as PortfolioIQ assessments informing Playbook decisions, is a planned architectural direction and isn't implemented. Further investment depends on validated demand.</p>
+    </section>
+
+    <!-- Product Evolution Roadmap -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Product Evolution Roadmap (Proposed)</h2>
+      <p style="margin-top:14px;">A proposed path for evolving PortfolioIQ in four evidence-gated phases. Each phase starts only when the previous phase's key question is answered with evidence from real users, and advancing to the next phase requires that supporting evidence and Product Owner approval. Further investment depends on validated demand. Timing is indicative, not a commitment.</p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px;">
 
         <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;">
           <div style="background:var(--nav-bg);color:white;padding:12px 16px;">
-            <div style="font-size:0.75rem;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;">Phase 1 &middot; Months 1&ndash;4</div>
+            <div style="font-size:0.75rem;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;">Phase 1</div>
             <div style="font-weight:700;margin-top:2px;">Validate</div>
-            <div style="font-size:0.8rem;opacity:0.8;">3 design partners</div>
+            <div style="font-size:0.8rem;opacity:0.8;">Pilot users</div>
           </div>
           <div style="padding:14px 16px;background:white;">
-            <p style="font-size:0.85rem;margin:0;">User auth, multi-user sessions, decision persistence, prompt A/B testing, Postgres for audit log persistence, CSV import for customer portfolio data, rule tests and evaluation baselines. <strong>Key question: Will they pay?</strong></p>
+            <p style="font-size:0.85rem;margin:0;">User authentication, multi-user sessions, decision persistence, a database audit log, CSV import for real portfolio data, rule tests and evaluation baselines. <strong>Key question: Does it improve real portfolio decisions for pilot users?</strong></p>
           </div>
         </div>
 
         <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;">
           <div style="background:var(--nav-bg-2);color:white;padding:12px 16px;">
-            <div style="font-size:0.75rem;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;">Phase 2 &middot; Months 5&ndash;10</div>
+            <div style="font-size:0.75rem;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;">Phase 2</div>
             <div style="font-weight:700;margin-top:2px;">Launch</div>
-            <div style="font-size:0.8rem;opacity:0.8;">10 paying customers</div>
+            <div style="font-size:0.8rem;opacity:0.8;">Repeatable value</div>
           </div>
           <div style="padding:14px 16px;background:white;">
-            <p style="font-size:0.85rem;margin:0;">Self-serve onboarding, tiered pricing (Starter / Growth / Enterprise), read-only INC/PRB evidence analysis with validated citations, retrieval and orchestration frameworks evaluated rather than assumed, model routing &mdash; cheap models for simple queries, Claude for complex reasoning. ServiceNow partner ecosystem outreach. <strong>Key question: Can we retain them?</strong></p>
+            <p style="font-size:0.85rem;margin:0;">Self-service onboarding, read-only analysis of incident and problem evidence with validated citations, retrieval and orchestration frameworks evaluated rather than assumed, and model routing: smaller models for simple queries, Claude for complex reasoning. <strong>Key question: Do users keep relying on it?</strong></p>
           </div>
         </div>
 
         <div style="border-radius:10px;border:1px solid var(--border);overflow:hidden;">
           <div style="background:#1a4a7a;color:white;padding:12px 16px;">
-            <div style="font-size:0.75rem;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;">Phase 3 &middot; Months 11&ndash;18</div>
+            <div style="font-size:0.75rem;opacity:0.7;text-transform:uppercase;letter-spacing:0.5px;">Phase 3</div>
             <div style="font-weight:700;margin-top:2px;">Scale</div>
-            <div style="font-size:0.8rem;opacity:0.8;">50 customers</div>
+            <div style="font-size:0.8rem;opacity:0.8;">Broader adoption</div>
           </div>
           <div style="padding:14px 16px;background:white;">
-            <p style="font-size:0.85rem;margin:0;">Bounded tool-using agent with human-approved write-back to ServiceNow, if adoption criteria are met; drift detection v2; fine-tuning evaluated only on consented, anonymized data; SOC 2 Type II; SSO/SAML; AI observability and tracing. <strong>Key question: Can we grow without me?</strong></p>
+            <p style="font-size:0.85rem;margin:0;">A bounded tool-using agent with human-approved write-back to ServiceNow, if adoption criteria are met; drift detection v2; fine-tuning evaluated only on consented, anonymized data; security certification, single sign-on, and AI observability and tracing. <strong>Key question: Can it operate reliably at scale?</strong></p>
           </div>
         </div>
 
         <div style="border-radius:10px;border:1px solid rgba(0,170,255,0.30);overflow:hidden;">
           <div style="background:var(--primary);color:white;padding:12px 16px;">
-            <div style="font-size:0.75rem;opacity:0.85;text-transform:uppercase;letter-spacing:0.5px;">Phase 4 &middot; Months 19&ndash;24</div>
+            <div style="font-size:0.75rem;opacity:0.85;text-transform:uppercase;letter-spacing:0.5px;">Phase 4</div>
             <div style="font-weight:700;margin-top:2px;">Expand</div>
-            <div style="font-size:0.8rem;opacity:0.9;">200&ndash;500 customers</div>
+            <div style="font-size:0.8rem;opacity:0.9;">Adjacent use cases</div>
           </div>
           <div style="padding:14px 16px;background:white;">
-            <p style="font-size:0.85rem;margin:0;">Approval-gated, orchestrated cycle workflows; a proprietary model only if evaluation and customer data agreements support it; adjacent markets (cloud cost governance, vendor rationalization, tech debt management), multi-region deployment, Series A or acquisition. <strong>Key question: Platform or exit?</strong></p>
+            <p style="font-size:0.85rem;margin:0;">Approval-gated, orchestrated review-cycle workflows; a proprietary model only if evaluation and data agreements support it; adjacent use cases such as cloud cost governance, vendor rationalization and technical debt management. <strong>Key question: Where else does governed decision support create value?</strong></p>
           </div>
         </div>
 
       </div>
 
       <p style="margin-top:16px;font-size:0.9rem;color:var(--subtext);background:rgba(11,30,61,0.03);border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 6px 6px 0;">
-        <strong style="color:var(--nav-bg);">The ServiceNow hypothesis:</strong> ServiceNow's APM module is expensive and complex. Their mid-market customers, companies with 50 to 500 applications, are underserved. A lightweight, AI-native alternative that integrates with ServiceNow rather than replacing it is a wedge, not a threat. One possible path, a hypothetical scenario rather than a plan in progress, is partnership with, or acquisition by, ServiceNow or a major SI partner.
+        <strong style="color:var(--nav-bg);">Investment decisions:</strong> Each phase is a decision point, not a commitment. Advancing requires supporting evidence of user value and demand, and Product Owner approval, consistent with the Enterprise AI Platform Program's approach of approving further investment only when demand is validated.
       </p>
+    </section>
+
+    <!-- Lessons Learned -->
+    <section style="margin-bottom:36px;">
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Lessons Learned</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px;">
+        <div class="card" style="padding:18px;">
+          <h3>Define decision criteria before introducing AI</h3>
+          <p style="font-size:0.9rem;">Explicit, consistent criteria made every recommendation reproducible and explainable. AI adds value on top of a decision that is already well defined, not as a substitute for defining it.</p>
+        </div>
+        <div class="card" style="padding:18px;">
+          <h3>Keep people accountable for AI-assisted decisions</h3>
+          <p style="font-size:0.9rem;">Explainable signals, mandatory override rationale and an audit trail let a reviewer understand, challenge and own each recommendation.</p>
+        </div>
+        <div class="card" style="padding:18px;">
+          <h3>Validate demand before adding capability</h3>
+          <p style="font-size:0.9rem;">Each further investment should follow evidence that users value the product, not precede it.</p>
+        </div>
+      </div>
     </section>
 
     <!-- Artifacts -->
@@ -316,14 +344,15 @@
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:18px;">
         <div class="card" style="padding:18px;text-align:center;">
           <div style="font-size:2rem;margin-bottom:8px;">&#x1F680;</div>
-          <strong style="color:var(--nav-bg);">Live Application</strong>
+          <strong style="color:var(--nav-bg);">Public Demo</strong>
           <p style="font-size:0.88rem;margin-top:6px;">Public demo on Streamlit Community Cloud with sample data. Open in any browser, no install required.</p>
           <a href="https://ai-app-advisor.streamlit.app" class="btn" style="margin-top:10px;font-size:0.85rem;" target="_blank" rel="noopener noreferrer">Open App</a>
         </div>
         <div class="card" style="padding:18px;text-align:center;">
-          <div style="font-size:2rem;margin-bottom:8px;">&#x1F4C4;</div>
-          <strong style="color:var(--nav-bg);">User Guide &amp; Roadmap</strong>
-          <p style="font-size:0.88rem;margin-top:6px;">Updated documentation is being prepared to match this case study. The screens and proposed roadmap are summarized above.</p>
+          <div style="font-size:2rem;margin-bottom:8px;">&#x1F9ED;</div>
+          <strong style="color:var(--nav-bg);">Architecture &amp; Evolution</strong>
+          <p style="font-size:0.88rem;margin-top:6px;">The architectural decisions behind the prototype and its proposed, governed evolution.</p>
+          <a href="architecture.html" class="btn btn-outline" style="margin-top:10px;font-size:0.85rem;">View Architecture</a>
         </div>
 
       </div>

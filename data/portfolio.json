@@ -92,14 +92,14 @@
         "Delivery: clear next actions and less repeated data entry",
         "Cost: pilots and value reviews that show whether outcomes justify investment"
       ],
-      "blueprintConnection": "The Playbook is one of several independently operable products in the Enterprise AI Platform Program, alongside PortfolioIQ (working prototype) and a proposed Leadership Dashboard (in discovery). Each works on its own; optional integration through defined interfaces is the planned architectural direction and is not yet implemented."
+      "blueprintConnection": "The Playbook is one of several independently operable products in the Enterprise AI Platform Program, alongside PortfolioIQ (working prototype) and a proposed Leadership Dashboard (in discovery). Each product is designed to operate independently. Optional integration through defined interfaces is the planned architectural direction and is not yet implemented."
     },
     {
       "id": "ai-rationalization-advisor",
       "featured": true,
-      "status": "live",
+      "status": "prototype",
       "title": "PortfolioIQ",
-      "subtitle": "A deployed Streamlit prototype demonstrating enterprise AI governance in action, running as a public demo on sample data.",
+      "subtitle": "Working prototype \u00b7 Public demo on sample data",
       "liveUrl": "https://ai-app-advisor.streamlit.app",
       "githubRepo": null,
       "caseStudyUrl": "/Product1/genai-advisor.html",
@@ -117,7 +117,7 @@
         "GitHub",
         "Streamlit Cloud"
       ],
-      "summary": "A deployed, 6-screen Streamlit prototype demonstrating a Centaur governance model for enterprise application portfolio rationalization. A deterministic, rules-based engine produces explainable recommendations; Claude powers a separate conversational analysis screen. Built to demonstrate enterprise AI product thinking beyond a simple chatbot, with governance, explainability, cost management, and human oversight built into the review workflow.",
+      "summary": "A working prototype I created to explore governed, AI-assisted application portfolio decisions. A deterministic rules engine produces explainable retain, modernize, retire or replace recommendations. Claude answers questions about the portfolio but never sets recommendations, and a person makes the final decision, with written rationale for every override. I defined the product vision, requirements, architectural direction, governance requirements and acceptance criteria, and used AI coding assistance for implementation.",
       "capabilities": [
         "Explainable rules-based recommendation engine: eight supporting signals displayed per application, some applied directly by the decision rules and others indirectly through the technical debt score",
         "Jagged Frontier classification (a framework identifying where automated recommendations are reliable versus where human judgment is essential): Inside, Edge, or Outside, derived from a rules-based confidence score",
@@ -130,17 +130,16 @@
       ],
       "artifacts": [
         "Public demo on Streamlit Community Cloud (sample data)",
-        "Professional user guide PDF",
-        "Proposed 24-month product roadmap (visual + PDF)"
+        "Proposed product evolution roadmap"
       ],
       "architectureNote": "Design choices: recommendations come from deterministic rules, and Claude is used only for conversational analysis; context stuffing over a vector database at the current 15-application scale; direct Claude API calls over LangChain for transparency and control. The proposed roadmap outlines when each would change at scale.",
       "businessValue": [
         "Demonstrates AI product thinking beyond output generation, with governance, explainability, and human oversight built into the review workflow",
-        "Includes a proposed 0\u2192500 customer productization roadmap; its customer and revenue targets are hypothetical planning assumptions",
-        "Rapid end-to-end delivery demonstrates the ability to move quickly from concept to working software."
+        "Proposed product evolution in evidence-gated phases, with further investment dependent on validated demand",
+        "Working software delivered from concept to a public demo"
       ],
-      "businessProblem": "Enterprise application portfolios routinely include hundreds of systems, and retain, retire, or modernize decisions are often made on incomplete information or institutional memory rather than consistent, defensible criteria. Without structured decision support, organizations either move too slowly or make costly modernization mistakes.",
-      "productVision": "The opportunity was to bring the same governance discipline used in the GE Vernova APM Dashboard to an AI-assisted version, one where automation accelerates the recommendation without removing human accountability for the decision.",
+      "businessProblem": "Application portfolios can include hundreds of systems, and retain, retire or modernize decisions need consistent, defensible criteria. PortfolioIQ explores how structured, explainable decision support can help.",
+      "productVision": "The opportunity was to bring the governance discipline of my GE Vernova Application Portfolio Management dashboard to an AI-assisted version, where automation accelerates the recommendation without removing human accountability for the decision.",
       "technicalArchitecture": "A governed decision-support architecture: enterprise portfolio data feeds a deterministic, rules-based scoring and recommendation layer; every recommendation is explainable and can be routed to a human review queue; and every decision is recorded in a session audit log with CSV export. Claude provides conversational analysis over the same data and does not set recommendations.",
       "keyFeatures": [
         "Six-screen guided workflow from portfolio overview to a reviewed, exportable decision",
@@ -148,7 +147,14 @@
         "Session-level governance controls to manage API usage responsibly",
         "Exportable decision audit log (CSV) for stakeholder and leadership review"
       ],
-      "blueprintConnection": "PortfolioIQ demonstrates governance and executive decision support, with an illustrative, sample-data view of value tracking, the same disciplines the Blueprint treats as inseparable, applied here to AI-assisted portfolio decisions specifically."
+      "blueprintConnection": "PortfolioIQ is the application portfolio assessment product of the Enterprise AI Platform Program, alongside the Enterprise Product & Delivery Playbook and a proposed Leadership Dashboard (in discovery). Each product is designed to operate independently. Integration through defined interfaces, such as PortfolioIQ assessments informing Playbook decisions, is a planned architectural direction and isn't implemented. Further investment depends on validated demand.",
+      "liveLabel": "Try the Public Demo",
+      "modalLabels": {
+        "blueprint": "Enterprise AI Platform Program"
+      },
+      "intendedValueIndexes": [
+        1
+      ]
     },
     {
       "id": "ai-security-triage-dashboard",

@@ -572,10 +572,14 @@ function renderProductModal() {
   document.getElementById('prod-modal-blueprint-label').textContent = labels.blueprint || 'Relationship to the Enterprise AI Blueprint';
   document.getElementById('prod-modal-link-label').textContent = labels.link || 'Architecture & Evolution';
   document.getElementById('prod-modal-tech-label').textContent = labels.tech || 'Technologies Used';
-  // Intended (unmeasured) value uses an arrow instead of a check mark
-  const valueIcon = p.valueIsIntended ? '&#8594;' : '&#10003;';
+  // Intended or proposed (unmeasured) value uses an arrow instead of a check mark:
+  // for every item (valueIsIntended) or for listed items only (intendedValueIndexes)
+  const intendedIdx = Array.isArray(p.intendedValueIndexes) ? p.intendedValueIndexes : [];
   document.getElementById('prod-modal-value').innerHTML =
-    p.businessValue.map(v => `<div class="modal-outcome-pill"><span class="check">${valueIcon}</span>${v}</div>`).join('');
+    p.businessValue.map((v, i) => {
+      const icon = (p.valueIsIntended || intendedIdx.includes(i)) ? '&#8594;' : '&#10003;';
+      return `<div class="modal-outcome-pill"><span class="check">${icon}</span>${v}</div>`;
+    }).join('');
   document.getElementById('prod-modal-blueprint').textContent = p.blueprintConnection;
 
   // Optional per-product link (only products with architectureLink show it)
