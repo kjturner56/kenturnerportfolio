@@ -80,21 +80,8 @@
     </div>
   </section>
 
-  <!-- Personal Reflection: What Changed (visual centerpiece of the page) -->
-  <section class="section" style="padding:var(--space-feature-py) 20px;">
-    <div class="container">
-      <div style="max-width:var(--text-width-wide);">
-        <span class="section-label" id="reflection-label"></span>
-        <blockquote class="pull-quote pull-quote-featured" id="reflection-quote" style="margin-top:20px;"></blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- Looking Ahead → Professional Foundation → Closing Thought:
-       one continuous section so the ending reads as a single arc
-       rather than three isolated blocks. Only the final closing
-       gets a deliberate pause above it, since that's the moment
-       meant to land as the takeaway. -->
+  <!-- Looking Ahead → Professional Foundation:
+       one continuous section so the ending reads as a single arc. -->
   <section id="ahead" class="section light-bg" style="padding:var(--space-section-py) 20px var(--space-feature-py);">
     <div class="container">
       <span class="section-label" id="ahead-label"></span>
@@ -104,11 +91,6 @@
       <div style="margin-top:var(--space-block-gap);">
         <span class="section-label" id="edu-label"></span>
         <ul id="edu-list" style="max-width:var(--text-width-narrow);font-size:0.92rem;line-height:1.9;margin-top:14px;"></ul>
-      </div>
-
-      <div style="margin-top:var(--space-block-gap-lg);text-align:center;">
-        <p style="max-width:var(--text-width-narrow);margin:0 auto 22px;font-size:1.1rem;line-height:1.75;color:var(--text);font-style:italic;" id="emotional-close"></p>
-        <p style="max-width:var(--text-width-standard);margin-left:auto;margin-right:auto;font-size:1.1rem;line-height:1.75;color:var(--nav-bg);font-weight:600;" id="closing-statement"></p>
       </div>
     </div>
   </section>
@@ -161,12 +143,6 @@
       document.getElementById('applied-cta').textContent = a.applied.cta;
     });
 
-    // Personal Reflection
-    Portfolio.renderSection('Personal Reflection', () => {
-      document.getElementById('reflection-label').textContent = a.reflection.label;
-      document.getElementById('reflection-quote').textContent = a.reflection.quote;
-    });
-
     // Looking Ahead
     Portfolio.renderSection('Looking Ahead', () => {
       document.getElementById('ahead-label').textContent = a.lookingAhead.label;
@@ -180,11 +156,6 @@
       document.getElementById('edu-list').innerHTML = a.education.items.map(i => `<li>${i}</li>`).join('');
     });
 
-    // Closing
-    Portfolio.renderSection('Closing', () => {
-      document.getElementById('emotional-close').textContent = a.emotionalClose;
-      document.getElementById('closing-statement').textContent = a.closing;
-    });
     // Scrollspy, same pattern as the rest of the site
     const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
     const targets = navLinks.map(link => document.querySelector(link.getAttribute('href')));

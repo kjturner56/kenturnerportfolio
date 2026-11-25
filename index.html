@@ -55,7 +55,6 @@
     </div>
     <div class="container">
       <div class="credibility-strip">
-        <span>Over 10 Years</span><span class="dot">&middot;</span>
         <span>GE Vernova</span><span class="dot">&middot;</span>
         <span>PMP</span><span class="dot">&middot;</span>
         <span>Graduate Certificate in Enterprise AI</span>
@@ -67,7 +66,6 @@
   <section id="capabilities" class="section light-bg">
     <div class="container">
       <span class="section-label">AREAS OF EXPERTISE</span>
-      <h2 id="cap-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-wide);"></h2>
       <div class="capability-grid" id="cap-cards"></div>
     </div>
   </section>
@@ -127,11 +125,8 @@
       <div class="about-preview-text">
         <span class="section-label">ABOUT</span>
         <h2 style="border-bottom:none;padding-bottom:0;">Enterprise experience. Product discipline. AI as a differentiator.</h2>
-        <p>I am an enterprise product and technology leader with more than 10 years of experience helping
-          organizations manage complex platforms, portfolios, investments, and transformation initiatives.
-          My work is grounded in what actually gets adopted inside large organizations, not just what performs
-          well in a demo.</p>
-        <p>My perspective is shaped by leadership roles at GE Vernova, GE Power, Alstom, and Pratt &amp; Whitney,
+        <p>I'm an enterprise product and technology leader who enjoys working directly with business and technical teams to solve problems, improve operations and deliver products that provide measurable value. I understand the broader enterprise environment and how to leverage its capabilities to support the needs of individual departments and business functions.</p>
+        <p>My perspective is shaped by leadership roles at GE Vernova, GE Power, Pratt &amp; Whitney, and Alstom
            along with graduate-level study in Enterprise AI.</p>
         <a href="/about.html" class="btn btn-outline" style="margin-top:8px;">Read My Full Background</a>
       </div>
@@ -141,7 +136,7 @@
   <!-- Section 8: Contact CTA -->
   <section class="section light-bg">
     <div class="container" style="text-align:center;">
-      <h2 style="border-bottom:none;padding-bottom:0;">Let's talk about your next enterprise product initiative, AI or otherwise.</h2>
+      <h2 style="border-bottom:none;padding-bottom:0;">Let's talk about your next enterprise product initiative.</h2>
       <p style="max-width:var(--text-width-narrow);margin:0 auto 8px;">I'm open to product leadership roles, including Senior Technical Product Manager positions,
         and to conversations about enterprise product management, AI operationalization and governance, portfolio strategy and executive decision support.</p>
       <a href="/contact.html" class="btn" style="margin-top:12px;">Contact Me</a>
@@ -210,7 +205,6 @@
 
     // Capabilities
     Portfolio.renderSection('Capabilities', () => {
-      document.getElementById('cap-headline').textContent = home.capabilities.headline;
       document.getElementById('cap-cards').innerHTML = Portfolio.buildCapabilityCards(home.capabilities.items);
     });
     // Scrollspy: highlight the active section-nav link as the visitor scrolls

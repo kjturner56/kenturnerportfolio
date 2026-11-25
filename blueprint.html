@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Enterprise AI Blueprint | Kenneth R. Turner</title>
-  <meta name="description" content="A structured executive framework for moving Enterprise AI from isolated pilots to a governed, scalable, and measurable business capability." />
+  <meta name="description" content="A structured methodology that organizations and individual departments can use to move AI from isolated pilots to a governed, measurable business capability." />
   <link rel="stylesheet" href="/css/style.css?v=20261124" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
@@ -32,7 +32,6 @@
   <a href="#struggle">Why It Matters</a>
   <a href="#steps">The Six Steps</a>
   <a href="#how-it-works">How It Works</a>
-  <a href="#relationship">Enterprise AI</a>
   </div>
 </div>
 
@@ -89,16 +88,6 @@
         <h2 id="how-headline" style="border-bottom:none;padding-bottom:0;"></h2>
         <div id="how-body"></div>
       </div>
-    </div>
-  </section>
-
-  <!-- Relationship to Enterprise AI -->
-  <section id="relationship" class="section">
-    <div class="container">
-      <span class="section-label" id="rel-label"></span>
-      <h2 id="rel-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-wide);"></h2>
-      <p id="rel-body" style="max-width:var(--text-width-standard);"></p>
-      <p id="rel-link" style="max-width:var(--text-width-standard);"></p>
     </div>
   </section>
 
@@ -160,15 +149,6 @@
       document.getElementById('how-label').textContent = bp.howItWorks.label;
       document.getElementById('how-headline').textContent = bp.howItWorks.headline;
       document.getElementById('how-body').innerHTML = bp.howItWorks.body.map(p => `<p>${p}</p>`).join('');
-    });
-
-    // Relationship to Enterprise AI
-    Portfolio.renderSection('Relationship to Enterprise AI', () => {
-      document.getElementById('rel-label').textContent = bp.relationship.label;
-      document.getElementById('rel-headline').textContent = bp.relationship.headline;
-      document.getElementById('rel-body').textContent = bp.relationship.body;
-      document.getElementById('rel-link').innerHTML =
-        `${bp.relationship.link.text} <a href="${bp.relationship.link.url}">${bp.relationship.link.label} &rarr;</a>`;
     });
 
     // Step 04 in detail: Operating Model capability domains

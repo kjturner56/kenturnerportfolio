@@ -103,7 +103,7 @@ function setYear() {
 /* ----- Badge helper --------------------------------------- */
 function badge(status) {
   if (status === 'live')
-    return `<span class="badge badge-live">Live</span>`;
+    return `<span class="badge badge-live">Working demo</span>`;
   return `<span class="badge badge-prototype">Prototype</span>`;
 }
 
@@ -173,35 +173,6 @@ function buildStandardCard(p, prefix, i) {
       <span class="exp-view-link" style="display:block;margin-top:10px;">Explore This Product &#8250;</span>
       <div style="margin-top:12px;">${caseBtn}</div>
     </div>`;
-}
-
-/* ----- Enterprise project cards -------------------------- */
-function buildProjectCards(projects) {
-  return projects.map(p => {
-    const bullets = p.bullets.map(b => `<li>${b}</li>`).join('');
-    return `
-      <div class="card project-card">
-        <h3>${p.title}</h3>
-        <p><strong>Objective:</strong> ${p.objective}</p>
-        <p><strong>Role:</strong> ${p.role}</p>
-        <ul>${bullets}</ul>
-        <div class="sqdc-row">
-          <span>Safety:</span> ${p.sqdc.safety}<br>
-          <span>Quality:</span> ${p.sqdc.quality}<br>
-          <span>Delivery:</span> ${p.sqdc.delivery}<br>
-          <span>Cost:</span> ${p.sqdc.cost}
-        </div>
-      </div>`;
-  }).join('');
-}
-
-/* ----- Approach cards ------------------------------------- */
-function buildApproachCards(items) {
-  return items.map(i => `
-    <div class="approach-card">
-      <h3>${i.title}</h3>
-      <p>${i.body}</p>
-    </div>`).join('');
 }
 
 /* ----- Technology cards ----------------------------------- */
@@ -495,7 +466,10 @@ function renderExpModal() {
     p.outcomes.map(o => `<div class="modal-outcome-pill"><span class="check">&#10003;</span>${o}</div>`).join('');
   document.getElementById('exp-modal-capabilities').innerHTML =
     p.capabilities.map(c => `<span class="tag">${c}</span>`).join('');
-  document.getElementById('exp-modal-blueprint').textContent = p.blueprintConnection;
+  // The Blueprint connection is optional; hide the section when a project has none
+  const expBlueprint = document.getElementById('exp-modal-blueprint');
+  expBlueprint.textContent = p.blueprintConnection || '';
+  expBlueprint.closest('.modal-section').style.display = p.blueprintConnection ? '' : 'none';
 
   // Optional full case-study link (flagship projects only)
   const csSection = document.getElementById('exp-modal-link-section');
@@ -617,7 +591,7 @@ function renderProductModal() {
 
 window.Portfolio = {
   loadData, renderSection, buildNav, buildFooter, buildProductCards,
-  buildProjectCards, buildApproachCards, buildTechCards,
+  buildTechCards,
   initNavToggle, setYear, tagList, badge,
   buildHeroVisual, buildStatCards, buildPovPillars,
   buildBlueprintSteps, buildAppliedCards, buildCapabilityCards,

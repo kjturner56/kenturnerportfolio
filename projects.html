@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Enterprise Experience | Kenneth R. Turner</title>
-  <meta name="description" content="Enterprise product, program, and portfolio leadership at GE Vernova, GE Power, and Pratt &amp; Whitney: modernization, governance, and delivery." />
+  <meta name="description" content="Enterprise product, program and portfolio leadership at GE Vernova, GE Power, Alstom and Pratt &amp; Whitney, covering modernization, governance and delivery." />
   <link rel="stylesheet" href="/css/style.css?v=20261124" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
@@ -44,7 +44,7 @@
       <div style="max-width:var(--text-width-standard);">
         <div class="eyebrow" id="exp-hero-eyebrow"></div>
         <h1 class="hero-headline" id="exp-hero-headline" style="font-size:2.15rem;line-height:1.28;color:var(--nav-bg);margin:0 0 20px;font-weight:700;"></h1>
-        <p id="exp-hero-intro" style="font-size:1.05rem;line-height:1.7;"></p>
+        <div id="exp-hero-intro" style="font-size:1.05rem;line-height:1.7;"></div>
       </div>
     </div>
   </section>
@@ -176,7 +176,7 @@
     Portfolio.renderSection('Hero', () => {
       document.getElementById('exp-hero-eyebrow').textContent = ep.hero.eyebrow;
       document.getElementById('exp-hero-headline').textContent = ep.hero.headline;
-      document.getElementById('exp-hero-intro').textContent = ep.hero.intro;
+      document.getElementById('exp-hero-intro').innerHTML = ep.hero.intro.map(p => `<p>${p}</p>`).join('');
     });
 
     // Enterprise Themes

@@ -440,22 +440,6 @@ li { margin-bottom: 6px; color: var(--subtext); }
 .card-links { display: flex; gap: var(--gap-actions); flex-wrap: wrap; margin-top: 6px; }
 
 /* ---------------------------------------------------------
-   PROJECT CARDS (Experience page)
-   --------------------------------------------------------- */
-.project-card { text-align: left; }
-.project-card h3 { color: var(--nav-bg); font-size: 1.05rem; margin-bottom: 6px; }
-
-.sqdc-row {
-  margin-top: 12px;
-  padding-top: 10px;
-  border-top: 1px solid var(--border);
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-.sqdc-row span { color: var(--gold); font-weight: 700; }
-
-/* ---------------------------------------------------------
    ABOUT PAGE
    --------------------------------------------------------- */
 .about-intro {

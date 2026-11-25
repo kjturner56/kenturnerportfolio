@@ -44,7 +44,7 @@ jobs:
             cp -R --parents "$entry" _site/
           done < .github/site-files.txt
           # Never publish files removed for disclosure reasons, even after a rollback restores them
-          blocked=$(find _site \( -name 'CLAUDE*' -o -path '_site/Archive*' -o -path '_site/Drafts*' -o -name 'AI_Portfolio_Advisor_*.pdf' -o -name '.env*' \) -print)
+          blocked=$(find _site \( -name 'CLAUDE*' -o -path '_site/Archive*' -o -path '_site/Drafts*' -o -name 'AI_Portfolio_Advisor_*.pdf' -o -name '.env*' -o -path '_site/Product3*' -o -name 'AI_BA_Analyzer.png' -o -path '_site/Product2*' -o -path '_site/Product4*' -o -iname 'SecurityTriage.png' -o -iname 'SemanticSearch.png' -o -iname 'semantic-search.png' \) -print)
           if [ -n "$blocked" ]; then echo "Blocked files in publish set:"; echo "$blocked"; exit 1; fi
           echo "Files to publish:"
           find _site -type f | sort

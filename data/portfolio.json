@@ -59,7 +59,7 @@
         "Executive Visibility",
         "AI-Assisted Development"
       ],
-      "summary": "An enterprise product for governed AI and non-AI delivery that I created and lead. It grew from my enterprise experience, graduate study in Enterprise AI and the Enterprise AI Blueprint into a six-phase, 18-step methodology, a working proof of concept and a multi-organization web platform. I own the vision, requirements, roadmap, governance and acceptance; implementation uses AI coding assistance.",
+      "summary": "An enterprise product for guiding AI, non-AI and hybrid initiatives that I created and lead. It grew from my enterprise experience, graduate study in Enterprise AI and the Enterprise AI Blueprint into a six-phase, 18-step methodology, a working proof of concept and a web platform whose foundation has been verified locally with synthetic data. I defined its vision, requirements, roadmap, governance framework and acceptance criteria, and I use AI coding assistance for implementation.",
       "cardCapabilitiesLabel": "Product Leadership Demonstrated",
       "capabilities": [
         "Product vision and strategy: one governed lifecycle for AI, non-AI and hybrid initiatives",
@@ -76,13 +76,13 @@
         "link": "Full Case Study"
       },
       "valueIsIntended": true,
-      "businessProblem": "Organizations run many initiatives at once: AI tools, system replacements, process changes. Teams piece together decisions, evidence and readiness information from delivery tools, documents and spreadsheets, and leaders lack one view of what is ready, what is at risk and what needs a decision.",
-      "productVision": "An enterprise platform that guides Product Managers and teams through a consistent, governed lifecycle, from identifying a business problem through requirements, design, delivery, adoption and ongoing operation. It is designed to support AI, non-AI and hybrid solutions, with configurable guidance, AI-assisted recommendations and controlled agentic execution within defined boundaries. Humans retain governance authority, oversight and accountability.",
-      "technicalArchitecture": "One modular web application with a separate workspace for each organization, role-based access and a permanent change history, verified locally with synthetic data and not yet deployed. It runs locally or self-hosted, with no mandatory paid services; integrations stay optional. The original proof of concept is a local, single-user application.",
+      "businessProblem": "Product Managers often rely on multiple tools, documents and spreadsheets to manage requirements, decisions, risks, evidence and delivery progress. This can make it difficult to maintain consistent delivery practices, understand why decisions were made and provide leadership with a reliable view of initiative progress. I created the Playbook to address this problem while complementing existing enterprise systems and governance processes.",
+      "productVision": "My vision is to provide Product Managers and their teams with a consistent, repeatable approach to guiding AI, non-AI and hybrid initiatives from business problem through requirements, design, delivery, adoption and ongoing operation. The platform is designed to support configurable guidance, governance, risk management, decision traceability and executive visibility. Planned AI assistance and controlled agentic execution would operate within defined boundaries while people retain oversight and accountability.",
+      "technicalArchitecture": "One modular web application with a separate workspace for each organization, role-based access and an append-only audit history, verified locally with synthetic data and not yet deployed. It is designed to run locally or be self-hosted, with no mandatory paid services, and integrations stay optional. Self-hosted deployment has not been implemented or verified. The original proof of concept is a local, single-user application.",
       "keyFeatures": [
         "Working proof of concept: all 18 steps and six gated phase reviews, decisions with conditions, risk and evidence registers, and reassessment when answers change",
-        "Implemented and verified (Milestones 1\u20132): organization isolation, roles and audit history; several product managers per initiative; protected evidence; an executive rollup limited to what each viewer may see",
-        "Next, in planning (Milestone 3): the full six-phase, 18-step governed lifecycle in the web platform",
+        "Implemented and verified locally with synthetic data (Milestones 1\u20132): organization isolation, roles and append-only audit history; several product managers per initiative; protected evidence; an executive rollup limited to what each viewer may see",
+        "In planning (Milestone 3): the proposed objective is to bring the six-phase, 18-step lifecycle into the web platform. Scope and implementation are not yet authorized",
         "Product vision (planned): intake and solution suitability, configurable questions and stakeholder guidance, regulatory applicability, responsible AI and controlled agentic execution, departmental AI readiness and adoption, and value realization through SQDC",
         "Planned (proposed roadmap): organization tailoring, pilot and value tracking, operational review, optional integrations and enterprise release readiness"
       ],
@@ -117,35 +117,29 @@
         "GitHub",
         "Streamlit Cloud"
       ],
-      "summary": "A working prototype I created to explore governed, AI-assisted application portfolio decisions. A deterministic rules engine produces explainable retain, modernize, retire or replace recommendations. Claude answers questions about the portfolio but never sets recommendations, and a person makes the final decision, with written rationale for every override. I defined the product vision, requirements, architectural direction, governance requirements and acceptance criteria, and used AI coding assistance for implementation.",
+      "summary": "A working prototype I created to explore how structured evaluation criteria, automated recommendations and AI-assisted analysis could support application portfolio decisions. A rules-based scoring engine generates explainable retain, modernize, retire or replace recommendations. Claude answers questions about the portfolio but does not determine recommendations, and people review recommendations and make the final decisions, with written rationale required for overrides. I defined the product vision, requirements, architectural direction, governance requirements and acceptance criteria, and used AI coding assistance for implementation.",
       "capabilities": [
         "Explainable rules-based recommendation engine: eight supporting signals displayed per application, some applied directly by the decision rules and others indirectly through the technical debt score",
-        "Jagged Frontier classification (a framework identifying where automated recommendations are reliable versus where human judgment is essential): Inside, Edge, or Outside, derived from a rules-based confidence score",
-        "Human-in-the-loop Centaur governance model",
-        "Recommendation drift indicator (simulated in the prototype)",
-        "Conversational portfolio analysis powered by Claude, with the full portfolio supplied as context",
-        "Per-session API governance with call limits",
-        "Access-controlled AI features with a shared passphrase gate (no individual user accounts)",
+        "Recommendation confidence and review guidance (Inside, Edge or Outside), derived from rules-based scoring and not calibrated as a measure of recommendation reliability",
+        "Human oversight and decision governance: people review recommendations and make the final decisions, with written rationale required for overrides",
+        "Recommendation drift indicator (simulated in the prototype, not operational monitoring)",
+        "Conversational portfolio analysis with Claude, which receives the portfolio data directly and does not determine recommendations",
+        "Session query limit and shared passphrase for the AI screen, used as prototype cost controls rather than production security controls",
         "ServiceNow Table API connector with automatic CSV fallback (the public demo runs on sample CSV data)"
       ],
-      "artifacts": [
-        "Public demo on Streamlit Community Cloud (sample data)",
-        "Proposed product evolution roadmap"
-      ],
-      "architectureNote": "Design choices: recommendations come from deterministic rules, and Claude is used only for conversational analysis; context stuffing over a vector database at the current 15-application scale; direct Claude API calls over LangChain for transparency and control. The proposed roadmap outlines when each would change at scale.",
       "businessValue": [
-        "Demonstrates AI product thinking beyond output generation, with governance, explainability, and human oversight built into the review workflow",
-        "Proposed product evolution in evidence-gated phases, with further investment dependent on validated demand",
-        "Working software delivered from concept to a public demo"
+        "Intended to help Application Portfolio Managers evaluate applications using consistent, explainable criteria",
+        "Intended to reduce manual analysis while preserving human accountability for portfolio decisions",
+        "Demonstrates the recommendation, review and decision recording workflow through a working public prototype"
       ],
-      "businessProblem": "Application portfolios can include hundreds of systems, and retain, retire or modernize decisions need consistent, defensible criteria. PortfolioIQ explores how structured, explainable decision support can help.",
-      "productVision": "The opportunity was to bring the governance discipline of my GE Vernova Application Portfolio Management dashboard to an AI-assisted version, where automation accelerates the recommendation without removing human accountability for the decision.",
-      "technicalArchitecture": "A governed decision-support architecture: enterprise portfolio data feeds a deterministic, rules-based scoring and recommendation layer; every recommendation is explainable and can be routed to a human review queue; and every decision is recorded in a session audit log with CSV export. Claude provides conversational analysis over the same data and does not set recommendations.",
+      "businessProblem": "Application Portfolio Managers need to make informed decisions about which applications to retain, modernize, retire or replace. In large enterprise portfolios, these decisions can be difficult when information is spread across multiple systems and evaluation criteria are inconsistent.",
+      "productVision": "The opportunity was to bring the governance discipline of my GE Vernova Application Portfolio Management dashboard to an AI-assisted version, where automation accelerates the recommendation without removing human accountability for the decision. The problem also reflects my predictive maintenance work, where I reviewed the available application portfolio information to check whether an existing application could meet the business requirements. I didn't find an equivalent, but limited visibility into the broader enterprise portfolio meant I couldn't confirm that across the enterprise.",
+      "technicalArchitecture": "A decision-support architecture in which portfolio data feeds a deterministic, rules-based scoring and recommendation layer. Every recommendation is explainable and can be reviewed in a human review queue, and reviewed decisions are recorded in a session-based audit log with CSV export. Claude provides conversational analysis over the same data and does not set recommendations.",
       "keyFeatures": [
         "Six-screen guided workflow from portfolio overview to a reviewed, exportable decision",
-        "Approve, override, or escalate recommendations in the review queue, with written rationale required for overrides",
-        "Session-level governance controls to manage API usage responsibly",
-        "Exportable decision audit log (CSV) for stakeholder and leadership review"
+        "Approve, override or escalate recommendations in the review queue, with written rationale required for overrides",
+        "Session query limit to manage API cost in the public demo",
+        "Session-based decision audit log with CSV export for stakeholder and leadership review"
       ],
       "blueprintConnection": "PortfolioIQ is the application portfolio assessment product of the Enterprise AI Platform Program, alongside the Enterprise Product & Delivery Playbook and a proposed Leadership Dashboard (in discovery). Each product is designed to operate independently. Integration through defined interfaces, such as PortfolioIQ assessments informing Playbook decisions, is a planned architectural direction and isn't implemented. Further investment depends on validated demand.",
       "liveLabel": "Try the Public Demo",
@@ -153,216 +147,56 @@
         "blueprint": "Enterprise AI Platform Program"
       },
       "intendedValueIndexes": [
+        0,
         1
       ]
-    },
-    {
-      "id": "ai-security-triage-dashboard",
-      "featured": true,
-      "status": "live",
-      "title": "AI Security Triage Dashboard",
-      "subtitle": "Enterprise threat and vulnerability decision-support with human-in-the-loop governance.",
-      "liveUrl": "https://ai-security-triage-dashboard.streamlit.app",
-      "githubRepo": null,
-      "caseStudyUrl": "/Product4/security-triage.html",
-      "image": "/images/SecurityTriage.png",
-      "imageAlt": "AI Security Triage Dashboard screenshot",
-      "tags": [
-        "Claude API",
-        "Python",
-        "Streamlit",
-        "NIST NVD API",
-        "GitHub",
-        "Streamlit Cloud",
-        "CISA KEV"
-      ],
-      "summary": "A governed AI decision-support demo that helps security analysts triage CVE vulnerabilities, phishing emails, and URL threat indicators. Built with the same governance pattern as PortfolioIQ: AI generates a triage summary and recommended action, the analyst decides, and every decision is recorded with its rationale. No security actions are automated.",
-      "capabilities": [
-        "CISA KEV cross-reference -  live exploitation status overlaid on every CVE, separating theoretical severity from operational priority.",
-        "Live CVE feed from NIST NVD API with CVSS severity scoring and AI triage summaries",
-        "Phishing email analysis on a 10-email sample from a labeled public research corpus, demonstrating AI risk scoring, explainable recommendations, and triage workflow governance. A production version would need an email security gateway integration.",
-        "Static sample set of URL threat indicators with severity classification and AI-generated mitigation recommendations",
-        "Human-in-the-loop review queue: every recommendation requires an analyst decision, which is recorded",
-        "Override tracking - written rationale required before any AI recommendation is overridden",
-        "Full audit log across all three data sources with CSV export",
-        "Decision recording: AI recommends, the analyst decides, and every decision is logged (no automated actions)"
-      ],
-      "artifacts": [
-        "Public demo on Streamlit Community Cloud"
-      ],
-      "architectureNote": "Same governance pattern applied to a cybersecurity context: retrieve threat data from multiple sources, AI recommends, the analyst decides, and the audit log records every decision. Demonstrates pattern reusability across domains. Designed, built, and deployed in a few days.",
-      "businessValue": [
-        "Addresses analyst triage consistency \u2014 AI surfaces relevant threat context so every analyst makes decisions from the same information baseline",
-        "Override counts show where analyst and AI judgment diverge",
-        "Demonstrates governance-first AI PM thinking applied to a new domain under time pressure"
-      ],
-      "businessProblem": "Security analysts face a constant volume of CVEs, phishing reports, and threat indicators, more than can be manually triaged with consistent judgment. Inconsistent triage means real threats get buried under noise, and different analysts reach different conclusions from the same data.",
-      "productVision": "The opportunity was to apply the same governed AI pattern used in portfolio decisions to a different domain under real time pressure, testing whether the governance model generalizes rather than being specific to one use case.",
-      "technicalArchitecture": "A shared governance pattern applied to security operations: threat data comes from live NVD and CISA KEV sources plus bundled phishing and URL sample data, AI generates a triage recommendation, the analyst decides, and every decision is captured in an audit trail.",
-      "keyFeatures": [
-        "Unified triage view across CVEs, phishing reports, and URL threat indicators",
-        "Live exploitation status overlaid on every vulnerability, not just theoretical severity",
-        "Required written rationale before overriding any AI recommendation",
-        "Full exportable audit log across all three data sources"
-      ],
-      "blueprintConnection": "The Security Triage Dashboard demonstrates operational governance, the same human-in-the-loop, audit-first pattern used for portfolio decisions, applied to a different domain to test whether the governance model generalizes."
-    },
-    {
-      "id": "semantic-cmdb-search",
-      "featured": false,
-      "status": "prototype",
-      "title": "Semantic CMDB Search Tool",
-      "subtitle": "Natural-language search across ServiceNow CMDB records",
-      "liveUrl": null,
-      "githubRepo": null,
-      "caseStudyUrl": "/Product2/semantic-search.html",
-      "image": "/images/SemanticSearch.png",
-      "imageAlt": "Semantic CMDB Search Tool screenshot",
-      "tags": [
-        "OpenAI Embeddings",
-        "ChromaDB",
-        "ServiceNow REST API",
-        "Python"
-      ],
-      "summary": "A local prototype connecting to a ServiceNow Personal Developer Instance via REST APIs, generating embeddings with the OpenAI embeddings API, and storing them locally in ChromaDB for embedding-based semantic retrieval across CMDB test records.",
-      "capabilities": [
-        "Natural-language queries across CMDB records",
-        "Embedding-based semantic retrieval with ChromaDB",
-        "Live ServiceNow PDI connection via REST API",
-        "Highlights CMDB data quality impact on retrieval accuracy"
-      ],
-      "artifacts": [
-        "Working local prototype with end-to-end retrieval pipeline"
-      ],
-      "architectureNote": null,
-      "businessValue": [
-        "Intended: faster discovery of CMDB configuration records (not measured)",
-        "Intended: easier access to configuration details for non-specialists (not measured)",
-        "Demonstrates real-world constraints of CMDB data quality on AI retrieval"
-      ],
-      "businessProblem": "Enterprise CMDB systems hold critical information about system dependencies and infrastructure relationships, but keyword search fails when people don't know the exact naming conventions or system IDs, so valuable context routinely goes unfound.",
-      "productVision": "The opportunity was to test whether natural-language search could make an existing CMDB investment more usable, without replacing or duplicating the system of record.",
-      "technicalArchitecture": "A retrieval-based architecture: CMDB test records are embedded and indexed for semantic search, and natural-language queries return the most similar configuration records and their metadata rather than exact keyword matches.",
-      "keyFeatures": [
-        "Natural-language query interface, no exact system names required",
-        "Returns the most similar configuration records with key metadata, beyond exact keyword matches",
-        "Connects to a ServiceNow developer instance via REST API"
-      ],
-      "blueprintConnection": "Semantic CMDB Search demonstrates organizational knowledge and AI-enabled discovery, making information the organization already has actually findable, one of the readiness gaps the Blueprint asks organizations to assess before scaling AI further."
-    },
-    {
-      "id": "benefits-cost-analyzer",
-      "featured": false,
-      "status": "prototype",
-      "title": "Benefits Cost & Utilization Data Foundation",
-      "subtitle": "Data foundation for benefits and claims analysis; AI capabilities planned",
-      "liveUrl": null,
-      "githubRepo": null,
-      "caseStudyUrl": "/Product3/ai-BeniCostAnlyzer.html",
-      "image": "/images/AI_BA_Analyzer.png",
-      "imageAlt": "Benefits Cost & Utilization Data Foundation screenshot",
-      "tags": [
-        "Python",
-        "Data Lakehouse",
-        "CMS Data",
-        "Public Datasets"
-      ],
-      "summary": "An early-stage data foundation for benefits and claims analysis: a local Bronze-layer Data Lakehouse with open datasets (CMS, BLS, Medicare) ingested and profiled. Predictive analytics, document intelligence, and conversational interfaces are planned and not yet built.",
-      "capabilities": [
-        "Bronze-layer Data Lakehouse using CMS, BLS, and Medicare datasets",
-        "Datasets ingested and profiled for future cost and utilization analysis",
-        "Planned: predictive modeling and document intelligence",
-        "Uses only public datasets"
-      ],
-      "artifacts": [
-        "Local data lakehouse with ingestion pipeline"
-      ],
-      "architectureNote": null,
-      "businessValue": [
-        "Intended: improved cost visibility for HR and finance stakeholders (hypothesis, not measured)",
-        "Demonstrates enterprise data architecture thinking",
-        "Roadmap shows path to conversational interface and HR system integration"
-      ],
-      "businessProblem": "HR and finance stakeholders need visibility into benefits cost and utilization trends, but the underlying data is often fragmented across sources and requires significant manual work to turn into a usable view.",
-      "productVision": "The opportunity was to build an enterprise data architecture, from ingestion toward analytics, that could later support cost visibility and predictive, conversational capabilities as the roadmap matures.",
-      "technicalArchitecture": "A layered data architecture: public benefits and claims data is ingested into a local lakehouse, providing the foundation for cost and utilization analysis and a path toward predictive and conversational capabilities.",
-      "keyFeatures": [
-        "Public benefits datasets ingested and profiled",
-        "Structured, layered data pipeline designed for future growth",
-        "Roadmap toward predictive modeling and a conversational interface"
-      ],
-      "blueprintConnection": "The Benefits Analyzer demonstrates enterprise data architecture thinking, building the data foundation a capability needs before adding predictive or conversational features on top of it, the same sequencing discipline behind the Blueprint's Capability Gaps phase."
     }
   ],
   "enterpriseProjects": [
     {
       "id": "knowledge-platform",
       "title": "Engineering Knowledge Database Replacement",
-      "objective": "Replace the retiring Lotus Notes knowledge database while preserving engineering's access to its documentation.",
-      "role": "Assignment: Requirements, platform choice, and phased rollout",
-      "bullets": [
-        "Interviewed department leads to map their requirements.",
-        "Chose the existing SharePoint platform for the replacement.",
-        "Piloted with the smallest department, then expanded the migration.",
-        "Added a week of lunchtime hands-on workshops after early user feedback.",
-        "Replaced the legacy system and preserved access to engineering documentation."
-      ],
-      "sqdc": {
-        "safety": "Preserved access to engineering documentation",
-        "quality": "Requirements mapped with department leads; usability feedback addressed with lunchtime workshops",
-        "delivery": "Phased rollout starting with the smallest department",
-        "cost": "Reused the existing SharePoint platform rather than buying another"
-      },
+      "role": "Assignment: Product ownership, requirements discovery and phased delivery",
       "organization": "GE Power",
-      "challenge": "Lotus Notes was being retired, putting engineering's access to its knowledge and documentation at risk.",
+      "challenge": "Lotus Notes was being retired, putting years of engineering documentation and procedures for boiler design at risk and raising the risk of engineers relying on outdated information.",
       "outcomes": [
-        "Interviewed department leads to map their needs",
-        "Chose the existing SharePoint platform and piloted with the smallest department before expanding",
-        "Replaced the legacy system and preserved access to engineering documentation",
-        "Added a week of lunchtime hands-on workshops after early user feedback"
+        "Migrated documentation for approximately five engineering departments while preserving years of engineering knowledge",
+        "Participating departments moved to the new solution and used it after migration and training",
+        "Avoided purchasing a replacement platform by using the existing SharePoint environment, with a third-party tool purchased for the migration",
+        "Improved metadata quality by correcting outdated metadata during the migration"
       ],
       "capabilities": [
+        "Product Ownership",
+        "Requirements & Discovery",
         "Knowledge Management",
-        "Enterprise Transformation",
-        "Process Improvement"
+        "User Adoption"
       ],
-      "executiveSummary": "A retiring Lotus Notes knowledge system put access to years of engineering documentation at risk. I interviewed department leads to map their needs, chose to build the replacement on the existing SharePoint platform, piloted it with the smallest department, and then expanded the migration. When an engineer asked for an enhancement to the retiring system, I kept it in the backlog for the replacement rather than invest further in a system being retired. After early user feedback, we added a week of lunchtime hands-on workshops. The legacy system was replaced, and engineering kept access to its documentation.",
-      "businessChallenge": "The system was being retired, but engineering still relied on the knowledge and documentation it held.",
-      "myRole": "I owned the requirements discovery, the platform choice, the phased rollout plan, and the response to user feedback.",
+      "executiveSummary": "A retiring Lotus Notes application put access to years of engineering knowledge and documentation at risk. I met with department leaders to understand their requirements and determined that our existing SharePoint platform could meet their needs without purchasing another platform, which also suited engineers who already knew SharePoint. I took a phased approach, starting with a smaller engineering department before expanding the migration. We used a third-party migration tool to transfer the documentation and remap its metadata, correcting outdated metadata along the way. When an engineer requested an enhancement to the retiring application, I deferred the request to the replacement application's backlog rather than invest further in the legacy system. Based on early user feedback, we added a week of hands-on lunchtime workshops to support adoption. Documentation for approximately five engineering departments was migrated, and the participating departments moved to the new solution and used it.",
+      "businessChallenge": "Engineering departments depended on years of accumulated documentation and procedures supporting boiler design. The retirement of Lotus Notes created a business continuity risk and a risk that engineers would rely on outdated information.",
+      "myRole": "I worked directly with department leaders and engineers to understand their business needs and define requirements. I owned the platform selection and rollout strategy, led the migration and prepared users for the transition. I also managed requirements prioritization and adjusted our approach based on user feedback.",
       "keyContributions": [
-        "Interviewed department leads to map their requirements.",
-        "Chose the existing SharePoint platform for the replacement.",
-        "Piloted with the smallest department, then expanded the migration.",
-        "Deferred an engineer's requested enhancement to the retiring system, keeping it in the backlog for the replacement."
+        "Met with department leaders to understand their requirements.",
+        "Evaluated existing enterprise capabilities before considering a new platform, and selected SharePoint because it met the requirements and engineers already knew it.",
+        "Started with a smaller engineering department, then expanded the migration.",
+        "Used a third-party migration tool and process to transfer documentation, remap metadata and correct outdated metadata.",
+        "Deferred an engineer's enhancement request for the retiring application to the replacement application's backlog.",
+        "Added a week of hands-on lunchtime workshops after early user feedback."
       ],
-      "blueprintConnection": "This connects to the Blueprint's treatment of adoption as its own phase: the workshops added after early feedback showed why adoption needs planning from the start.",
+      "blueprintConnection": "This experience helped shape my approach to adoption and change enablement within the Enterprise AI Blueprint. Delivering a technically sound solution is only part of the responsibility. We also need to prepare users, listen to their feedback and adjust our approach to support adoption.",
       "featured": true,
       "caseStudyUrl": "/Experience/engineering-knowledge-database.html"
     },
     {
       "id": "boiler-performance-tools",
       "title": "Boiler Performance Tools Modernization",
-      "objective": "Move roughly 20 legacy engineering applications to AWS while keeping the functionality engineering needed and providing secure access for internal users and external licensees.",
       "role": "Assignment: Technical Product Owner & Scrum Master",
-      "bullets": [
-        "Served as Product Owner and Scrum Master for re-platforming roughly 20 FORTRAN engineering applications to AWS.",
-        "Defined requirements and user stories with business stakeholders and the solution architect.",
-        "Replaced the original conversion story with the engineers' wrapper approach, had the team size it, and adjusted the sprint plan.",
-        "Coordinated business test cases and user acceptance testing in staging before production releases.",
-        "The team re-platformed the applications, and licensees moved to hosted access."
-      ],
-      "sqdc": {
-        "safety": "Hosted access replaced executable distribution, helping protect intellectual property",
-        "quality": "Business-defined test cases and staging user acceptance testing before production releases",
-        "delivery": "Backlog and sprint plan adjusted when direct conversion wasn't possible; re-platforming completed",
-        "cost": "Moved off legacy infrastructure that was increasingly costly to support"
-      },
       "organization": "GE Power",
-      "challenge": "About 20 legacy FORTRAN engineering applications, some dating to the 1960s, ran on aging infrastructure, and external licensees received installable executables.",
+      "challenge": "Multiple engineering departments depended on about 20 custom FORTRAN applications for boiler design that ran on aging, unsupported technology, and the business needed to protect software it licensed externally.",
       "outcomes": [
-        "Defined requirements and owned the backlog and sprint plan for the move to AWS",
-        "Reworked the backlog when some FORTRAN modules couldn't be converted directly",
-        "The team re-platformed roughly 20 applications to AWS, and licensees moved to hosted access"
+        "Multiple modernized applications were deployed to AWS, and engineers began using them",
+        "Preserved engineering capabilities supporting legacy boiler design while reducing dependency on unsupported technology",
+        "Established an engineering validation approach that reused existing test cases to confirm equivalent calculation results",
+        "Addressed intellectual property protection requirements for externally licensed engineering software"
       ],
       "capabilities": [
         "Product Ownership",
@@ -370,98 +204,78 @@
         "Cloud Migration",
         "Agile Delivery"
       ],
-      "executiveSummary": "About 20 legacy FORTRAN engineering applications, some dating to the 1960s, ran on infrastructure that was aging and increasingly costly to support. As Product Owner and Scrum Master, I defined requirements and user stories with business stakeholders and the solution architect, owned the backlog, and ran the Scrum ceremonies. When engineers found that some modules couldn't be converted directly to C#, they designed a wrapper. I replaced the original story, had the team size the new work, and adjusted the sprint plan. Business users validated releases through test cases and user acceptance testing in staging. The team re-platformed the applications to AWS. Licensees previously received installable executables; moving to hosted access gave the business more control over its software and intellectual property.",
-      "businessChallenge": "The applications ran on infrastructure that was aging and increasingly costly to support, and the delivery model sent installable executables to external licensees.",
-      "myRole": "I owned requirements, the backlog, prioritization, and sprint planning, and coordinated business validation. The software engineers and solution architect owned the technical design, including the FORTRAN wrapper. The cloud engineering team provisioned the AWS environment.",
+      "executiveSummary": "Multiple engineering departments depended on about 20 custom FORTRAN applications for boiler design that ran on aging, unsupported technology, and the business also needed to protect software it licensed externally. As Product Owner and Scrum Master, I led the team responsible for modernizing this portfolio of applications using C# and AWS, retaining legacy components where appropriate. I worked with engineering stakeholders and software engineers to set modernization priorities, starting with the applications needed for upcoming engineering projects. When engineers found that some modules couldn't be converted directly to C#, they designed a wrapper around the existing FORTRAN code, and I replaced the original story, had the team size the new work and adjusted the sprint plan. I worked with engineering application owners to repurpose their existing test cases so we could confirm the modernized applications produced equivalent calculation results. Multiple modernized applications were deployed to AWS, engineers began using them, and intellectual property protection requirements were addressed.",
+      "businessChallenge": "Multiple engineering departments depended on custom legacy applications for boiler design and engineering work. The applications relied on aging FORTRAN software and unsupported infrastructure, so the business needed to preserve these engineering capabilities while moving to a more supportable technology environment. Protecting the intellectual property in externally licensed engineering software was also a consideration.",
+      "myRole": "I owned requirements, backlog prioritization, sprint planning and coordination of business validation, and I ran the Scrum ceremonies. The software engineers and solution architect owned the technical design and implementation, including the FORTRAN wrapper. The cloud engineering team provisioned the AWS environment.",
       "keyContributions": [
+        "Worked with engineering stakeholders and software engineers to set modernization priorities, starting with the applications needed for upcoming engineering projects.",
         "Defined requirements and user stories with business stakeholders and the solution architect.",
-        "Replaced the blocked conversion story with the wrapper work and adjusted the sprint plan.",
-        "Coordinated business test cases and user acceptance testing in staging before production releases."
+        "Worked with engineering to redefine the blocked conversion work as wrapper work and adjusted the sprint plan.",
+        "Worked with engineering application owners to repurpose existing test cases to confirm equivalent calculation results.",
+        "Supported requirements for protecting proprietary engineering software."
       ],
-      "blueprintConnection": "This connects to the Blueprint's focus on modernizing the systems a business depends on while keeping the functionality it still needs.",
       "featured": true,
       "caseStudyUrl": "/Experience/boiler-performance-tools.html"
     },
     {
       "id": "apm-dashboard",
       "title": "Application Portfolio Management",
-      "objective": "Give Steam IT leadership a consolidated view of its application portfolio to support investment, modernization, and retirement decisions.",
       "role": "Senior Staff Technical Program Manager \u00b7 Assignment: Application Portfolio Management Lead",
-      "bullets": [
-        "Took over application portfolio management for Steam IT's 200+ applications during an IT reorganization.",
-        "Worked with the CIO and directors to identify the dashboard metrics they needed.",
-        "Built and maintained the dashboard, consolidating health scores, technical debt, cost, and cloud adoption data into a single view.",
-        "Ran quarterly portfolio reviews with CIOs, directors, and application owners.",
-        "Worked with application owners and technical teams to help raise portfolio governance health to the centrally required targets for critical and noncritical applications in about two quarters."
-      ],
-      "sqdc": {
-        "safety": "Surfaced lifecycle and technical-debt risks; risk reduction was not measured",
-        "quality": "Prioritized improvements based on data rather than opinion",
-        "delivery": "Established a predictable quarterly portfolio review cadence",
-        "cost": "Made decommissioning and cloud candidates visible to support cost decisions; savings were not measured"
-      },
       "organization": "GE Vernova",
-      "challenge": "Leadership didn't have a consolidated view of Steam IT's 200+ applications, and new central governance metrics required information that hadn't been captured before.",
+      "challenge": "The Steam business needed to improve application portfolio governance, and leadership had to request portfolio information from the portfolio manager rather than see it directly.",
       "outcomes": [
-        "Worked with the CIO and directors to identify the dashboard metrics they needed, then built the dashboard",
-        "Helped raise portfolio governance health to the centrally required targets in about two quarters, with application owners and technical teams",
-        "Quarterly portfolio reviews with CIOs, directors, and application owners",
-        "Surfaced lifecycle and technical-debt risks to inform prioritization"
+        "Approximately doubled portfolio health scores within two quarters and met the centrally established governance targets for critical and noncritical applications, working with application owners and technical teams",
+        "Reduced the application footprint by approximately 67% over my ownership, from about 300 to about 100 applications, with about three quarters of the reduction coming from divestiture",
+        "Gave the Steam CIO and IT directors self-service portfolio visibility, and the dashboard became the basis for quarterly governance discussions",
+        "Drove the retirement of approximately 50 applications through rationalization outside the divestiture, with application owners making the final decisions",
+        "Established a recurring governance process that prompted remediation and retirement by application owners and technical teams, though some individual applications still had open issues"
       ],
       "capabilities": [
         "Enterprise Portfolio Management",
         "Requirements & Discovery",
         "Governance"
       ],
-      "executiveSummary": "When I took over application portfolio management for Steam IT's more than 200 applications, leadership didn't have a consolidated view of the portfolio, and new central governance metrics required information that hadn't been captured before. I identified that visibility gap, worked with the CIO and directors to identify the metrics they needed, and built a Smartsheet tracking system and dashboard covering application health, technical debt, hosting, cloud candidates, and decommissioning candidates. I worked with application owners to close information gaps, coordinated technical-debt and security follow-up with technical teams, and sent weekly updates to the central team so governance scores were recalculated. In about two quarters, the portfolio groups reached their centrally required targets, though some individual applications still had open issues. I used the dashboard in quarterly reviews with CIOs, directors, and application owners.",
-      "businessChallenge": "New central governance metrics required information that had not previously been captured, and leadership needed one view of application health, technical debt, hosting, and decommissioning candidates.",
-      "myRole": "I owned the dashboard requirements and the tracking and dashboard workflow, and coordinated follow-up with application owners and technical teams. The governance scoring methodology was defined centrally and calculated by the governance system; I didn't design it. Technical teams owned remediation.",
+      "executiveSummary": "When I took over application portfolio management for the Steam business, leadership needed better governance performance and had to request portfolio information rather than see it directly. I worked with the central governance team to understand the portfolio health metrics, worked with the CIO and directors to understand their reporting needs, and built a centralized Smartsheet dashboard from the enterprise source system covering portfolio health, technical debt, metadata completeness, application footprint, hosting and retirement progress. I held quarterly reviews with application owners on whether their applications were still needed, coordinated retirements while owners kept the final decision, reported progress to leadership monthly and ran quarterly governance reviews with the Steam CIO and domain directors. Working with application owners and technical teams, we approximately doubled portfolio health scores within two quarters and met the centrally established targets, though some individual applications still had open issues. Over my ownership the portfolio went from about 300 to about 100 applications. About three quarters of that reduction came from divestiture, and about 50 applications were retired through rationalization.",
+      "businessChallenge": "The Steam business needed to improve application portfolio governance performance while giving leadership better visibility into portfolio health, composition and application retirement progress. Leadership previously had to request this information from the application portfolio manager.",
+      "myRole": "I worked with the CIO and directors to understand what information they needed to manage the application portfolio. I defined the dashboard requirements, built the Smartsheet tracking and reporting solution, worked with application owners to address information gaps and coordinated remediation activities with the responsible technical teams. I also led quarterly portfolio reviews to help leadership understand application health, technical debt, hosting, modernization opportunities and decommissioning candidates. The governance scoring methodology was defined centrally, and I didn't design it. Application owners kept the final decision on retiring their applications.",
       "keyContributions": [
-        "Identified leadership's portfolio visibility gap and worked with the CIO and directors to identify the dashboard metrics.",
-        "Built a Smartsheet tracking system and dashboard for more than 200 applications.",
-        "Closed information gaps with application owners and supplied weekly updates for score recalculation."
+        "Worked with the central governance team to understand the portfolio health metrics and requirements.",
+        "Worked with the CIO and directors to understand their reporting and governance needs.",
+        "Built a centralized Smartsheet dashboard from the enterprise source system covering portfolio health, technical debt, metadata completeness, application footprint, hosting and retirement progress.",
+        "Held quarterly reviews with application owners on whether each application was still needed, and coordinated retirements while owners kept the final decision.",
+        "Reported progress to leadership monthly and ran quarterly governance reviews with the Steam CIO and domain directors.",
+        "Supported application decommissioning associated with the divestiture."
       ],
-      "blueprintConnection": "This connects to the Blueprint's starting point: agree on what leaders need to decide before building the reporting or the model.",
+      "blueprintConnection": "This connects to the Blueprint's starting point, which is agreeing on what leaders need to decide before building the reporting or the model.",
       "featured": true,
       "caseStudyUrl": "/Experience/application-portfolio-management.html"
     },
     {
       "id": "predictive-maintenance",
       "title": "Predictive-Maintenance Application: AWS Deployment",
-      "objective": "Put a purchased predictive-maintenance application into service on AWS for engineering users.",
       "role": "Senior Staff Technical Program Manager \u00b7 Assignment: Technical Product Manager",
-      "bullets": [
-        "Took ownership of bringing the purchased application into service.",
-        "Coordinated engineering users, enterprise architecture, cloud, security, and the vendor on requirements and the delivery approach.",
-        "Personally installed and configured the application, working with the cloud engineering team on the AWS environment.",
-        "Created environment-access documentation and a training video, and trained engineering users.",
-        "Deployed the application on AWS and made it available to engineering users."
-      ],
-      "sqdc": {
-        "safety": "Safety and downtime impact were not measured",
-        "quality": "Architecture and security requirements coordinated before go-live",
-        "delivery": "Purchased application brought through AWS deployment and user training",
-        "cost": "Put a purchased application into use; savings were not measured"
-      },
       "organization": "GE Vernova",
-      "challenge": "A purchased predictive-maintenance application needed an implementation owner to bring it into service.",
+      "challenge": "A purchased predictive maintenance application needed to be brought into production so service engineers could analyze customer equipment data and recommend preventive maintenance.",
       "outcomes": [
-        "Deployed the application on AWS and made it available to engineering users",
-        "Coordinated engineering users, enterprise architecture, cloud, security, and the vendor",
-        "Created access documentation and a training video, and trained engineering users"
+        "Turned previously purchased software into an operational capability that service engineers could use to analyze vibration data and identify potential equipment failures",
+        "Service engineers began using the application following deployment and training",
+        "Trained three service engineers and gave them reusable documentation and video training so they could train other engineers"
       ],
       "capabilities": [
-        "Enterprise Transformation",
         "Product Management",
-        "Operating Models"
+        "Enterprise Governance",
+        "User Enablement"
       ],
-      "executiveSummary": "GE Vernova had purchased a predictive-maintenance application that needed an implementation owner. I coordinated engineering users, enterprise architecture, cloud, security, and the vendor, personally installed and configured the application on AWS, and created access documentation, a training video, and training for engineering users. The application was deployed on AWS and made available to engineering users.",
-      "businessChallenge": "Purchased software often depends on cloud, security, and architecture teams that were not part of the buying decision, so it needs an owner to carry it into production.",
-      "myRole": "As Technical Product Manager, I coordinated the deployment across engineering users, enterprise architecture, cloud engineering, security, and the vendor. I personally installed and configured the application, working with the cloud engineering team on the AWS environment.",
+      "executiveSummary": "With support from my leadership and the responsible Domain Director, I took ownership of bringing a purchased predictive maintenance application into service on AWS so service engineers could use it to support customers. It analyzes vibration data from customer equipment to identify potential failures and recommend preventive maintenance. I worked with service engineers to understand the business problem and intended value, and I reviewed the available application portfolio information to check whether an existing application already provided similar functionality. I coordinated GE's standard onboarding process with enterprise architecture, security, cloud engineering and the vendor, and personally installed and configured the application on AWS. I created documentation and a video walkthrough, personally trained three service engineers and gave them reusable training resources so they could train others. An existing software investment became an operational capability that service engineers began using.",
+      "businessChallenge": "Service engineers needed a way to predict potential equipment failures and recommend preventive maintenance for customers. The purchased application could do this, but it had to be onboarded, installed, and put into use first.",
+      "myRole": "With support from my leadership and the responsible Domain Director, I owned bringing the application into service. I worked with the service engineers on their needs, coordinated onboarding with enterprise architecture, security, cloud engineering and the vendor, personally installed and configured the application, and trained the users. The cloud engineering team provisioned and configured the AWS environment.",
       "keyContributions": [
-        "Coordinated architecture, cloud, security, and vendor requirements and approvals.",
-        "Personally installed and configured the application on AWS.",
-        "Created environment-access documentation and a training video, and trained engineering users."
+        "Worked directly with service engineers to understand their business needs and the decisions they wanted to support.",
+        "Reviewed the available application portfolio information to check whether an existing application provided similar functionality.",
+        "Coordinated the standard enterprise onboarding process with enterprise architecture, security, cloud engineering and the vendor.",
+        "Coordinated architecture and security requirements and approvals before go-live.",
+        "Worked directly with the vendor on installation requirements and personally installed and configured the application on AWS.",
+        "Created documentation and a video walkthrough, personally trained three service engineers and equipped them to train others."
       ],
       "blueprintConnection": "Buying technology and putting it into service are different steps. The Blueprint treats that handoff as part of the plan for AI initiatives.",
       "featured": true,
@@ -470,189 +284,126 @@
     {
       "id": "tendering-application",
       "title": "U.S. Steam Tendering Application",
-      "objective": "Give U.S. Steam Tendering one application for tender documents, status, reviews, and approvals.",
       "role": "Assignment: Requirements, backlog, and platform recommendation",
-      "bullets": [
-        "Gathered tendering users' requirements and managed the backlog and working versions.",
-        "Compared Box and SharePoint against the required document, status, review, and approval workflows.",
-        "Presented the business requirements and platform tradeoffs to the IT and Tendering directors, securing agreement to proceed with SharePoint.",
-        "The application was delivered and used."
-      ],
-      "sqdc": {
-        "safety": "No direct safety outcome",
-        "quality": "Document review and approval workflow matched to business requirements",
-        "delivery": "Application delivered with stakeholder agreement on the platform",
-        "cost": "Reused existing SharePoint capability"
-      },
       "organization": "GE Power",
-      "challenge": "U.S. Steam Tendering needed one application for tender documents, status, reviews, and approvals, and an IT director proposed using Box.",
+      "challenge": "The tendering team relied on a file share that made it hard to find documents, tell which version was current, know who owned a document and manage approvals. An IT director proposed using Box.",
       "outcomes": [
-        "Gathered users' requirements and owned the backlog and working versions",
-        "Compared Box and SharePoint against the required workflows and recommended SharePoint",
-        "Secured the IT and Tendering directors' agreement to proceed with SharePoint; the application was delivered and used"
+        "The tendering team moved from the file share to SharePoint and used it",
+        "Users could search document contents rather than relying only on filenames and folders",
+        "Improved document ownership, version control and approvals through structured metadata and approval workflows",
+        "The platform was chosen to fit the required workflow, with agreement from the IT and Tendering directors",
+        "Kept product ownership after launch and delivered enhancements as business needs changed"
       ],
       "capabilities": [
         "Product Ownership",
         "Requirements & Discovery",
         "Platform Tradeoffs"
       ],
-      "executiveSummary": "U.S. Steam Tendering needed an application to manage tender documents, status, reviews, and approvals. An IT director proposed using Box. I gathered the users' requirements, managed the backlog and the working versions of the application, and compared what each platform could do against the document, status, review, and approval workflows the team needed. I presented the business requirements and platform tradeoffs to the IT and Tendering directors, securing agreement to proceed with SharePoint. The application was delivered and used.",
-      "businessChallenge": "The tendering workflow depended on tracking documents through status, review, and approval, and the platform choice had to support that workflow.",
-      "myRole": "I owned the requirements, the backlog, the working versions of the application, and the platform recommendation.",
+      "executiveSummary": "The U.S. Steam tendering team relied on a file share that made it hard to find documents, tell which version was current, know who owned a document and manage approvals. I worked with the team to understand these problems and defined requirements for document ownership, metadata, version control, approval workflows and information discovery. An IT director proposed using Box. I compared what each platform could do against the workflow the team needed and recommended SharePoint because it was the better fit, and the IT and Tendering directors agreed to proceed with it. Using existing SharePoint capabilities, I implemented structured metadata, document ownership, version control and approval workflows, and enabled full-text search of document contents. The team moved from the file share to SharePoint, and I kept product ownership after launch, delivering enhancements as business needs changed.",
+      "businessChallenge": "The file share's folder structure made it difficult to locate relevant documents, determine current versions, identify document owners and manage approvals.",
+      "myRole": "I owned the requirements, the backlog, the working versions of the application and the platform recommendation, and I kept product ownership after launch.",
       "keyContributions": [
-        "Gathered tendering users' requirements.",
-        "Managed the backlog and working versions of the application.",
-        "Compared platform capabilities against the required workflows and recommended SharePoint."
+        "Worked with the tendering team to understand their business problems, decisions and intended value.",
+        "Defined requirements for document ownership, metadata, version control, approval workflows and information discovery.",
+        "Compared Box and SharePoint against the team's required workflow and recommended SharePoint as the better fit.",
+        "Implemented structured metadata, document ownership, version control, approval workflows and full-text search using existing SharePoint capabilities.",
+        "Kept product ownership after launch and delivered enhancements as business needs changed."
       ],
-      "blueprintConnection": "This connects to the Blueprint's emphasis on choosing technology based on the workflow the business needs.",
       "featured": true
     },
     {
       "id": "me-intranet-recovery",
       "title": "ME Intranet Migration Recovery",
-      "objective": "Get a stalled business-unit intranet migration to SharePoint back on track and rebuild the unit's working relationship with IT.",
       "role": "Assignment: Recovery plan, schedule, and delivery",
-      "bullets": [
-        "Took over a stalled Dreamweaver-to-SharePoint intranet migration.",
-        "Built a task-level Microsoft Project schedule from owner estimates.",
-        "Secured development and data-migration commitments from the IT services vendor.",
-        "Ran weekly progress meetings with the application owner and the vendor.",
-        "Delivered on the date set during the recovery, under the original budget, with about $43K in reported savings."
-      ],
-      "sqdc": {
-        "safety": "No direct safety outcome",
-        "quality": "Started from the business unit's pain points and needs",
-        "delivery": "Recovered a stalled migration and delivered on the date set during the recovery",
-        "cost": "Under the original budget, with about $43K in reported savings"
-      },
       "organization": "Pratt & Whitney",
-      "challenge": "A business unit's move from an outdated Dreamweaver intranet to SharePoint had stalled, and that unit's confidence in IT was low.",
+      "challenge": "A business unit's move from an outdated intranet to SharePoint had stalled, and that unit's confidence in IT was low.",
       "outcomes": [
-        "Listened to the business first, then rebuilt the plan from task-owner estimates",
-        "Secured development and data-migration commitments from the IT services vendor",
-        "Delivered on the date set during the recovery, under the original budget, with about $43K in reported savings",
-        "Improved working relationship with the business unit"
+        "Recovered a stalled migration and delivered on the date set during the recovery",
+        "Completed under the original budget, with about $43K in reported savings",
+        "Improved the business unit's working relationship with IT"
       ],
       "capabilities": [
         "Customer Trust",
         "Project Recovery",
         "Stakeholder Management"
       ],
-      "executiveSummary": "When I joined Pratt & Whitney, the ME business unit's migration from an outdated Dreamweaver intranet to SharePoint had stalled. The application owner was trying to manage it without the IT support they needed, and the IT services vendor was committed elsewhere. I met with the application owner and business stakeholders to understand their pain points and what they needed from the new intranet. I broke the remaining work into tasks with owners and estimates, built the schedule in Microsoft Project, and set a delivery date. I explained the business impact to the vendor's director, secured commitments for development and data migration, and ran weekly progress meetings. The migration was completed by that date and under the original budget, with about $43K in reported savings, and the working relationship with the business unit improved.",
+      "executiveSummary": "When I joined Pratt & Whitney, the ME business unit's migration from an outdated intranet to SharePoint had stalled. The application owner was trying to manage it without the IT support they needed, and the IT services vendor was committed elsewhere. I met with the application owner and business stakeholders to understand their pain points and what they needed from the new intranet. I broke the remaining work into tasks with owners and estimates, built the schedule in Microsoft Project, and set a delivery date. I explained the business impact to the vendor's director, secured commitments for development and data migration, and ran weekly progress meetings. The migration was completed by that date and under the original budget, with about $43K in reported savings, and the working relationship with the business unit improved.",
       "businessChallenge": "The business unit had been waiting on a stalled migration, and the vendor's team was committed to other work.",
-      "myRole": "I owned the recovery: the plan, the schedule and delivery date, the resource commitments, and progress tracking. SharePoint had already been selected. I didn't manage the original budget; the savings were reported against it.",
+      "myRole": "I owned the recovery, including the plan, the schedule and delivery date, the resource commitments, and progress tracking. SharePoint had already been selected. I didn't manage the original budget, and the savings were reported against it.",
       "keyContributions": [
         "Met with the application owner and stakeholders to understand their pain points and needs.",
         "Built a Microsoft Project schedule from task-owner estimates and set the delivery date.",
         "Secured vendor commitments and ran weekly progress meetings."
       ],
-      "blueprintConnection": "This connects to the Blueprint's emphasis on earning stakeholder trust through clear plans and follow-through.",
       "featured": true
     },
     {
       "id": "portfolio-planning",
       "title": "Steam IT PMO",
-      "objective": "Establish a PMO for Steam IT that gives leadership one consistent view of project requests and ongoing work.",
       "role": "Senior Staff Technical Program Manager \u00b7 Assignment: Program Manager / PMO Lead",
-      "bullets": [
-        "Established the Steam IT PMO at the CIO's request.",
-        "Customized Smartsheet PMO templates for intake, approvals, project templates, automation, and dashboards.",
-        "Trained Project Managers on the lifecycle, tollgates, and the system.",
-        "Ran quarterly project health reviews with the CIO and Domain Directors.",
-        "Leadership gained one place to see project requests, health, costs, and timelines."
-      ],
-      "sqdc": {
-        "safety": "Earlier visibility of project risk; no safety metric was measured",
-        "quality": "Consistent intake, required status updates, and one source of truth for reporting",
-        "delivery": "Project timelines and health visible in quarterly reviews; on-time delivery impact was not measured",
-        "cost": "Project cost visibility; savings were not measured"
-      },
       "organization": "GE Vernova",
-      "challenge": "The CIO could see major strategic projects, but issues on smaller Steam IT projects often came up only in one-on-one meetings.",
+      "challenge": "The Steam CIO could see larger initiatives, but getting information on smaller projects managed within individual domains meant contacting each domain director.",
       "outcomes": [
-        "Set up intake, approval, planning, and reporting across Steam IT's domains",
-        "Trained Project Managers and kept Smartsheet as the single source for reporting",
-        "Leadership gained one place to see project requests, health, costs, and timelines"
+        "Centralized approximately 100 project requests through one intake process over the life of the PMO",
+        "Gave leadership visibility into approximately 10 concurrent projects, with schedule and budget risks surfaced for discussion",
+        "Gave the CIO self-service visibility into project performance across domains",
+        "Established a consistent process for leadership to approve, reject or postpone project requests",
+        "Established consistent project management and reporting practices, supported by documentation and direct training"
       ],
       "capabilities": [
         "Program Governance",
-        "Operating Models",
+        "Project Intake & Prioritization",
         "Enterprise Portfolio Management"
       ],
-      "executiveSummary": "The Steam IT CIO could see major strategic projects but didn't have a consolidated view of smaller ones, and issues often surfaced only in one-on-one meetings. The CIO brought me on to set up a PMO. I customized Smartsheet's PMO templates into intake forms, approval workflows, project templates, automation, and dashboards, set up the intake, approval, and reporting process, and trained the Project Managers. Some wanted to keep their own spreadsheets, so I let them use those day to day but kept Smartsheet as the single source for reporting. Before each quarterly review I checked that project information was current, then walked the CIO and Domain Directors through project health. Leadership gained one place to see project requests, health, costs, and timelines.",
-      "businessChallenge": "Smaller projects across Steam IT were tracked in different ways, so their schedule and cost status were hard to review together.",
-      "myRole": "I designed and ran the PMO process. The Project Managers reported to their Domain Directors, not to me, so adoption depended on influence rather than authority. I surfaced project health; I didn't own every project's recovery plan.",
+      "executiveSummary": "The Steam CIO could see larger initiatives but had no central view of smaller projects managed within individual domains, and getting project information meant contacting each domain director. I set up a lightweight PMO in Smartsheet, customizing an existing template to fit the business requirements. I established a central project request and intake process, defined the information each request needed, and brought request reviews into quarterly leadership meetings, where leadership could approve, reject or postpone requests pending more information. I set up a standard project lifecycle structure, built an executive dashboard showing progress, schedule risk, budget risk and completion, and trained the designated project managers using documentation I wrote. Some wanted to keep their own spreadsheets, so I let them use those day to day but kept Smartsheet as the single source for reporting. Over the life of the PMO, about 100 project requests came through the central intake, and leadership could see about 10 concurrent projects.",
+      "businessChallenge": "The CIO had visibility into larger initiatives but not into smaller projects managed independently within individual domains, and getting project information required contacting each domain director.",
+      "myRole": "I designed and ran the PMO intake and reporting process. The Project Managers reported to their Domain Directors, not to me, so adoption depended on influence rather than authority. I surfaced project health, while each project's manager owned its delivery and any recovery plan.",
       "keyContributions": [
-        "Customized Smartsheet PMO templates for intake, approvals, and tracking.",
-        "Trained Project Managers on the lifecycle, tollgates, and the system.",
-        "Ran quarterly project health reviews with the CIO and Domain Directors."
+        "Set up a lightweight PMO in Smartsheet, customizing an existing template to fit the business requirements.",
+        "Established a central project request and intake process and defined the information each request needed.",
+        "Brought project request reviews into quarterly leadership meetings, where leadership approved, rejected or postponed requests.",
+        "Built an executive dashboard showing project progress, schedule and budget risks, and completion.",
+        "Wrote training documentation with screenshots and trained the designated project managers."
       ],
-      "blueprintConnection": "A PMO only works if people don't route around it, which meant designing for adoption from the first decision, not bolting it on later. That same discipline is why the Blueprint treats operating model design and adoption as connected, not sequential afterthoughts.",
+      "blueprintConnection": "This connects to the Blueprint's view that the operating model and adoption have to be planned together, not one after the other.",
       "featured": true
     },
     {
       "id": "sharepoint-modernization",
       "title": "SharePoint Upgrade: The No-Go Decision",
-      "objective": "Move engineering's SharePoint 2007 environment to a 64-bit version supported by the data center without losing data.",
       "role": "Assignment: Cutover planning and go/no-go decision",
-      "bullets": [
-        "Stopped the cutover when the old environment was restarted, accepting the schedule delay.",
-        "Took ownership of the unclear shutdown instructions and reset responsibilities and checkpoints.",
-        "Validated the migration before the second cutover.",
-        "The second cutover had no reported post-launch data-integrity issues."
-      ],
-      "sqdc": {
-        "safety": "Avoided relying on potentially incomplete data after the restart",
-        "quality": "Migration validated before retry; no reported post-launch data-integrity issues",
-        "delivery": "Accepted a schedule delay and completed the second cutover",
-        "cost": "Reduced rework risk; not quantified"
-      },
       "organization": "GE Power",
-      "challenge": "Engineering's SharePoint 2007 environment had to be upgraded to a version supported by the data center.",
+      "challenge": "Engineering's SharePoint environment had to be upgraded to a version supported by the data center.",
       "outcomes": [
-        "Stopped the cutover when the old environment was restarted, accepting a schedule delay to protect data integrity",
-        "Reset responsibilities and checkpoints and validated the migration before retrying",
-        "No reported post-launch data-integrity issues after the second cutover"
+        "Avoided relying on potentially incomplete data after the old environment was restarted",
+        "The second cutover had no reported post-launch data-integrity issues"
       ],
       "capabilities": [
         "Risk Management",
         "Data Integrity",
-        "Enterprise Transformation"
+        "Delivery Governance"
       ],
-      "executiveSummary": "Engineering's SharePoint 2007 project-execution environment had to move to a 64-bit version supported by the data center. During the cutover, the old environment was restarted, which meant data could diverge between the old and new systems. I made the no-go decision and accepted the delay. I took ownership of the unclear shutdown instructions that had allowed the restart, reset responsibilities and checkpoints, and validated the migration before retrying. The second cutover had no reported post-launch data-integrity issues.",
+      "executiveSummary": "Engineering's SharePoint project-execution environment had to move to a 64-bit version supported by the data center. During the cutover, the old environment was restarted, which meant data could diverge between the old and new systems. I made the no-go decision and accepted the delay. I took ownership of the unclear shutdown instructions that had allowed the restart, reset responsibilities and checkpoints, and validated the migration before retrying. The second cutover had no reported post-launch data-integrity issues.",
       "businessChallenge": "The platform supported engineering's project execution, so the upgrade could not risk losing data.",
-      "myRole": "I made the no-go decision and owned the reset: clearer responsibilities and checkpoints, and validation before the second cutover. I also took ownership of the unclear shutdown instructions that contributed to the restart.",
+      "myRole": "I made the no-go decision and owned the reset, with clearer responsibilities and checkpoints and validation before the second cutover. I also took ownership of the unclear shutdown instructions that contributed to the restart.",
       "keyContributions": [
         "Stopped the cutover when the old environment was restarted, accepting the schedule delay.",
         "Took ownership of the unclear shutdown instructions and reset responsibilities and checkpoints.",
         "Validated the migration before the second cutover."
       ],
-      "blueprintConnection": "The decision to pause a live cutover rather than protect a deadline is the same judgment the Blueprint asks organizations to build into AI governance: knowing when to stop is as important as knowing how to scale.",
+      "blueprintConnection": "This connects to the Blueprint's view that governance must include the authority to stop, even when it costs schedule.",
       "featured": false
     },
     {
       "id": "data-quality",
       "title": "Document Data Quality Improvement",
-      "objective": "Resolve a long-standing SharePoint metadata problem without waiting for developer capacity.",
       "role": "Assignment: Metadata correction process and owner coordination",
-      "bullets": [
-        "Exported the metadata into department-specific Excel files using a third-party tool.",
-        "Had document owners validate the corrections.",
-        "Reimported the corrected metadata without custom development.",
-        "Resolved a long-standing metadata issue without waiting for developer capacity."
-      ],
-      "sqdc": {
-        "safety": "Safety impact was not measured",
-        "quality": "Document owners validated the corrected metadata",
-        "delivery": "Resolved without waiting for developer availability",
-        "cost": "Used existing tools and distributed review"
-      },
       "organization": "GE Power",
       "challenge": "A long-standing SharePoint metadata issue had gone unresolved while developer capacity was unavailable.",
       "outcomes": [
-        "Document owners validated the corrected metadata",
-        "Resolved the issue without waiting for developer capacity",
-        "Used existing tools rather than custom development"
+        "Resolved a metadata issue that had gone unresolved for over a year",
+        "Document owners validated the corrections to their own data",
+        "Resolved the issue using existing tools without requiring custom development"
       ],
       "capabilities": [
         "Process Improvement",
@@ -673,71 +424,44 @@
     {
       "id": "itar-ear-compliance",
       "title": "ITAR/EAR Collaboration Templates",
-      "objective": "Enable regulated engineering data to be managed safely within everyday enterprise collaboration workflows.",
       "role": "Assignment: Technical Product Manager / SharePoint Governance Lead",
       "organization": "Pratt & Whitney",
-      "challenge": "Regulated engineering data needed SharePoint collaboration that supported ITAR and EAR export-control requirements without slowing teams down.",
+      "challenge": "Regulated engineering data needed SharePoint collaboration that supported ITAR and EAR export-control requirements and still worked for engineering teams.",
       "outcomes": [
-        "Collaborated with vendors on SharePoint collaboration templates supporting ITAR and EAR requirements",
-        "Collaborated with vendors and with IT, security, legal, and compliance partners on export logging and scanning controls for regulated sites"
+        "SharePoint collaboration templates for regulated engineering sites, developed with vendors to support ITAR and EAR requirements",
+        "Export logging and scanning controls for regulated sites, developed with vendors and IT, security, legal, and compliance partners"
       ],
       "capabilities": [
         "Governance",
         "Export-Control Requirements",
         "Vendor Collaboration"
       ],
-      "bullets": [
-        "Collaborated with vendors on SharePoint collaboration templates supporting ITAR and EAR requirements.",
-        "Collaborated with vendors on export logging and scanning controls for regulated sites.",
-        "Worked with IT, security, legal, and compliance partners on SharePoint governance for regulated sites."
-      ],
-      "sqdc": {
-        "safety": "Supported controls for regulated data; security-incident impact was not measured",
-        "quality": "Templates and controls aligned with export-control requirements",
-        "delivery": "Templates and controls developed with vendors for regulated sites",
-        "cost": "Cost impact was not measured"
-      },
       "executiveSummary": "At Pratt & Whitney, I supported SharePoint governance for sites handling export-controlled engineering information. I collaborated with vendors and internal IT, security, legal, and compliance stakeholders on collaboration templates and export logging and scanning controls designed to support ITAR and EAR requirements.",
-      "businessChallenge": "Export-control requirements are strict, but controls that are too heavy discourage the teams they are meant to protect.",
+      "businessChallenge": "Export-control requirements are strict, and the controls also had to fit how engineering teams collaborate day to day.",
       "myRole": "I led SharePoint governance for these sites and collaborated with vendors on the collaboration templates and controls.",
       "keyContributions": [
         "Collaborated with vendors on SharePoint collaboration templates supporting ITAR and EAR requirements.",
         "Collaborated with vendors on export logging and scanning controls for regulated sites.",
         "Worked with IT, security, legal, and compliance partners on SharePoint governance for regulated sites."
       ],
-      "blueprintConnection": "Compliance that people avoid isn't actually compliance. Designing governance that people would use, not just tolerate, is a principle that carries directly into how the Blueprint approaches AI governance: oversight has to be usable, or it gets bypassed.",
+      "blueprintConnection": "This experience reinforced the importance of working with security, legal, compliance and business stakeholders to establish governance controls that support both regulatory requirements and operational needs.",
       "featured": false
     },
     {
       "id": "agile-delivery",
       "title": "Agile Introduction",
-      "objective": "Introduce a consistent Agile approach for a newly consolidated engineering software team.",
       "role": "Assignment: Agile introduction, training, and Scrum facilitation",
-      "bullets": [
-        "Introduced Agile at the director's request.",
-        "Trained the developers and facilitated Scrum ceremonies.",
-        "Coached the team through adoption.",
-        "The team adopted a more consistent planning and delivery approach."
-      ],
-      "sqdc": {
-        "safety": "Safety impact was not measured",
-        "quality": "More consistent feedback and review rhythm",
-        "delivery": "Shared planning cadence; cycle-time change was not measured",
-        "cost": "Cost impact was not measured"
-      },
       "organization": "GE Power",
       "challenge": "A newly consolidated engineering software team had inconsistent planning and delivery practices.",
       "outcomes": [
-        "Introduced Scrum and trained the team at the director's request",
-        "Facilitated Scrum ceremonies and coached the team through adoption",
-        "Team adopted a more consistent planning and delivery approach"
+        "The consolidated engineering software team adopted a consistent approach to planning, tracking, reviewing and delivering work"
       ],
       "capabilities": [
         "Agile Delivery",
         "Process Improvement",
         "Coaching"
       ],
-      "executiveSummary": "After GE Power consolidated its engineering software developers into one team, practices remained inconsistent. At the director's request, I introduced Agile: I defined the delivery process, trained the developers, facilitated Scrum ceremonies, and coached the team through adoption.",
+      "executiveSummary": "After GE Power consolidated its engineering software developers into one team, practices remained inconsistent. At the director's request, I introduced Agile. I defined the delivery process, trained the developers, facilitated Scrum ceremonies, and coached the team through adoption.",
       "businessChallenge": "A newly consolidated team brought different habits for planning and tracking work, which made delivery harder to plan and coordinate.",
       "myRole": "At the director's request, I introduced Agile to the team, trained the developers, facilitated the Scrum ceremonies, and coached them through adoption.",
       "keyContributions": [
@@ -745,7 +469,6 @@
         "Trained the developers and facilitated Scrum ceremonies.",
         "Coached the team through adoption."
       ],
-      "blueprintConnection": "Delivery predictability doesn't come from adopting a framework, it comes from designing how that framework fits a specific team's context. That same instinct, fit before framework, shapes how the Blueprint's Operating Model phase avoids one-size-fits-all prescriptions.",
       "featured": false
     }
   ],
@@ -754,38 +477,33 @@
       "eyebrow": "THE STORY BEHIND THE WORK",
       "headline": "Enterprise product leadership, with AI as a differentiator.",
       "narrative": [
-        "Over ten years leading enterprise technology initiatives, I discovered that organizations rarely struggle because of technology alone. They struggle because governance, operating models, leadership, and adoption aren't connected. That realization shapes how I lead products today, and it led me to add Enterprise AI operationalization to that work.",
-        "AI didn't introduce a new category of organizational failure. It exposed the same one, at a larger scale, moving faster, with less room to recover from getting it wrong."
+        "I'm an enterprise product and technology leader who enjoys working directly with business and technical teams to solve problems, improve operations and deliver products that provide measurable value.",
+        "I understand the broader enterprise environment and how to leverage its capabilities to support the needs of individual departments and business functions."
       ]
     },
     "leadership": {
       "label": "ENTERPRISE LEADERSHIP",
-      "headline": "Over ten years building the systems that determine whether technology investments actually work.",
-      "body": "Product management, portfolio management, governance, decision support, and modernization, at executive scale, across GE Vernova, GE Power, Pratt & Whitney, and Alstom Power. That experience is the core of what I bring, and the foundation for my AI and product work."
+      "headline": "Enterprise Product Leadership and AI Operationalization",
+      "body": "Product management, portfolio management, governance, decision support, and modernization, across GE Vernova, GE Power, Pratt & Whitney, and Alstom. That experience is the core of what I bring, and the foundation for my AI and product work."
     },
     "whyAI": {
       "label": "WHY ENTERPRISE AI",
       "headline": "The hardest problems were never really about the technology.",
       "body": [
-        "The deeper I got into enterprise technology leadership, the more I noticed that the hardest problems came down to whether an organization could govern a decision, build an operating model people would actually use, and get people to adopt a change instead of quietly working around it.",
-        "Enterprise AI didn't change that pattern. It raised the stakes on it. The organizations that succeed with AI won't be the ones with the best models, they'll be the ones who can operationalize it the way they'd operationalize any enterprise capability: with governance, ownership, adoption, and a way to measure whether it's actually working.",
-        "That's the problem I became interested in solving, not AI as a technology, but AI as something an organization has to be built to sustain. That interest is what eventually became the Enterprise AI Blueprint."
+        "My experience managing enterprise products and technology initiatives helped me recognize that delivering business value requires more than implementing technology. It requires understanding business needs, establishing clear ownership, managing risks and preparing people to adopt new ways of working.",
+        "I pursued graduate education in Enterprise AI to build on that experience and better understand how organizations can apply AI responsibly and effectively. I brought my professional experience and education together to develop the Enterprise AI Blueprint and the products that put these principles into practice."
       ]
     },
     "applied": {
       "label": "INDEPENDENT PRODUCT INNOVATION",
-      "headline": "Testing the thinking by building it.",
-      "body": "My products, including the Enterprise Product & Delivery Playbook and PortfolioIQ, show how these ideas become working software.",
+      "headline": "Turning product ideas into working software",
+      "body": "I created the Enterprise Product & Delivery Playbook and PortfolioIQ to address business problems and demonstrate how I translate product vision, requirements and governance into working software.",
       "cta": "View My Products"
-    },
-    "reflection": {
-      "label": "WHAT CHANGED",
-      "quote": "Organizations rarely struggle because of the technology itself. They struggle because governance, operating models, product leadership, adoption, and business alignment were never connected to begin with, each one solved in isolation, if it gets solved at all. That realization became the foundation for everything I've built since."
     },
     "lookingAhead": {
       "label": "LOOKING AHEAD",
       "headline": "Where I'm focused now.",
-      "body": "I'm pursuing Senior Technical Product Manager roles where I can lead enterprise products with the disciplines that made a difference long before AI was the assignment, using AI as a differentiator where it creates real value."
+      "body": "I'm pursuing Senior Technical Product Manager opportunities where I can work directly with business stakeholders and technical teams to deliver enterprise products that solve meaningful business problems. I also bring Enterprise AI expertise that can help organizations identify and operationalize AI opportunities where they create measurable value."
     },
     "education": {
       "label": "PROFESSIONAL FOUNDATION",
@@ -793,91 +511,50 @@
         "Graduate Certificate in Enterprise AI, Stevens Institute of Technology",
         "Bachelor of Science, Aviation Management and Flight Operations, Daniel Webster College",
         "PMP, Project Management Professional",
-        "ITIL Foundation",
-        "In Progress: SAFe Product Owner / Product Manager (POPM), AWS Cloud Practitioner"
+        "ITIL Foundation"
       ]
-    },
-    "closing": "Enterprise AI isn't just another technology shift. It's an organizational transformation. My work today is focused on helping organizations build the structures, governance, and leadership needed to make Enterprise AI a lasting business capability.",
-    "emotionalClose": "Enterprise AI isn't the destination for me, it became the natural evolution of everything I'd spent my career solving. The technology changed. The organizational challenges did not."
-  },
-  "pov": {
-    "headline": "My Point of View on Enterprise AI",
-    "body": "Most organizations are not failing at AI because of the models. They are struggling because they are applying AI to problems that have not been translated into clear, actionable decisions. AI does not solve problems directly. It supports decisions that address those problems. If the decision is not clearly defined, owned, and measurable, AI introduces risk instead of value.",
-    "coreInsight": "I view AI as a decision-support capability, not a decision-maker. The decision must be explicit, ownership must be assigned, and outcomes must be measurable and validated.",
-    "approach": [
-      "Start with the decision: define what needs to be decided, who owns it, and what success looks like",
-      "Separate pattern work from judgment: AI supports pattern recognition, humans own tradeoffs",
-      "Keep AI in an advisory role with required human validation",
-      "Track false positives, false negatives, and business impact",
-      "Assign ownership and monitor outcomes through feedback loops"
-    ]
-  },
-  "productApproach": [
-    {
-      "title": "Start with the Decision",
-      "body": "I define the decision we are trying to improve, who owns it, and what action it drives. If the decision is unclear, I do not move forward."
-    },
-    {
-      "title": "Decompose the Workflow",
-      "body": "I map the end-to-end workflow, separating data retrieval, rules-based logic, pattern recognition, and human judgment to identify where AI actually fits."
-    },
-    {
-      "title": "Choose the Right Approach",
-      "body": "I determine whether the problem requires rules, search, retrieval-based approaches, or machine learning. Not every problem needs AI."
-    },
-    {
-      "title": "Design Human + AI Interaction",
-      "body": "I define what the AI does, what the human does, and where validation occurs. AI supports decisions, but humans remain accountable."
-    },
-    {
-      "title": "Define Success & Risk",
-      "body": "I establish business metrics and assess risk early, ensuring outputs are measurable, reversible, and appropriate for the level of impact."
-    },
-    {
-      "title": "Pilot, Measure, and Scale",
-      "body": "I start with a narrow use case, measure both output quality and workflow impact, and scale only when value, trust, and control are proven."
     }
-  ],
+  },
   "technologyCapabilities": [
     {
       "title": "AI Patterns & Capabilities",
       "items": [
-        "Context-grounded generation (portfolio data supplied in the prompt) and embedding-based semantic retrieval",
+        "Conversational portfolio analysis with the portfolio data provided directly to the AI model",
         "Explainable rules-based recommendation engines with multi-signal scoring",
-        "Jagged Frontier classification for AI task suitability",
-        "Recommendation drift indicators (simulated in the PortfolioIQ prototype)"
+        "Recommendation confidence and review guidance derived from rules-based scoring (not calibrated against measured accuracy)",
+        "Recommendation drift indicators (simulated in the PortfolioIQ prototype, not operational monitoring)"
       ]
     },
     {
       "title": "Governance & Human-in-the-Loop",
       "items": [
-        "Centaur governance model: the system recommends, humans decide",
-        "Human validation built into the recommendation workflow",
-        "Access-controlled AI features with session-level governance"
+        "Human oversight: the rules engine recommends, and people review and decide",
+        "Human review built into the recommendation workflow, with written rationale required for overrides",
+        "Shared passphrase and session query limits used as prototype cost controls"
       ]
     },
     {
       "title": "Data Architecture",
       "items": [
         "REST API integration with graceful fallback",
-        "Embedding-based indexing for semantic retrieval (local prototype)",
-        "Structured data models using publicly available enterprise-style datasets to demonstrate scalable retrieval and decision-support patterns"
+        "Structured sample data representing an enterprise application portfolio",
+        "Organization data isolation enforced by database security rules (Playbook web platform, verified locally)"
       ]
     },
     {
       "title": "Stack & Deployment",
       "items": [
-        "Python, Streamlit, Anthropic Claude API",
-        "GitHub with automatic redeploy on push (Streamlit Community Cloud)",
-        "Live cloud deployments for the featured products"
+        "PortfolioIQ: Python, Streamlit and the Anthropic Claude API, with a public demo on Streamlit Community Cloud",
+        "Playbook web platform: Next.js, TypeScript and PostgreSQL, verified locally with synthetic data and not yet deployed",
+        "GitHub with automatic redeploy on push for the PortfolioIQ demo"
       ]
     },
     {
       "title": "Outputs & Decision Support",
       "items": [
-        "Rules-based and AI-generated recommendations with supporting rationale",
+        "Rules-based recommendations and AI-assisted portfolio analysis",
         "Structured outputs designed for stakeholder review",
-        "Exportable decision reports for leadership"
+        "Exportable session decision logs (CSV)"
       ]
     },
     {
@@ -894,30 +571,30 @@
       "eyebrow": "ENTERPRISE PRODUCT MANAGEMENT \u00b7 ENTERPRISE AI \u00b7 PRODUCT INNOVATION",
       "headline": "Leading enterprise products from business problem to measurable outcomes.",
       "body": [
-        "I lead enterprise products, programs and portfolios: identifying the problem, learning what customers need, setting priorities, making tradeoffs, and seeing the work through delivery and into operation.",
-        "Across more than ten years of enterprise technology leadership, including product strategy, governance, and application portfolio management at GE Vernova, I supported technology investment decisions for a portfolio of more than 200 applications.",
-        "AI is a differentiator in that work. I developed the Enterprise AI Blueprint for operationalizing AI responsibly, and I build products, including the Enterprise Product & Delivery Playbook and PortfolioIQ, that put governed delivery into practice."
+        "I lead enterprise products, programs and portfolios, working directly with business stakeholders, customers and technical teams. My focus is on understanding business problems, defining requirements, setting priorities, making tradeoffs and bringing the right people together to deliver solutions that provide measurable business value.",
+        "I have more than ten years of enterprise technology leadership experience across product strategy, governance and application portfolio management. At GE Vernova, I supported technology investment decisions for an application portfolio that went from approximately 300 to approximately 100 applications during my ownership, through rationalization and divestiture.",
+        "My expertise in Enterprise AI builds on that experience. I developed the Enterprise AI Blueprint for operationalizing AI responsibly, and I build products, including the Enterprise Product & Delivery Playbook and PortfolioIQ, that put governed delivery into practice."
       ]
     },
     "experience": {
       "label": "ENTERPRISE EXPERIENCE",
       "headline": "Proven experience improving how enterprise technology investments are evaluated, governed, and managed.",
-      "intro": "Across GE Vernova, GE Power, Alstom and Pratt & Whitney, I've worked on the organizational disciplines that determine whether complex technology investments succeed: portfolio strategy, product leadership, governance, modernization, executive decision support, and lifecycle management.",
+      "intro": "Across GE Vernova, GE Power, Pratt & Whitney and Alstom, I've worked on the organizational disciplines that determine whether complex technology investments succeed, including portfolio strategy, product leadership, governance, modernization, executive decision support, and lifecycle management.",
       "stats": [
         {
-          "value": "200+",
-          "label": "Enterprise Applications",
-          "body": "Application portfolio governance and decision support for Steam IT at GE Vernova."
+          "value": "~2x",
+          "label": "Portfolio Health Improvement",
+          "body": "Achieved centrally established governance targets within two quarters, working with application owners and technical teams at GE Vernova."
+        },
+        {
+          "value": "~67%",
+          "label": "Portfolio Footprint Reduction",
+          "body": "Through application rationalization and divestiture activities, from about 300 to about 100 applications."
         },
         {
           "value": "~20",
-          "label": "Legacy Apps Modernized",
-          "body": "Legacy FORTRAN engineering applications re-platformed to AWS at GE Power, with me as Product Owner and Scrum Master."
-        },
-        {
-          "value": "Over 10",
-          "label": "Years",
-          "body": "Enterprise leadership across GE Vernova, GE Power, Alstom, and Pratt & Whitney."
+          "label": "Engineering Apps in Modernization Scope",
+          "body": "Product Owner and Scrum Master for the team modernizing legacy FORTRAN engineering applications, with modernized applications deployed to AWS."
         }
       ]
     },
@@ -944,8 +621,9 @@
       "label": "STRUCTURED METHODOLOGY",
       "headline": "The Enterprise AI Blueprint",
       "body": [
-        "The Enterprise AI Blueprint is a structured executive methodology I developed to help organizations understand their current position, assess readiness, identify capability gaps, establish an operating model, operationalize AI, and connect implementation to measurable business outcomes.",
-        "It draws on more than ten years of enterprise technology leadership, recent applied AI product work, and focused research into how organizations move AI from experimentation to sustained enterprise capability."
+        "The Enterprise AI Blueprint is a structured methodology I developed to help organizations and individual departments understand their current state, assess AI readiness, identify capability gaps, establish or leverage existing operating models and connect AI initiatives to measurable business outcomes.",
+        "It recognizes that departments may have different business needs, priorities, resources and levels of AI readiness. The methodology helps teams operationalize AI while working within existing enterprise strategies, technology platforms and governance policies.",
+        "It draws on my enterprise technology leadership experience, recent applied AI product work and focused research into how organizations move AI from experimentation to sustained enterprise capability."
       ],
       "steps": [
         {
@@ -959,7 +637,7 @@
         {
           "n": "02",
           "title": "AI Readiness",
-          "body": "Assess organizational readiness to adopt AI responsibly.",
+          "body": "Assess business, technology, data and workforce readiness to adopt AI responsibly.",
           "question": "Are we organizationally ready to adopt AI responsibly, or are we ahead of our own capability?",
           "purpose": "Evaluate whether the governance, talent, data, and operational foundations exist to support AI initiatives at the level leadership intends to pursue them.",
           "outcome": "A readiness position that keeps the organization from scaling AI faster than it can govern."
@@ -977,7 +655,7 @@
           "title": "Operating Model",
           "body": "Define how AI initiatives will be governed and delivered.",
           "question": "Who owns AI decisions, and how do initiatives actually get governed and delivered?",
-          "purpose": "Define the structure, accountability, and decision rights required to move AI from ad hoc activity to a managed enterprise function.",
+          "purpose": "Define or leverage the structure, accountability and decision rights needed to govern and deliver AI, building on existing enterprise structures where they exist.",
           "outcome": "A defined operating model that gives leadership a repeatable way to govern and deliver AI initiatives.",
           "detailLink": {
             "label": "Explore the six capability domains",
@@ -1005,18 +683,19 @@
     },
     "appliedWork": {
       "label": "INDEPENDENT PRODUCT INNOVATION",
-      "headline": "Products I've created and lead.",
+      "headline": "Turning product ideas into working software.",
       "cards": [
         {
           "title": "Enterprise Product & Delivery Playbook",
           "subtitle": "Governed Product & Delivery Lifecycle",
-          "body": "An enterprise product I created and lead: a six-phase, 18-step methodology for governed delivery, tested in a working proof of concept and now evolving into a multi-organization web platform.",
+          "body": "Product Managers need a consistent approach to guiding initiatives from business problem through delivery, adoption and ongoing operation. I created the Playbook to provide a structured, repeatable process for AI and non-AI initiatives while complementing existing enterprise systems and governance processes. I own its product vision, strategy, requirements and roadmap.",
           "highlights": [
-            "Six-phase, 18-step governed lifecycle",
+            "Six-phase, 18-step guided delivery lifecycle",
+            "Support for AI and non-AI initiatives",
+            "Governance, risk and decision traceability",
+            "Reassessment and executive visibility",
             "Working proof of concept",
             "Web platform foundation verified",
-            "Decision traceability",
-            "Executive visibility",
             "Product walkthrough video"
           ],
           "cta": "View the Playbook",
@@ -1024,8 +703,8 @@
         },
         {
           "title": "PortfolioIQ",
-          "subtitle": "AI-Powered Application Portfolio Decision Support",
-          "body": "PortfolioIQ helps enterprise leaders evaluate application investments through structured data, transparent rules-based scoring, Claude-powered conversational analysis, and human review.",
+          "subtitle": "AI-Assisted Application Portfolio Decision Support",
+          "body": "Leaders deciding whether to retain, modernize, retire or replace applications need recommendations they can explain and defend. I created PortfolioIQ as a working prototype and defined its vision, requirements and governance. Rules-based scoring generates recommendations, AI helps users analyze the information, and people retain final decision authority.",
           "highlights": [
             "Explainable rules-based recommendations",
             "Human-in-the-loop governance",
@@ -1036,27 +715,11 @@
           ],
           "cta": "View PortfolioIQ",
           "url": "/Product1/genai-advisor.html"
-        },
-        {
-          "title": "AI Security Triage Dashboard",
-          "subtitle": "Enterprise Threat & Vulnerability Decision Support",
-          "body": "A governed AI decision-support platform that helps security analysts triage vulnerabilities, phishing emails, and threat indicators through explainable recommendations and human oversight.",
-          "highlights": [
-            "Live NIST & CISA threat intelligence",
-            "Human-in-the-loop governance",
-            "AI-assisted security triage",
-            "Override tracking",
-            "Complete audit trail",
-            "Live cloud deployment"
-          ],
-          "cta": "View AI Security Triage Dashboard",
-          "url": "/Product4/security-triage.html"
         }
       ]
     },
     "capabilities": {
       "label": "AREAS OF EXPERTISE",
-      "headline": "Three complementary areas of expertise.",
       "items": [
         {
           "title": "Enterprise Product Management",
@@ -1064,29 +727,30 @@
         },
         {
           "title": "Enterprise AI Operationalization",
-          "body": "The Enterprise AI Blueprint and operating model, covering the governance, adoption and value realization that move AI from pilot to sustained capability."
+          "body": "Helping organizations and departments identify AI opportunities, assess readiness, leverage existing enterprise capabilities and deliver solutions with appropriate governance, adoption and measurable business value."
         },
         {
           "title": "Independent Product Innovation",
-          "body": "Products I've created and lead, including the Enterprise Product & Delivery Playbook, PortfolioIQ and the AI Security Triage Dashboard."
+          "body": "Product vision, strategy, requirements, governance and development of the Enterprise Product & Delivery Playbook and PortfolioIQ."
         }
       ]
     }
   },
   "blueprintPage": {
     "hero": {
-      "eyebrow": "STRUCTURED EXECUTIVE METHODOLOGY",
+      "eyebrow": "STRUCTURED METHODOLOGY",
       "headline": "The Enterprise AI Blueprint",
       "body": [
-        "The Enterprise AI Blueprint is a structured executive framework for moving Enterprise AI from isolated pilots to a governed, scalable, and measurable business capability.",
-        "The Enterprise AI Blueprint emerged from a simple observation: the organizational disciplines that determine whether enterprise technology succeeds also determine whether Enterprise AI succeeds. Governance, product leadership, operating models, adoption, and value realization are not AI-specific. They are enterprise capabilities that become even more critical as organizations operationalize AI.",
-        "That perspective was shaped through more than ten years leading enterprise technology investment, governance, and product management at GE Vernova, GE Power, Pratt & Whitney, and Alstom Power."
+        "The Enterprise AI Blueprint is a structured methodology that organizations and individual departments can use to move AI from isolated pilots to a governed, measurable business capability.",
+        "The Enterprise AI Blueprint emerged from a simple observation. The organizational disciplines that determine whether enterprise technology succeeds also determine whether Enterprise AI succeeds. Governance, product leadership, operating models, adoption, and value realization are not AI-specific. They are enterprise capabilities that become even more critical as organizations operationalize AI.",
+        "Departments have different business needs, priorities, resources and levels of AI readiness. A department doesn't need to redesign the organization's operating model to use the Blueprint. It can build on existing enterprise strategy, approved technology platforms, governance policies and supporting teams.",
+        "That perspective was shaped by my experience leading enterprise technology investment, governance and product management at GE Vernova, GE Power, Pratt & Whitney and Alstom."
       ]
     },
     "struggle": {
       "label": "WHY ORGANIZATIONS STRUGGLE",
       "headline": "A successful pilot is only the beginning. Building the governance, operating model and organizational capabilities to sustain AI as an enterprise capability is the harder work.",
-      "intro": "A pilot can be funded and demonstrated on its own. What's difficult is everything after the demo: governance that holds up under real use, delivery that survives contact with existing systems, adoption that outlasts the initial enthusiasm, and a way to prove the investment was worth it. Selecting the right technology is only part of the challenge. Organizations must also establish the governance, delivery and adoption capabilities required to operate AI at scale.",
+      "intro": "A pilot can be funded and demonstrated on its own. What's difficult is everything after the demo, including governance that holds up under real use, delivery that survives contact with existing systems, adoption that outlasts the initial enthusiasm, and a way to prove the investment was worth it. Selecting the right technology is only part of the challenge. Organizations must also establish the governance, delivery and adoption capabilities required to operate AI at scale.",
       "patterns": [
         {
           "title": "Treated as a project, not a capability",
@@ -1105,7 +769,7 @@
     "steps": {
       "label": "THE SIX-STEP BLUEPRINT",
       "headline": "A structured path from fragmented activity to operational AI capability.",
-      "intro": "Each phase answers a specific executive question. Together, they move an organization from uncertainty about where it stands to a governed capability it can measure and sustain."
+      "intro": "Each step answers a specific leadership question. Together, they move an organization or department from uncertainty about where it stands to a governed capability it can measure and sustain."
     },
     "howItWorks": {
       "label": "HOW THE BLUEPRINT WORKS",
@@ -1115,19 +779,9 @@
         "In practice, the phases are iterative. Organizations revisit earlier phases as conditions change, new initiatives emerge, or readiness gaps close. What stays constant is the discipline of not skipping ahead. When a later-stage concern such as adoption or governance isn't addressed at the stage where it's needed, it becomes harder to resolve later."
       ]
     },
-    "relationship": {
-      "label": "RELATIONSHIP TO ENTERPRISE AI",
-      "headline": "The Blueprint connects the disciplines that operationalizing AI actually requires.",
-      "body": "Enterprise AI is not one initiative or one technology decision. It is the product of several disciplines operating as a single system, and the Blueprint is the structure that connects them.",
-      "link": {
-        "text": "These disciplines map to the six capability domains of the Operating Model in Step 04.",
-        "label": "Explore the capability domains",
-        "url": "#operating-model"
-      }
-    },
     "operatingModel": {
       "heading": "Step 04 in Detail: The Enterprise AI Operating Model",
-      "intro": "Step 04 defines the Enterprise AI Operating Model. The Blueprint's six steps describe how an organization moves forward; the Operating Model's six capability domains describe what it must own and sustain. They don't happen in sequence. Each has its own executive ownership, they operate continuously, and decisions in one domain shape the others. Readiness is assessed earlier, in Step 2.",
+      "intro": "Step 04 defines the Enterprise AI Operating Model. The Blueprint's six steps describe how an organization or department moves forward, and the Operating Model's six capability domains describe what must be owned and sustained. They don't happen in sequence. Each needs clear ownership, they operate continuously, and decisions in one domain shape the others. A department doesn't have to build every domain itself. It can rely on enterprise strategy, approved platforms, governance policies and supporting teams that already exist. Readiness is assessed earlier, in Step 2.",
       "domains": [
         {
           "name": "Strategy & Portfolio Management",
@@ -1150,7 +804,7 @@
         {
           "name": "AI Governance",
           "question": "How do we govern AI responsibly throughout its lifecycle?",
-          "does": "It establishes oversight, human accountability, decision rights and risk management across the AI lifecycle, drawing on established risk and compliance frameworks.",
+          "does": "It establishes oversight, human accountability, decision rights and risk management across the AI lifecycle, drawing on established risk and compliance frameworks. Oversight is matched to the risk and intended use, from AI that supports human decisions to bounded automation of approved tasks.",
           "why": "Governance designed in from the start lets AI scale with trust."
         },
         {
@@ -1168,8 +822,8 @@
       ]
     },
     "closing": {
-      "headline": "Ready to operationalize Enterprise AI?",
-      "body": "The Blueprint is the framework. The conversation is where it gets specific to your organization's current state, constraints, and goals.",
+      "headline": "Interested in how I apply this?",
+      "body": "The Blueprint reflects how I approach operationalizing AI. I'd welcome a conversation about how it applies to your products and goals.",
       "links": [
         {
           "label": "Explore the Operating Model",
@@ -1198,11 +852,14 @@
     "hero": {
       "eyebrow": "ENTERPRISE EXPERIENCE",
       "headline": "Enterprise product, program, and portfolio leadership.",
-      "intro": "I've owned products, run programs, and managed application portfolios at GE Vernova, GE Power, and Pratt & Whitney. That meant finding the problem, learning what customers needed, setting priorities, making tradeoffs, and seeing the work through delivery and into operation."
+      "intro": [
+        "My experience includes enterprise product management, program delivery and application portfolio management across GE Vernova, GE Power, Alstom and Pratt & Whitney.",
+        "I've worked directly with business stakeholders, customers and technical teams to solve departmental business problems, modernize enterprise applications, improve operations and support technology investment decisions."
+      ]
     },
     "themes": {
       "label": "ENTERPRISE THEMES",
-      "headline": "The capability areas this experience spans.",
+      "headline": "Core product management and delivery capabilities",
       "items": [
         "Product Ownership",
         "Requirements & Discovery",
@@ -1216,7 +873,7 @@
     },
     "projects": {
       "label": "FEATURED PROJECTS",
-      "headline": "Product, program, and portfolio work.",
+      "headline": "Delivering solutions to business problems",
       "intro": "Each project covers the problem, what I decided and did, and the result."
     },
     "additional": {
@@ -1228,8 +885,8 @@
       "label": "RELATIONSHIP TO THE BLUEPRINT",
       "headline": "How This Work Informs the Blueprint",
       "body": [
-        "This work stands on its own: products delivered, programs run, and portfolios managed inside large organizations.",
-        "It also shaped the Enterprise AI Blueprint. The same things kept deciding the outcome: clear decision criteria, governance people would use, modernization that protected what the business relied on, and adoption planned from the start. The Blueprint turns those lessons into a framework for Enterprise AI."
+        "My experience working with individual departments, business functions and enterprise technology teams shaped the Enterprise AI Blueprint. The same principles that contribute to successful enterprise product delivery also apply to AI. Understanding business needs, making informed decisions, managing risks, leveraging existing enterprise capabilities and planning for adoption are essential to delivering measurable business value.",
+        "The Blueprint brings these principles together in a structured methodology that can be applied at both the department and enterprise level."
       ],
       "cta": "View the Enterprise AI Blueprint"
     }
@@ -1237,9 +894,9 @@
   "appliedPage": {
     "hero": {
       "eyebrow": "INDEPENDENT PRODUCT INNOVATION",
-      "headline": "Where governance, decision support, and product thinking become working solutions.",
+      "headline": "Products I've created to solve specific business problems.",
       "body": [
-        "These products demonstrate how the principles behind the Enterprise AI Blueprint become working enterprise software through explainable AI, human accountability, and governance by design."
+        "Each product starts with a business problem. These products demonstrate how I translate business needs into product requirements, evaluate technical approaches and develop solutions. Each page describes what is working today and what is planned."
       ]
     },
     "products": {
@@ -1260,12 +917,12 @@
           "body": "AI supports pattern recognition. Humans own the tradeoffs and the accountability."
         },
         {
-          "title": "Keep AI Advisory",
-          "body": "Every recommendation requires human validation before it becomes an action."
+          "title": "Match Oversight to Risk",
+          "body": "Human oversight should fit the risk and intended use. In PortfolioIQ, the rules engine recommends, and a person reviews recommendations and makes the final decision."
         },
         {
           "title": "Track What Goes Wrong",
-          "body": "False positives, false negatives, and business impact should be measured, not assumed. The current prototypes record analyst overrides; formal error measurement is planned."
+          "body": "False positives, false negatives, and business impact should be measured, not assumed. PortfolioIQ records recommendation overrides, and formal error measurement is planned."
         },
         {
           "title": "Assign Ownership",
