@@ -179,7 +179,8 @@
     const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
     const targets = navLinks.map(a => document.querySelector(a.getAttribute('href')));
     const fixedOffset = () => {
-      const raw = getComputedStyle(document.documentElement).getPropertyValue('--total-fixed-h');
+      const rootStyle = getComputedStyle(document.documentElement);
+      const raw = rootStyle.getPropertyValue('--fixed-h-live') || rootStyle.getPropertyValue('--total-fixed-h');
       const parsed = parseFloat(raw);
       return (isNaN(parsed) ? 172 : parsed) + 16;
     };

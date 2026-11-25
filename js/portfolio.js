@@ -49,7 +49,27 @@ function buildFooter(data) {
     </div>`;
 }
 
+/* ----- Fixed header height ---------------------------------
+   Measures the real bottom edge of the fixed banner and section menu
+   and publishes it as --fixed-h-live, so page padding and in-page link
+   offsets stay correct when the menu wraps on narrow screens. */
+function syncFixedHeaderHeight() {
+  const nav = document.querySelector('.nav');
+  if (nav && nav.classList.contains('open')) return; // mobile menu expanded: keep the last value
+  let bottom = 0;
+  [document.querySelector('.banner'), document.getElementById('section-nav')].forEach(el => {
+    if (!el) return;
+    const cs = getComputedStyle(el);
+    if (cs.display === 'none' || (cs.position !== 'fixed' && cs.position !== 'sticky')) return;
+    bottom = Math.max(bottom, el.getBoundingClientRect().bottom);
+  });
+  if (bottom > 0) document.documentElement.style.setProperty('--fixed-h-live', Math.ceil(bottom) + 'px');
+}
+
 function initNavToggle() {
+  syncFixedHeaderHeight();
+  window.addEventListener('resize', syncFixedHeaderHeight);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncFixedHeaderHeight);
   const toggle = document.querySelector('.nav-toggle');
   const nav    = document.querySelector('.nav');
   if (!toggle || !nav) return;
