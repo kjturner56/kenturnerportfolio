@@ -91,7 +91,9 @@
       <span class="section-label">POINT OF VIEW</span>
       <h2 id="pov-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-wide);"></h2>
       <p id="pov-body" style="max-width:var(--text-width-standard);"></p>
+      <h3 class="pov-pillars-heading" id="pov-pillars-heading"></h3>
       <div id="pov-pillars-slot"></div>
+      <p class="pov-pillars-link"><a id="pov-pillars-link" href="/blueprint.html#operating-model"></a></p>
       <blockquote class="pull-quote" id="pov-quote"></blockquote>
     </div>
   </section>
@@ -177,7 +179,11 @@
     // Point of View
     document.getElementById('pov-headline').textContent = home.pointOfView.headline;
     document.getElementById('pov-body').textContent = home.pointOfView.body;
+    document.getElementById('pov-pillars-heading').textContent = home.pointOfView.pillarsHeading;
     document.getElementById('pov-pillars-slot').innerHTML = Portfolio.buildPovPillars(home.pointOfView.pillars);
+    const povLink = document.getElementById('pov-pillars-link');
+    povLink.href = home.pointOfView.pillarsLink.url;
+    povLink.innerHTML = `${home.pointOfView.pillarsLink.label} &rarr;`;
     document.getElementById('pov-quote').textContent = home.pointOfView.pullQuote;
 
     // Blueprint

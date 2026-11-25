@@ -71,6 +71,13 @@
 
       <!-- Detailed executive question / purpose / outcome per phase -->
       <div class="bp-steps-grid" id="steps-detail"></div>
+
+      <!-- Step 04 in detail: the six Operating Model capability domains -->
+      <div class="bp-operating-model" id="operating-model">
+        <h3 id="om-heading"></h3>
+        <p id="om-intro" style="max-width:var(--text-width-standard);"></p>
+        <div class="pattern-grid grid-3" id="om-domains"></div>
+      </div>
     </div>
   </section>
 
@@ -91,7 +98,7 @@
       <span class="section-label" id="rel-label"></span>
       <h2 id="rel-headline" style="border-bottom:none;padding-bottom:0;max-width:var(--text-width-wide);"></h2>
       <p id="rel-body" style="max-width:var(--text-width-standard);"></p>
-      <div id="rel-pillars-slot"></div>
+      <p id="rel-link" style="max-width:var(--text-width-standard);"></p>
     </div>
   </section>
 
@@ -149,12 +156,24 @@
     document.getElementById('rel-label').textContent = bp.relationship.label;
     document.getElementById('rel-headline').textContent = bp.relationship.headline;
     document.getElementById('rel-body').textContent = bp.relationship.body;
-    document.getElementById('rel-pillars-slot').innerHTML = Portfolio.buildPovPillars(bp.relationship.pillars);
+    document.getElementById('rel-link').innerHTML =
+      `${bp.relationship.link.text} <a href="${bp.relationship.link.url}">${bp.relationship.link.label} &rarr;</a>`;
+
+    // Step 04 in detail: Operating Model capability domains
+    document.getElementById('om-heading').textContent = bp.operatingModel.heading;
+    document.getElementById('om-intro').textContent = bp.operatingModel.intro;
+    document.getElementById('om-domains').innerHTML = Portfolio.buildDomainCards(bp.operatingModel.domains);
 
     // Closing CTA
     document.getElementById('closing-headline').textContent = bp.closing.headline;
     document.getElementById('closing-body').textContent = bp.closing.body;
     document.getElementById('closing-links').innerHTML = Portfolio.buildClosingLinks(bp.closing.links);
+
+    // Content renders after load, so honor a link to an in-page section (e.g. #operating-model)
+    if (location.hash) {
+      const target = document.getElementById(location.hash.slice(1));
+      if (target) target.scrollIntoView();
+    }
 
     // Scrollspy, same pattern as the homepage
     const navLinks = Array.from(document.querySelectorAll('#section-nav a'));

@@ -918,16 +918,21 @@
     "pointOfView": {
       "label": "POINT OF VIEW",
       "headline": "Enterprise AI is not simply a technology deployment. It is an organizational capability.",
-      "body": "Organizations have become increasingly capable of funding AI pilots and deploying new tools. Far fewer establish the enterprise capabilities required to consistently select the right initiatives, govern them responsibly, coordinate delivery, drive adoption, and measure sustained business value.",
+      "body": "In my experience, the disciplines that determine whether enterprise technology succeeds also determine whether AI succeeds. Selecting the right initiatives, governing them responsibly, coordinating delivery, driving adoption and measuring value are organizational capabilities, not features of a model.",
       "pillars": [
-        "Strategy and portfolio management",
-        "Platform and technology decisions",
-        "Product and delivery leadership",
-        "Governance and human accountability",
-        "Adoption and change enablement",
-        "Value realization and continuous improvement"
+        "Strategy & Portfolio Management",
+        "AI Platform & Technology Strategy",
+        "AI Delivery & Product Management",
+        "AI Governance",
+        "Adoption & Change Enablement",
+        "Value Realization & Performance Management"
       ],
-      "pullQuote": "AI becomes an enterprise capability when governance, delivery, adoption, and value realization operate as one system."
+      "pillarsHeading": "Six Core Capabilities for Enterprise AI",
+      "pillarsLink": {
+        "label": "How each capability works in the Enterprise AI Operating Model",
+        "url": "/blueprint.html#operating-model"
+      },
+      "pullQuote": "Enterprise AI becomes a lasting capability when strategy, technology, delivery, governance, adoption and value realization operate as one system."
     },
     "blueprint": {
       "label": "STRUCTURED METHODOLOGY",
@@ -967,7 +972,11 @@
           "body": "Define how AI initiatives will be governed and delivered.",
           "question": "Who owns AI decisions, and how do initiatives actually get governed and delivered?",
           "purpose": "Define the structure, accountability, and decision rights required to move AI from ad hoc activity to a managed enterprise function.",
-          "outcome": "A defined operating model that gives leadership a repeatable way to govern and deliver AI initiatives."
+          "outcome": "A defined operating model that gives leadership a repeatable way to govern and deliver AI initiatives.",
+          "detailLink": {
+            "label": "Explore the six capability domains",
+            "url": "#operating-model"
+          }
         },
         {
           "n": "05",
@@ -1070,8 +1079,8 @@
     },
     "struggle": {
       "label": "WHY ORGANIZATIONS STRUGGLE",
-      "headline": "Launching an AI pilot is often the easy part. Building the governance, operating model, and organizational capabilities required to sustain AI as an enterprise capability is much harder.",
-      "intro": "Pilots are relatively easy to fund and easy to demo. What's difficult is everything after the demo: governance that holds up under real use, delivery that survives contact with existing systems, adoption that outlasts the initial enthusiasm, and a way to prove the investment was worth it. Most AI initiatives don't fail because the model was wrong. They stall because the organization never built the capability to run them at scale.",
+      "headline": "A successful pilot is only the beginning. Building the governance, operating model and organizational capabilities to sustain AI as an enterprise capability is the harder work.",
+      "intro": "A pilot can be funded and demonstrated on its own. What's difficult is everything after the demo: governance that holds up under real use, delivery that survives contact with existing systems, adoption that outlasts the initial enthusiasm, and a way to prove the investment was worth it. Selecting the right technology is only part of the challenge. Organizations must also establish the governance, delivery and adoption capabilities required to operate AI at scale.",
       "patterns": [
         {
           "title": "Treated as a project, not a capability",
@@ -1097,20 +1106,59 @@
       "headline": "Each phase builds on the one before it.",
       "body": [
         "The Blueprint is sequential, not because process demands it, but because each phase produces something the next phase depends on. You cannot design a credible operating model before you understand your actual readiness. You cannot operationalize AI at scale on top of a governance structure that doesn't yet exist.",
-        "In practice, the phases are iterative. Organizations revisit earlier phases as conditions change, new initiatives emerge, or readiness gaps close. What stays constant is the discipline of not skipping ahead. Most of the AI initiatives that stall did so because a later-stage problem, usually adoption or governance, was never addressed at the stage where it needed to be."
+        "In practice, the phases are iterative. Organizations revisit earlier phases as conditions change, new initiatives emerge, or readiness gaps close. What stays constant is the discipline of not skipping ahead. When a later-stage concern such as adoption or governance isn't addressed at the stage where it's needed, it becomes harder to resolve later."
       ]
     },
     "relationship": {
       "label": "RELATIONSHIP TO ENTERPRISE AI",
       "headline": "The Blueprint connects the disciplines that operationalizing AI actually requires.",
       "body": "Enterprise AI is not one initiative or one technology decision. It is the product of several disciplines operating as a single system, and the Blueprint is the structure that connects them.",
-      "pillars": [
-        "Strategy and portfolio management",
-        "Organizational readiness and governance",
-        "Operating model and decision rights",
-        "Product and delivery leadership",
-        "Adoption and change enablement",
-        "Value realization and continuous improvement"
+      "link": {
+        "text": "These disciplines map to the six capability domains of the Operating Model in Step 04.",
+        "label": "Explore the capability domains",
+        "url": "#operating-model"
+      }
+    },
+    "operatingModel": {
+      "heading": "Step 04 in Detail: The Enterprise AI Operating Model",
+      "intro": "Step 04 defines the Enterprise AI Operating Model. The Blueprint's six steps describe how an organization moves forward; the Operating Model's six capability domains describe what it must own and sustain. They don't happen in sequence. Each has its own executive ownership, they operate continuously, and decisions in one domain shape the others. Readiness is assessed earlier, in Step 2.",
+      "domains": [
+        {
+          "name": "Strategy & Portfolio Management",
+          "question": "What AI initiatives should we pursue, and why?",
+          "does": "It selects and prioritizes AI initiatives against business strategy and manages them as a portfolio.",
+          "why": "Investment goes to the initiatives most likely to create value, and strategy shapes how the other domains are governed and delivered."
+        },
+        {
+          "name": "AI Platform & Technology Strategy",
+          "question": "What enterprise AI platform, architecture, model and integration capabilities are required?",
+          "does": "It defines the shared platform, architecture, models and integrations that initiatives build on.",
+          "why": "Initiatives build on consistent, supportable foundations instead of solving the same technology problems separately."
+        },
+        {
+          "name": "AI Delivery & Product Management",
+          "question": "How do we consistently deliver enterprise AI capabilities?",
+          "does": "It turns approved initiatives into working capabilities through product management and a governed delivery lifecycle.",
+          "why": "Consistent delivery is how strategy becomes something the business can use, and it shapes adoption."
+        },
+        {
+          "name": "AI Governance",
+          "question": "How do we govern AI responsibly throughout its lifecycle?",
+          "does": "It establishes oversight, human accountability, decision rights and risk management across the AI lifecycle, drawing on established risk and compliance frameworks.",
+          "why": "Governance designed in from the start lets AI scale with trust."
+        },
+        {
+          "name": "Adoption & Change Enablement",
+          "question": "How do we ensure people successfully adopt AI?",
+          "does": "It prepares people and supports changes to workflows through training, communication and ongoing support.",
+          "why": "Value depends on people actually changing how they work."
+        },
+        {
+          "name": "Value Realization & Performance Management",
+          "question": "How do we measure, sustain and improve business value?",
+          "does": "It defines how value is measured, tracks results and feeds what's learned back into priorities.",
+          "why": "Business outcomes are the feedback that keeps the whole model improving."
+        }
       ]
     },
     "closing": {

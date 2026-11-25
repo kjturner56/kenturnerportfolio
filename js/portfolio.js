@@ -342,6 +342,18 @@ function buildDetailedSteps(steps) {
         <div><span class="bp-meta-label">Purpose</span><p>${s.purpose}</p></div>
         <div><span class="bp-meta-label">Outcome</span><p>${s.outcome}</p></div>
       </div>
+      ${s.detailLink ? `<p class="bp-step-link"><a href="${s.detailLink.url}">${s.detailLink.label} &darr;</a></p>` : ''}
+    </div>`).join('');
+}
+
+/* ----- Blueprint page: Operating Model capability domains ---- */
+function buildDomainCards(domains) {
+  return domains.map(c => `
+    <div class="pattern-card">
+      <h4>${c.name}</h4>
+      <p class="domain-question">&ldquo;${c.question}&rdquo;</p>
+      <p>${c.does}</p>
+      <p class="domain-why"><strong>Why it matters:</strong> ${c.why}</p>
     </div>`).join('');
 }
 
@@ -569,7 +581,7 @@ window.Portfolio = {
   initNavToggle, setYear, tagList, badge,
   buildHeroVisual, buildStatCards, buildPovPillars,
   buildBlueprintSteps, buildAppliedCards, buildCapabilityCards,
-  buildPatternCards, buildDetailedSteps, buildClosingLinks,
+  buildPatternCards, buildDetailedSteps, buildDomainCards, buildClosingLinks,
   buildThemeChips, buildExperienceCards,
   initExpModal, openExpModal, closeExpModal, expModalPrev, expModalNext,
   buildPrincipleCards,
