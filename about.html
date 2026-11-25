@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Kenneth R. Turner</title>
   <meta name="description" content="How enterprise product, program and portfolio leadership led to Enterprise AI operationalization and the products I build." />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.css?v=20261124" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
@@ -118,56 +118,73 @@
 <div class="role-intent" id="role-intent"></div>
 <footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-<script src="/js/portfolio.js"></script>
+<script src="/js/portfolio.js?v=20261124"></script>
 <script>
   (async () => {
     const d = await Portfolio.loadData();
-    document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'about.html');
-    document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
-    document.getElementById('role-intent').textContent = d.meta.tagline;
-    Portfolio.initNavToggle();
-    Portfolio.setYear();
+    Portfolio.renderSection('Site navigation and footer', () => {
+      document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'about.html');
+      document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
+      document.getElementById('role-intent').textContent = d.meta.tagline;
+      Portfolio.initNavToggle();
+      Portfolio.setYear();
+    });
 
     const a = d.about;
 
     // Hero
-    document.getElementById('hero-eyebrow').textContent = a.hero.eyebrow;
-    document.getElementById('hero-headline').textContent = a.hero.headline;
-    document.getElementById('hero-narrative').innerHTML = a.hero.narrative.map(p => `<p>${p}</p>`).join('');
+    Portfolio.renderSection('Hero', () => {
+      document.getElementById('hero-eyebrow').textContent = a.hero.eyebrow;
+      document.getElementById('hero-headline').textContent = a.hero.headline;
+      document.getElementById('hero-narrative').innerHTML = a.hero.narrative.map(p => `<p>${p}</p>`).join('');
+    });
 
     // Enterprise Leadership
-    document.getElementById('leadership-label').textContent = a.leadership.label;
-    document.getElementById('leadership-headline').textContent = a.leadership.headline;
-    document.getElementById('leadership-body').textContent = a.leadership.body;
+    Portfolio.renderSection('Enterprise Leadership', () => {
+      document.getElementById('leadership-label').textContent = a.leadership.label;
+      document.getElementById('leadership-headline').textContent = a.leadership.headline;
+      document.getElementById('leadership-body').textContent = a.leadership.body;
+    });
 
     // Why Enterprise AI
-    document.getElementById('whyai-label').textContent = a.whyAI.label;
-    document.getElementById('whyai-headline').textContent = a.whyAI.headline;
-    document.getElementById('whyai-body').innerHTML = a.whyAI.body.map(p => `<p>${p}</p>`).join('');
+    Portfolio.renderSection('Why Enterprise AI', () => {
+      document.getElementById('whyai-label').textContent = a.whyAI.label;
+      document.getElementById('whyai-headline').textContent = a.whyAI.headline;
+      document.getElementById('whyai-body').innerHTML = a.whyAI.body.map(p => `<p>${p}</p>`).join('');
+    });
 
     // Building Applied AI
-    document.getElementById('applied-label').textContent = a.applied.label;
-    document.getElementById('applied-headline').textContent = a.applied.headline;
-    document.getElementById('applied-body').textContent = a.applied.body;
-    document.getElementById('applied-cta').textContent = a.applied.cta;
+    Portfolio.renderSection('Building Applied AI', () => {
+      document.getElementById('applied-label').textContent = a.applied.label;
+      document.getElementById('applied-headline').textContent = a.applied.headline;
+      document.getElementById('applied-body').textContent = a.applied.body;
+      document.getElementById('applied-cta').textContent = a.applied.cta;
+    });
 
     // Personal Reflection
-    document.getElementById('reflection-label').textContent = a.reflection.label;
-    document.getElementById('reflection-quote').textContent = a.reflection.quote;
+    Portfolio.renderSection('Personal Reflection', () => {
+      document.getElementById('reflection-label').textContent = a.reflection.label;
+      document.getElementById('reflection-quote').textContent = a.reflection.quote;
+    });
 
     // Looking Ahead
-    document.getElementById('ahead-label').textContent = a.lookingAhead.label;
-    document.getElementById('ahead-headline').textContent = a.lookingAhead.headline;
-    document.getElementById('ahead-body').textContent = a.lookingAhead.body;
+    Portfolio.renderSection('Looking Ahead', () => {
+      document.getElementById('ahead-label').textContent = a.lookingAhead.label;
+      document.getElementById('ahead-headline').textContent = a.lookingAhead.headline;
+      document.getElementById('ahead-body').textContent = a.lookingAhead.body;
+    });
 
     // Education & Certifications
-    document.getElementById('edu-label').textContent = a.education.label;
-    document.getElementById('edu-list').innerHTML = a.education.items.map(i => `<li>${i}</li>`).join('');
+    Portfolio.renderSection('Education & Certifications', () => {
+      document.getElementById('edu-label').textContent = a.education.label;
+      document.getElementById('edu-list').innerHTML = a.education.items.map(i => `<li>${i}</li>`).join('');
+    });
 
     // Closing
-    document.getElementById('emotional-close').textContent = a.emotionalClose;
-    document.getElementById('closing-statement').textContent = a.closing;
-
+    Portfolio.renderSection('Closing', () => {
+      document.getElementById('emotional-close').textContent = a.emotionalClose;
+      document.getElementById('closing-statement').textContent = a.closing;
+    });
     // Scrollspy, same pattern as the rest of the site
     const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
     const targets = navLinks.map(link => document.querySelector(link.getAttribute('href')));

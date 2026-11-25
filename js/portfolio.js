@@ -5,13 +5,29 @@
 // Global data cache
 let DATA = null;
 
+// Release version, read from this script's own URL (portfolio.js?v=...), so the
+// data file is requested with the same version as the page's CSS and JS. A new
+// release changes every asset URL together, so a returning visitor never mixes
+// new pages with cached older assets.
+const ASSET_VERSION = (() => {
+  try { return new URL(document.currentScript.src).searchParams.get('v') || ''; }
+  catch (e) { return ''; }
+})();
+
 async function loadData() {
   if (DATA) return DATA;
   const depth = document.body.dataset.depth || '0';
   const prefix = depth === '1' ? '../' : '/';
-  const res = await fetch(prefix + 'data/portfolio.json');
+  const res = await fetch(prefix + 'data/portfolio.json' + (ASSET_VERSION ? '?v=' + ASSET_VERSION : ''));
   DATA = await res.json();
   return DATA;
+}
+
+// Render one page section in isolation: an error in one section is logged
+// and the remaining sections still render.
+function renderSection(name, fn) {
+  try { fn(); }
+  catch (err) { console.error('Section "' + name + '" could not be rendered:', err); }
 }
 
 /* ----- Nav / Footer injection ----------------------------- */
@@ -600,7 +616,7 @@ function renderProductModal() {
 }
 
 window.Portfolio = {
-  loadData, buildNav, buildFooter, buildProductCards,
+  loadData, renderSection, buildNav, buildFooter, buildProductCards,
   buildProjectCards, buildApproachCards, buildTechCards,
   initNavToggle, setYear, tagList, badge,
   buildHeroVisual, buildStatCards, buildPovPillars,

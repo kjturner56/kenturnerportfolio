@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Products | Kenneth R. Turner</title>
   <meta name="description" content="Products I've created and lead, including the Enterprise Product &amp; Delivery Playbook and PortfolioIQ." />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.css?v=20261124" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
@@ -151,40 +151,49 @@
 <div class="role-intent" id="role-intent"></div>
 <footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-<script src="/js/portfolio.js"></script>
+<script src="/js/portfolio.js?v=20261124"></script>
 <script>
   (async () => {
     const d = await Portfolio.loadData();
-    document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'products.html');
-    document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
-    document.getElementById('role-intent').textContent = d.meta.tagline;
-    Portfolio.initNavToggle();
-    Portfolio.setYear();
+    Portfolio.renderSection('Site navigation and footer', () => {
+      document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'products.html');
+      document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
+      document.getElementById('role-intent').textContent = d.meta.tagline;
+      Portfolio.initNavToggle();
+      Portfolio.setYear();
+    });
 
     const ap = d.appliedPage;
 
     // Hero
-    document.getElementById('hero-eyebrow').textContent = ap.hero.eyebrow;
-    document.getElementById('hero-headline').textContent = ap.hero.headline;
-    document.getElementById('hero-body').innerHTML = ap.hero.body.map(p => `<p>${p}</p>`).join('');
+    Portfolio.renderSection('Hero', () => {
+      document.getElementById('hero-eyebrow').textContent = ap.hero.eyebrow;
+      document.getElementById('hero-headline').textContent = ap.hero.headline;
+      document.getElementById('hero-body').innerHTML = ap.hero.body.map(p => `<p>${p}</p>`).join('');
+    });
 
     // Featured Products
-    document.getElementById('products-label').textContent = ap.products.label;
-    document.getElementById('products-headline').textContent = ap.products.headline;
-    document.getElementById('products-intro').textContent = ap.products.intro;
-    document.getElementById('product-cards').innerHTML = Portfolio.buildProductCards(d.aiProducts, '0');
-    Portfolio.initProductModal(d.aiProducts);
+    Portfolio.renderSection('Featured Products', () => {
+      document.getElementById('products-label').textContent = ap.products.label;
+      document.getElementById('products-headline').textContent = ap.products.headline;
+      document.getElementById('products-intro').textContent = ap.products.intro;
+      document.getElementById('product-cards').innerHTML = Portfolio.buildProductCards(d.aiProducts, '0');
+      Portfolio.initProductModal(d.aiProducts);
+    });
 
     // Product Thinking
-    document.getElementById('principles-label').textContent = ap.principles.label;
-    document.getElementById('principles-headline').textContent = ap.principles.headline;
-    document.getElementById('principles-cards').innerHTML = Portfolio.buildPrincipleCards(ap.principles.items);
+    Portfolio.renderSection('Product Thinking', () => {
+      document.getElementById('principles-label').textContent = ap.principles.label;
+      document.getElementById('principles-headline').textContent = ap.principles.headline;
+      document.getElementById('principles-cards').innerHTML = Portfolio.buildPrincipleCards(ap.principles.items);
+    });
 
     // Technical Capabilities
-    document.getElementById('tech-label').textContent = ap.technology.label;
-    document.getElementById('tech-headline').textContent = ap.technology.headline;
-    document.getElementById('tech-cards').innerHTML = Portfolio.buildTechCards(d.technologyCapabilities);
-
+    Portfolio.renderSection('Technical Capabilities', () => {
+      document.getElementById('tech-label').textContent = ap.technology.label;
+      document.getElementById('tech-headline').textContent = ap.technology.headline;
+      document.getElementById('tech-cards').innerHTML = Portfolio.buildTechCards(d.technologyCapabilities);
+    });
     // Scrollspy, same pattern as the rest of the site
     const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
     const targets = navLinks.map(a => document.querySelector(a.getAttribute('href')));

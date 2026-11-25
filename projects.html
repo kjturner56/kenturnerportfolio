@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Enterprise Experience | Kenneth R. Turner</title>
   <meta name="description" content="Enterprise product, program, and portfolio leadership at GE Vernova, GE Power, and Pratt &amp; Whitney: modernization, governance, and delivery." />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.css?v=20261124" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
@@ -155,50 +155,61 @@
 <div class="role-intent" id="role-intent"></div>
 <footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-<script src="/js/portfolio.js"></script>
+<script src="/js/portfolio.js?v=20261124"></script>
 <script>
   (async () => {
     const d = await Portfolio.loadData();
-    document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'projects.html');
-    document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
-    document.getElementById('role-intent').textContent = d.meta.tagline;
-    Portfolio.initNavToggle();
-    Portfolio.setYear();
+    Portfolio.renderSection('Site navigation and footer', () => {
+      document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'projects.html');
+      document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
+      document.getElementById('role-intent').textContent = d.meta.tagline;
+      Portfolio.initNavToggle();
+      Portfolio.setYear();
+    });
 
     const ep = d.experiencePage;
-
-    // Hero
-    document.getElementById('exp-hero-eyebrow').textContent = ep.hero.eyebrow;
-    document.getElementById('exp-hero-headline').textContent = ep.hero.headline;
-    document.getElementById('exp-hero-intro').textContent = ep.hero.intro;
-
-    // Enterprise Themes
-    document.getElementById('themes-label').textContent = ep.themes.label;
-    document.getElementById('themes-headline').textContent = ep.themes.headline;
-    document.getElementById('themes-chips').innerHTML = Portfolio.buildThemeChips(ep.themes.items);
-
-    // Featured Projects
-    document.getElementById('projects-label').textContent = ep.projects.label;
-    document.getElementById('projects-headline').textContent = ep.projects.headline;
-    document.getElementById('projects-intro').textContent = ep.projects.intro;
     // Featured first, then additional; one modal list keeps Prev/Next across both
     const featured = d.enterpriseProjects.filter(p => p.featured);
     const additional = d.enterpriseProjects.filter(p => !p.featured);
-    document.getElementById('projects-cards').innerHTML = Portfolio.buildExperienceCards(featured);
-    Portfolio.initExpModal(featured.concat(additional));
+
+    // Hero
+    Portfolio.renderSection('Hero', () => {
+      document.getElementById('exp-hero-eyebrow').textContent = ep.hero.eyebrow;
+      document.getElementById('exp-hero-headline').textContent = ep.hero.headline;
+      document.getElementById('exp-hero-intro').textContent = ep.hero.intro;
+    });
+
+    // Enterprise Themes
+    Portfolio.renderSection('Enterprise Themes', () => {
+      document.getElementById('themes-label').textContent = ep.themes.label;
+      document.getElementById('themes-headline').textContent = ep.themes.headline;
+      document.getElementById('themes-chips').innerHTML = Portfolio.buildThemeChips(ep.themes.items);
+    });
+
+    // Featured Projects
+    Portfolio.renderSection('Featured Projects', () => {
+      document.getElementById('projects-label').textContent = ep.projects.label;
+      document.getElementById('projects-headline').textContent = ep.projects.headline;
+      document.getElementById('projects-intro').textContent = ep.projects.intro;
+      document.getElementById('projects-cards').innerHTML = Portfolio.buildExperienceCards(featured);
+      Portfolio.initExpModal(featured.concat(additional));
+    });
 
     // Additional Enterprise Experience
-    document.getElementById('additional-label').textContent = ep.additional.label;
-    document.getElementById('additional-headline').textContent = ep.additional.headline;
-    document.getElementById('additional-intro').textContent = ep.additional.intro;
-    document.getElementById('additional-cards').innerHTML = Portfolio.buildExperienceCards(additional, featured.length);
+    Portfolio.renderSection('Additional Enterprise Experience', () => {
+      document.getElementById('additional-label').textContent = ep.additional.label;
+      document.getElementById('additional-headline').textContent = ep.additional.headline;
+      document.getElementById('additional-intro').textContent = ep.additional.intro;
+      document.getElementById('additional-cards').innerHTML = Portfolio.buildExperienceCards(additional, featured.length);
+    });
 
     // Relationship to the Blueprint
-    document.getElementById('rel-label').textContent = ep.relationship.label;
-    document.getElementById('rel-headline').textContent = ep.relationship.headline;
-    document.getElementById('rel-body').innerHTML = ep.relationship.body.map(p => `<p>${p}</p>`).join('');
-    document.getElementById('rel-cta').textContent = ep.relationship.cta;
-
+    Portfolio.renderSection('Relationship to the Blueprint', () => {
+      document.getElementById('rel-label').textContent = ep.relationship.label;
+      document.getElementById('rel-headline').textContent = ep.relationship.headline;
+      document.getElementById('rel-body').innerHTML = ep.relationship.body.map(p => `<p>${p}</p>`).join('');
+      document.getElementById('rel-cta').textContent = ep.relationship.cta;
+    });
     // Scrollspy, same pattern as Home and Blueprint
     const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
     const targets = navLinks.map(a => document.querySelector(a.getAttribute('href')));

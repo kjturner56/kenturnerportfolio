@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kenneth R. Turner | Enterprise Product & AI Leadership</title>
   <meta name="description" content="Enterprise product, program and portfolio leader with expertise in Enterprise AI operationalization and independent product innovation." />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.css?v=20261124" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
@@ -153,53 +153,66 @@
 <div class="role-intent" id="role-intent"></div>
 <footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-<script src="/js/portfolio.js"></script>
+<script src="/js/portfolio.js?v=20261124"></script>
 <script>
   (async () => {
     const d = await Portfolio.loadData();
-    document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'index.html');
-    document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
-    document.getElementById('role-intent').textContent = d.meta.tagline;
-    Portfolio.initNavToggle();
-    Portfolio.setYear();
+    Portfolio.renderSection('Site navigation and footer', () => {
+      document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'index.html');
+      document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
+      document.getElementById('role-intent').textContent = d.meta.tagline;
+      Portfolio.initNavToggle();
+      Portfolio.setYear();
+    });
 
     const home = d.home;
 
     // Hero
-    document.getElementById('hero-eyebrow').textContent = home.hero.eyebrow;
-    document.getElementById('hero-headline').textContent = home.hero.headline;
-    document.getElementById('hero-body').innerHTML = home.hero.body.map(p => `<p>${p}</p>`).join('');
-    document.getElementById('hero-visual-slot').innerHTML = Portfolio.buildHeroVisual();
+    Portfolio.renderSection('Hero', () => {
+      document.getElementById('hero-eyebrow').textContent = home.hero.eyebrow;
+      document.getElementById('hero-headline').textContent = home.hero.headline;
+      document.getElementById('hero-body').innerHTML = home.hero.body.map(p => `<p>${p}</p>`).join('');
+      document.getElementById('hero-visual-slot').innerHTML = Portfolio.buildHeroVisual();
+    });
 
     // Enterprise Experience
-    document.getElementById('exp-headline').textContent = home.experience.headline;
-    document.getElementById('exp-intro').textContent = home.experience.intro;
-    document.getElementById('exp-stats').innerHTML = Portfolio.buildStatCards(home.experience.stats);
+    Portfolio.renderSection('Enterprise Experience', () => {
+      document.getElementById('exp-headline').textContent = home.experience.headline;
+      document.getElementById('exp-intro').textContent = home.experience.intro;
+      document.getElementById('exp-stats').innerHTML = Portfolio.buildStatCards(home.experience.stats);
+    });
 
     // Point of View
-    document.getElementById('pov-headline').textContent = home.pointOfView.headline;
-    document.getElementById('pov-body').textContent = home.pointOfView.body;
-    document.getElementById('pov-pillars-heading').textContent = home.pointOfView.pillarsHeading;
-    document.getElementById('pov-pillars-slot').innerHTML = Portfolio.buildPovPillars(home.pointOfView.pillars);
-    const povLink = document.getElementById('pov-pillars-link');
-    povLink.href = home.pointOfView.pillarsLink.url;
-    povLink.innerHTML = `${home.pointOfView.pillarsLink.label} &rarr;`;
-    document.getElementById('pov-quote').textContent = home.pointOfView.pullQuote;
+    Portfolio.renderSection('Point of View', () => {
+      document.getElementById('pov-headline').textContent = home.pointOfView.headline;
+      document.getElementById('pov-body').textContent = home.pointOfView.body;
+      document.getElementById('pov-pillars-heading').textContent = home.pointOfView.pillarsHeading;
+      document.getElementById('pov-pillars-slot').innerHTML = Portfolio.buildPovPillars(home.pointOfView.pillars);
+      const povLink = document.getElementById('pov-pillars-link');
+      povLink.href = home.pointOfView.pillarsLink.url;
+      povLink.innerHTML = `${home.pointOfView.pillarsLink.label} &rarr;`;
+      document.getElementById('pov-quote').textContent = home.pointOfView.pullQuote;
+    });
 
     // Blueprint
-    document.getElementById('blueprint-headline').textContent = home.blueprint.headline;
-    document.getElementById('blueprint-body').innerHTML = home.blueprint.body.map(p => `<p>${p}</p>`).join('');
-    document.getElementById('blueprint-steps-slot').innerHTML = Portfolio.buildBlueprintSteps(home.blueprint.steps);
-    document.getElementById('blueprint-cta').textContent = home.blueprint.cta;
+    Portfolio.renderSection('Blueprint', () => {
+      document.getElementById('blueprint-headline').textContent = home.blueprint.headline;
+      document.getElementById('blueprint-body').innerHTML = home.blueprint.body.map(p => `<p>${p}</p>`).join('');
+      document.getElementById('blueprint-steps-slot').innerHTML = Portfolio.buildBlueprintSteps(home.blueprint.steps);
+      document.getElementById('blueprint-cta').textContent = home.blueprint.cta;
+    });
 
     // Applied Work
-    document.getElementById('applied-headline').textContent = home.appliedWork.headline;
-    document.getElementById('applied-cards').innerHTML = Portfolio.buildAppliedCards(home.appliedWork.cards);
+    Portfolio.renderSection('Applied Work', () => {
+      document.getElementById('applied-headline').textContent = home.appliedWork.headline;
+      document.getElementById('applied-cards').innerHTML = Portfolio.buildAppliedCards(home.appliedWork.cards);
+    });
 
     // Capabilities
-    document.getElementById('cap-headline').textContent = home.capabilities.headline;
-    document.getElementById('cap-cards').innerHTML = Portfolio.buildCapabilityCards(home.capabilities.items);
-
+    Portfolio.renderSection('Capabilities', () => {
+      document.getElementById('cap-headline').textContent = home.capabilities.headline;
+      document.getElementById('cap-cards').innerHTML = Portfolio.buildCapabilityCards(home.capabilities.items);
+    });
     // Scrollspy: highlight the active section-nav link as the visitor scrolls
     const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
     const targets = navLinks.map(a => document.querySelector(a.getAttribute('href')));

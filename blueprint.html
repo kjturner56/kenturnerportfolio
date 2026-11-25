@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Enterprise AI Blueprint | Kenneth R. Turner</title>
   <meta name="description" content="A structured executive framework for moving Enterprise AI from isolated pilots to a governed, scalable, and measurable business capability." />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style.css?v=20261124" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
@@ -116,59 +116,74 @@
 <div class="role-intent" id="role-intent"></div>
 <footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-<script src="/js/portfolio.js"></script>
+<script src="/js/portfolio.js?v=20261124"></script>
 <script>
   (async () => {
     const d = await Portfolio.loadData();
-    document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'blueprint.html');
-    document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
-    document.getElementById('role-intent').textContent = d.meta.tagline;
-    Portfolio.initNavToggle();
-    Portfolio.setYear();
+    Portfolio.renderSection('Site navigation and footer', () => {
+      document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'blueprint.html');
+      document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
+      document.getElementById('role-intent').textContent = d.meta.tagline;
+      Portfolio.initNavToggle();
+      Portfolio.setYear();
+    });
 
     const bp = d.blueprintPage;
     const steps = d.home.blueprint.steps;
 
     // Hero
-    document.getElementById('bp-hero-eyebrow').textContent = bp.hero.eyebrow;
-    document.getElementById('bp-hero-headline').textContent = bp.hero.headline;
-    document.getElementById('bp-hero-body').innerHTML = bp.hero.body.map(p => `<p>${p}</p>`).join('');
+    Portfolio.renderSection('Hero', () => {
+      document.getElementById('bp-hero-eyebrow').textContent = bp.hero.eyebrow;
+      document.getElementById('bp-hero-headline').textContent = bp.hero.headline;
+      document.getElementById('bp-hero-body').innerHTML = bp.hero.body.map(p => `<p>${p}</p>`).join('');
+    });
 
     // Why Organizations Struggle
-    document.getElementById('struggle-label').textContent = bp.struggle.label;
-    document.getElementById('struggle-headline').textContent = bp.struggle.headline;
-    document.getElementById('struggle-intro').textContent = bp.struggle.intro;
-    document.getElementById('struggle-patterns').innerHTML = Portfolio.buildPatternCards(bp.struggle.patterns);
+    Portfolio.renderSection('Why Organizations Struggle', () => {
+      document.getElementById('struggle-label').textContent = bp.struggle.label;
+      document.getElementById('struggle-headline').textContent = bp.struggle.headline;
+      document.getElementById('struggle-intro').textContent = bp.struggle.intro;
+      document.getElementById('struggle-patterns').innerHTML = Portfolio.buildPatternCards(bp.struggle.patterns);
+    });
 
     // Six-Step Blueprint
-    document.getElementById('steps-label').textContent = bp.steps.label;
-    document.getElementById('steps-headline').textContent = bp.steps.headline;
-    document.getElementById('steps-intro').textContent = bp.steps.intro;
-    document.getElementById('steps-overview-slot').innerHTML = Portfolio.buildBlueprintSteps(steps);
-    document.getElementById('steps-detail').innerHTML = Portfolio.buildDetailedSteps(steps);
+    Portfolio.renderSection('Six-Step Blueprint', () => {
+      document.getElementById('steps-label').textContent = bp.steps.label;
+      document.getElementById('steps-headline').textContent = bp.steps.headline;
+      document.getElementById('steps-intro').textContent = bp.steps.intro;
+      document.getElementById('steps-overview-slot').innerHTML = Portfolio.buildBlueprintSteps(steps);
+      document.getElementById('steps-detail').innerHTML = Portfolio.buildDetailedSteps(steps);
+    });
 
     // How It Works
-    document.getElementById('how-label').textContent = bp.howItWorks.label;
-    document.getElementById('how-headline').textContent = bp.howItWorks.headline;
-    document.getElementById('how-body').innerHTML = bp.howItWorks.body.map(p => `<p>${p}</p>`).join('');
+    Portfolio.renderSection('How It Works', () => {
+      document.getElementById('how-label').textContent = bp.howItWorks.label;
+      document.getElementById('how-headline').textContent = bp.howItWorks.headline;
+      document.getElementById('how-body').innerHTML = bp.howItWorks.body.map(p => `<p>${p}</p>`).join('');
+    });
 
     // Relationship to Enterprise AI
-    document.getElementById('rel-label').textContent = bp.relationship.label;
-    document.getElementById('rel-headline').textContent = bp.relationship.headline;
-    document.getElementById('rel-body').textContent = bp.relationship.body;
-    document.getElementById('rel-link').innerHTML =
-      `${bp.relationship.link.text} <a href="${bp.relationship.link.url}">${bp.relationship.link.label} &rarr;</a>`;
+    Portfolio.renderSection('Relationship to Enterprise AI', () => {
+      document.getElementById('rel-label').textContent = bp.relationship.label;
+      document.getElementById('rel-headline').textContent = bp.relationship.headline;
+      document.getElementById('rel-body').textContent = bp.relationship.body;
+      document.getElementById('rel-link').innerHTML =
+        `${bp.relationship.link.text} <a href="${bp.relationship.link.url}">${bp.relationship.link.label} &rarr;</a>`;
+    });
 
     // Step 04 in detail: Operating Model capability domains
-    document.getElementById('om-heading').textContent = bp.operatingModel.heading;
-    document.getElementById('om-intro').textContent = bp.operatingModel.intro;
-    document.getElementById('om-domains').innerHTML = Portfolio.buildDomainCards(bp.operatingModel.domains);
+    Portfolio.renderSection('Step 04 in detail', () => {
+      document.getElementById('om-heading').textContent = bp.operatingModel.heading;
+      document.getElementById('om-intro').textContent = bp.operatingModel.intro;
+      document.getElementById('om-domains').innerHTML = Portfolio.buildDomainCards(bp.operatingModel.domains);
+    });
 
     // Closing CTA
-    document.getElementById('closing-headline').textContent = bp.closing.headline;
-    document.getElementById('closing-body').textContent = bp.closing.body;
-    document.getElementById('closing-links').innerHTML = Portfolio.buildClosingLinks(bp.closing.links);
-
+    Portfolio.renderSection('Closing CTA', () => {
+      document.getElementById('closing-headline').textContent = bp.closing.headline;
+      document.getElementById('closing-body').textContent = bp.closing.body;
+      document.getElementById('closing-links').innerHTML = Portfolio.buildClosingLinks(bp.closing.links);
+    });
     // Content renders after load, so honor a link to an in-page section (e.g. #operating-model)
     if (location.hash) {
       const target = document.getElementById(location.hash.slice(1));
