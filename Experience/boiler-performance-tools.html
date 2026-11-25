@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Case study: modernizing a portfolio of approximately 20 legacy FORTRAN engineering applications with C# and AWS, with backlog ownership, test-case validation and sprint replanning.">
+  <title>Boiler Performance Tools Modernization | Kenneth R. Turner</title>
+  <link rel="stylesheet" href="../css/style.css?v=20261124" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EG813QJ4B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3EG813QJ4B');
+  </script>
+  <style>
+    .pb-h2 { display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px; }
+    .pb-section { margin-bottom:36px; }
+    .pb-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:16px; }
+    .pb-card { background:white;border:1px solid var(--border);border-radius:10px;padding:16px 18px; }
+    .pb-card h3 { margin:0 0 6px;font-size:1.02rem; }
+    .pb-card p { margin:0;font-size:0.9rem; }
+    .pb-value { margin-top:8px !important;font-size:0.85rem !important;color:var(--subtext); }
+    .pb-status { display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;border-radius:999px;padding:3px 10px;margin-bottom:8px; }
+    .pb-done { background:rgba(46,204,113,0.14);color:#1e7e45; }
+    .pb-next { background:rgba(0,170,255,0.12);color:#0b6fa4; }
+    .pb-planned { background:rgba(11,30,61,0.07);color:var(--subtext); }
+    .pb-group { font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--nav-bg);margin:22px 0 0; }
+    .pb-steps { list-style:none;padding:0;margin:16px 0 0;display:flex;flex-direction:column;gap:10px; }
+    .pb-steps li { display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;background:white;border:1px solid var(--border);border-radius:10px;padding:12px 16px; }
+    .pb-num { width:30px;height:30px;border-radius:50%;background:var(--nav-bg);color:white;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:0.9rem; }
+    .pb-steps li.pb-current { border:2px solid var(--primary); }
+    .pb-steps li.pb-current .pb-num { background:var(--primary); }
+    .pb-details { background:white;border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-top:14px; }
+    .pb-details summary { cursor:pointer;font-weight:600;color:var(--nav-bg); }
+    .pb-details[open] summary { margin-bottom:10px; }
+    .pb-lesson { border-left:3px solid var(--primary);background:rgba(11,30,61,0.03);padding:14px 18px;border-radius:0 8px 8px 0;margin-top:14px; }
+  </style>
+</head>
+
+<body data-depth="1">
+
+<header class="banner" role="banner">
+  <div class="container banner-inner" id="banner-inner"></div>
+  <div class="banner-divider" aria-hidden="true"></div>
+</header>
+
+<main>
+  <div class="container" style="padding-top:28px;padding-bottom:48px;">
+
+    <section style="margin-bottom:32px;">
+      <p style="margin:0 0 10px;"><a href="../projects.html">&larr; Enterprise Experience</a></p>
+      <span class="exp-org" style="display:inline-block;margin-bottom:6px;">GE Power</span>
+      <h1 style="font-size:2rem;line-height:1.25;color:var(--nav-bg);margin:0 0 6px;">Boiler Performance Tools Modernization</h1>
+      <p style="font-style:italic;color:var(--subtext);margin:0 0 16px;">Assignment: Technical Product Owner &amp; Scrum Master</p>
+      <p class="intro" style="margin:0;">As Product Owner and Scrum Master, I led the team responsible for modernizing a portfolio of approximately 20 legacy FORTRAN engineering applications using C# and AWS. I owned requirements, backlog prioritization, sprint planning and coordination of business validation.</p>
+    </section>
+    <section class="pb-section">
+      <h2 class="pb-h2">The Business Problem</h2>
+      <p style="margin-top:14px;">Multiple engineering departments depended on custom legacy applications for boiler design and engineering work, some dating to the 1960s. They relied on aging FORTRAN software and unsupported infrastructure, so the business needed to preserve these engineering capabilities while moving to a more supportable technology environment. Protecting the intellectual property in externally licensed engineering software was also a business consideration.</p>
+    </section>
+    <section class="pb-section">
+      <h2 class="pb-h2">Stakeholders</h2>
+      <p style="margin-top:14px;">Business stakeholders, engineering users, external licensees, the solution architect, the software engineers and the cloud engineering team.</p>
+    </section>
+    <section class="pb-section" style="background:var(--muted);border-radius:12px;padding:24px 28px;border:1px solid var(--border);">
+      <h2 class="pb-h2">My Role</h2>
+      <p style="margin-top:14px;">I worked with engineering stakeholders and software engineers to set modernization priorities, defined requirements and user stories with business stakeholders and the solution architect, owned and prioritized the backlog, planned the sprints, ran the Scrum ceremonies and coordinated business validation. I also supported the requirements for protecting proprietary engineering software.</p>
+      <p><strong style="color:var(--nav-bg);">Owned by others:</strong> The software engineers and solution architect owned the technical design and implementation, including the FORTRAN wrapper. The cloud engineering team provisioned the AWS environment.</p>
+    </section>
+    <section class="pb-section">
+      <h2 class="pb-h2">Key Decisions and Tradeoffs</h2>
+      <div class="pb-grid">
+        <div class="pb-card">
+          <h3>Prioritize by upcoming engineering work</h3>
+          <p>With engineering stakeholders and the software engineers, I prioritized the applications needed for upcoming engineering projects.</p>
+        </div>
+        <div class="pb-card">
+          <h3>Adapting to a conversion constraint</h3>
+          <p>When engineers found that some modules could not be converted directly to C#, they designed a wrapper around the existing FORTRAN code. I worked with them to understand the impact, replaced the original conversion story with one for the wrapper work, had the team size it, and adjusted the sprint plan and priorities.</p>
+        </div>
+        <div class="pb-card">
+          <h3>Validate with existing test cases</h3>
+          <p>I worked with engineering application owners to identify their existing test cases and repurposed them to confirm the modernized applications produced equivalent calculation results. Business users validated releases in staging before production.</p>
+        </div>
+      </div>
+    </section>
+    <section class="pb-section">
+      <h2 class="pb-h2">Delivery and Validation</h2>
+      <p style="margin-top:14px;">The team delivered the work in Scrum sprints from the backlog I owned, with business validation in staging before each production release.</p>
+      <details class="pb-details">
+        <summary>Technical context</summary>
+        <p style="font-size:0.9rem;margin:0;">Angular user interface; C# application logic, with FORTRAN wrapped in C# where direct conversion wasn't possible; NuGet packaging; SQL Server; and AWS compute, managed database and private networking.</p>
+      </details>
+    </section>
+    <section class="pb-section" style="background:var(--muted);border-radius:12px;padding:24px 28px;border:1px solid var(--border);">
+      <h2 class="pb-h2">Results</h2>
+      <div class="pb-grid">
+        <div class="pb-card">
+          <span class="pb-status pb-done">Delivery</span>
+          <p>Multiple modernized applications were deployed to AWS, and engineers began using them. Approximately 20 applications were in the modernization scope.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-done">Business continuity</span>
+          <p>Engineering capabilities supporting legacy boiler design were preserved while reducing dependency on unsupported technology.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-done">Quality</span>
+          <p>Reusing existing engineering test cases gave the team a way to confirm that modernized applications produced equivalent calculation results.</p>
+        </div>
+        <div class="pb-card">
+          <span class="pb-status pb-done">Risk reduction</span>
+          <p>Intellectual property protection requirements for externally licensed engineering software were addressed, with hosted access giving the business greater control over its software.</p>
+        </div>
+      </div>
+      <p><strong style="color:var(--nav-bg);">Intended benefit, not measured:</strong> lower infrastructure support costs by moving off aging infrastructure.</p>
+    </section>
+    <section class="pb-section">
+      <h2 class="pb-h2">Lesson Learned</h2>
+      <p class="pb-lesson">This experience reinforced the importance of identifying technical risks early, particularly when modernizing legacy applications. When engineering identifies a constraint, the Product Owner needs to understand the impact, evaluate alternatives with the team and adjust the backlog and delivery plan accordingly.</p>
+    </section>
+    <p><a href="../projects.html" class="btn btn-outline">&larr; Back to Enterprise Experience</a></p>
+
+  </div><!-- /container -->
+</main>
+
+<div class="role-intent" id="role-intent"></div>
+<footer class="site-footer" role="contentinfo" id="site-footer"></footer>
+
+<script src="../js/portfolio.js?v=20261124"></script>
+<script>
+  (async () => {
+    const d = await Portfolio.loadData();
+    document.getElementById('banner-inner').innerHTML  = Portfolio.buildNav(d, 'projects.html');
+    document.getElementById('site-footer').innerHTML   = Portfolio.buildFooter(d);
+    document.getElementById('role-intent').textContent = d.meta.tagline;
+    Portfolio.initNavToggle();
+    Portfolio.setYear();
+  })();
+</script>
+
+</body>
+</html>

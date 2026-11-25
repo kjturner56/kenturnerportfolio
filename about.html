@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Kenneth R. Turner</title>
-  <meta name="description" content="Why I've devoted this stage of my career to Enterprise AI Operationalization." />
-  <link rel="stylesheet" href="/css/style.css" />
+  <meta name="description" content="How enterprise product, program and portfolio leadership led to Enterprise AI operationalization and the products I build." />
+  <link rel="stylesheet" href="/css/style.css?v=20261124" />
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png" />
@@ -31,7 +31,7 @@
   <div class="container section-nav-inner">
   <a href="#leadership">Leadership</a>
   <a href="#why-ai">Why AI</a>
-  <a href="#applied">Applied AI</a>
+  <a href="#applied">Products</a>
   <a href="#ahead">Looking Ahead</a>
   </div>
 </div>
@@ -80,21 +80,8 @@
     </div>
   </section>
 
-  <!-- Personal Reflection: What Changed (visual centerpiece of the page) -->
-  <section class="section" style="padding:var(--space-feature-py) 20px;">
-    <div class="container">
-      <div style="max-width:var(--text-width-wide);">
-        <span class="section-label" id="reflection-label"></span>
-        <blockquote class="pull-quote pull-quote-featured" id="reflection-quote" style="margin-top:20px;"></blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- Looking Ahead → Professional Foundation → Closing Thought:
-       one continuous section so the ending reads as a single arc
-       rather than three isolated blocks. Only the final closing
-       gets a deliberate pause above it, since that's the moment
-       meant to land as the takeaway. -->
+  <!-- Looking Ahead → Professional Foundation:
+       one continuous section so the ending reads as a single arc. -->
   <section id="ahead" class="section light-bg" style="padding:var(--space-section-py) 20px var(--space-feature-py);">
     <div class="container">
       <span class="section-label" id="ahead-label"></span>
@@ -105,11 +92,6 @@
         <span class="section-label" id="edu-label"></span>
         <ul id="edu-list" style="max-width:var(--text-width-narrow);font-size:0.92rem;line-height:1.9;margin-top:14px;"></ul>
       </div>
-
-      <div style="margin-top:var(--space-block-gap-lg);text-align:center;">
-        <p style="max-width:var(--text-width-narrow);margin:0 auto 22px;font-size:1.1rem;line-height:1.75;color:var(--text);font-style:italic;" id="emotional-close"></p>
-        <p style="max-width:var(--text-width-standard);margin-left:auto;margin-right:auto;font-size:1.1rem;line-height:1.75;color:var(--nav-bg);font-weight:600;" id="closing-statement"></p>
-      </div>
     </div>
   </section>
 
@@ -118,61 +100,68 @@
 <div class="role-intent" id="role-intent"></div>
 <footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-<script src="/js/portfolio.js"></script>
+<script src="/js/portfolio.js?v=20261124"></script>
 <script>
   (async () => {
     const d = await Portfolio.loadData();
-    document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'about.html');
-    document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
-    document.getElementById('role-intent').textContent = d.meta.tagline;
-    Portfolio.initNavToggle();
-    Portfolio.setYear();
+    Portfolio.renderSection('Site navigation and footer', () => {
+      document.getElementById('banner-inner').innerHTML = Portfolio.buildNav(d, 'about.html');
+      document.getElementById('site-footer').innerHTML  = Portfolio.buildFooter(d);
+      document.getElementById('role-intent').textContent = d.meta.tagline;
+      Portfolio.initNavToggle();
+      Portfolio.setYear();
+    });
 
     const a = d.about;
 
     // Hero
-    document.getElementById('hero-eyebrow').textContent = a.hero.eyebrow;
-    document.getElementById('hero-headline').textContent = a.hero.headline;
-    document.getElementById('hero-narrative').innerHTML = a.hero.narrative.map(p => `<p>${p}</p>`).join('');
+    Portfolio.renderSection('Hero', () => {
+      document.getElementById('hero-eyebrow').textContent = a.hero.eyebrow;
+      document.getElementById('hero-headline').textContent = a.hero.headline;
+      document.getElementById('hero-narrative').innerHTML = a.hero.narrative.map(p => `<p>${p}</p>`).join('');
+    });
 
     // Enterprise Leadership
-    document.getElementById('leadership-label').textContent = a.leadership.label;
-    document.getElementById('leadership-headline').textContent = a.leadership.headline;
-    document.getElementById('leadership-body').textContent = a.leadership.body;
+    Portfolio.renderSection('Enterprise Leadership', () => {
+      document.getElementById('leadership-label').textContent = a.leadership.label;
+      document.getElementById('leadership-headline').textContent = a.leadership.headline;
+      document.getElementById('leadership-body').textContent = a.leadership.body;
+    });
 
     // Why Enterprise AI
-    document.getElementById('whyai-label').textContent = a.whyAI.label;
-    document.getElementById('whyai-headline').textContent = a.whyAI.headline;
-    document.getElementById('whyai-body').innerHTML = a.whyAI.body.map(p => `<p>${p}</p>`).join('');
+    Portfolio.renderSection('Why Enterprise AI', () => {
+      document.getElementById('whyai-label').textContent = a.whyAI.label;
+      document.getElementById('whyai-headline').textContent = a.whyAI.headline;
+      document.getElementById('whyai-body').innerHTML = a.whyAI.body.map(p => `<p>${p}</p>`).join('');
+    });
 
     // Building Applied AI
-    document.getElementById('applied-label').textContent = a.applied.label;
-    document.getElementById('applied-headline').textContent = a.applied.headline;
-    document.getElementById('applied-body').textContent = a.applied.body;
-    document.getElementById('applied-cta').textContent = a.applied.cta;
-
-    // Personal Reflection
-    document.getElementById('reflection-label').textContent = a.reflection.label;
-    document.getElementById('reflection-quote').textContent = a.reflection.quote;
+    Portfolio.renderSection('Building Applied AI', () => {
+      document.getElementById('applied-label').textContent = a.applied.label;
+      document.getElementById('applied-headline').textContent = a.applied.headline;
+      document.getElementById('applied-body').textContent = a.applied.body;
+      document.getElementById('applied-cta').textContent = a.applied.cta;
+    });
 
     // Looking Ahead
-    document.getElementById('ahead-label').textContent = a.lookingAhead.label;
-    document.getElementById('ahead-headline').textContent = a.lookingAhead.headline;
-    document.getElementById('ahead-body').textContent = a.lookingAhead.body;
+    Portfolio.renderSection('Looking Ahead', () => {
+      document.getElementById('ahead-label').textContent = a.lookingAhead.label;
+      document.getElementById('ahead-headline').textContent = a.lookingAhead.headline;
+      document.getElementById('ahead-body').textContent = a.lookingAhead.body;
+    });
 
     // Education & Certifications
-    document.getElementById('edu-label').textContent = a.education.label;
-    document.getElementById('edu-list').innerHTML = a.education.items.map(i => `<li>${i}</li>`).join('');
-
-    // Closing
-    document.getElementById('emotional-close').textContent = a.emotionalClose;
-    document.getElementById('closing-statement').textContent = a.closing;
+    Portfolio.renderSection('Education & Certifications', () => {
+      document.getElementById('edu-label').textContent = a.education.label;
+      document.getElementById('edu-list').innerHTML = a.education.items.map(i => `<li>${i}</li>`).join('');
+    });
 
     // Scrollspy, same pattern as the rest of the site
     const navLinks = Array.from(document.querySelectorAll('#section-nav a'));
     const targets = navLinks.map(link => document.querySelector(link.getAttribute('href')));
     const fixedOffset = () => {
-      const raw = getComputedStyle(document.documentElement).getPropertyValue('--total-fixed-h');
+      const rootStyle = getComputedStyle(document.documentElement);
+      const raw = rootStyle.getPropertyValue('--fixed-h-live') || rootStyle.getPropertyValue('--total-fixed-h');
       const parsed = parseFloat(raw);
       return (isNaN(parsed) ? 172 : parsed) + 16;
     };

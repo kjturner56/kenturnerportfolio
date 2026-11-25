@@ -5,13 +5,29 @@
 // Global data cache
 let DATA = null;
 
+// Release version, read from this script's own URL (portfolio.js?v=...), so the
+// data file is requested with the same version as the page's CSS and JS. A new
+// release changes every asset URL together, so a returning visitor never mixes
+// new pages with cached older assets.
+const ASSET_VERSION = (() => {
+  try { return new URL(document.currentScript.src).searchParams.get('v') || ''; }
+  catch (e) { return ''; }
+})();
+
 async function loadData() {
   if (DATA) return DATA;
   const depth = document.body.dataset.depth || '0';
   const prefix = depth === '1' ? '../' : '/';
-  const res = await fetch(prefix + 'data/portfolio.json');
+  const res = await fetch(prefix + 'data/portfolio.json' + (ASSET_VERSION ? '?v=' + ASSET_VERSION : ''));
   DATA = await res.json();
   return DATA;
+}
+
+// Render one page section in isolation: an error in one section is logged
+// and the remaining sections still render.
+function renderSection(name, fn) {
+  try { fn(); }
+  catch (err) { console.error('Section "' + name + '" could not be rendered:', err); }
 }
 
 /* ----- Nav / Footer injection ----------------------------- */
@@ -45,11 +61,31 @@ function buildFooter(data) {
       <div class="footer-right">
         <a class="footer-btn" href="${data.meta.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
-      <p>© <span id="yr"></span> ${data.meta.name} | Product Management &amp; AI Innovation</p>
+      <p>© <span id="yr"></span> ${data.meta.name} | Enterprise Product Management &middot; Enterprise AI &middot; Product Innovation</p>
     </div>`;
 }
 
+/* ----- Fixed header height ---------------------------------
+   Measures the real bottom edge of the fixed banner and section menu
+   and publishes it as --fixed-h-live, so page padding and in-page link
+   offsets stay correct when the menu wraps on narrow screens. */
+function syncFixedHeaderHeight() {
+  const nav = document.querySelector('.nav');
+  if (nav && nav.classList.contains('open')) return; // mobile menu expanded: keep the last value
+  let bottom = 0;
+  [document.querySelector('.banner'), document.getElementById('section-nav')].forEach(el => {
+    if (!el) return;
+    const cs = getComputedStyle(el);
+    if (cs.display === 'none' || (cs.position !== 'fixed' && cs.position !== 'sticky')) return;
+    bottom = Math.max(bottom, el.getBoundingClientRect().bottom);
+  });
+  if (bottom > 0) document.documentElement.style.setProperty('--fixed-h-live', Math.ceil(bottom) + 'px');
+}
+
 function initNavToggle() {
+  syncFixedHeaderHeight();
+  window.addEventListener('resize', syncFixedHeaderHeight);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncFixedHeaderHeight);
   const toggle = document.querySelector('.nav-toggle');
   const nav    = document.querySelector('.nav');
   if (!toggle || !nav) return;
@@ -67,7 +103,7 @@ function setYear() {
 /* ----- Badge helper --------------------------------------- */
 function badge(status) {
   if (status === 'live')
-    return `<span class="badge badge-live">Live</span>`;
+    return `<span class="badge badge-live">Working demo</span>`;
   return `<span class="badge badge-prototype">Prototype</span>`;
 }
 
@@ -86,7 +122,7 @@ function buildProductCards(products, depth) {
 }
 
 function buildFeaturedCard(p, prefix, i) {
-  const liveBtn  = p.liveUrl  ? `<a href="${p.liveUrl}" class="btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">&#x1F680; View Live App</a>` : '';
+  const liveBtn  = p.liveUrl  ? `<a href="${p.liveUrl}" class="btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">${p.liveLabel || '&#x1F680; View Live App'}</a>` : '';
   const ghBtn    = p.githubRepo ? `<a href="https://github.com/${p.githubRepo}" class="btn btn-outline" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">GitHub Repo</a>` : '';
   const caseBtn  = p.caseStudyUrl ? `<a href="${prefix + p.caseStudyUrl.replace(/^\//, '')}" class="btn btn-outline" onclick="event.stopPropagation()">Full Case Study</a>` : '';
   const capItems = p.capabilities.map(c => `<li>${c}</li>`).join('');
@@ -108,7 +144,7 @@ function buildFeaturedCard(p, prefix, i) {
         <p>${p.summary}</p>
         ${tagList(p.tags)}
         <div>
-          <strong style="font-size:0.88rem;color:var(--nav-bg);text-transform:uppercase;letter-spacing:0.5px;">AI Capabilities Demonstrated</strong>
+          <strong style="font-size:0.88rem;color:var(--nav-bg);text-transform:uppercase;letter-spacing:0.5px;">${p.cardCapabilitiesLabel || 'AI Capabilities Demonstrated'}</strong>
           <ul style="margin-top:6px;">${capItems}</ul>
         </div>
         <span class="exp-view-link" style="display:block;margin-top:4px;">Explore This Product &#8250;</span>
@@ -137,35 +173,6 @@ function buildStandardCard(p, prefix, i) {
       <span class="exp-view-link" style="display:block;margin-top:10px;">Explore This Product &#8250;</span>
       <div style="margin-top:12px;">${caseBtn}</div>
     </div>`;
-}
-
-/* ----- Enterprise project cards -------------------------- */
-function buildProjectCards(projects) {
-  return projects.map(p => {
-    const bullets = p.bullets.map(b => `<li>${b}</li>`).join('');
-    return `
-      <div class="card project-card">
-        <h3>${p.title}</h3>
-        <p><strong>Objective:</strong> ${p.objective}</p>
-        <p><strong>Role:</strong> ${p.role}</p>
-        <ul>${bullets}</ul>
-        <div class="sqdc-row">
-          <span>Safety:</span> ${p.sqdc.safety}<br>
-          <span>Quality:</span> ${p.sqdc.quality}<br>
-          <span>Delivery:</span> ${p.sqdc.delivery}<br>
-          <span>Cost:</span> ${p.sqdc.cost}
-        </div>
-      </div>`;
-  }).join('');
-}
-
-/* ----- Approach cards ------------------------------------- */
-function buildApproachCards(items) {
-  return items.map(i => `
-    <div class="approach-card">
-      <h3>${i.title}</h3>
-      <p>${i.body}</p>
-    </div>`).join('');
 }
 
 /* ----- Technology cards ----------------------------------- */
@@ -244,7 +251,7 @@ function buildHeroVisual() {
           <rect x="15" y="12" width="1.6" height="1.6" fill="#0b1e3d"/>
         </g>
         <text x="${cx}" y="${nodeY + 58}" text-anchor="middle" font-family="Segoe UI, sans-serif"
-          font-size="16" font-weight="700" letter-spacing="0.5" fill="#0b1e3d">ENTERPRISE AI CAPABILITY</text>
+          font-size="16" font-weight="700" letter-spacing="0.5" fill="#0b1e3d">ENTERPRISE PRODUCT &amp; AI LEADERSHIP</text>
       </svg>
     </div>`;
 }
@@ -290,7 +297,7 @@ function buildAppliedCards(cards) {
   }).join('');
 }
 
-/* ----- Home: core capabilities grid ------------------------- */
+/* ----- Home: areas of expertise grid ------------------------ */
 const CAP_ICONS = {
   'Enterprise AI Strategy':
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l4-8 5 5 5-9 4 12"/><circle cx="3" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="21" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>',
@@ -305,6 +312,9 @@ const CAP_ICONS = {
   'Adoption & Value Realization':
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18l5-6 4 3 7-9"/><path d="M14 6h6v6"/></svg>'
 };
+// Areas of Expertise reuse existing icons
+CAP_ICONS['Enterprise Product Management'] = CAP_ICONS['Product & Portfolio Leadership'];
+CAP_ICONS['Independent Product Innovation'] = CAP_ICONS['Operating Model Design'];
 
 function buildCapabilityCards(items) {
   return items.map(i => `
@@ -339,6 +349,18 @@ function buildDetailedSteps(steps) {
         <div><span class="bp-meta-label">Purpose</span><p>${s.purpose}</p></div>
         <div><span class="bp-meta-label">Outcome</span><p>${s.outcome}</p></div>
       </div>
+      ${s.detailLink ? `<p class="bp-step-link"><a href="${s.detailLink.url}">${s.detailLink.label} &darr;</a></p>` : ''}
+    </div>`).join('');
+}
+
+/* ----- Blueprint page: Operating Model capability domains ---- */
+function buildDomainCards(domains) {
+  return domains.map(c => `
+    <div class="pattern-card">
+      <h4>${c.name}</h4>
+      <p class="domain-question">&ldquo;${c.question}&rdquo;</p>
+      <p>${c.does}</p>
+      <p class="domain-why"><strong>Why it matters:</strong> ${c.why}</p>
     </div>`).join('');
 }
 
@@ -378,6 +400,7 @@ function buildExperienceCards(projects, offset = 0) {
         <ul class="exp-outcomes">${outcomes}</ul>
         <div class="tag-list" style="margin-bottom:14px;">${capabilities}</div>
         <span class="exp-view-link">View Project Details &#8250;</span>
+        ${p.caseStudyUrl ? `<a href="${p.caseStudyUrl}" class="exp-view-link" style="display:block;margin-top:8px;" onclick="event.stopPropagation()">Read the Full Case Study &#8250;</a>` : ''}
       </div>`;
   }).join('');
 }
@@ -443,7 +466,18 @@ function renderExpModal() {
     p.outcomes.map(o => `<div class="modal-outcome-pill"><span class="check">&#10003;</span>${o}</div>`).join('');
   document.getElementById('exp-modal-capabilities').innerHTML =
     p.capabilities.map(c => `<span class="tag">${c}</span>`).join('');
-  document.getElementById('exp-modal-blueprint').textContent = p.blueprintConnection;
+  // The Blueprint connection is optional; hide the section when a project has none
+  const expBlueprint = document.getElementById('exp-modal-blueprint');
+  expBlueprint.textContent = p.blueprintConnection || '';
+  expBlueprint.closest('.modal-section').style.display = p.blueprintConnection ? '' : 'none';
+
+  // Optional full case-study link (flagship projects only)
+  const csSection = document.getElementById('exp-modal-link-section');
+  if (csSection) {
+    document.getElementById('exp-modal-link').innerHTML = p.caseStudyUrl
+      ? `<a href="${p.caseStudyUrl}" class="btn btn-outline">Read the Full Case Study &rarr;</a>` : '';
+    csSection.style.display = p.caseStudyUrl ? '' : 'none';
+  }
 
   const prevBtn = document.getElementById('exp-modal-prev');
   const nextBtn = document.getElementById('exp-modal-next');
@@ -521,8 +555,21 @@ function renderProductModal() {
   document.getElementById('prod-modal-tech').innerHTML = tagList(p.tags);
   document.getElementById('prod-modal-features').innerHTML =
     p.keyFeatures.map(f => `<li>${f}</li>`).join('');
+  // Optional per-product section headings; defaults keep the existing products unchanged
+  const labels = p.modalLabels || {};
+  document.getElementById('prod-modal-capabilities-label').textContent = labels.capabilities || 'AI Capabilities';
+  document.getElementById('prod-modal-value-label').textContent = labels.value || 'Business Value';
+  document.getElementById('prod-modal-blueprint-label').textContent = labels.blueprint || 'Relationship to the Enterprise AI Blueprint';
+  document.getElementById('prod-modal-link-label').textContent = labels.link || 'Architecture & Evolution';
+  document.getElementById('prod-modal-tech-label').textContent = labels.tech || 'Technologies Used';
+  // Intended or proposed (unmeasured) value uses an arrow instead of a check mark:
+  // for every item (valueIsIntended) or for listed items only (intendedValueIndexes)
+  const intendedIdx = Array.isArray(p.intendedValueIndexes) ? p.intendedValueIndexes : [];
   document.getElementById('prod-modal-value').innerHTML =
-    p.businessValue.map(v => `<div class="modal-outcome-pill"><span class="check">&#10003;</span>${v}</div>`).join('');
+    p.businessValue.map((v, i) => {
+      const icon = (p.valueIsIntended || intendedIdx.includes(i)) ? '&#8594;' : '&#10003;';
+      return `<div class="modal-outcome-pill"><span class="check">${icon}</span>${v}</div>`;
+    }).join('');
   document.getElementById('prod-modal-blueprint').textContent = p.blueprintConnection;
 
   // Optional per-product link (only products with architectureLink show it)
@@ -543,12 +590,12 @@ function renderProductModal() {
 }
 
 window.Portfolio = {
-  loadData, buildNav, buildFooter, buildProductCards,
-  buildProjectCards, buildApproachCards, buildTechCards,
+  loadData, renderSection, buildNav, buildFooter, buildProductCards,
+  buildTechCards,
   initNavToggle, setYear, tagList, badge,
   buildHeroVisual, buildStatCards, buildPovPillars,
   buildBlueprintSteps, buildAppliedCards, buildCapabilityCards,
-  buildPatternCards, buildDetailedSteps, buildClosingLinks,
+  buildPatternCards, buildDetailedSteps, buildDomainCards, buildClosingLinks,
   buildThemeChips, buildExperienceCards,
   initExpModal, openExpModal, closeExpModal, expModalPrev, expModalNext,
   buildPrincipleCards,

@@ -1,0 +1,19 @@
+# Approved website files: the only paths the Pages workflow publishes.
+# One path per line (file or folder), relative to the repository root.
+# Anything not listed here (for example CLAUDE.md or .github/) is never deployed.
+# Add a path only when it is part of the public website.
+
+index.html
+about.html
+blueprint.html
+contact.html
+products.html
+projects.html
+CNAME
+css
+js
+data
+images
+Experience
+Product1
+Product5

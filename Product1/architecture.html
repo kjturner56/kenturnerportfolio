@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="PortfolioIQ Architecture &amp; Evolution — architectural decisions and tradeoffs behind the implemented Streamlit prototype, and a proposed, governed path toward agentic AI workflows. Stages 1–4 are proposed and not implemented.">
   <title>PortfolioIQ Architecture &amp; Evolution | Kenneth R. Turner</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style.css?v=20261124" />
 <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EG813QJ4B"></script>
   <script>
@@ -55,7 +55,7 @@
     <!-- SECTION A -->
     <section style="margin-bottom:36px;">
       <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Architectural Decisions &amp; Technical Tradeoffs</h2>
-      <p style="margin-top:14px;">Here&rsquo;s how we built the prototype, what each choice costs, and what would make a more complex design worth it.</p>
+      <p style="margin-top:14px;">Here&rsquo;s how I approached the prototype, what each choice costs, and what would make a more complex design worth it.</p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px;">
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
@@ -73,21 +73,21 @@
       </div>
 
       <h3 style="margin-top:28px;color:var(--nav-bg);">4. Tradeoffs</h3>
-      <p style="font-size:0.9rem;">Each card covers what we chose, why, what it costs, and when I&rsquo;d change it.</p>
+      <p style="font-size:0.9rem;">Each card covers what I chose, why, what it costs, and when I&rsquo;d change it.</p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:14px;">
 
         <div class="card" style="padding:20px;">
           <h3>Deterministic rules vs. LLM recommendations</h3>
           <p style="font-size:0.9rem;"><strong>Choice:</strong> Python rules make every recommendation, and a person makes the final decision. Claude only answers questions. <em>(Implemented.)</em></p>
-          <p style="font-size:0.9rem;"><strong>Why</strong> <em>(present-day assessment, not a documented original rationale)</em><strong>:</strong> We have defined fields: lifecycle, technical debt, duplicate functionality, whether a replacement exists, and how critical the app is. That makes a rules-based approach a good fit. The rules are deterministic, so the same inputs always give the same answer. They&rsquo;re easy to test and explain, and they don&rsquo;t add AI cost. AI could help if we need to find patterns in information such as incident and problem summaries.</p>
-          <p style="font-size:0.9rem;"><strong>Cost:</strong> The rules don&rsquo;t interpret incident summaries, and we have to update the scoring criteria ourselves.</p>
+          <p style="font-size:0.9rem;"><strong>Why</strong> <em>(present-day assessment, not a documented original rationale)</em><strong>:</strong> The data has defined fields for lifecycle, technical debt, duplicate functionality, whether a replacement exists and how critical the app is. That makes a rules-based approach a good fit. The rules are deterministic, so the same inputs always give the same answer. They&rsquo;re easy to test and explain, and they don&rsquo;t add AI cost. AI could help if the product needs to find patterns in information such as incident and problem summaries.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> The rules don&rsquo;t interpret incident summaries, and the scoring criteria have to be updated manually.</p>
           <p style="font-size:0.9rem;"><strong>Change when:</strong> If incident summaries contain important information that the defined fields miss. Then I&rsquo;d use AI to pull out that evidence and show where it came from. The rules would still make the recommendation, and a person would still make the final decision.</p>
         </div>
 
         <div class="card" style="padding:20px;">
           <h3>Build vs. buy vs. integrate</h3>
-          <p style="font-size:0.9rem;"><strong>Choice:</strong> We built the scoring and governance workflow. The approach is to integrate with ServiceNow rather than replace it. <em>(Documented: roadmap build-vs-buy notes.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> I chose to build the scoring and governance workflow and to integrate with ServiceNow rather than replace it. <em>(Documented: roadmap build-vs-buy notes.)</em></p>
           <p style="font-size:0.9rem;"><strong>Why:</strong> The governance model and the scoring signals are what make the product different. The CMDB already exists, and it stays the system of record.</p>
           <p style="font-size:0.9rem;"><strong>Cost:</strong> The recommendations are only as good as the customer&rsquo;s CMDB data.</p>
           <p style="font-size:0.9rem;"><strong>Change when:</strong> If something is a commodity, like login, monitoring, or compliance tooling, I&rsquo;d buy it instead of building it.</p>
@@ -103,18 +103,18 @@
 
         <div class="card" style="padding:20px;">
           <h3>Direct Claude API vs. orchestration frameworks</h3>
-          <p style="font-size:0.9rem;"><strong>Choice:</strong> We call the Claude API directly. <em>(Documented: original case study.)</em></p>
-          <p style="font-size:0.9rem;"><strong>Why:</strong> Each request is one question and one answer, so we don&rsquo;t need an orchestration framework. It also keeps the prompts and responses easy to see.</p>
-          <p style="font-size:0.9rem;"><strong>Cost:</strong> We have to build retries, tracing, and multi-step flows ourselves.</p>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> I chose to call the Claude API directly. <em>(Documented: original case study.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Why:</strong> Each request is one question and one answer, so the prototype doesn&rsquo;t need an orchestration framework. It also keeps the prompts and responses easy to see.</p>
+          <p style="font-size:0.9rem;"><strong>Cost:</strong> Retries, tracing and multi-step flows would have to be built without a framework.</p>
           <p style="font-size:0.9rem;"><strong>Change when:</strong> If workflows need several steps, branching, runs that can pick up where they stopped, or tool calls. Even then, I&rsquo;d compare a framework against a hand-built workflow before adopting one.</p>
         </div>
 
         <div class="card" style="padding:20px;">
           <h3>Context stuffing vs. retrieval / vector search</h3>
-          <p style="font-size:0.9rem;"><strong>Choice:</strong> We send the full 15-application portfolio with every prompt. That&rsquo;s called context stuffing. <em>(Documented: original case study.)</em></p>
+          <p style="font-size:0.9rem;"><strong>Choice:</strong> I chose to send the full 15-application portfolio with every prompt. That&rsquo;s called context stuffing. <em>(Documented: original case study.)</em></p>
           <p style="font-size:0.9rem;"><strong>Why:</strong> At demo size it&rsquo;s simple, easy to inspect, and there&rsquo;s no search index to maintain.</p>
           <p style="font-size:0.9rem;"><strong>Cost:</strong> As the portfolio grows, prompts get bigger, slower, and more expensive. Every call also sends all of the data.</p>
-          <p style="font-size:0.9rem;"><strong>Change when:</strong> If the portfolio no longer fits a set prompt size, or the cost or response time we measure gets too high. Retrieval is how we&rsquo;d scale, not where we&rsquo;d start.</p>
+          <p style="font-size:0.9rem;"><strong>Change when:</strong> If the portfolio no longer fits a set prompt size, or measured cost or response time gets too high. Retrieval is how I&rsquo;d scale, not where I&rsquo;d start.</p>
         </div>
 
         <div class="card" style="padding:20px;">
@@ -148,11 +148,11 @@
         </div>
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">6. Validation</strong>
-          <p style="margin-top:6px;font-size:0.9rem;"><em>Today:</em> we check results by hand against the sample data. <em>Proposed:</em> unit tests for the rules, a reference set of expected recommendations, prompt-injection test cases, and an evaluation set for Claude&rsquo;s answers.</p>
+          <p style="margin-top:6px;font-size:0.9rem;"><em>Today:</em> I check results by hand against the sample data. <em>Proposed:</em> unit tests for the rules, a reference set of expected recommendations, prompt-injection test cases, and an evaluation set for Claude&rsquo;s answers.</p>
         </div>
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">7. Delivery &amp; Operations</strong>
-          <p style="margin-top:6px;font-size:0.9rem;"><em>Today:</em> pushing to GitHub automatically redeploys the app on Streamlit Community Cloud. To roll back, we revert the commit. There&rsquo;s no monitoring. <em>Proposed:</em> automated tests in CI before each deploy, a staging environment, error logging, and a cost dashboard.</p>
+          <p style="margin-top:6px;font-size:0.9rem;"><em>Today:</em> pushing to GitHub automatically redeploys the app on Streamlit Community Cloud. To roll back, I revert the commit. There&rsquo;s no monitoring. <em>Proposed:</em> automated tests in CI before each deploy, a staging environment, error logging, and a cost dashboard.</p>
         </div>
       </div>
 
@@ -249,7 +249,7 @@
       </div>
 
       <h3 style="margin-top:28px;color:var(--nav-bg);">When is an agent justified?</h3>
-      <p style="font-size:0.9rem;">A fixed workflow is cheaper, faster, and easier to test, so it remains the default. An agent is justified only when all of these hold:</p>
+      <p style="font-size:0.9rem;">A simpler, fixed workflow is the preferred starting point because it is usually easier to test, operate and explain. It isn&rsquo;t always cheaper or faster, so alternatives should be evaluated against the actual requirements and measured results. An agent is justified only when all of these hold:</p>
       <ul style="font-size:0.9rem;">
         <li>The task needs a sequence of steps that cannot be fixed in advance.</li>
         <li>The Stage 2 pipeline has been measured and falls short on that task.</li>
@@ -283,8 +283,8 @@
 
     <!-- Roadmap alignment -->
     <section style="margin-bottom:36px;">
-      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Alignment with the Proposed 24-Month Roadmap</h2>
-      <p style="margin-top:14px;">Each architecture stage maps to one business phase in the <a href="genai-advisor.html">case study roadmap</a>. A stage advances only when both the phase&rsquo;s business question and the stage&rsquo;s SQDC criteria are met. Timelines, customer counts, and revenue figures remain hypothetical planning assumptions.</p>
+      <h2 style="display:inline-block;border-bottom:2px solid var(--primary);padding-bottom:5px;">Alignment with the Proposed Product Evolution Roadmap</h2>
+      <p style="margin-top:14px;">Each architecture stage maps to one phase of the proposed product evolution in the <a href="genai-advisor.html">case study</a>. A stage advances only when both the phase&rsquo;s key question and the stage&rsquo;s SQDC criteria are met, with supporting evidence and Product Owner approval; further investment depends on validated demand.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px;">
         <div style="background:white;border-radius:8px;padding:16px;border:1px solid var(--border);">
           <strong style="color:var(--nav-bg);">Phase 1 &middot; Validate &rarr; Stage 1</strong>
@@ -314,7 +314,7 @@
 <div class="role-intent" id="role-intent"></div>
 <footer class="site-footer" role="contentinfo" id="site-footer"></footer>
 
-<script src="../js/portfolio.js"></script>
+<script src="../js/portfolio.js?v=20261124"></script>
 <script>
   (async () => {
     const d = await Portfolio.loadData();
