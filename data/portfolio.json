@@ -224,10 +224,10 @@
       "organization": "GE Vernova",
       "challenge": "The Steam business needed to improve application portfolio governance, and leadership had to request portfolio information from the portfolio manager rather than see it directly.",
       "outcomes": [
-        "Approximately doubled portfolio health scores within two quarters and met the centrally established governance targets for critical and noncritical applications, working with application owners and technical teams",
-        "Reduced the application footprint by approximately 67% over my ownership, from about 300 to about 100 applications, with about three quarters of the reduction coming from divestiture",
+        "Worked with application owners and technical teams to approximately double portfolio health scores within two quarters and meet the centrally established governance targets for critical and noncritical applications",
+        "Worked with the teams responsible for the divestiture to ensure the application portfolio accurately reflected organizational and application changes",
         "Gave the Steam CIO and IT directors self-service portfolio visibility, and the dashboard became the basis for quarterly governance discussions",
-        "Drove the retirement of approximately 50 applications through rationalization outside the divestiture, with application owners making the final decisions",
+        "Coordinated the retirement of approximately 50 applications through rationalization outside the divestiture, with application owners making the final decisions",
         "Established a recurring governance process that prompted remediation and retirement by application owners and technical teams, though some individual applications still had open issues"
       ],
       "capabilities": [
@@ -235,16 +235,16 @@
         "Requirements & Discovery",
         "Governance"
       ],
-      "executiveSummary": "When I took over application portfolio management for the Steam business, leadership needed better governance performance and had to request portfolio information rather than see it directly. I worked with the central governance team to understand the portfolio health metrics, worked with the CIO and directors to understand their reporting needs, and built a centralized Smartsheet dashboard from the enterprise source system covering portfolio health, technical debt, metadata completeness, application footprint, hosting and retirement progress. I held quarterly reviews with application owners on whether their applications were still needed, coordinated retirements while owners kept the final decision, reported progress to leadership monthly and ran quarterly governance reviews with the Steam CIO and domain directors. Working with application owners and technical teams, we approximately doubled portfolio health scores within two quarters and met the centrally established targets, though some individual applications still had open issues. Over my ownership the portfolio went from about 300 to about 100 applications. About three quarters of that reduction came from divestiture, and about 50 applications were retired through rationalization.",
+      "executiveSummary": "When I took over application portfolio management for the Steam business, leadership needed better governance performance and had to request portfolio information rather than see it directly. I worked with the central governance team to understand the portfolio health metrics, worked with the CIO and directors to understand their reporting needs, and built a centralized Smartsheet dashboard from the enterprise source system covering portfolio health, technical debt, metadata completeness, application footprint, hosting and retirement progress. I worked with application owners in quarterly reviews to identify retirement opportunities and coordinate application rationalization while owners kept the final decision, reported progress to leadership monthly and ran quarterly governance reviews with the Steam CIO and domain directors. Working with application owners and technical teams, we approximately doubled portfolio health scores within two quarters and met the centrally established targets, though some individual applications still had open issues. Over my ownership the portfolio went from about 300 to about 100 applications. About three quarters of that reduction came from a divestiture, and I worked with the teams responsible for it to maintain an accurate application portfolio. Separately, about 50 applications were retired through rationalization.",
       "businessChallenge": "The Steam business needed to improve application portfolio governance performance while giving leadership better visibility into portfolio health, composition and application retirement progress. Leadership previously had to request this information from the application portfolio manager.",
-      "myRole": "I worked with the CIO and directors to understand what information they needed to manage the application portfolio. I defined the dashboard requirements, built the Smartsheet tracking and reporting solution, worked with application owners to address information gaps and coordinated remediation activities with the responsible technical teams. I also led quarterly portfolio reviews to help leadership understand application health, technical debt, hosting, modernization opportunities and decommissioning candidates. The governance scoring methodology was defined centrally, and I didn't design it. Application owners kept the final decision on retiring their applications.",
+      "myRole": "I worked with the CIO and directors to understand what information they needed to manage the application portfolio. I defined the dashboard requirements, built the Smartsheet tracking and reporting solution, worked with application owners to address information gaps and coordinated remediation activities with the responsible technical teams. I also led quarterly portfolio reviews to help leadership understand application health, technical debt, hosting, modernization opportunities and decommissioning candidates. The governance scoring methodology was defined centrally, and I didn't design it. Application owners kept the final decision on retiring their applications. I worked with the teams responsible for the divestiture to maintain an accurate application portfolio.",
       "keyContributions": [
         "Worked with the central governance team to understand the portfolio health metrics and requirements.",
         "Worked with the CIO and directors to understand their reporting and governance needs.",
         "Built a centralized Smartsheet dashboard from the enterprise source system covering portfolio health, technical debt, metadata completeness, application footprint, hosting and retirement progress.",
-        "Held quarterly reviews with application owners on whether each application was still needed, and coordinated retirements while owners kept the final decision.",
+        "Worked with application owners in quarterly reviews to identify retirement opportunities and coordinate application rationalization, while owners kept the final decision.",
         "Reported progress to leadership monthly and ran quarterly governance reviews with the Steam CIO and domain directors.",
-        "Supported application decommissioning associated with the divestiture."
+        "Worked with the teams responsible for the divestiture to ensure the application portfolio accurately reflected the changes."
       ],
       "blueprintConnection": "This connects to the Blueprint's starting point, which is agreeing on what leaders need to decide before building the reporting or the model.",
       "featured": true,
@@ -572,7 +572,7 @@
       "headline": "Leading enterprise products from business problem to measurable outcomes.",
       "body": [
         "I lead enterprise products, programs and portfolios, working directly with business stakeholders, customers and technical teams. My focus is on understanding business problems, defining requirements, setting priorities, making tradeoffs and bringing the right people together to deliver solutions that provide measurable business value.",
-        "I have more than ten years of enterprise technology leadership experience across product strategy, governance and application portfolio management. At GE Vernova, I supported technology investment decisions for an application portfolio that went from approximately 300 to approximately 100 applications during my ownership, through rationalization and divestiture.",
+        "I have more than ten years of enterprise technology leadership experience across product strategy, governance and application portfolio management. At GE Vernova, I managed application portfolio governance for approximately 300 applications, supporting technology investment decisions and application rationalization.",
         "My expertise in Enterprise AI builds on that experience. I developed the Enterprise AI Blueprint for operationalizing AI responsibly, and I build products, including the Enterprise Product & Delivery Playbook and PortfolioIQ, that put governed delivery into practice."
       ]
     },
@@ -584,12 +584,12 @@
         {
           "value": "~2x",
           "label": "Portfolio Health Improvement",
-          "body": "Achieved centrally established governance targets within two quarters, working with application owners and technical teams at GE Vernova."
+          "body": "Worked with application owners and technical teams at GE Vernova to approximately double portfolio health scores and meet centrally established governance targets within two quarters."
         },
         {
-          "value": "~67%",
-          "label": "Portfolio Footprint Reduction",
-          "body": "Through application rationalization and divestiture activities, from about 300 to about 100 applications."
+          "value": "~300",
+          "label": "Applications Under Portfolio Governance",
+          "body": "Managed application portfolio governance at GE Vernova, providing leadership with visibility into application health, technical debt and rationalization opportunities."
         },
         {
           "value": "~20",
